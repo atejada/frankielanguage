@@ -109,9 +109,9 @@ A small, friendly experimental programming language
 
 <p>
 Frankie is a lightweight programming language created for experimentation,
-learning, and fun. Stitched together from Ruby • Python • R • Fortran
+learning, and fun. <br><br>Stitched together from Ruby • Python • R • Fortran
 </p>
-
+<br>
 <p>
 The goal of Frankie is to be:
 </p>
@@ -135,24 +135,29 @@ The goal of Frankie is to be:
 
 <section>
 
-<h2>Example</h2>
+<h2>Language features</h2>
 
 <h3>Variables</h3>
 
-<pre><code>name = "Frankie"
+<pre><code>
+name = "Frankie"
 age = 5</code></pre>
 
 <h3>Functions</h3>
 
-<pre><code>fn greet(name) {
+<pre><code>
+fn greet(name) {
   print("Hello " + name)
-}</code></pre>
+}
+</code></pre>
 
 <h3>Conditionals</h3>
 
-<pre><code>if x > 10 {
+<pre><code>
+if x > 10 {
   print("Big number")
-}</code></pre>
+}
+</code></pre>
 
 </section>
 
@@ -163,15 +168,23 @@ age = 5</code></pre>
 <p>Clone the repository:</p>
 
 <pre><code>git clone https://github.com/atejada/Frankie
-cd Frankie</code></pre>
+ cd Frankie
+ python3 install.py
+ export PATH="/path/to/frankie/bin:$PATH"
+ </code></pre>
 
-<p>Build the interpreter:</p>
+<p>Using without installing:</p>
 
-<pre><code>make</code></pre>
+<pre><code>python3 frankiec.py run examples/hello.fk</code></pre>
 
-<p>Run a program:</p>
+<p>Commands</p>
 
-<pre><code>frankie hello.fr</code></pre>
+<pre><code>
+frankiec run   <file.fk>    # Run a Frankie program
+frankiec build <file.fk>    # Compile to Python source (for inspection)
+frankiec check <file.fk>    # Syntax check only — no execution
+frankiec version   # Show version info
+</code></pre>
 
 </section>
 
