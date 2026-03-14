@@ -1,109 +1,185 @@
-# Frankie Programming Language
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<p align="center">
-  <img src="The%20Frankie%20Programming%20Language.png" width="600">
+<title>Frankie Programming Language</title>
+
+<style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    background:#0f172a;
+    color:#e2e8f0;
+}
+
+header{
+    text-align:center;
+    padding:60px 20px;
+}
+
+header img{
+    width:420px;
+    max-width:90%;
+}
+
+h1{
+    font-size:48px;
+    margin-top:20px;
+}
+
+.subtitle{
+    font-size:20px;
+    color:#94a3b8;
+}
+
+nav{
+    margin-top:25px;
+}
+
+nav a{
+    color:#38bdf8;
+    margin:0 12px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+section{
+    max-width:900px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+h2{
+    border-bottom:1px solid #334155;
+    padding-bottom:10px;
+}
+
+code{
+    background:#020617;
+    padding:3px 6px;
+    border-radius:5px;
+}
+
+pre{
+    background:#020617;
+    padding:20px;
+    border-radius:10px;
+    overflow:auto;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#64748b;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<img src="The%20Frankie%20Programming%20Language.png">
+
+<h1>Frankie</h1>
+
+<p class="subtitle">
+A small, friendly experimental programming language
 </p>
 
-<p align="center">
-<b>A small, friendly, experimental programming language.</b>
+<nav>
+<a href="#about">About</a>
+<a href="#hello">Hello World</a>
+<a href="#start">Getting Started</a>
+<a href="https://github.com/atejada/Frankie">GitHub</a>
+</nav>
+
+</header>
+
+<section id="about">
+
+<h2>About Frankie</h2>
+
+<p>
+Frankie is a lightweight programming language created for experimentation,
+learning, and fun. Stitched together from Ruby • Python • R • Fortran
 </p>
 
----
-
-## About Frankie
-
-Frankie is a lightweight programming language created for experimentation, learning, and fun Stitched together from Ruby • Python • R • Fortran
-
+<p>
 The goal of Frankie is to be:
+</p>
 
-* Simple to read
-* Easy to modify
-* Small enough to understand completely
-* Friendly for language experimentation
+<ul>
+<li>Simple to read</li>
+<li>Easy to modify</li>
+<li>Small enough to understand completely</li>
+<li>Friendly for language experimentation</li>
+</ul>
 
----
+</section>
 
-## Hello World
+<section id="hello">
 
-```frankie
-print("Hello, Frankie!")
-```
+<h2>Hello World</h2>
 
----
+<pre><code>print("Hello, Frankie!")</code></pre>
 
-## Example
+</section>
 
-### Variables
+<section>
 
-```frankie
-name = "Frankie"
-age = 5
-```
+<h2>Example</h2>
 
-### Functions
+<h3>Variables</h3>
 
-```frankie
-fn greet(name) {
+<pre><code>name = "Frankie"
+age = 5</code></pre>
+
+<h3>Functions</h3>
+
+<pre><code>fn greet(name) {
   print("Hello " + name)
-}
-```
+}</code></pre>
 
-### Conditionals
+<h3>Conditionals</h3>
 
-```frankie
-if x > 10 {
+<pre><code>if x > 10 {
   print("Big number")
-}
-```
+}</code></pre>
 
----
+</section>
 
-## Getting Started
+<section id="start">
 
-Clone the repository:
+<h2>Getting Started</h2>
 
-```
-git clone https://github.com/atejada/Frankie
-cd Frankie
-```
+<p>Clone the repository:</p>
 
-Build the interpreter:
+<pre><code>git clone https://github.com/atejada/Frankie
+cd Frankie</code></pre>
 
-```
-make
-```
+<p>Build the interpreter:</p>
 
-Run a program:
+<pre><code>make</code></pre>
 
-```
-frankie hello.fr
-```
+<p>Run a program:</p>
 
----
+<pre><code>frankie hello.fr</code></pre>
 
-## Philosophy
+</section>
 
-Frankie follows a few simple ideas:
+<footer>
 
-* Programming languages should be easy to read.
-* Implementations should be understandable.
-* Experimentation should be encouraged.
+<p>Designed and Developed by <b>Claude</b> and <b>Blag Aka. Alvaro Tejada Galindo</b>.</p>
 
----
+</footer>
 
-## Contributing
-
-Contributions are welcome!
-
-You can help Frankie by:
-
-* reporting bugs
-* improving documentation
-* adding examples
-* experimenting with new language features
-
----
-
-## Author
-
-Designed and Developed by Claude and Blag Aka. Alvaro Tejada Galindo.
+</body>
+</html>
