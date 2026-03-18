@@ -50,6 +50,7 @@ code{font-family:'Share Tech Mono',monospace;font-size:.82em;color:var(--green)}
 .card-icon{font-size:1.25rem;margin-bottom:.8rem}
 .card h3{font-family:'Special Elite',cursive;font-size:1rem;color:var(--white);margin-bottom:.4rem;font-weight:400}
 .card p{font-size:.88rem;color:var(--muted);line-height:1.6}
+.new-badge{font-family:'Share Tech Mono',monospace;font-size:.55rem;letter-spacing:.1em;padding:.15rem .5rem;background:rgba(57,255,138,.12);border:1px solid rgba(57,255,138,.3);color:var(--green);border-radius:2px;vertical-align:middle;margin-left:.5rem}
 .code-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2.8rem}
 .cp{background:var(--panel);border:1px solid var(--border);border-radius:3px;overflow:hidden}
 .cp-head{display:flex;align-items:center;justify-content:space-between;padding:.65rem 1.1rem;border-bottom:1px solid var(--border);background:var(--dark)}
@@ -88,7 +89,7 @@ footer{border-top:1px solid var(--border);padding:2.2rem 2.5rem;display:flex;ali
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">🧟 Frankie <span>v1.5</span></a>
+  <a href="#" class="nav-logo">🧟 Frankie <span>v1.6</span></a>
   <ul>
     <li><a href="#features">Features</a></li>
     <li><a href="#syntax">Syntax</a></li>
@@ -100,13 +101,11 @@ footer{border-top:1px solid var(--border);padding:2.2rem 2.5rem;display:flex;ali
 
 <div class="hero">
   <p class="eyebrow">⚡ It's alive!</p>
-  <pre class="ascii">
-_____                _    _
-   |  ___| __ __ _ _ __ | | _(_) ___
-   | |_ | '__/ _` | '_ \| |/ / |/ _ \
-   |  _|| | | (_| | | | |   &lt;| |  __/
-   |_|  |_|  \__,_|_| |_|_|\_\_|\___| 
- </pre>
+  <pre class="ascii">_____               _    _
+    |  ___| __ __ _ _ __ | | _(_) ___
+    | |_ | '__/ _` | '_ \| |/ / |/ _ \
+    |  _|| | | (_| | | | |   &lt;| |  __/
+    |_|  |_|  \__,_|_| |_|_|\_\_|\___| </pre>
   <h1>The <em>Frankie</em> Language</h1>
   <p class="sub">A procedural programming language lovingly stitched together from Ruby, Python, R, and Fortran. Zero dependencies. Proudly monstrous.</p>
   <div class="tags">
@@ -117,7 +116,7 @@ _____                _    _
   </div>
   <div class="ctas">
     <a href="#install" class="btn btn-p">Get Started →</a>
-    <a href="https://github.com/atejada/Frankie/releases" class="btn btn-s">Download v1.5</a>
+    <a href="https://github.com/atejada/Frankie/releases" class="btn btn-s">Download v1.6</a>
     <a href="https://github.com/atejada/Frankie" class="btn btn-s">★ Star on GitHub</a>
   </div>
   <p class="scroll">▼ scroll</p>
@@ -130,15 +129,18 @@ _____                _    _
   <h2>Everything you need.<br>Nothing you don't.</h2>
   <p style="color:var(--muted);max-width:560px;font-size:.97rem">Proudly procedural — functions, data, loops, logic. No classes, no <code>self</code>, no inheritance. Runs on Python 3.10+ with zero external dependencies.</p>
   <div class="grid">
+    <div class="card"><div class="card-icon">➕</div><h3>Compound Assignment <span class="new-badge">v1.6</span></h3><p><code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>//=</code> <code>**=</code> <code>%=</code> — all operators, including Fortran-style integer division and exponentiation. Works on variables and vector elements.</p></div>
+    <div class="card"><div class="card-icon">🛡️</div><h3>Typed Rescue <span class="new-badge">v1.6</span></h3><p><code>rescue ZeroDivisionError e</code>, <code>rescue TypeError e</code> — multiple typed clauses on one <code>begin…end</code> block. Catch exactly what you mean.</p></div>
+    <div class="card"><div class="card-icon">🔍</div><h3>.find / .detect <span class="new-badge">v1.6</span></h3><p>Return the first element where the block is true, or <code>nil</code>. Works on any vector including vectors of hashes. Chains naturally with <code>.select</code>, <code>.sort_by</code>, and the pipe operator.</p></div>
+    <div class="card"><div class="card-icon">🧪</div><h3>frankiec test <span class="new-badge">v1.6</span></h3><p>Built-in test runner. <code>assert_true</code>, <code>assert_eq</code>, <code>assert_neq</code>, <code>assert_raises</code> — no imports. Live ✓ / ✗ output per assertion. Exits 1 on failure for CI.</p></div>
     <div class="card"><div class="card-icon">📊</div><h3>R-style Statistics</h3><p>Built-in <code>mean</code>, <code>stdev</code>, <code>median</code>, <code>variance</code>. Vectorised arithmetic. Pipe operator <code>|&gt;</code> for clean data pipelines.</p></div>
     <div class="card"><div class="card-icon">🌐</div><h3>Built-in Web Server</h3><p>Sinatra-style routing with <code>web_app()</code>. Path params, JSON bodies, before/after filters, custom 404 — zero external deps.</p></div>
     <div class="card"><div class="card-icon">🗄️</div><h3>SQLite Built-in</h3><p>Open databases, run queries, insert rows with clean Frankie syntax. No ORM, no driver, no setup required.</p></div>
     <div class="card"><div class="card-icon">🔗</div><h3>HTTP, JSON &amp; CSV</h3><p>Make HTTP requests, parse JSON and CSV, work with DateTime — all in the stdlib, all zero-dependency.</p></div>
     <div class="card"><div class="card-icon">🎲</div><h3>Randomness</h3><p><code>rand</code>, <code>rand_int</code>, <code>rand_float</code>, <code>shuffle</code>, <code>sample</code>, <code>rand_seed</code> — everything for games and simulations.</p></div>
-    <div class="card"><div class="card-icon">🔁</div><h3>Rich Iterators</h3><p><code>.map</code>, <code>.select</code>, <code>.sort_by</code>, <code>.reduce</code>, <code>.min_by</code>, <code>.max_by</code>, <code>.sum_by</code> with <code>do |x| end</code> blocks.</p></div>
+    <div class="card"><div class="card-icon">🔁</div><h3>Rich Iterators</h3><p><code>.map</code>, <code>.select</code>, <code>.find</code>, <code>.sort_by</code>, <code>.reduce</code>, <code>.min_by</code>, <code>.max_by</code> with <code>do |x| end</code> blocks.</p></div>
     <div class="card"><div class="card-icon">⏭️</div><h3>Loop Control</h3><p><code>next</code> to skip iterations, <code>break</code> to exit early, <code>break value</code> to exit with a result. Postfix forms work too.</p></div>
     <div class="card"><div class="card-icon">🔒</div><h3>Constants</h3><p><code>UPPER_SNAKE_CASE</code> names are constants. Reassignment warns and preserves the original value automatically.</p></div>
-    <div class="card"><div class="card-icon">🛡️</div><h3>Error Handling</h3><p>Ruby-style <code>begin / rescue / ensure</code> with <code>raise</code>. Postfix <code>raise "msg" if cond</code> works perfectly.</p></div>
   </div>
 </section>
 
@@ -150,9 +152,107 @@ _____                _    _
   <div class="code-grid">
 
     <div class="cp">
+      <div class="cp-head"><span class="cp-title">compound.fk <span class="new-badge">v1.6</span></span><div class="dots"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div></div></div>
+      <pre><span class="cm"># Compound assignment operators</span>
+<span class="vr">score</span> = <span class="num">0</span>
+<span class="vr">score</span> += <span class="num">10</span>   <span class="cm"># score = 10</span>
+<span class="vr">score</span> *= <span class="num">2</span>    <span class="cm"># score = 20</span>
+<span class="vr">score</span> -= <span class="num">3</span>    <span class="cm"># score = 17</span>
+<span class="vr">score</span> **= <span class="num">2</span>   <span class="cm"># score = 289 (Fortran!)</span>
+<span class="vr">score</span> %= <span class="num">100</span>  <span class="cm"># score = 89</span>
+
+<span class="cm"># Works on vector elements too</span>
+<span class="vr">v</span> = [<span class="num">10</span>, <span class="num">20</span>, <span class="num">30</span>]
+<span class="vr">v</span>[<span class="num">0</span>] += <span class="num">5</span>     <span class="cm"># [15, 20, 30]</span>
+<span class="vr">v</span>[<span class="num">2</span>] //= <span class="num">4</span>    <span class="cm"># [15, 20, 7]</span>
+
+<span class="cm"># Idiomatic loop accumulation</span>
+<span class="vr">total</span> = <span class="num">0</span>
+[<span class="num">3</span>, <span class="num">7</span>, <span class="num">2</span>, <span class="num">9</span>].<span class="fn">each</span> <span class="kw">do</span> |<span class="vr">n</span>|
+  <span class="vr">total</span> += <span class="vr">n</span>
+<span class="kw">end</span>
+<span class="fn">puts</span> <span class="vr">total</span>  <span class="cm"># 21</span></pre>
+    </div>
+
+    <div class="cp">
+      <div class="cp-head"><span class="cp-title">rescue.fk <span class="new-badge">v1.6</span></span><div class="dots"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div></div></div>
+      <pre><span class="cm"># Typed rescue clauses</span>
+<span class="kw">def</span> <span class="fn">safe_divide</span>(<span class="vr">a</span>, <span class="vr">b</span>)
+  <span class="kw">begin</span>
+    <span class="kw">return</span> <span class="vr">a</span> // <span class="vr">b</span>
+  <span class="kw">rescue</span> <span class="vr">ZeroDivisionError</span> <span class="vr">e</span>
+    <span class="fn">puts</span> <span class="str">"division by zero"</span>
+    <span class="kw">return</span> <span class="num">0</span>
+  <span class="kw">rescue</span> <span class="vr">TypeError</span> <span class="vr">e</span>
+    <span class="fn">puts</span> <span class="str">"wrong type: #{e}"</span>
+    <span class="kw">return</span> <span class="num">0</span>
+  <span class="kw">rescue</span> <span class="vr">e</span>
+    <span class="fn">puts</span> <span class="str">"unexpected: #{e}"</span>
+    <span class="kw">return</span> <span class="num">0</span>
+  <span class="kw">ensure</span>
+    <span class="fn">puts</span> <span class="str">"always runs"</span>
+  <span class="kw">end</span>
+<span class="kw">end</span>
+
+<span class="fn">puts</span> <span class="fn">safe_divide</span>(<span class="num">10</span>, <span class="num">2</span>)   <span class="cm"># 5</span>
+<span class="fn">puts</span> <span class="fn">safe_divide</span>(<span class="num">10</span>, <span class="num">0</span>)   <span class="cm"># 0</span></pre>
+    </div>
+
+    <div class="cp">
+      <div class="cp-head"><span class="cp-title">find.fk <span class="new-badge">v1.6</span></span><div class="dots"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div></div></div>
+      <pre><span class="vr">nums</span> = [<span class="num">3</span>, <span class="num">7</span>, <span class="num">2</span>, <span class="num">11</span>, <span class="num">4</span>, <span class="num">9</span>]
+
+<span class="cm"># First element matching the block</span>
+<span class="vr">big</span> = <span class="vr">nums</span>.<span class="fn">find</span> <span class="kw">do</span> |<span class="vr">n</span>|
+  <span class="vr">n</span> &gt; <span class="num">8</span>
+<span class="kw">end</span>
+<span class="fn">puts</span> <span class="vr">big</span>  <span class="cm"># 11</span>
+
+<span class="cm"># .detect is an alias</span>
+<span class="vr">even</span> = <span class="vr">nums</span>.<span class="fn">detect</span> <span class="kw">do</span> |<span class="vr">n</span>|
+  <span class="vr">n</span> % <span class="num">2</span> == <span class="num">0</span>
+<span class="kw">end</span>
+<span class="fn">puts</span> <span class="vr">even</span>  <span class="cm"># 2</span>
+
+<span class="cm"># Returns nil when nothing matches</span>
+<span class="vr">huge</span> = <span class="vr">nums</span>.<span class="fn">find</span> <span class="kw">do</span> |<span class="vr">n</span>|
+  <span class="vr">n</span> &gt; <span class="num">100</span>
+<span class="kw">end</span>
+<span class="fn">p</span> <span class="vr">huge</span>  <span class="cm"># (Nil) nil</span></pre>
+    </div>
+
+    <div class="cp">
+      <div class="cp-head"><span class="cp-title">test.fk <span class="new-badge">v1.6</span></span><div class="dots"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div></div></div>
+      <pre><span class="cm"># frankiec test — built-in test runner</span>
+<span class="cm"># No imports needed. Run: frankiec test</span>
+
+<span class="vr">x</span> = <span class="num">10</span>
+<span class="vr">x</span> += <span class="num">5</span>
+<span class="fn">assert_eq</span>(<span class="vr">x</span>, <span class="num">15</span>, <span class="str">"+= works"</span>)
+
+<span class="vr">result</span> = [<span class="num">1</span>, <span class="num">3</span>, <span class="num">5</span>, <span class="num">7</span>].<span class="fn">find</span> <span class="kw">do</span> |<span class="vr">n</span>|
+  <span class="vr">n</span> &gt; <span class="num">4</span>
+<span class="kw">end</span>
+<span class="fn">assert_eq</span>(<span class="vr">result</span>, <span class="num">5</span>, <span class="str">".find works"</span>)
+
+<span class="vr">caught</span> = <span class="kw">nil</span>
+<span class="kw">begin</span>
+  <span class="vr">y</span> = <span class="num">1</span> // <span class="num">0</span>
+<span class="kw">rescue</span> <span class="vr">ZeroDivisionError</span> <span class="vr">e</span>
+  <span class="vr">caught</span> = <span class="str">"zero"</span>
+<span class="kw">end</span>
+<span class="fn">assert_eq</span>(<span class="vr">caught</span>, <span class="str">"zero"</span>, <span class="str">"typed rescue"</span>)
+
+<span class="cm"># ✓  += works</span>
+<span class="cm"># ✓  .find works</span>
+<span class="cm"># ✓  typed rescue</span>
+<span class="cm"># ✓  All 3 test(s) passed  (1.4ms)</span></pre>
+    </div>
+
+    <div class="cp">
       <div class="cp-head"><span class="cp-title">stats.fk</span><div class="dots"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div></div></div>
       <pre><span class="cm"># R-style stats + pipe operator</span>
-<span class="vr">data</span> = [23, 45, 12, 67, 34, 89]
+<span class="vr">data</span> = [<span class="num">23</span>, <span class="num">45</span>, <span class="num">12</span>, <span class="num">67</span>, <span class="num">34</span>, <span class="num">89</span>]
 
 <span class="fn">puts</span> <span class="fn">mean</span>(<span class="vr">data</span>)    <span class="cm"># 45.0</span>
 <span class="fn">puts</span> <span class="fn">stdev</span>(<span class="vr">data</span>)   <span class="cm"># 27.9</span>
@@ -174,7 +274,7 @@ _____                _    _
   <span class="vr">w</span>.length &gt; <span class="num">4</span>
 <span class="kw">end</span>  <span class="cm"># [banana, cherry]</span>
 
-<span class="cm"># next / break (v1.5)</span>
+<span class="cm"># next / break</span>
 [<span class="num">1</span>,<span class="num">2</span>,<span class="num">3</span>,<span class="num">4</span>,<span class="num">5</span>,<span class="num">6</span>].<span class="fn">each</span> <span class="kw">do</span> |<span class="vr">n</span>|
   <span class="kw">next</span> <span class="kw">if</span> <span class="vr">n</span> % <span class="num">2</span> == <span class="num">0</span>
   <span class="kw">break</span> <span class="kw">if</span> <span class="vr">n</span> &gt; <span class="num">5</span>
@@ -184,42 +284,6 @@ _____                _    _
 <span class="cm"># Constants</span>
 <span class="vr">MAX_SIZE</span> = <span class="num">100</span>
 <span class="vr">PI</span>       = <span class="num">3.14159</span></pre>
-    </div>
-
-    <div class="cp">
-      <div class="cp-head"><span class="cp-title">errors.fk</span><div class="dots"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div></div></div>
-      <pre><span class="kw">def</span> <span class="fn">safe_div</span>(<span class="vr">a</span>, <span class="vr">b</span>)
-  <span class="kw">begin</span>
-    <span class="kw">return</span> <span class="vr">a</span> / <span class="vr">b</span>
-  <span class="kw">rescue</span> <span class="vr">e</span>
-    <span class="fn">puts</span> <span class="str">"Error: #{e}"</span>
-    <span class="kw">return</span> <span class="num">0</span>
-  <span class="kw">ensure</span>
-    <span class="fn">puts</span> <span class="str">"done"</span>
-  <span class="kw">end</span>
-<span class="kw">end</span>
-
-<span class="cm"># Postfix raise</span>
-<span class="kw">def</span> <span class="fn">positive!</span>(<span class="vr">n</span>)
-  <span class="kw">raise</span> <span class="str">"must be &gt; 0"</span> <span class="kw">if</span> <span class="vr">n</span> &lt;= <span class="num">0</span>
-  <span class="kw">return</span> <span class="vr">n</span> * <span class="num">2</span>
-<span class="kw">end</span></pre>
-    </div>
-
-    <div class="cp">
-      <div class="cp-head"><span class="cp-title">random.fk</span><div class="dots"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div></div></div>
-      <pre><span class="fn">rand_seed</span>(<span class="num">42</span>)
-
-<span class="fn">puts</span> <span class="fn">rand</span>(<span class="num">10</span>)           <span class="cm"># 0..9</span>
-<span class="fn">puts</span> <span class="fn">rand_int</span>(<span class="num">1</span>, <span class="num">6</span>)    <span class="cm"># dice roll</span>
-<span class="fn">puts</span> <span class="fn">rand_float</span>(<span class="num">0</span>, <span class="num">1</span>)  <span class="cm"># 0.0..1.0</span>
-
-<span class="vr">deck</span> = [<span class="str">"A"</span>,<span class="str">"K"</span>,<span class="str">"Q"</span>,<span class="str">"J"</span>,<span class="str">"10"</span>]
-<span class="fn">puts</span> <span class="fn">shuffle</span>(<span class="vr">deck</span>)
-<span class="fn">puts</span> <span class="fn">sample</span>(<span class="vr">deck</span>, <span class="num">3</span>)
-
-<span class="fn">sleep</span>(<span class="num">0.5</span>)
-<span class="fn">puts</span> <span class="str">"woke up"</span></pre>
     </div>
 
   </div>
@@ -245,7 +309,7 @@ _____                _    _
 <span class="kw">end</span>
 
 <span class="vr">app</span>.<span class="fn">get</span>(<span class="str">"/api/status"</span>) <span class="kw">do</span> |<span class="vr">req</span>|
-  <span class="fn">json_response</span>({status: <span class="str">"ok"</span>, version: <span class="str">"1.5"</span>})
+  <span class="fn">json_response</span>({status: <span class="str">"ok"</span>, version: <span class="str">"1.6"</span>})
 <span class="kw">end</span>
 
 <span class="vr">store</span> = {notes: []}
@@ -301,15 +365,17 @@ git clone https://github.com/atejada/Frankie &amp;&amp; cd Frankie</pre></div>
     <div class="step"><span class="sn">02</span><pre><span class="cm"># Install (creates bin/frankiec)</span>
 python3 install.py
 export PATH="/path/to/Frankie/bin:$PATH"</pre></div>
-    <div class="step"><span class="sn">03</span><pre><span class="cm"># Run a program or launch the REPL</span>
+    <div class="step"><span class="sn">03</span><pre><span class="cm"># Run a program, launch the REPL, or run your tests</span>
 frankiec run examples/hello.fk
-frankiec repl</pre></div>
+frankiec repl
+frankiec test</pre></div>
   </div>
   <table>
     <thead><tr><th>Version</th><th>Highlights</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td><strong>v1.5</strong></td><td>next / break, constants, randomness, sort_by, sleep, unzip</td><td><span class="badge bl">Latest</span></td></tr>
-      <tr><td>v1.4</td><td>Built-in web server, routes, JSON API, filters, custom 404</td><td><span class="badge bs">Stable</span></td></tr>
+      <tr><td><strong>v1.6</strong></td><td>Compound assign +=/-=/*= etc., typed rescue, .find/.detect, frankiec test</td><td><span class="badge bl">Latest</span></td></tr>
+      <tr><td>v1.5</td><td>next / break, constants, randomness, sort_by, sleep, unzip</td><td><span class="badge bs">Stable</span></td></tr>
+      <tr><td>v1.4</td><td>Built-in web server, routes, JSON API, filters, custom 404</td><td><span class="badge bo">Old</span></td></tr>
       <tr><td>v1.3</td><td>JSON, CSV, DateTime, HTTP client, project scaffolding</td><td><span class="badge bo">Old</span></td></tr>
       <tr><td>v1.2</td><td>SQLite built-in, transactions, multi-file with require</td><td><span class="badge bo">Old</span></td></tr>
       <tr><td>v1.1</td><td>Rich iterators, REPL, case/when, destructuring</td><td><span class="badge bo">Old</span></td></tr>
