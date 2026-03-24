@@ -270,24 +270,20 @@ footer{border-top:1px solid var(--border);padding:2.2rem 2.5rem;display:flex;ali
       <div class="cp-head"><span class="cp-title">lambdas.fk <span class="badge bs">v1.8</span></span><div class="dots"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div></div></div>
       <pre><span class="cm"># Lambdas — functions as first-class values</span>
 <span class="vr">double</span> = <span class="fn">-&gt;</span>(<span class="vr">x</span>) { <span class="vr">x</span> * <span class="num">2</span> }
-<span class="vr">square</span> = <span class="fn">-&gt;</span>(<span class="vr">x</span>) { <span class="vr">x</span> * <span class="vr">x</span> }
-<span class="fn">puts</span> <span class="vr">double</span>.<span class="fn">call</span>(<span class="num">7</span>)   <span class="cm"># 14</span>
-<span class="fn">puts</span> <span class="vr">square</span>.<span class="fn">call</span>(<span class="num">5</span>)   <span class="cm"># 25</span>
-
+<span class="vr">add</span>    = <span class="fn">-&gt;</span>(<span class="vr">a</span>, <span class="vr">b</span>) { <span class="vr">a</span> + <span class="vr">b</span> }
+<span class="fn">puts</span> <span class="vr">double</span>.<span class="fn">call</span>(<span class="num">7</span>)      <span class="cm"># 14</span>
+<span class="fn">puts</span> <span class="vr">add</span>.<span class="fn">call</span>(<span class="num">3</span>, <span class="num">4</span>)      <span class="cm"># 7</span>
 <span class="cm"># Higher-order functions</span>
 <span class="kw">def</span> <span class="fn">apply</span>(<span class="vr">fn</span>, <span class="vr">val</span>)
   <span class="kw">return</span> <span class="vr">fn</span>.<span class="fn">call</span>(<span class="vr">val</span>)
 <span class="kw">end</span>
-<span class="fn">puts</span> <span class="fn">apply</span>(<span class="vr">double</span>, <span class="num">9</span>)   <span class="cm"># 18</span>
-
+<span class="fn">puts</span> <span class="fn">apply</span>(<span class="vr">double</span>, <span class="num">9</span>)    <span class="cm"># 18</span>
 <span class="cm"># Hash merge operator |</span>
-<span class="vr">defaults</span> = {color: <span class="str">"blue"</span>, size: <span class="str">"md"</span>}
-<span class="vr">overrides</span> = {color: <span class="str">"red"</span>}
-<span class="fn">puts</span> <span class="vr">defaults</span> | <span class="vr">overrides</span>
-<span class="cm"># {color: red, size: md}</span></pre>
+<span class="vr">cfg</span> = {color: <span class="str">"blue"</span>} | {color: <span class="str">"red"</span>, size: <span class="str">"md"</span>}
+<span class="fn">puts</span> <span class="vr">cfg</span>[<span class="str">"color"</span>]        <span class="cm"># red</span>
+<span class="fn">puts</span> <span class="vr">cfg</span>[<span class="str">"size"</span>]          <span class="cm"># md</span></pre>
     </div>
 
-    <div class="cp">
     <div class="cp">
       <div class="cp-head"><span class="cp-title">records.fk <span class="new-badge">v1.9</span></span><div class="dots"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div></div></div>
       <pre><span class="cm"># record — lightweight named data objects</span>
