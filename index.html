@@ -89,7 +89,7 @@ footer{border-top:1px solid var(--border);padding:2.2rem 2.5rem;display:flex;ali
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">🧟 Frankie <span>v1.10</span></a>
+  <a href="#" class="nav-logo">🧟 Frankie <span>v1.11</span></a>
   <ul>
     <li><a href="#features">Features</a></li>
     <li><a href="#syntax">Syntax</a></li>
@@ -117,7 +117,7 @@ footer{border-top:1px solid var(--border);padding:2.2rem 2.5rem;display:flex;ali
   </div>
   <div class="ctas">
     <a href="#install" class="btn btn-p">Get Started →</a>
-    <a href="https://github.com/atejada/Frankie/releases" class="btn btn-s">Download v1.10</a>
+    <a href="https://github.com/atejada/Frankie/releases" class="btn btn-s">Download v1.11</a>
     <a href="https://github.com/atejada/Frankie" class="btn btn-s">★ Star on GitHub</a>
   </div>
   <p class="scroll">▼ scroll</p>
@@ -130,9 +130,12 @@ footer{border-top:1px solid var(--border);padding:2.2rem 2.5rem;display:flex;ali
   <h2>Everything you need.<br>Nothing you don't.</h2>
   <p style="color:var(--muted);max-width:560px;font-size:.97rem">Proudly procedural — functions, data, loops, logic. No classes, no <code>self</code>, no inheritance. Runs on Python 3.10+ with zero external dependencies.</p>
   <div class="grid">
-    <div class="card"><div class="card-icon">✳️</div><h3>String &amp; Vector <code>*</code> <span class="new-badge">v1.10</span></h3><p><code>"ha" * 3</code> → <code>"hahaha"</code>. <code>[0] * 5</code> → <code>[0,0,0,0,0]</code>. The missing arithmetic case — zero new syntax, works in both directions.</p></div>
-    <div class="card"><div class="card-icon">📜</div><h3>Heredoc <code>&lt;&lt;~TEXT</code> <span class="new-badge">v1.10</span></h3><p>Multiline strings with automatic indent-stripping and full <code>#{}</code> interpolation. Essential for SQL, HTML, and test fixtures — no escaping, no concatenation.</p></div>
-    <div class="card"><div class="card-icon">🔁</div><h3><code>times()</code> standalone + polish <span class="new-badge">v1.10</span></h3><p><code>times(5) do |i|</code> alongside <code>5.times do</code>. <code>flatten(n)</code> with depth control. <code>map_with_index</code>, <code>pp</code>, <code>encode</code>/<code>decode</code>, exit codes, <code>--help</code>.</p></div>
+    <div class="card"><div class="card-icon">↩️</div><h3>Implicit Return <span class="new-badge">v1.11</span></h3><p>The last expression in a function is automatically returned — <code>return</code> is now optional. Matches Ruby's feel. Zero breaking changes.</p></div>
+    <div class="card"><div class="card-icon">🔀</div><h3>Inline <code>if</code> Expression <span class="new-badge">v1.11</span></h3><p><code>grade = if score >= 90 then "A" else "B" end</code> — <code>if</code> is now usable as an expression. No <code>?:</code> operator needed.</p></div>
+    <div class="card"><div class="card-icon">🔁</div><h3><code>.replace()</code>, <code>.format()</code>, <code>.zip_with</code> <span class="new-badge">v1.11</span></h3><p><code>"hello".replace("l","r")</code>, <code>"{name}".format({name:"Alice"})</code>, pair-wise vector transform. The methods everyone reaches for first.</p></div>
+    <div class="card"><div class="card-icon">✳️</div><h3>String &amp; Vector <code>*</code> <span class="badge bs">v1.10</span></h3><p><code>"ha" * 3</code> → <code>"hahaha"</code>. <code>[0] * 5</code> → <code>[0,0,0,0,0]</code>. The missing arithmetic case — zero new syntax, works in both directions.</p></div>
+    <div class="card"><div class="card-icon">📜</div><h3>Heredoc <code>&lt;&lt;~TEXT</code> <span class="badge bs">v1.10</span></h3><p>Multiline strings with automatic indent-stripping and full <code>#{}</code> interpolation. Essential for SQL, HTML, and test fixtures — no escaping, no concatenation.</p></div>
+    <div class="card"><div class="card-icon">🔁</div><h3><code>times()</code> standalone + polish <span class="badge bs">v1.10</span></h3><p><code>times(5) do |i|</code> alongside <code>5.times do</code>. <code>flatten(n)</code> with depth control. <code>map_with_index</code>, <code>pp</code>, <code>encode</code>/<code>decode</code>, exit codes, <code>--help</code>.</p></div>
     <div class="card"><div class="card-icon">📋</div><h3>Record Types <span class="badge bs">v1.9</span></h3><p><code>record Point(x, y)</code> — lightweight named data objects. Prints as <code>Point(x: 3, y: 4)</code>. Built on hashes, so every iterator, <code>dig</code>, <code>|</code>, and <code>group_by</code> works on them instantly.</p></div>
     <div class="card"><div class="card-icon">🔍</div><h3>Hash <code>.dig</code> <span class="badge bs">v1.9</span></h3><p><code>config.dig("db", "host")</code> — safe nested access. Returns <code>nil</code> instead of crashing. Works on hashes and vectors. Chains with <code>&amp;.</code>.</p></div>
     <div class="card"><div class="card-icon">✨</div><h3><code>frankiec fmt</code> + <code>docs</code> <span class="badge bs">v1.9</span></h3><p>AST-based auto-formatter (<code>--write</code>, <code>--check</code>) and Markdown doc generator from <code>##</code> comments. Both zero-dependency, both CI-friendly.</p></div>
@@ -241,7 +244,34 @@ footer{border-top:1px solid var(--border);padding:2.2rem 2.5rem;display:flex;ali
     </div>
 
     <div class="cp">
-      <div class="cp-head"><span class="cp-title">v1.10.fk <span class="new-badge">v1.10</span></span><div class="dots"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div></div></div>
+      <div class="cp-head"><span class="cp-title">v1.11.fk <span class="new-badge">v1.11</span></span><div class="dots"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div></div></div>
+      <pre><span class="cm"># Implicit return — no 'return' needed</span>
+<span class="kw">def</span> <span class="fn">double</span>(<span class="vr">x</span>)
+  <span class="vr">x</span> * <span class="num">2</span>
+<span class="kw">end</span>
+<span class="fn">puts</span> <span class="fn">double</span>(<span class="num">7</span>)   <span class="cm"># 14</span>
+
+<span class="cm"># Inline if expression</span>
+<span class="vr">grade</span> = <span class="kw">if</span> <span class="vr">score</span> &gt;= <span class="num">90</span> <span class="kw">then</span> <span class="str">"A"</span> <span class="kw">else</span> <span class="str">"B"</span> <span class="kw">end</span>
+
+<span class="cm"># String .replace() and .format(hash)</span>
+<span class="fn">puts</span> <span class="str">"hello world"</span>.<span class="fn">replace</span>(<span class="str">"world"</span>, <span class="str">"Frankie"</span>)
+<span class="fn">puts</span> <span class="str">"Hi, {name}!"</span>.<span class="fn">format</span>({name: <span class="str">"Alice"</span>})
+
+<span class="cm"># .zip_with — pair-wise transform</span>
+<span class="fn">puts</span> [<span class="num">1</span>,<span class="num">2</span>,<span class="num">3</span>].<span class="fn">zip_with</span>([<span class="num">10</span>,<span class="num">20</span>,<span class="num">30</span>]) <span class="kw">do</span> |<span class="vr">a</span>, <span class="vr">b</span>|
+  <span class="vr">a</span> + <span class="vr">b</span>
+<span class="kw">end</span>   <span class="cm"># [11, 22, 33]</span>
+
+<span class="cm"># Multiple return values</span>
+<span class="kw">def</span> <span class="fn">minmax</span>(<span class="vr">v</span>)
+  [<span class="fn">min</span>(<span class="vr">v</span>), <span class="fn">max</span>(<span class="vr">v</span>)]
+<span class="kw">end</span>
+<span class="vr">lo</span>, <span class="vr">hi</span> = <span class="fn">minmax</span>([<span class="num">3</span>,<span class="num">1</span>,<span class="num">4</span>,<span class="num">1</span>,<span class="num">5</span>,<span class="num">9</span>])</pre>
+    </div>
+
+    <div class="cp">
+      <div class="cp-head"><span class="cp-title">v1.10.fk <span class="badge bs">v1.10</span></span><div class="dots"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div></div></div>
       <pre><span class="cm"># String &amp; vector * repetition</span>
 <span class="fn">puts</span> <span class="str">"ha"</span> * <span class="num">3</span>           <span class="cm"># hahaha</span>
 <span class="fn">puts</span> [<span class="num">0</span>] * <span class="num">5</span>            <span class="cm"># [0, 0, 0, 0, 0]</span>
@@ -372,8 +402,9 @@ frankiec test</pre></div>
   <table>
     <thead><tr><th>Version</th><th>Highlights</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td><strong>v1.10</strong></td><td>String/vector *, heredoc &lt;&lt;~, times(), flatten(depth), map_with_index, pp, encode/decode, exit codes, --help</td><td><span class="badge bl">Latest</span></td></tr>
-      <tr><td>v1.9</td><td>Records, dig, zip(), frankiec fmt, frankiec docs, readline REPL, .env loader</td><td><span class="badge bs">Stable</span></td></tr>
+      <tr><td><strong>v1.11</strong></td><td>Implicit return, inline if expression, .replace(), .format(hash), .zip_with, multi-line REPL history, boxed check errors</td><td><span class="badge bl">Latest</span></td></tr>
+      <tr><td>v1.10</td><td>String/vector *, heredoc &lt;&lt;~, times(), flatten(depth), map_with_index, pp, encode/decode, exit codes, --help</td><td><span class="badge bs">Stable</span></td></tr>
+      <tr><td>v1.9</td><td>Records, dig, zip(), frankiec fmt, frankiec docs, readline REPL, .env loader</td><td><span class="badge bo">Old</span></td></tr>
       <tr><td>v1.8</td><td>Lambdas <code>-&gt;(x) { }</code>, hash merge <code>|</code>, group_by, each_slice, each_cons</td><td><span class="badge bs">Stable</span></td></tr>
       <tr><td>v1.7</td><td>Nil safety <code>&amp;.</code>, string templates, file system ops, assert_raises_typed</td><td><span class="badge bo">Old</span></td></tr>
       <tr><td>v1.6</td><td>Compound assign +=/-=/*= etc., typed rescue, .find/.detect, frankiec test</td><td><span class="badge bo">Old</span></td></tr>
