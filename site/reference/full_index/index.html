@@ -1,0 +1,4149 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../changelog/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Full Stdlib Index - Frankie - The Programming Language</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#full-stdlib-index" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Frankie - The Programming Language" class="md-header__button md-logo" aria-label="Frankie - The Programming Language" data-md-component="logo">
+      
+  <img src="../../img/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Frankie - The Programming Language
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Full Stdlib Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Frankie - The Programming Language" class="md-nav__button md-logo" aria-label="Frankie - The Programming Language" data-md-component="logo">
+      
+  <img src="../../img/favicon.ico" alt="logo">
+
+    </a>
+    Frankie - The Programming Language
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/cli_commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/variables_and_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables & Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditionals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/error_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Types
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Types
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/Integers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/float/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Float
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/boolean_and_nil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean & Nil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/Strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/vector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/hash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hash
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standard Library
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standard Library
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/math_statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math & Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/IntegerMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integer Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/StringMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/VectorMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/HashMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hash Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/DateTimeMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datetime Methos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/regex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/file_io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File I/O
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/json_csv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON & CSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/datetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DateTime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/http_client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/webserver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing (frankiec test)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/random/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stitches
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stitches
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiecolor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiecolor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankietable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankietable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiepager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiepager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieconfig/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieconfig
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiestring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiestring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Showcase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/what_is_new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whats''s New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Stdlib Index
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Stdlib Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#math-arithmetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math &amp; Arithmetic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequences-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequences &amp; Vectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hash-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hash Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integer-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#float-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Float Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File I/O
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File I/O">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-handle-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Handle Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON &amp; CSV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DateTime
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Client
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#httpresponse-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTPResponse Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database (SQLite)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frankierequest-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FrankieRequest Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Random
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-checking-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type Checking &amp; Conversion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input &amp; Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operators Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#math-arithmetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math &amp; Arithmetic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequences-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequences &amp; Vectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hash-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hash Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integer-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#float-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Float Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File I/O
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File I/O">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-handle-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Handle Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON &amp; CSV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DateTime
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Client
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#httpresponse-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTPResponse Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database (SQLite)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frankierequest-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FrankieRequest Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Random
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-checking-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type Checking &amp; Conversion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input &amp; Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operators Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="full-stdlib-index">Full Stdlib Index</h1>
+<p>Every function, method, and operator available in Frankie v1.12. All are available without any import.</p>
+<hr />
+<h2 id="math-arithmetic">Math &amp; Arithmetic</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>abs(x)</code></td>
+<td>Absolute value</td>
+</tr>
+<tr>
+<td><code>sqrt(x)</code></td>
+<td>Square root — always returns Float</td>
+</tr>
+<tr>
+<td><code>floor(x)</code></td>
+<td>Round down to nearest integer</td>
+</tr>
+<tr>
+<td><code>ceil(x)</code></td>
+<td>Round up to nearest integer</td>
+</tr>
+<tr>
+<td><code>round(x, n)</code></td>
+<td>Round to n decimal places (default 0)</td>
+</tr>
+<tr>
+<td><code>clamp(x, lo, hi)</code></td>
+<td>Constrain x between lo and hi</td>
+</tr>
+<tr>
+<td><code>min(a, b)</code></td>
+<td>Smaller of two values</td>
+</tr>
+<tr>
+<td><code>min(vec)</code></td>
+<td>Smallest element of a vector</td>
+</tr>
+<tr>
+<td><code>max(a, b)</code></td>
+<td>Larger of two values</td>
+</tr>
+<tr>
+<td><code>max(vec)</code></td>
+<td>Largest element of a vector</td>
+</tr>
+<tr>
+<td><code>sum(vec)</code></td>
+<td>Sum of all elements</td>
+</tr>
+<tr>
+<td><code>mean(vec)</code></td>
+<td>Arithmetic mean</td>
+</tr>
+<tr>
+<td><code>median(vec)</code></td>
+<td>Middle value (average of two middles for even length)</td>
+</tr>
+<tr>
+<td><code>stdev(vec)</code></td>
+<td>Sample standard deviation (n-1)</td>
+</tr>
+<tr>
+<td><code>variance(vec)</code></td>
+<td>Sample variance</td>
+</tr>
+<tr>
+<td><code>+</code> <code>-</code> <code>*</code> <code>/</code></td>
+<td>Arithmetic operators — <code>/</code> always returns Float</td>
+</tr>
+<tr>
+<td><code>//</code></td>
+<td>Integer (floor) division — Fortran heritage</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Modulo</td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>Exponentiation — Fortran heritage</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="sequences-vectors">Sequences &amp; Vectors</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>seq(start, stop, step)</code></td>
+<td>Numeric sequence — <code>seq(1,5)</code> → <code>[1,2,3,4,5]</code></td>
+</tr>
+<tr>
+<td><code>linspace(start, stop, n)</code></td>
+<td>Exactly n evenly-spaced values</td>
+</tr>
+<tr>
+<td><code>vec(range)</code></td>
+<td>Vector from range — <code>vec(1..10)</code></td>
+</tr>
+<tr>
+<td><code>rep(x, n)</code></td>
+<td>Repeat a value n times — <code>rep(0, 3)</code> → <code>[0,0,0]</code></td>
+</tr>
+<tr>
+<td><code>unzip(vec)</code></td>
+<td>Split vector of pairs → two vectors</td>
+</tr>
+<tr>
+<td><code>zip(a, b)</code></td>
+<td>Pair two vectors → vector of pairs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="string-functions">String Functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sub(str, pat, rep)</code></td>
+<td>Replace first regex match</td>
+</tr>
+<tr>
+<td><code>gsub(str, pat, rep)</code></td>
+<td>Replace all regex matches</td>
+</tr>
+<tr>
+<td><code>match(str, pat)</code></td>
+<td>First match object or nil</td>
+</tr>
+<tr>
+<td><code>match_all(str, pat)</code></td>
+<td>All matches as a vector of strings</td>
+</tr>
+<tr>
+<td><code>matches(str, pat)</code></td>
+<td>True if pattern matches anywhere</td>
+</tr>
+<tr>
+<td><code>regex(pat, flags)</code></td>
+<td>Compile a pattern with flags (<code>"i"</code>, <code>"m"</code>, <code>"s"</code>)</td>
+</tr>
+<tr>
+<td><code>template(str, hash)</code></td>
+<td><code>{{key}}</code> placeholder substitution</td>
+</tr>
+<tr>
+<td><code>sprintf(fmt, ...)</code></td>
+<td>C-style format string</td>
+</tr>
+<tr>
+<td><code>paste(..., sep:)</code></td>
+<td>Join values with separator</td>
+</tr>
+<tr>
+<td><code>format(fmt, ...)</code></td>
+<td>Alias for sprintf</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="string-methods">String Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.upcase</code></td>
+<td>Uppercase</td>
+</tr>
+<tr>
+<td><code>.downcase</code></td>
+<td>Lowercase</td>
+</tr>
+<tr>
+<td><code>.length</code></td>
+<td>Character count</td>
+</tr>
+<tr>
+<td><code>.reverse</code></td>
+<td>Reversed string</td>
+</tr>
+<tr>
+<td><code>.strip</code></td>
+<td>Remove leading/trailing whitespace</td>
+</tr>
+<tr>
+<td><code>.lstrip</code></td>
+<td>Remove leading whitespace</td>
+</tr>
+<tr>
+<td><code>.rstrip</code></td>
+<td>Remove trailing whitespace</td>
+</tr>
+<tr>
+<td><code>.chomp</code></td>
+<td>Remove trailing newline</td>
+</tr>
+<tr>
+<td><code>.chop</code></td>
+<td>Remove last character</td>
+</tr>
+<tr>
+<td><code>.chars</code></td>
+<td>Vector of characters</td>
+</tr>
+<tr>
+<td><code>.bytes</code></td>
+<td>Vector of byte integers</td>
+</tr>
+<tr>
+<td><code>.lines</code></td>
+<td>Vector of lines (newlines stripped)</td>
+</tr>
+<tr>
+<td><code>.ord</code></td>
+<td>ASCII/Unicode code point of first character</td>
+</tr>
+<tr>
+<td><code>.encode</code></td>
+<td>String → vector of byte integers</td>
+</tr>
+<tr>
+<td><code>.decode</code></td>
+<td>Vector of byte integers → string</td>
+</tr>
+<tr>
+<td><code>.split(sep)</code></td>
+<td>Split by separator → Vector</td>
+</tr>
+<tr>
+<td><code>.join(sep)</code></td>
+<td>Join vector elements with separator</td>
+</tr>
+<tr>
+<td><code>.include?(s)</code></td>
+<td>True if s is a substring</td>
+</tr>
+<tr>
+<td><code>.start_with?(s)</code></td>
+<td>True if string starts with s</td>
+</tr>
+<tr>
+<td><code>.end_with?(s)</code></td>
+<td>True if string ends with s</td>
+</tr>
+<tr>
+<td><code>.count(sub)</code></td>
+<td>Count occurrences of sub</td>
+</tr>
+<tr>
+<td><code>.empty?</code></td>
+<td>True if length is 0</td>
+</tr>
+<tr>
+<td><code>.nil?</code></td>
+<td>Always false for a string</td>
+</tr>
+<tr>
+<td><code>.match(pat)</code></td>
+<td>First match object or nil</td>
+</tr>
+<tr>
+<td><code>.match_all(pat)</code></td>
+<td>All matches as vector of strings</td>
+</tr>
+<tr>
+<td><code>.matches?(pat)</code></td>
+<td>True if pattern matches anywhere</td>
+</tr>
+<tr>
+<td><code>.replace(old, new)</code></td>
+<td>Replace first occurrence (alias for sub)</td>
+</tr>
+<tr>
+<td><code>.sub(pat, rep)</code></td>
+<td>Replace first regex match</td>
+</tr>
+<tr>
+<td><code>.gsub(pat, rep)</code></td>
+<td>Replace all regex matches</td>
+</tr>
+<tr>
+<td><code>.gsub(pat) do \|m\|</code></td>
+<td>Replace all matches — block transforms each</td>
+</tr>
+<tr>
+<td><code>.delete(chars)</code></td>
+<td>Remove all occurrences of any char in set</td>
+</tr>
+<tr>
+<td><code>.squeeze</code></td>
+<td>Collapse consecutive duplicate chars</td>
+</tr>
+<tr>
+<td><code>.tr(from, to)</code></td>
+<td>Translate characters position-by-position</td>
+</tr>
+<tr>
+<td><code>.center(w, pad)</code></td>
+<td>Center in field of width w</td>
+</tr>
+<tr>
+<td><code>.ljust(w, pad)</code></td>
+<td>Left-justify in field of width w</td>
+</tr>
+<tr>
+<td><code>.rjust(w, pad)</code></td>
+<td>Right-justify in field of width w</td>
+</tr>
+<tr>
+<td><code>.to_i</code></td>
+<td>Parse as integer</td>
+</tr>
+<tr>
+<td><code>.to_f</code></td>
+<td>Parse as float</td>
+</tr>
+<tr>
+<td><code>.to_s</code></td>
+<td>Return self</td>
+</tr>
+<tr>
+<td><code>.format(hash)</code></td>
+<td><code>{key}</code> placeholder substitution</td>
+</tr>
+<tr>
+<td><code>.each_char do \|c\|</code></td>
+<td>Iterate over characters</td>
+</tr>
+<tr>
+<td><code>.each_line do \|l\|</code></td>
+<td>Iterate over lines</td>
+</tr>
+<tr>
+<td><code>[i]</code></td>
+<td>Character at index (negatives ok)</td>
+</tr>
+<tr>
+<td><code>[a..b]</code></td>
+<td>Inclusive slice</td>
+</tr>
+<tr>
+<td><code>[a...b]</code></td>
+<td>Exclusive slice</td>
+</tr>
+<tr>
+<td><code>* n</code></td>
+<td>Repeat string n times</td>
+</tr>
+<tr>
+<td><code>=~</code></td>
+<td>Position of first match or nil</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="vector-methods">Vector Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.length</code> / <code>.size</code></td>
+<td>Number of elements</td>
+</tr>
+<tr>
+<td><code>.first</code></td>
+<td>First element or nil</td>
+</tr>
+<tr>
+<td><code>.last</code></td>
+<td>Last element or nil</td>
+</tr>
+<tr>
+<td><code>.empty?</code></td>
+<td>True if no elements</td>
+</tr>
+<tr>
+<td><code>.include?(x)</code></td>
+<td>True if x is an element</td>
+</tr>
+<tr>
+<td><code>.count</code></td>
+<td>Number of elements</td>
+</tr>
+<tr>
+<td><code>.count do \|x\|</code></td>
+<td>Count elements satisfying block</td>
+</tr>
+<tr>
+<td><code>.tally</code></td>
+<td>Count occurrences → Hash</td>
+</tr>
+<tr>
+<td><code>.push(x)</code></td>
+<td>Append element, return vector</td>
+</tr>
+<tr>
+<td><code>.pop()</code></td>
+<td>Remove and return last element</td>
+</tr>
+<tr>
+<td><code>.delete(x)</code></td>
+<td>Remove first occurrence of x, return vector</td>
+</tr>
+<tr>
+<td><code>.sort</code></td>
+<td>Sorted copy</td>
+</tr>
+<tr>
+<td><code>.sort_by do \|x\|</code></td>
+<td>Sort by computed key</td>
+</tr>
+<tr>
+<td><code>.reverse</code></td>
+<td>Reversed copy</td>
+</tr>
+<tr>
+<td><code>.uniq</code></td>
+<td>Deduplicated copy (first occurrence wins)</td>
+</tr>
+<tr>
+<td><code>.flatten</code></td>
+<td>Deep flatten all levels</td>
+</tr>
+<tr>
+<td><code>.flatten(n)</code></td>
+<td>Flatten exactly n levels</td>
+</tr>
+<tr>
+<td><code>.compact</code></td>
+<td>Remove all nil values</td>
+</tr>
+<tr>
+<td><code>.take(n)</code></td>
+<td>First n elements</td>
+</tr>
+<tr>
+<td><code>.drop(n)</code></td>
+<td>All but first n elements</td>
+</tr>
+<tr>
+<td><code>.sum</code></td>
+<td>Sum of all elements</td>
+</tr>
+<tr>
+<td><code>.min</code></td>
+<td>Minimum element</td>
+</tr>
+<tr>
+<td><code>.max</code></td>
+<td>Maximum element</td>
+</tr>
+<tr>
+<td><code>.mean</code></td>
+<td>Arithmetic mean</td>
+</tr>
+<tr>
+<td><code>.map do \|x\|</code></td>
+<td>Transform each element → new vector</td>
+</tr>
+<tr>
+<td><code>.map_with_index do \|x, i\|</code></td>
+<td>Map with element and index</td>
+</tr>
+<tr>
+<td><code>.flat_map do \|x\|</code></td>
+<td>Map then flatten one level</td>
+</tr>
+<tr>
+<td><code>.select do \|x\|</code></td>
+<td>Keep elements where block is true</td>
+</tr>
+<tr>
+<td><code>.reject do \|x\|</code></td>
+<td>Keep elements where block is false</td>
+</tr>
+<tr>
+<td><code>.find do \|x\|</code></td>
+<td>First element where block is true</td>
+</tr>
+<tr>
+<td><code>.detect do \|x\|</code></td>
+<td>Alias for find</td>
+</tr>
+<tr>
+<td><code>.reduce(init) do \|acc, x\|</code></td>
+<td>Fold into a single value</td>
+</tr>
+<tr>
+<td><code>.inject(init) do \|acc, x\|</code></td>
+<td>Alias for reduce</td>
+</tr>
+<tr>
+<td><code>.each do \|x\|</code></td>
+<td>Iterate for side effects</td>
+</tr>
+<tr>
+<td><code>.each_with_index do \|x, i\|</code></td>
+<td>Iterate with index</td>
+</tr>
+<tr>
+<td><code>.each_with_object(init) do \|x, obj\|</code></td>
+<td>Iterate with shared accumulator</td>
+</tr>
+<tr>
+<td><code>.each_slice(n) do \|s\|</code></td>
+<td>Iterate in non-overlapping chunks</td>
+</tr>
+<tr>
+<td><code>.each_cons(n) do \|w\|</code></td>
+<td>Iterate with sliding window</td>
+</tr>
+<tr>
+<td><code>.any? do \|x\|</code></td>
+<td>True if any element satisfies block</td>
+</tr>
+<tr>
+<td><code>.all? do \|x\|</code></td>
+<td>True if all elements satisfy block</td>
+</tr>
+<tr>
+<td><code>.none? do \|x\|</code></td>
+<td>True if no elements satisfy block</td>
+</tr>
+<tr>
+<td><code>.min_by do \|x\|</code></td>
+<td>Element with smallest key value</td>
+</tr>
+<tr>
+<td><code>.max_by do \|x\|</code></td>
+<td>Element with largest key value</td>
+</tr>
+<tr>
+<td><code>.sum_by do \|x\|</code></td>
+<td>Sum of block results</td>
+</tr>
+<tr>
+<td><code>.sort_by do \|x\|</code></td>
+<td>Sort by computed key</td>
+</tr>
+<tr>
+<td><code>.group_by do \|x\|</code></td>
+<td>Bucket into hash of arrays</td>
+</tr>
+<tr>
+<td><code>.chunk(n)</code></td>
+<td>Split into sub-vectors of size n</td>
+</tr>
+<tr>
+<td><code>.zip(other)</code></td>
+<td>Pair elements with another vector</td>
+</tr>
+<tr>
+<td><code>.zip_with(other) do \|a, b\|</code></td>
+<td>Zip and transform each pair</td>
+</tr>
+<tr>
+<td><code>.product(other)</code></td>
+<td>Cartesian product</td>
+</tr>
+<tr>
+<td><code>.join(sep)</code></td>
+<td>Join elements as string with separator</td>
+</tr>
+<tr>
+<td><code>.encode</code></td>
+<td>Vector of byte ints → string</td>
+</tr>
+<tr>
+<td><code>.decode</code></td>
+<td>Vector of byte ints → string (explicit)</td>
+</tr>
+<tr>
+<td><code>.dig(i1, i2, ...)</code></td>
+<td>Safe nested access — returns nil</td>
+</tr>
+<tr>
+<td><code>[i]</code></td>
+<td>Element at index (negatives ok)</td>
+</tr>
+<tr>
+<td><code>[a..b]</code></td>
+<td>Inclusive slice</td>
+</tr>
+<tr>
+<td><code>[i] =</code></td>
+<td>Index assignment</td>
+</tr>
+<tr>
+<td><code>* n</code></td>
+<td>Repeat vector n times</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="hash-methods">Hash Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>h[key]</code></td>
+<td>Get value — nil if missing</td>
+</tr>
+<tr>
+<td><code>h[key] =</code></td>
+<td>Set value</td>
+</tr>
+<tr>
+<td><code>.keys</code></td>
+<td>Vector of all keys</td>
+</tr>
+<tr>
+<td><code>.values</code></td>
+<td>Vector of all values</td>
+</tr>
+<tr>
+<td><code>.size</code> / <code>.count</code></td>
+<td>Number of pairs</td>
+</tr>
+<tr>
+<td><code>.has_key?(k)</code></td>
+<td>True if key exists</td>
+</tr>
+<tr>
+<td><code>.empty?</code></td>
+<td>True if no pairs</td>
+</tr>
+<tr>
+<td><code>.fetch(key, default)</code></td>
+<td>Get with explicit default</td>
+</tr>
+<tr>
+<td><code>.dig(k1, k2, ...)</code></td>
+<td>Safe nested access — nil at any missing level</td>
+</tr>
+<tr>
+<td><code>.delete(key)</code></td>
+<td>Remove key, return modified hash</td>
+</tr>
+<tr>
+<td><code>.merge(other)</code></td>
+<td>New merged hash — right wins on conflict</td>
+</tr>
+<tr>
+<td><code>.merge_bang(other)</code></td>
+<td>Merge in place</td>
+</tr>
+<tr>
+<td><code>h1 \| h2</code></td>
+<td>Merge operator — right wins on conflict</td>
+</tr>
+<tr>
+<td><code>.store(key, val)</code></td>
+<td>Method form of <code>h[key]=</code></td>
+</tr>
+<tr>
+<td><code>.to_a</code></td>
+<td>Convert to vector of <code>[key, value]</code> pairs</td>
+</tr>
+<tr>
+<td><code>.each do \|k, v\|</code></td>
+<td>Iterate pairs</td>
+</tr>
+<tr>
+<td><code>.each_pair do \|k, v\|</code></td>
+<td>Alias for each</td>
+</tr>
+<tr>
+<td><code>.each_with_object(init) do \|pair, obj\|</code></td>
+<td>Iterate with accumulator</td>
+</tr>
+<tr>
+<td><code>.map do \|k, v\|</code></td>
+<td>Transform pairs → vector</td>
+</tr>
+<tr>
+<td><code>.map_hash do \|k, v\|</code></td>
+<td>Transform pairs → new hash</td>
+</tr>
+<tr>
+<td><code>.select do \|k, v\|</code></td>
+<td>Keep pairs where block is true → new hash</td>
+</tr>
+<tr>
+<td><code>.reject do \|k, v\|</code></td>
+<td>Keep pairs where block is false → new hash</td>
+</tr>
+<tr>
+<td><code>.find do \|k, v\|</code></td>
+<td>First pair where block is true</td>
+</tr>
+<tr>
+<td><code>.any? do \|k, v\|</code></td>
+<td>True if any pair satisfies block</td>
+</tr>
+<tr>
+<td><code>.all? do \|k, v\|</code></td>
+<td>True if all pairs satisfy block</td>
+</tr>
+<tr>
+<td><code>.none? do \|k, v\|</code></td>
+<td>True if no pair satisfies block</td>
+</tr>
+<tr>
+<td><code>.count do \|k, v\|</code></td>
+<td>Count pairs satisfying block</td>
+</tr>
+<tr>
+<td><code>.sort_by do \|k, v\|</code></td>
+<td>Sort pairs by key → vector</td>
+</tr>
+<tr>
+<td><code>.min_by do \|k, v\|</code></td>
+<td>Pair with smallest key value</td>
+</tr>
+<tr>
+<td><code>.max_by do \|k, v\|</code></td>
+<td>Pair with largest key value</td>
+</tr>
+<tr>
+<td><code>.group_by do \|k, v\|</code></td>
+<td>Bucket pairs by block result</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="integer-methods">Integer Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.to_f</code></td>
+<td>Convert to Float</td>
+</tr>
+<tr>
+<td><code>.to_s</code></td>
+<td>Convert to String</td>
+</tr>
+<tr>
+<td><code>.to_i</code></td>
+<td>Return self</td>
+</tr>
+<tr>
+<td><code>.times do \|i\|</code></td>
+<td>Repeat block n times, i from 0 to n-1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="float-methods">Float Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.to_i</code></td>
+<td>Truncate to Integer (toward zero)</td>
+</tr>
+<tr>
+<td><code>.to_s</code></td>
+<td>Convert to String</td>
+</tr>
+<tr>
+<td><code>.to_f</code></td>
+<td>Return self</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="file-io">File I/O</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file_read(path)</code></td>
+<td>Read entire file as string — raises <code>FileNotFoundError</code></td>
+</tr>
+<tr>
+<td><code>file_lines(path)</code></td>
+<td>Read file as vector of lines — raises <code>FileNotFoundError</code></td>
+</tr>
+<tr>
+<td><code>file_write(path, str)</code></td>
+<td>Write string to file (overwrites)</td>
+</tr>
+<tr>
+<td><code>file_append(path, str)</code></td>
+<td>Append string to file</td>
+</tr>
+<tr>
+<td><code>file_exists(path)</code></td>
+<td>True if file exists</td>
+</tr>
+<tr>
+<td><code>file_delete(path)</code></td>
+<td>Delete file — returns false if missing</td>
+</tr>
+<tr>
+<td><code>file_copy(src, dst)</code></td>
+<td>Copy file — raises <code>FileNotFoundError</code> if src missing</td>
+</tr>
+<tr>
+<td><code>file_rename(src, dst)</code></td>
+<td>Rename/move file — raises <code>FileNotFoundError</code> if src missing</td>
+</tr>
+<tr>
+<td><code>file_open(path, mode)</code></td>
+<td>Open file handle (<code>"r"</code>, <code>"w"</code>, <code>"a"</code>)</td>
+</tr>
+<tr>
+<td><code>file_mkdir(path)</code></td>
+<td>Create directory and all parents</td>
+</tr>
+<tr>
+<td><code>dir_exists(path)</code></td>
+<td>True if directory exists</td>
+</tr>
+<tr>
+<td><code>dir_list(path)</code></td>
+<td>Sorted vector of filenames in directory</td>
+</tr>
+</tbody>
+</table>
+<h3 id="file-handle-methods">File Handle Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.read</code></td>
+<td>Read full contents as string</td>
+</tr>
+<tr>
+<td><code>.write(str)</code></td>
+<td>Write string</td>
+</tr>
+<tr>
+<td><code>.close</code></td>
+<td>Close the handle</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="json-csv">JSON &amp; CSV</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>json_read(path)</code></td>
+<td>Read and parse JSON file</td>
+</tr>
+<tr>
+<td><code>json_write(path, data)</code></td>
+<td>Write data as JSON file</td>
+</tr>
+<tr>
+<td><code>json_write(path, data, true)</code></td>
+<td>Write pretty-printed JSON</td>
+</tr>
+<tr>
+<td><code>json_parse(str)</code></td>
+<td>Parse JSON string → value</td>
+</tr>
+<tr>
+<td><code>json_dump(data)</code></td>
+<td>Serialise value → JSON string</td>
+</tr>
+<tr>
+<td><code>json_dump(data, true)</code></td>
+<td>Pretty-printed JSON string</td>
+</tr>
+<tr>
+<td><code>csv_read(path)</code></td>
+<td>Read CSV → vector of hashes</td>
+</tr>
+<tr>
+<td><code>csv_read(path, false)</code></td>
+<td>Read CSV → vector of vectors</td>
+</tr>
+<tr>
+<td><code>csv_write(path, data)</code></td>
+<td>Write vector of hashes to CSV</td>
+</tr>
+<tr>
+<td><code>csv_write(path, data, headers)</code></td>
+<td>Write with explicit column order</td>
+</tr>
+<tr>
+<td><code>csv_parse(str)</code></td>
+<td>Parse CSV string → vector of hashes</td>
+</tr>
+<tr>
+<td><code>csv_dump(data)</code></td>
+<td>Serialise → CSV string</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="datetime">DateTime</h2>
+<table>
+<thead>
+<tr>
+<th>Function / Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>now()</code></td>
+<td>Current date and time</td>
+</tr>
+<tr>
+<td><code>today()</code></td>
+<td>Today at midnight</td>
+</tr>
+<tr>
+<td><code>date_parse(str, fmt)</code></td>
+<td>Parse string — default fmt <code>"%Y-%m-%d"</code></td>
+</tr>
+<tr>
+<td><code>date_from(y, m, d, h, min, s)</code></td>
+<td>Build from components</td>
+</tr>
+<tr>
+<td><code>.year</code> <code>.month</code> <code>.day</code></td>
+<td>Date components</td>
+</tr>
+<tr>
+<td><code>.hour</code> <code>.minute</code> <code>.second</code></td>
+<td>Time components</td>
+</tr>
+<tr>
+<td><code>.format(fmt)</code></td>
+<td>Format with strftime codes</td>
+</tr>
+<tr>
+<td><code>.add_days(n)</code></td>
+<td>Add n days (negative subtracts)</td>
+</tr>
+<tr>
+<td><code>.add_hours(n)</code></td>
+<td>Add n hours</td>
+</tr>
+<tr>
+<td><code>.add_minutes(n)</code></td>
+<td>Add n minutes</td>
+</tr>
+<tr>
+<td><code>.diff_days(other)</code></td>
+<td>Days between two dates</td>
+</tr>
+<tr>
+<td><code>.diff_seconds(other)</code></td>
+<td>Seconds between two datetimes</td>
+</tr>
+<tr>
+<td><code>.weekday</code></td>
+<td>0=Monday … 6=Sunday</td>
+</tr>
+<tr>
+<td><code>.is_before(other)</code></td>
+<td>True if earlier</td>
+</tr>
+<tr>
+<td><code>.is_after(other)</code></td>
+<td>True if later</td>
+</tr>
+<tr>
+<td><code>.timestamp</code></td>
+<td>Unix timestamp as Float</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="http-client">HTTP Client</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>http_get(url)</code></td>
+<td>GET request</td>
+</tr>
+<tr>
+<td><code>http_get(url, headers)</code></td>
+<td>GET with custom headers</td>
+</tr>
+<tr>
+<td><code>http_post(url, data)</code></td>
+<td>POST — hash sends as JSON</td>
+</tr>
+<tr>
+<td><code>http_post(url, data, headers)</code></td>
+<td>POST with custom headers</td>
+</tr>
+<tr>
+<td><code>http_put(url, data)</code></td>
+<td>PUT request</td>
+</tr>
+<tr>
+<td><code>http_put(url, data, headers)</code></td>
+<td>PUT with custom headers</td>
+</tr>
+<tr>
+<td><code>http_delete(url)</code></td>
+<td>DELETE request</td>
+</tr>
+<tr>
+<td><code>http_delete(url, headers)</code></td>
+<td>DELETE with custom headers</td>
+</tr>
+<tr>
+<td><code>url_encode(hash)</code></td>
+<td>Hash → URL query string</td>
+</tr>
+<tr>
+<td><code>url_decode(str)</code></td>
+<td>Query string → Hash</td>
+</tr>
+</tbody>
+</table>
+<h3 id="httpresponse-properties">HTTPResponse Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property / Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.status</code></td>
+<td>HTTP status code</td>
+</tr>
+<tr>
+<td><code>.body</code></td>
+<td>Raw response body string</td>
+</tr>
+<tr>
+<td><code>.headers</code></td>
+<td>Response headers hash</td>
+</tr>
+<tr>
+<td><code>.json()</code></td>
+<td>Parse body as JSON</td>
+</tr>
+<tr>
+<td><code>.ok()</code></td>
+<td>True if 2xx status</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="database-sqlite">Database (SQLite)</h2>
+<table>
+<thead>
+<tr>
+<th>Function / Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>db_open(path)</code></td>
+<td>Open or create SQLite database</td>
+</tr>
+<tr>
+<td><code>.exec(sql, params)</code></td>
+<td>Execute statement — returns row count</td>
+</tr>
+<tr>
+<td><code>.query(sql, params)</code></td>
+<td>SELECT → vector of hashes</td>
+</tr>
+<tr>
+<td><code>.query_one(sql, params)</code></td>
+<td>SELECT → first row as hash or nil</td>
+</tr>
+<tr>
+<td><code>.insert(table, hash)</code></td>
+<td>Insert row from hash — returns last id</td>
+</tr>
+<tr>
+<td><code>.insert_many(table, rows)</code></td>
+<td>Insert vector of hashes</td>
+</tr>
+<tr>
+<td><code>.find(table, where)</code></td>
+<td>SELECT with where hash → vector of hashes</td>
+</tr>
+<tr>
+<td><code>.find_one(table, where)</code></td>
+<td>SELECT first match → hash or nil</td>
+</tr>
+<tr>
+<td><code>.update(table, data, where)</code></td>
+<td>UPDATE rows — returns count</td>
+</tr>
+<tr>
+<td><code>.delete(table, where)</code></td>
+<td>DELETE rows — returns count</td>
+</tr>
+<tr>
+<td><code>.count(table)</code></td>
+<td>COUNT rows in table</td>
+</tr>
+<tr>
+<td><code>.tables</code></td>
+<td>Vector of table names</td>
+</tr>
+<tr>
+<td><code>.columns(table)</code></td>
+<td>Vector of column names</td>
+</tr>
+<tr>
+<td><code>.last_id</code></td>
+<td>Last inserted row id</td>
+</tr>
+<tr>
+<td><code>.begin</code></td>
+<td>Begin transaction</td>
+</tr>
+<tr>
+<td><code>.commit</code></td>
+<td>Commit transaction</td>
+</tr>
+<tr>
+<td><code>.rollback</code></td>
+<td>Rollback transaction</td>
+</tr>
+<tr>
+<td><code>.close</code></td>
+<td>Close connection</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="web-server">Web Server</h2>
+<table>
+<thead>
+<tr>
+<th>Function / Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>web_app()</code></td>
+<td>Create a new web application</td>
+</tr>
+<tr>
+<td><code>.get(path) do \|req\|</code></td>
+<td>Register GET route</td>
+</tr>
+<tr>
+<td><code>.post(path) do \|req\|</code></td>
+<td>Register POST route</td>
+</tr>
+<tr>
+<td><code>.put(path) do \|req\|</code></td>
+<td>Register PUT route</td>
+</tr>
+<tr>
+<td><code>.delete(path) do \|req\|</code></td>
+<td>Register DELETE route</td>
+</tr>
+<tr>
+<td><code>.patch(path) do \|req\|</code></td>
+<td>Register PATCH route</td>
+</tr>
+<tr>
+<td><code>.before do \|req\|</code></td>
+<td>Before filter — runs before every route</td>
+</tr>
+<tr>
+<td><code>.after do \|req\|</code></td>
+<td>After filter — runs after every route</td>
+</tr>
+<tr>
+<td><code>.not_found do \|req\|</code></td>
+<td>Custom 404 handler</td>
+</tr>
+<tr>
+<td><code>.run(port)</code></td>
+<td>Start server on port</td>
+</tr>
+<tr>
+<td><code>response(body, status, headers)</code></td>
+<td>Build a response</td>
+</tr>
+<tr>
+<td><code>json_response(data, status)</code></td>
+<td>JSON response</td>
+</tr>
+<tr>
+<td><code>html_response(body, status)</code></td>
+<td>HTML response</td>
+</tr>
+<tr>
+<td><code>redirect(location, status)</code></td>
+<td>Redirect response</td>
+</tr>
+<tr>
+<td><code>halt(status, body)</code></td>
+<td>Abort with status</td>
+</tr>
+</tbody>
+</table>
+<h3 id="frankierequest-properties">FrankieRequest Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.path</code></td>
+<td>URL path</td>
+</tr>
+<tr>
+<td><code>.method</code></td>
+<td>HTTP method string</td>
+</tr>
+<tr>
+<td><code>.params</code></td>
+<td>Path parameters hash</td>
+</tr>
+<tr>
+<td><code>.query</code></td>
+<td>Query string parameters hash</td>
+</tr>
+<tr>
+<td><code>.form</code></td>
+<td>Form body parameters hash</td>
+</tr>
+<tr>
+<td><code>.json</code></td>
+<td>Parsed JSON body</td>
+</tr>
+<tr>
+<td><code>.body</code></td>
+<td>Raw request body string</td>
+</tr>
+<tr>
+<td><code>.headers</code></td>
+<td>Request headers hash</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="random">Random</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rand_int(a, b)</code></td>
+<td>Random integer a..b inclusive</td>
+</tr>
+<tr>
+<td><code>rand_float(a, b)</code></td>
+<td>Random float in [a, b)</td>
+</tr>
+<tr>
+<td><code>rand()</code></td>
+<td>Random float in [0.0, 1.0)</td>
+</tr>
+<tr>
+<td><code>rand(n)</code></td>
+<td>Random integer in [0, n)</td>
+</tr>
+<tr>
+<td><code>rand_seed(n)</code></td>
+<td>Fix seed for reproducibility</td>
+</tr>
+<tr>
+<td><code>shuffle(vec)</code></td>
+<td>Randomly reordered copy of vector</td>
+</tr>
+<tr>
+<td><code>sample(vec, n)</code></td>
+<td>n randomly chosen elements (no repeats)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="testing">Testing</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>assert_eq(actual, expected, msg)</code></td>
+<td>Pass if actual == expected</td>
+</tr>
+<tr>
+<td><code>assert_neq(actual, expected, msg)</code></td>
+<td>Pass if actual != expected</td>
+</tr>
+<tr>
+<td><code>assert_true(value, msg)</code></td>
+<td>Pass if value is truthy</td>
+</tr>
+<tr>
+<td><code>assert_nil(value, msg)</code></td>
+<td>Pass if value is nil</td>
+</tr>
+<tr>
+<td><code>assert_match(value, pattern, msg)</code></td>
+<td>Pass if pattern matches anywhere in value</td>
+</tr>
+<tr>
+<td><code>assert_raises(fn, msg)</code></td>
+<td>Pass if fn raises any error</td>
+</tr>
+<tr>
+<td><code>assert_raises_typed(fn, type, msg)</code></td>
+<td>Pass if fn raises that specific error type</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="type-checking-conversion">Type Checking &amp; Conversion</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>is_integer(x)</code></td>
+<td>True if x is an Integer</td>
+</tr>
+<tr>
+<td><code>is_float(x)</code></td>
+<td>True if x is a Float</td>
+</tr>
+<tr>
+<td><code>is_string(x)</code></td>
+<td>True if x is a String</td>
+</tr>
+<tr>
+<td><code>is_vector(x)</code></td>
+<td>True if x is a Vector</td>
+</tr>
+<tr>
+<td><code>is_nil(x)</code></td>
+<td>True if x is nil</td>
+</tr>
+<tr>
+<td><code>is_bool(x)</code></td>
+<td>True if x is Boolean</td>
+</tr>
+<tr>
+<td><code>to_int(x)</code></td>
+<td>Convert to Integer</td>
+</tr>
+<tr>
+<td><code>to_float(x)</code></td>
+<td>Convert to Float</td>
+</tr>
+<tr>
+<td><code>to_str(x)</code></td>
+<td>Convert to String</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="input-output">Input &amp; Output</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>puts(val)</code></td>
+<td>Print with newline</td>
+</tr>
+<tr>
+<td><code>print(val)</code></td>
+<td>Print without newline</td>
+</tr>
+<tr>
+<td><code>pp(val)</code></td>
+<td>Pretty-print with type annotation</td>
+</tr>
+<tr>
+<td><code>input(prompt)</code></td>
+<td>Read line from stdin as string</td>
+</tr>
+<tr>
+<td><code>input_int(prompt)</code></td>
+<td>Read line from stdin as integer</td>
+</tr>
+<tr>
+<td><code>input_float(prompt)</code></td>
+<td>Read line from stdin as float</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="system">System</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>exit(code)</code></td>
+<td>Exit with given code (default 0)</td>
+</tr>
+<tr>
+<td><code>argv()</code></td>
+<td>Command-line arguments as vector</td>
+</tr>
+<tr>
+<td><code>env(key, default)</code></td>
+<td>Read environment variable</td>
+</tr>
+<tr>
+<td><code>sleep(seconds)</code></td>
+<td>Pause execution</td>
+</tr>
+<tr>
+<td><code>times(n) do \|i\|</code></td>
+<td>Repeat block n times — standalone form</td>
+</tr>
+<tr>
+<td><code>require(path)</code></td>
+<td>Load another .fk file (once only)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="operators-reference">Operators Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code> <code>-</code> <code>*</code> <code>/</code></td>
+<td>Arithmetic</td>
+</tr>
+<tr>
+<td><code>//</code></td>
+<td>Integer (floor) division</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Modulo</td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>Exponentiation</td>
+</tr>
+<tr>
+<td><code>==</code> <code>!=</code> <code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code></td>
+<td>Comparison</td>
+</tr>
+<tr>
+<td><code>and</code> <code>or</code> <code>not</code></td>
+<td>Logical</td>
+</tr>
+<tr>
+<td><code>=~</code></td>
+<td>Regex match — returns position or nil</td>
+</tr>
+<tr>
+<td><code>\|&gt;</code></td>
+<td>Pipe — pass left as argument to right</td>
+</tr>
+<tr>
+<td><code>&amp;.</code></td>
+<td>Nil-safe navigation — returns nil instead of crashing</td>
+</tr>
+<tr>
+<td><code>\|</code></td>
+<td>Hash merge — right wins on conflict</td>
+</tr>
+<tr>
+<td><code>..</code></td>
+<td>Inclusive range</td>
+</tr>
+<tr>
+<td><code>...</code></td>
+<td>Exclusive range</td>
+</tr>
+<tr>
+<td><code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>//=</code> <code>**=</code> <code>%=</code></td>
+<td>Compound assignment</td>
+</tr>
+<tr>
+<td><code>#{}</code></td>
+<td>String interpolation</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

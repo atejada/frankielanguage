@@ -1,0 +1,3747 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../examples/what_is_new/">
+      
+      
+        <link rel="next" href="../full_index/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Changelog - Frankie - The Programming Language</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#changelog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Frankie - The Programming Language" class="md-header__button md-logo" aria-label="Frankie - The Programming Language" data-md-component="logo">
+      
+  <img src="../../img/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Frankie - The Programming Language
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Frankie - The Programming Language" class="md-nav__button md-logo" aria-label="Frankie - The Programming Language" data-md-component="logo">
+      
+  <img src="../../img/favicon.ico" alt="logo">
+
+    </a>
+    Frankie - The Programming Language
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/cli_commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/variables_and_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables & Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditionals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/error_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Types
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Types
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/Integers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/float/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Float
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/boolean_and_nil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean & Nil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/Strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/vector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/hash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hash
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standard Library
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standard Library
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/math_statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math & Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/IntegerMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integer Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/StringMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/VectorMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/HashMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hash Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/DateTimeMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datetime Methos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/regex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/file_io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File I/O
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/json_csv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON & CSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/datetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DateTime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/http_client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/webserver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing (frankiec test)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/random/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stitches
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stitches
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiecolor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiecolor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankietable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankietable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiepager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiepager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieconfig/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieconfig
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiestring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiestring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Showcase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/what_is_new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whats''s New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v1120-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.12.0 (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.12.0 (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes &amp; Improvements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1110-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.11.0 (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.11.0 (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1100-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.10.0 (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.10.0 (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v190-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.9.0 (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.9.0 (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v180-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.8.0 (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.8.0 (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v171-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.7.1 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.7.1 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v170-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.7.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.7.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v160-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.6.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.6.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v150-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.5.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.5.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v140-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.4.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v130-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.3.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.3.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v120-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.2.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.2.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v110-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.1.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.1.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compiler-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiler Version
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v100-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.0.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.0.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Release
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Stdlib Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v1120-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.12.0 (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.12.0 (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes &amp; Improvements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1110-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.11.0 (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.11.0 (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1100-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.10.0 (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.10.0 (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v190-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.9.0 (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.9.0 (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v180-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.8.0 (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.8.0 (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v171-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.7.1 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.7.1 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v170-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.7.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.7.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v160-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.6.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.6.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v150-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.5.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.5.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v140-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.4.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v130-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.3.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.3.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v120-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.2.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.2.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v110-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.1.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.1.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compiler-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiler Version
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v100-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.0.0 (2025)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.0.0 (2025)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Release
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="changelog">Changelog</h1>
+<h2 id="v1120-2026">v1.12.0 (2026)</h2>
+<h3 id="new-features">New Features</h3>
+<p><strong>Standard Library — String <code>.gsub</code> with Block</strong>
+- <code>"hello".gsub("[aeiou]") do |m| m.upcase end</code> → <code>"hEllO"</code>
+- Block form transforms each match; the block receives the matched substring and returns the replacement
+- The fixed-string form <code>gsub(pattern, replacement)</code> continues to work unchanged
+- Uses <code>re.sub</code> with a callable internally — no new dependencies</p>
+<p><strong>Standard Library — Hash <code>.map_hash do |k, v|</code></strong>
+- <code>{a: 1, b: 2}.map_hash do |k, v| [k, v * 2] end</code> → <code>{a: 2, b: 4}</code>
+- Transforms a hash into a new hash in one idiomatic step
+- Block must return a two-element vector <code>[new_key, new_value]</code>; any other return raises a clear runtime error
+- Fills the gap between <code>.map</code> (returns vector of pairs) and a true hash transform</p>
+<p><strong>Standard Library — <code>round(x, n)</code></strong>
+- <code>round(3.14159, 2)</code> → <code>3.14</code>
+- Rounds to n decimal places; n defaults to 0
+- Available as a top-level function alongside <code>floor</code> and <code>ceil</code>
+- Wired to Python's built-in <code>round()</code> — no surprises on banker's rounding edge cases</p>
+<p><strong>Standard Library — <code>Vector .product(other)</code></strong>
+- <code>[1,2].product([3,4])</code> → <code>[[1,3],[1,4],[2,3],[2,4]]</code>
+- Cartesian product — every combination of elements from two vectors
+- Pure nested loop, zero dependencies
+- Natural companion to <code>.zip</code> and <code>.zip_with</code> — completes the combinatorics trio</p>
+<p><strong>Standard Library — <code>String .chars</code> (promoted)</strong>
+- <code>.chars</code> was already in the method map but undocumented
+- Now a first-class documented method alongside <code>.bytes</code> and <code>.lines</code>
+- Chains naturally into iterators: <code>"hello".chars.select do |c| c != "l" end</code></p>
+<p><strong>Standard Library — <code>Vector .each_with_object</code> with Hash Accumulator (documented)</strong>
+- Hash accumulators already worked implicitly; now explicitly documented and tested
+- <code>[1,2,3].each_with_object({}) do |x, h| h[x] = x * x end</code> → <code>{1: 1, 2: 4, 3: 9}</code></p>
+<p><strong>Tooling — <code>assert_match</code> and <code>assert_nil</code></strong>
+- <code>assert_match(value, pattern, msg)</code> — checks a regex match; pattern can be a regex or string
+- <code>assert_nil(value, msg)</code> — checks for nil; cleaner than <code>assert_eq(x, nil)</code>
+- Both available in <code>frankiec test</code> with the same output style as existing assertions</p>
+<p><strong>Tooling — <code>frankiec watch &lt;file.fk&gt;</code></strong>
+- Polls file mtime and re-runs automatically on every save
+- <code>frankiec watch test.fk --test</code> runs in test mode
+- Zero dependencies — uses <code>os.stat</code> and <code>time.sleep</code>
+- Ctrl-C to stop; gracefully ignores <code>exit()</code> calls in watched files</p>
+<p><strong>Tooling — <code>frankiec repl --no-banner</code></strong>
+- Skips the ASCII art and version header
+- Makes the REPL usable piped into other tools or embedded in scripts</p>
+<h3 id="bug-fixes-improvements">Bug Fixes &amp; Improvements</h3>
+<p><strong>Runtime — <code>FileNotFoundError</code> from File I/O</strong>
+- <code>file_read</code> and <code>file_lines</code> previously raised <code>RuntimeError</code>, silently defeating <code>rescue FileNotFoundError</code>
+- Now raise a genuine <code>FileNotFoundError</code> with a clean message — no <code>[Frankie]</code> prefix noise
+- <code>file_copy</code> and <code>file_rename</code> also raise <code>FileNotFoundError</code> when the source is missing
+- <code>file_delete</code> and <code>file_exists</code> unchanged — returning <code>false</code> for missing files is correct for those
+- <code>rescue FileNotFoundError e</code> now works as expected for all file I/O</p>
+<p><strong>Runtime — Friendlier Error Messages</strong>
+- <code>TypeError</code> now reads as <code>"Type mismatch — can't use '+' with Integer and String"</code> instead of the raw Python message
+- <code>IndexError</code> now reads as <code>"Index out of bounds — vector index does not exist"</code> instead of <code>"list index out of range"</code>
+- <code>FileNotFoundError</code> strips the raw Python <code>[Errno 2] No such file or directory:</code> prefix
+- The friendly dict in <code>frankiec.py</code> is now backed by three focused helper functions for easier future extension</p>
+<hr />
+<h2 id="v1110-2026">v1.11.0 (2026)</h2>
+<h3 id="new-features_1">New Features</h3>
+<p><strong>Language — Implicit Return</strong>
+- The last expression in a function body is now automatically returned — <code>return</code> is optional
+- Early <code>return</code> statements are still fully supported for mid-function exits
+- Applies to all function bodies including nested functions
+- Only expressions trigger implicit return; assignments, loops, and <code>puts</code> at the end still return <code>nil</code>
+- Zero breaking change risk: all existing programs using explicit <code>return</code> continue to work identically</p>
+<p><strong>Language — Inline <code>if</code> Expression</strong>
+- <code>x = if cond then a else b end</code> — <code>if</code> is now usable as an expression, not just a statement
+- <code>then</code> keyword is optional; a newline after the condition also works
+- <code>elsif</code> clauses are supported: <code>if a then x elsif b then y else z end</code>
+- Missing <code>else</code> clause evaluates to <code>nil</code>
+- New <code>THEN</code> token type added to the lexer; new <code>IfExpr</code> AST node added
+- Avoids introducing a <code>?:</code> ternary operator that clashes with Frankie's readable style</p>
+<p><strong>Standard Library — String <code>.replace(old, new)</code></strong>
+- <code>"hello world".replace("world", "Frankie")</code> → <code>"hello Frankie"</code>
+- Replaces the first occurrence — an alias for <code>sub()</code>
+- The method name new users always reach for before remembering <code>sub</code>/<code>gsub</code>
+- <code>sub()</code>, <code>gsub()</code> continue to work as before</p>
+<p><strong>Standard Library — String <code>.format(hash)</code></strong>
+- <code>"Hello, {name}!".format({name: "Alice"})</code> — named <code>{key}</code> placeholder replacement
+- Method form of the existing <code>template()</code> function
+- Uses <code>{key}</code> syntax (vs <code>template()</code>'s <code>{{key}}</code> syntax)
+- Runtime dispatches on argument type: dict → string format; non-dict → datetime format</p>
+<p><strong>Standard Library — <code>.zip_with do |a, b|</code></strong>
+- <code>[1,2,3].zip_with([10,20,30]) do |a, b| a + b end</code> → <code>[11, 22, 33]</code>
+- Pair-wise transform two vectors in a single pass
+- Completes the R-style vector pipeline alongside <code>.zip</code>, <code>.map</code>, <code>.select</code>
+- Stops at the shorter vector, matching <code>.zip</code> behaviour</p>
+<p><strong>Tooling — <code>frankiec check</code> Boxed Error Output</strong>
+- Parse and lex errors from <code>frankiec check</code> now use the same boxed format as runtime errors
+- Includes file path, line number, and source context with <code>──▶</code> pointer
+- Essential for editor integration — output is now machine-parseable and visually consistent
+- Exit codes unchanged: 0 = clean, 1 = error</p>
+<p><strong>Tooling — REPL Multi-line History Recall</strong>
+- <code>↑</code> now recalls a complete <code>def...end</code> block as a single history entry
+- Previously, each line of a multi-line block was stored separately
+- Implementation: per-line readline entries are removed and replaced with a single joined entry
+- History file (<code>~/.frankie_history</code>) updated on block submission, not just on exit
+- Gracefully degrades on readline bindings that don't support <code>remove_history_item</code></p>
+<p><strong>Tooling — <code>frankiec fmt</code> Heredoc Support</strong>
+- Heredoc string bodies are now preserved verbatim during formatting
+- Multiline string literals are re-emitted as <code>&lt;&lt;~HEREDOC</code> blocks
+- Fixes a v1.10 regression where heredoc content could be mangled by the formatter</p>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>New <code>docs/13_v111_features.md</code> with full feature reference and examples</li>
+<li>Multiple return values via destructuring documented as an official pattern</li>
+<li>String <code>.delete(chars)</code> promoted from hidden stdlib to documented method</li>
+</ul>
+<hr />
+<h2 id="v1100-2026">v1.10.0 (2026)</h2>
+<h3 id="new-features_2">New Features</h3>
+<p><strong>Language — String &amp; Vector <code>*</code> Repetition</strong>
+- <code>"ha" * 3</code> → <code>"hahaha"</code> — string repetition
+- <code>[0] * 5</code> → <code>[0, 0, 0, 0, 0]</code> — vector fill
+- <code>[1, 2] * 3</code> → <code>[1, 2, 1, 2, 1, 2]</code> — pattern repeat
+- Integer on either side works: <code>3 * "hi"</code> → <code>"hihihi"</code>
+- Implemented in <code>_fk_arith</code> — zero new syntax</p>
+<p><strong>Language — Heredoc <code>&lt;&lt;~TEXT</code></strong>
+- <code>&lt;&lt;~DELIM ... DELIM</code> multiline string with automatic indent-stripping
+- <code>&lt;&lt;DELIM</code> variant (no strip) also supported
+- Full <code>#{}</code> interpolation inside heredoc bodies
+- Pure lexer change — no new tokens or AST nodes
+- The codegen <code>gen_string</code> rewritten to use <code>repr()</code> + concatenation for multiline interpolated strings, eliminating triple-quote/backslash edge cases entirely</p>
+<p><strong>Language — Named Rescue Without Variable</strong>
+- <code>rescue TypeError</code> is now valid without a binding variable
+- <code>rescue TypeError e</code> still works when the message is needed
+- Parser fix: variable binding is now truly optional after a typed rescue</p>
+<p><strong>Standard Library — <code>times(n) do |i|</code> standalone</strong>
+- <code>times(n) do |i| ... end</code> functional form added alongside <code>n.times do</code>
+- <code>times(n)</code> with no block returns <code>[0..n-1]</code> as a list
+- <code>FuncCall</code> AST node gains an optional <code>block</code> field; parser attaches trailing <code>do...end</code> blocks to function calls; codegen emits a <code>for</code> loop for <code>times</code></p>
+<p><strong>Standard Library — <code>flatten(depth)</code></strong>
+- <code>.flatten</code> with no argument now does <strong>full deep</strong> flatten (breaking change from v1.9's one-level-only behaviour)
+- <code>.flatten(n)</code> flattens exactly <code>n</code> levels; <code>.flatten(0)</code> is a no-op
+- Backed by new <code>_fk_flatten_deep(iterable, depth)</code> in stdlib</p>
+<p><strong>Standard Library — <code>map_with_index</code></strong>
+- <code>.map_with_index do |x, i| ... end</code> — index available in map block
+- Single-expression blocks compile to a list comprehension; multi-statement blocks use a helper function</p>
+<p><strong>Standard Library — <code>pp(value)</code> pretty-print</strong>
+- Indented multiline output for hashes, vectors, and records
+- Records printed as <code>RecordName(\n  field: value,\n  ...)</code>
+- Flat vectors printed on one line; nested structures indented recursively</p>
+<p><strong>Standard Library — <code>encode</code> / <code>decode</code></strong>
+- <code>"hello".encode</code> → <code>[104, 101, 108, 108, 111]</code> (UTF-8 bytes as vector)
+- <code>"hello".encode("ascii")</code> — explicit encoding
+- <code>[104, 105].decode</code> → <code>"hi"</code>
+- <code>[104, 105].decode("utf-8")</code> — explicit encoding</p>
+<p><strong>Runtime — Exit Code Propagation</strong>
+- <code>exit(42)</code> in Frankie code now propagates the exact code to the shell
+- <code>frankiec run</code> catches <code>SystemExit</code> and calls <code>sys.exit(e.code)</code> instead of re-raising</p>
+<p><strong>CLI — <code>--help</code> Flag</strong>
+- <code>frankiec --help</code> prints the full usage docstring
+- <code>frankiec &lt;cmd&gt; --help</code> prints a short description for that specific command
+- All commands covered: <code>run</code>, <code>repl</code>, <code>test</code>, <code>fmt</code>, <code>docs</code>, <code>build</code>, <code>check</code>, <code>new</code>, <code>version</code></p>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><code>gen_string</code> multiline interpolation: single-line f-strings were emitted with literal embedded newlines (invalid Python syntax). Fixed by using <code>repr()</code> + string concatenation for all multiline interpolated strings.</li>
+<li><code>flatten</code> semantics changed to full-deep by default; use <code>.flatten(1)</code> for the old one-level behaviour.</li>
+</ul>
+<hr />
+<h2 id="v190-2026">v1.9.0 (2026)</h2>
+<h3 id="new-features_3">New Features</h3>
+<p><strong>Language — Record Types (<code>record</code>)</strong>
+- <code>record Point(x, y)</code> defines a lightweight named data object
+- Constructor function generated automatically: <code>p = Point(3, 4)</code>
+- Prints as <code>Point(x: 3, y: 4)</code> — clean, readable output
+- Records are hashes under the hood — all hash methods, iterators, <code>dig</code>, <code>|</code>, and <code>.merge</code> work on them
+- New lexer token <code>RECORD</code>, new AST node <code>RecordDef</code>, new <code>gen_record_def</code> in codegen
+- <code>_fk_to_str</code> updated to detect <code>__type__</code> and display record notation</p>
+<div class="highlight"><pre><span></span><code><span class="n">record</span><span class="w"> </span><span class="no">Employee</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span>
+<span class="n">emp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Employee</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Engineering&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">95000</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">emp</span><span class="w">               </span><span class="c1"># Employee(name: Alice, dept: Engineering, salary: 95000)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">emp</span><span class="o">[</span><span class="s2">&quot;dept&quot;</span><span class="o">]</span><span class="w">       </span><span class="c1"># Engineering</span>
+<span class="n">by_dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">employees</span><span class="o">.</span><span class="n">group_by</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">e</span><span class="o">|</span><span class="w"> </span><span class="n">e</span><span class="o">[</span><span class="s2">&quot;dept&quot;</span><span class="o">]</span><span class="w"> </span><span class="k">end</span>
+</code></pre></div>
+<p><strong>Standard Library — <code>hash.dig(key, ...)</code></strong>
+- Safe nested access: returns <code>nil</code> at the first missing key, never crashes
+- Works on hashes (string/symbol keys) and vectors (integer indices)
+- Chains correctly with <code>&amp;.</code> for nil-safe navigation</p>
+<div class="highlight"><pre><span></span><code><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="ss">db</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="ss">host</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">pool</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="ss">max</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">}}}</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">config</span><span class="o">.</span><span class="n">dig</span><span class="p">(</span><span class="s2">&quot;db&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pool&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;max&quot;</span><span class="p">)</span><span class="w">   </span><span class="c1"># 10</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">config</span><span class="o">.</span><span class="n">dig</span><span class="p">(</span><span class="s2">&quot;db&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;missing&quot;</span><span class="p">)</span><span class="w">       </span><span class="c1"># nil  (no crash)</span>
+</code></pre></div>
+<p><strong>Standard Library — Standalone <code>zip(*vecs)</code></strong>
+- <code>zip(a, b)</code> function form alongside the existing <code>.zip</code> method
+- Accepts two or more vectors; stops at the shortest
+- Consistent with Frankie's R-inspired functional style</p>
+<div class="highlight"><pre><span></span><code><span class="n">zip</span><span class="p">(</span><span class="o">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="o">[</span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">87</span><span class="o">]</span><span class="p">)</span><span class="w">   </span><span class="c1"># [[&quot;Alice&quot;, 95], [&quot;Bob&quot;, 87]]</span>
+</code></pre></div>
+<p><strong>Tooling — <code>frankiec fmt</code> (Auto-Formatter)</strong>
+- New command: <code>frankiec fmt &lt;file.fk&gt;</code> — print canonically formatted source
+- <code>--write</code> flag: reformat in-place
+- <code>--check</code> flag: exit 1 if not already formatted (CI-friendly)
+- Implemented in <code>frankie_fmt.py</code> — walks the AST, zero new dependencies
+- Canonical style: 2-space indent, single-expr blocks inlined, blank line after top-level <code>def</code></p>
+<p><strong>Tooling — <code>frankiec docs</code> (Documentation Generator)</strong>
+- New command: <code>frankiec docs &lt;file.fk&gt;</code> — extract <code>##</code> doc-comments to Markdown
+- <code>--output &lt;file.md&gt;</code> flag: write to file instead of stdout
+- Supports <code>@param</code>, <code>@return</code>, <code>@example</code> tags
+- Works on directories: <code>frankiec docs lib/</code> generates docs for every <code>.fk</code> file
+- Implemented in <code>frankie_docs.py</code> — pure Python, zero new dependencies</p>
+<p><strong>REPL — readline, Tab Completion, History Persistence</strong>
+- Arrow key navigation (<code>↑</code>/<code>↓</code>) and Ctrl+R reverse-search via Python's built-in <code>readline</code>
+- Tab completion for Frankie keywords, stdlib functions, and common method names
+- History saved to <code>~/.frankie_history</code> on exit; restored at next startup (max 1000 entries)
+- <code>.env</code> auto-loaded from the current working directory at REPL startup</p>
+<p><strong>Runtime — <code>.env</code> Auto-Loader</strong>
+- <code>frankiec run</code> and <code>frankiec repl</code> automatically load <code>.env</code> from the current directory
+- Keys already set in the shell environment take precedence
+- Values accessible via the existing <code>env(key, default)</code> stdlib function
+- No crash if <code>.env</code> is absent</p>
+<h3 id="bug-fixes_1">Bug Fixes</h3>
+<ul>
+<li><code>record</code> added as a reserved keyword — programs that used <code>record</code> as a variable name must rename it (the existing <code>.fk</code> examples in the repo have been updated)</li>
+<li><code>scaffold.py</code> version string updated from <code>v1.3</code> to <code>v1.9</code></li>
+</ul>
+<hr />
+<h2 id="v180-2026">v1.8.0 (2026)</h2>
+<h3 id="new-features_4">New Features</h3>
+<p><strong>Language — Lambda / Anonymous Functions (<code>-&gt;</code>)</strong>
+- Store functions as first-class values: <code>double = -&gt;(x) { x * 2 }</code>
+- Call with <code>.call(args)</code>: <code>double.call(5)</code> → <code>10</code>
+- Single-expression bodies use brace syntax: <code>-&gt;(x) { x * 2 }</code>
+- Multi-statement bodies use <code>do...end</code>: <code>-&gt;(x) do ... end</code>
+- Default parameters are supported: <code>-&gt;(x, y = 1) { x + y }</code>
+- Lambdas can be stored in variables, vectors, and hashes
+- Lambdas can be passed to functions as arguments (higher-order functions)
+- Lambdas can be returned from functions
+- New token: <code>ARROW</code> (<code>-&gt;</code>)
+- New AST node: <code>LambdaLiteral</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}</span>
+<span class="n">add</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="o">-&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">}</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">double</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="w">      </span><span class="c1"># 14</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">add</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w">      </span><span class="c1"># 7</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">fn</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">double</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span><span class="w">    </span><span class="c1"># 18</span>
+</code></pre></div>
+<p><strong>Language — Hash Merge Operator <code>|</code></strong>
+- <code>h1 | h2</code> merges two hashes; right-hand keys win on conflict
+- Returns a new hash — neither operand is modified
+- Chains naturally: <code>a | b | c</code>
+- Complements the existing <code>.merge(other)</code> method</p>
+<div class="highlight"><pre><span></span><code><span class="n">defaults</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="ss">color</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">size</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="p">}</span>
+<span class="n">overrides</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="ss">color</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">}</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">defaults</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">overrides</span><span class="w">   </span><span class="c1"># {color: red, size: medium}</span>
+</code></pre></div>
+<p><strong>Standard Library — <code>group_by</code></strong>
+- <code>vector.group_by do |x| key end</code> buckets elements by block return value
+- Returns a hash whose values are arrays of matching elements, in original order
+- Pairs naturally with <code>.tally</code>, <code>.sort_by</code>, <code>.each</code>, and the new <code>|</code> operator</p>
+<div class="highlight"><pre><span></span><code><span class="n">words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;ant&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ape&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bear&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bee&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cat&quot;</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">words</span><span class="o">.</span><span class="n">group_by</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">w</span><span class="o">|</span><span class="w"> </span><span class="n">w</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="k">end</span>
+<span class="c1"># {&quot;a&quot; =&gt; [&quot;ant&quot;, &quot;ape&quot;], &quot;b&quot; =&gt; [&quot;bear&quot;, &quot;bee&quot;], &quot;c&quot; =&gt; [&quot;cat&quot;]}</span>
+</code></pre></div>
+<p><strong>Standard Library — <code>each_slice</code> and <code>each_cons</code></strong>
+- <code>vector.each_slice(n)</code> — iterate non-overlapping chunks of size <code>n</code>
+- <code>vector.each_cons(n)</code> — iterate all consecutive windows of size <code>n</code> (sliding window)
+- Both accept an optional <code>do |var| ... end</code> block; without a block, return a vector of slices/windows
+- Mirrors Ruby's API; natural fit for data-processing, batch operations, and rolling statistics</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="o">].</span><span class="n">each_slice</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">s</span><span class="o">|</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="w">     </span><span class="c1"># [1,2]  [3,4]  [5,6]</span>
+<span class="k">end</span>
+
+<span class="o">[</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="o">].</span><span class="n">each_cons</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">w</span><span class="o">|</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="n">w</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">w</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w">    </span><span class="c1"># 3  -2  4</span>
+<span class="k">end</span>
+</code></pre></div>
+<h3 id="bug-fixes_2">Bug Fixes</h3>
+<ul>
+<li><strong><code>_block_to_lambda</code></strong> — blocks whose body ends with a control-flow expression
+  (<code>if</code>, <code>case</code>, <code>unless</code>) now correctly capture the result value instead of
+  raising a <code>CodeGenError</code>. Affects <code>select</code>, <code>reject</code>, <code>sort_by</code>, <code>min_by</code>,
+  <code>max_by</code>, <code>sum_by</code>, <code>find</code>, <code>flat_map</code>, and the new <code>group_by</code>.</li>
+</ul>
+<hr />
+<h2 id="v171-2025">v1.7.1 (2025)</h2>
+<h3 id="bug-fixes_3">Bug Fixes</h3>
+<ul>
+<li><strong><code>N.times do</code></strong> — <code>def _gen_times</code> method definition was accidentally dropped from
+  <code>compiler/codegen.py</code> during v1.7 development, causing an <code>AttributeError</code> at runtime.
+  The method body was present but the <code>def</code> header was missing.</li>
+<li><strong><code>test_v17.fk</code></strong> — example test file used <code>def()</code> anonymous function syntax inside
+  <code>assert_raises_typed</code> which does not exist in Frankie yet. Rewritten to use
+  <code>begin/rescue</code> blocks instead.</li>
+</ul>
+<hr />
+<h2 id="v170-2025">v1.7.0 (2025)</h2>
+<h3 id="new-features_5">New Features</h3>
+<p><strong>Language — Nil Safety Operator <code>&amp;.</code></strong>
+- <code>x&amp;.method</code> — call <code>.method</code> on <code>x</code>, returning <code>nil</code> if <code>x</code> is nil (no crash)
+- <code>x&amp;.method(args)</code> — nil-safe method call with arguments
+- <code>x&amp;.property</code> — nil-safe property / zero-arg attribute access
+- Chains naturally: <code>a&amp;.b&amp;.c</code> — short-circuits at the first nil
+- Works with any value: strings, hashes, vectors, custom objects
+- No language keywords added — <code>&amp;.</code> is a single new operator token</p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">}</span>
+<span class="n">missing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">nil</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="n">user</span><span class="o">[</span><span class="s2">&quot;name&quot;</span><span class="o">]&amp;.</span><span class="n">upcase</span><span class="w">   </span><span class="c1"># ALICE</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">missing</span><span class="o">&amp;.</span><span class="n">upcase</span><span class="w">        </span><span class="c1"># nil  (no crash)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">missing</span><span class="o">&amp;.</span><span class="n">upcase</span><span class="o">&amp;.</span><span class="n">reverse</span><span class="w">  </span><span class="c1"># nil  (chain short-circuits)</span>
+</code></pre></div>
+<p><strong>Standard Library — <code>template(str, hash)</code></strong>
+- Replace <code>{{key}}</code> placeholders in a string with values from a hash
+- Clean alternative to <code>sprintf</code> / <code>#{}</code> when keys are dynamic or templates are stored externally
+- Raises <code>KeyError</code> if a placeholder key is missing from the hash</p>
+<div class="highlight"><pre><span></span><code><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">template</span><span class="p">(</span><span class="s2">&quot;Hello, {{name}}! Age: {{age}}.&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nb">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">age</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">})</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">msg</span><span class="w">   </span><span class="c1"># Hello, Alice! Age: 30.</span>
+</code></pre></div>
+<p><strong>Standard Library — File System Operations</strong>
+- <code>file_rename(src, dst)</code> — rename or move a file
+- <code>file_copy(src, dst)</code> — copy a file (preserving metadata); returns <code>dst</code>
+- <code>file_mkdir(path)</code> — create a directory; creates intermediate dirs by default (like <code>mkdir -p</code>)
+- <code>file_mkdir(path, false)</code> — create a single directory only (no parents)
+- <code>dir_exists(path)</code> — return <code>true</code> if path is an existing directory
+- <code>dir_list(path)</code> — return a sorted vector of filenames in a directory (default: <code>"."</code>)
+- All use Python's built-in <code>os</code> / <code>shutil</code> — zero external dependencies</p>
+<div class="highlight"><pre><span></span><code><span class="n">file_mkdir</span><span class="p">(</span><span class="s2">&quot;/tmp/myapp/data&quot;</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">dir_exists</span><span class="p">(</span><span class="s2">&quot;/tmp/myapp/data&quot;</span><span class="p">)</span><span class="w">     </span><span class="c1"># true</span>
+
+<span class="n">file_write</span><span class="p">(</span><span class="s2">&quot;/tmp/myapp/data/a.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+<span class="n">file_copy</span><span class="p">(</span><span class="s2">&quot;/tmp/myapp/data/a.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/tmp/myapp/data/b.txt&quot;</span><span class="p">)</span>
+<span class="n">file_rename</span><span class="p">(</span><span class="s2">&quot;/tmp/myapp/data/b.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/tmp/myapp/data/c.txt&quot;</span><span class="p">)</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="n">dir_list</span><span class="p">(</span><span class="s2">&quot;/tmp/myapp/data&quot;</span><span class="p">)</span><span class="w">       </span><span class="c1"># [a.txt, c.txt]</span>
+</code></pre></div>
+<p><strong>Standard Library — <code>assert_raises_typed(fn, type, msg)</code></strong>
+- Extends the test runner to assert that a specific error <em>type</em> was raised
+- <code>type</code> can be a string (<code>"ZeroDivisionError"</code>) or a Python exception class
+- Fails with a clear message if no error is raised, or if the wrong type is raised
+- Supported type names mirror typed <code>rescue</code>: <code>RuntimeError</code>, <code>TypeError</code>, <code>ValueError</code>,
+  <code>ZeroDivisionError</code>, <code>IndexError</code>, <code>KeyError</code>, <code>IOError</code>, <code>FileNotFoundError</code>,
+  <code>OverflowError</code>, <code>NameError</code>, <code>AttributeError</code>, <code>Exception</code> / <code>Error</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
+<span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;division by zero raises correctly&quot;</span><span class="p">)</span>
+
+<span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
+<span class="w">  </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;/no/such/file.txt&quot;</span><span class="p">)</span>
+<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;RuntimeError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;missing file raises RuntimeError&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="bug-fixes_4">Bug Fixes</h3>
+<ul>
+<li><code>&amp;.</code> operator correctly short-circuits chains — once a nil is encountered, remaining
+  method calls in the chain are skipped without raising errors</li>
+</ul>
+<hr />
+<h2 id="v160-2025">v1.6.0 (2025)</h2>
+<h3 id="new-features_6">New Features</h3>
+<p><strong>Language — Compound Assignment Operators</strong>
+- <code>+=</code> — add and assign: <code>x += 5</code>
+- <code>-=</code> — subtract and assign: <code>x -= 3</code>
+- <code>*=</code> — multiply and assign: <code>x *= 2</code>
+- <code>/=</code> — divide and assign (float): <code>x /= 4</code>
+- <code>//=</code> — integer-divide and assign (Fortran): <code>x //= 3</code>
+- <code>**=</code> — exponentiate and assign (Fortran): <code>x **= 2</code>
+- <code>%=</code> — modulo and assign: <code>x %= 7</code>
+- All operators also work on vector elements: <code>v[i] += 1</code></p>
+<p><strong>Language — Typed Rescue Clauses</strong>
+- <code>rescue TypeError e</code> — catch only <code>TypeError</code> errors
+- <code>rescue ZeroDivisionError e</code> — catch only division by zero
+- Multiple <code>rescue</code> clauses on one <code>begin...end</code> block, checked in order
+- Full list of supported types: <code>RuntimeError</code>, <code>TypeError</code>, <code>ValueError</code>,
+  <code>ZeroDivisionError</code>, <code>IndexError</code>, <code>KeyError</code>, <code>IOError</code>,
+  <code>FileNotFoundError</code>, <code>OverflowError</code>, <code>NameError</code>, <code>AttributeError</code>,
+  <code>StopIteration</code>, <code>Exception</code> / <code>Error</code> (catch-all aliases)
+- Untyped <code>rescue e</code> remains valid and catches everything</p>
+<p><strong>Standard Library — <code>.find</code> / <code>.detect</code></strong>
+- <code>.find do |x| ... end</code> — return the first element for which the block is true, or <code>nil</code>
+- <code>.detect do |x| ... end</code> — alias for <code>.find</code>
+- Works on any vector, including vectors of hashes
+- Chains naturally with <code>.select</code>, <code>.map</code>, <code>.sort_by</code>, etc.</p>
+<p><strong>Tooling — <code>frankiec test</code></strong>
+- <code>frankiec test</code> — run <code>test.fk</code> in the current directory
+- <code>frankiec test &lt;file.fk&gt;</code> — run a named test file
+- Built-in assertions (no imports needed):
+  - <code>assert_true(cond, msg)</code> — pass if condition is truthy
+  - <code>assert_eq(actual, expected, msg)</code> — pass if values are equal
+  - <code>assert_neq(actual, expected, msg)</code> — pass if values differ
+  - <code>assert_raises(fn, msg)</code> — pass if calling <code>fn</code> raises any error
+- Live <code>✓</code> / <code>✗</code> output per assertion
+- Summary line with pass count, fail count, and elapsed time
+- Exits with code 1 if any assertion fails (CI-friendly)</p>
+<h3 id="bug-fixes_5">Bug Fixes</h3>
+<ul>
+<li><code>_fk_test_suite</code> singleton now uses a fresh isolated copy per <code>frankiec test</code> run,
+  preventing state leakage between multiple test invocations in the same process</li>
+</ul>
+<hr />
+<h2 id="v150-2025">v1.5.0 (2025)</h2>
+<h3 id="new-features_7">New Features</h3>
+<p><strong>Language — Loop Control</strong>
+- <code>next</code> — skip to the next iteration (like <code>continue</code> in other languages); supports postfix <code>next if cond</code>
+- <code>break</code> — exit a loop early; supports postfix <code>break if cond</code>
+- <code>break value</code> — exit a loop and store a result in <code>_fk_break_val</code>; supports postfix form</p>
+<p><strong>Language — Constants</strong>
+- <code>UPPER_CASE = value</code> — UPPER_SNAKE_CASE identifiers are treated as constants
+- Reassignment prints a warning and preserves the original value
+- Works with any type: integers, floats, strings, vectors, hashes</p>
+<p><strong>Standard Library — Randomness</strong>
+- <code>random()</code> — random Float in [0.0, 1.0)
+- <code>rand(n)</code> — random Integer in [0, n)
+- <code>rand_int(a, b)</code> — random Integer in [a, b] (both inclusive)
+- <code>rand_float(a, b)</code> — random Float in [a, b)
+- <code>shuffle(vec)</code> — return a shuffled copy of a vector
+- <code>sample(vec, n)</code> — return n randomly chosen elements (no repeats)
+- <code>rand_seed(n)</code> — seed the RNG for reproducible results</p>
+<p><strong>Standard Library — Sorting</strong>
+- <code>.sort_by do |x| key end</code> — sort a vector by any computed key
+- <code>.min_by do |x| key end</code> — element with the smallest key
+- <code>.max_by do |x| key end</code> — element with the largest key
+- <code>.sum_by do |x| val end</code> — sum the values the block returns</p>
+<p><strong>Standard Library — Other</strong>
+- <code>sleep(n)</code> — pause execution for n seconds (float supported)
+- <code>unzip(vec)</code> — inverse of zip: vector of pairs → vector of columns
+- <code>format(fmt, ...)</code> — alias for <code>sprintf</code></p>
+<h3 id="bug-fixes_6">Bug Fixes</h3>
+<ul>
+<li>Block parameters named <code>p</code> (e.g. <code>do |p|</code>) now parse correctly — <code>p</code> was always tokenised as the debug-print keyword, preventing it from being used as a loop variable</li>
+<li><code>p[...]</code> and <code>p.method</code> now correctly treated as variable access rather than a debug-print call</li>
+<li><code>break if cond</code> and <code>next if cond</code> (postfix forms) parse without errors</li>
+</ul>
+<hr />
+<h2 id="v140-2025">v1.4.0 (2025)</h2>
+<h3 id="new-features_8">New Features</h3>
+<p><strong>Web Server</strong> (built-in <code>http.server</code> — zero deps)
+- <code>web_app()</code> — create a new Frankie web application
+- <code>app.get(path) do |req| end</code> — register a GET route
+- <code>app.post(path) do |req| end</code> — register a POST route
+- <code>app.put(path) do |req| end</code> — register a PUT route
+- <code>app.delete(path) do |req| end</code> — register a DELETE route
+- <code>app.patch(path) do |req| end</code> — register a PATCH route
+- <code>app.before do |req| end</code> — before-filter (runs before every matched route)
+- <code>app.after do |req, res| end</code> — after-filter (runs after every matched route)
+- <code>app.not_found do |req| end</code> — custom 404 handler
+- <code>app.run(port)</code> / <code>app.run(port, host)</code> — start the server (blocking, multi-threaded)
+- Path parameters with <code>:name</code> segments: <code>"/users/:id"</code> → <code>req.params["id"]</code>
+- Query string access: <code>req.query["page"]</code>
+- JSON body parsing: <code>req.json</code> — returns parsed hash/vector or nil
+- Form body parsing: <code>req.form</code> — returns decoded hash
+- <code>response(body, status, headers)</code> — plain-text response
+- <code>html_response(body, status)</code> — HTML response
+- <code>json_response(data, status)</code> — JSON response (auto-serializes hashes and vectors)
+- <code>redirect(location, status)</code> — redirect response (default 302)
+- <code>halt(status, body)</code> — error response shortcut
+- Returning a plain string from a handler auto-wraps as <code>200 text/plain</code>
+- Returning a hash or vector auto-wraps as <code>200 application/json</code>
+- Full request object: <code>.method</code>, <code>.path</code>, <code>.params</code>, <code>.query</code>, <code>.headers</code>, <code>.body</code>, <code>.json</code>, <code>.form</code>
+- See <code>docs/09_web.md</code> and <code>examples/webapp.fk</code> for full reference and demo</p>
+<h3 id="bug-fixes_7">Bug Fixes</h3>
+<ul>
+<li><code>raise expr if cond</code> (postfix <code>if</code> on <code>raise</code>) now parsed correctly — was leaving the <code>if</code> clause unconsumed, causing <code>rescue</code> to be seen as an unexpected token in <code>begin/rescue</code> blocks</li>
+<li><code>data |&gt; sum |&gt; puts</code> — <code>puts</code> and <code>print</code> now accepted as bare pipe targets (previously raised an unexpected token error)</li>
+</ul>
+<hr />
+<h2 id="v130-2025">v1.3.0 (2025)</h2>
+<h3 id="new-features_9">New Features</h3>
+<p><strong>Language</strong>
+- Default parameter values: <code>def greet(name, msg="Hello", punct="!")</code>
+- Keyword-named parameters (e.g. <code>times</code>, <code>each</code>) now usable as variable/param names
+- Triple-quoted multi-line strings: <code>"""..."""</code> and <code>'''...'''</code> with interpolation</p>
+<p><strong>JSON</strong> (built-in <code>json</code> module — zero deps)
+- <code>json_parse(str)</code> — parse JSON string → Frankie value
+- <code>json_dump(obj, pretty)</code> — serialize to JSON string
+- <code>json_read(path)</code> — read and parse JSON file
+- <code>json_write(path, obj, pretty)</code> — serialize and write JSON file</p>
+<p><strong>CSV</strong> (built-in <code>csv</code> module — zero deps)
+- <code>csv_parse(text, headers)</code> — parse CSV text → vector of hashes
+- <code>csv_dump(data, headers)</code> — serialize vector of hashes → CSV string
+- <code>csv_read(path, headers)</code> — read and parse CSV file
+- <code>csv_write(path, data, headers)</code> — write CSV file</p>
+<p><strong>DateTime</strong> (built-in <code>datetime</code> module — zero deps)
+- <code>now()</code> — current date and time
+- <code>today()</code> — today's date at midnight
+- <code>date_from(year, month, day, hour, minute, second)</code> — construct a date
+- <code>date_parse(str, fmt)</code> — parse a date string (default fmt: <code>%Y-%m-%d</code>)
+- <code>.year</code>, <code>.month</code>, <code>.day</code>, <code>.hour</code>, <code>.minute</code>, <code>.second</code> — accessors
+- <code>.format(fmt)</code> — format with <code>strftime</code> directives
+- <code>.add_days(n)</code>, <code>.add_hours(n)</code>, <code>.add_minutes(n)</code> — arithmetic
+- <code>.diff_days(other)</code>, <code>.diff_seconds(other)</code> — differences
+- <code>.weekday()</code>, <code>.weekday_name()</code> — day of week
+- <code>.is_before(other)</code>, <code>.is_after(other)</code> — comparison
+- <code>.timestamp()</code> — Unix timestamp</p>
+<p><strong>HTTP</strong> (built-in <code>urllib</code> — zero deps)
+- <code>http_get(url, headers)</code> — GET request
+- <code>http_post(url, data, headers)</code> — POST request (auto JSON-encodes dicts)
+- <code>http_put(url, data, headers)</code> — PUT request
+- <code>http_delete(url, headers)</code> — DELETE request
+- Response: <code>.status</code>, <code>.body</code>, <code>.headers</code>, <code>.json()</code>, <code>.ok()</code>
+- <code>url_encode(hash)</code> — encode params as query string
+- <code>url_decode(str)</code> — decode query string → hash</p>
+<p><strong>Tooling</strong>
+- <code>frankiec new &lt;project&gt;</code> — scaffold a new project with <code>main.fk</code>, <code>test.fk</code>, <code>lib/</code>, <code>data/</code>, <code>README.md</code>, <code>.gitignore</code>
+- Better error messages — compile and runtime errors now show a boxed display with source context and line pointer (──▶)
+- Syntax highlighting for <strong>VS Code</strong> (<code>.tmLanguage.json</code> + <code>package.json</code> + <code>language-configuration.json</code>)
+- Syntax highlighting for <strong>Vim/Neovim</strong> (<code>frankie.vim</code>)
+- Syntax highlighting for <strong>Sublime Text / TextMate</strong> (<code>frankie.tmLanguage.json</code>)
+- All editor files in <code>editors/</code></p>
+<h3 id="bug-fixes_8">Bug Fixes</h3>
+<ul>
+<li>Fixed <code>print</code> output disappearing when running from a different working directory</li>
+<li><code>times</code>, <code>each</code>, <code>map</code> keywords can now be used as parameter and variable names</li>
+<li>Template placeholders in <code>frankiec new</code> use <code>.replace()</code> to avoid <code>str.format()</code> key conflicts</li>
+</ul>
+<hr />
+<h2 id="v120-2025">v1.2.0 (2025)</h2>
+<h3 id="new-features_10">New Features</h3>
+<p><strong>Database Access (SQLite)</strong>
+- <code>db_open(path)</code> — open or create a SQLite database; <code>":memory:"</code> for in-memory
+- <code>db.exec(sql, params)</code> — run DDL/DML with <code>?</code> placeholders; returns row count
+- <code>db.query(sql, params)</code> — SELECT → vector of hashes keyed by column name
+- <code>db.query_one(sql, params)</code> — SELECT → first row as hash or nil
+- <code>db.insert(table, hash)</code> — insert a hash of column→value; returns new row id
+- <code>db.insert_many(table, rows)</code> — bulk insert a vector of hashes
+- <code>db.find_all(table)</code> — all rows as vector of hashes
+- <code>db.find(table, where)</code> — filtered rows (where is a hash, conditions ANDed)
+- <code>db.find_one(table, where)</code> — first matching row or nil
+- <code>db.update(table, data, where)</code> — update matching rows; returns count
+- <code>db.delete(table, where)</code> — delete matching rows; returns count
+- <code>db.count(table)</code> / <code>db.count(table, where)</code> — row counts
+- <code>db.last_id</code> — rowid of last INSERT
+- <code>db.tables</code> — list of table names in the database
+- <code>db.columns(table)</code> — column info as vector of hashes
+- <code>db.transaction do...end</code> — atomic block; rolls back on any error
+- <code>db.begin</code> / <code>db.commit</code> / <code>db.rollback</code> — explicit transaction control
+- <code>db.close</code> — close the connection
+- Zero external dependencies — uses Python's built-in <code>sqlite3</code></p>
+<p><strong>Multi-line Strings</strong>
+- Triple-quoted strings <code>"""..."""</code> and <code>'''...'''</code> spanning multiple lines
+- String interpolation <code>#{}</code> works inside triple-double-quoted strings
+- Perfect for embedding multi-line SQL, templates, or long text</p>
+<h3 id="bug-fixes_9">Bug Fixes</h3>
+<ul>
+<li><code>isinstance(obj, FrankieDB)</code> cross-namespace failure — fixed with duck typing
+  (<code>hasattr</code> checks instead) so DB objects work correctly inside <code>exec()</code> globals</li>
+<li><code>db.delete(table, where)</code> was intercepted by string/hash delete handler — now
+  correctly dispatches based on argument count (2 args = DB call)</li>
+<li><code>.count("sub")</code> on a DB object was routing to <code>_fk_str_count</code> — fixed via
+  <code>_fk_count_dispatch</code> with duck typing</li>
+<li>Transaction <code>BEGIN</code>/<code>COMMIT</code>/<code>ROLLBACK</code> now uses explicit <code>isolation_level=None</code>
+  with an <code>_in_tx</code> flag for correct per-operation autocommit and block rollback</li>
+</ul>
+<hr />
+<h2 id="v110-2025">v1.1.0 (2025)</h2>
+<h3 id="new-features_11">New Features</h3>
+<p><strong>Iterators &amp; Collections</strong>
+- <code>.select do |x|</code> — filter elements where block is true
+- <code>.reject do |x|</code> — filter elements where block is false
+- <code>.reduce(init) do |acc, x|</code> — fold to a single value (also <code>.inject</code>)
+- <code>.each_with_object(init) do |x, obj|</code> — iterate with shared accumulator
+- <code>.any? do |x|</code> — true if any element matches
+- <code>.all? do |x|</code> — true if all elements match
+- <code>.none? do |x|</code> — true if no elements match
+- <code>.count do |x|</code> — count matching elements (or <code>.count("sub")</code> for strings)
+- <code>.flat_map do |x|</code> — map then flatten one level
+- <code>.take(n)</code> — first n elements
+- <code>.drop(n)</code> — all but first n elements
+- <code>.tally</code> — count occurrences → Hash
+- <code>.compact</code> — remove nil values
+- <code>.chunk(n)</code> — split into sub-vectors of size n
+- <code>.zip(other)</code> — zip two vectors together</p>
+<p><strong>Control Flow</strong>
+- <code>case/when/else/end</code> — pattern matching on values or conditions
+- Bare <code>case</code> (no subject) — uses truthy when-clauses</p>
+<p><strong>Destructuring Assignment</strong>
+- <code>a, b, c = [1, 2, 3]</code> — unpack vector into named variables
+- Pads with <code>nil</code> if vector is shorter than target count</p>
+<p><strong>String Methods (new)</strong>
+- <code>.chars</code> — vector of individual characters
+- <code>.bytes</code> — vector of byte values
+- <code>.lines</code> — vector of lines
+- <code>.chomp</code> — remove trailing newline
+- <code>.chop</code> — remove last character
+- <code>.count("sub")</code> — count substring occurrences
+- <code>.center(w, pad)</code> — center in field
+- <code>.ljust(w, pad)</code> — left-justify in field
+- <code>.rjust(w, pad)</code> — right-justify in field
+- <code>.squeeze</code> — collapse consecutive duplicates
+- <code>.tr(from, to)</code> — translate characters
+- <code>.each_char do |c|</code> — iterate over characters
+- <code>.each_line do |l|</code> — iterate over lines
+- <code>.lstrip</code> / <code>.rstrip</code> — directional whitespace trim</p>
+<p><strong>REPL (Interactive Mode)</strong>
+- <code>frankiec repl</code> — starts the interactive REPL
+- <code>frankiec</code> with no arguments also launches the REPL
+- Multi-line block detection — automatically waits for <code>end</code>
+- <code>vars</code> — show all user-defined variables and functions
+- <code>clear</code> — reset the session
+- <code>load &lt;file.fk&gt;</code> — load a file into the current session
+- <code>help</code> — show available commands
+- Persistent state across expressions in a session</p>
+<h3 id="bug-fixes_10">Bug Fixes</h3>
+<ul>
+<li><code>do...while</code> body was accidentally consuming the <code>while</code> keyword</li>
+<li>Postfix <code>if</code>/<code>unless</code> now works after <code>puts</code> (not just expressions)</li>
+<li><code>matches()</code> and all regex functions had flipped argument order — fixed to <code>(string, pattern)</code></li>
+<li><code>s[-5..-1]</code> negative range ends now parse as <code>(-5)..(-1)</code> correctly</li>
+<li><code>[x, x * 2]</code> vector literal with multiplication was mis-parsed as destructuring — fixed with backtracking</li>
+<li><code>gen_pipe</code> method lost its <code>def</code> header during code insertion — restored</li>
+<li><code>count</code> method now correctly dispatches: <code>.count("sub")</code> for strings, <code>.count do</code> for filtering, <code>.count</code> for length</li>
+</ul>
+<h3 id="compiler-version">Compiler Version</h3>
+<ul>
+<li>Version header in generated files updated to v1.1</li>
+</ul>
+<hr />
+<h2 id="v100-2025">v1.0.0 (2025)</h2>
+<h3 id="initial-release">Initial Release</h3>
+<p><strong>Core language</strong>
+- 7 data types: Integer, Float, String, Boolean, Nil, Vector, Hash
+- Full arithmetic: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>//</code>, <code>%</code>, <code>**</code>
+- String interpolation with <code>#{}</code>
+- Ranges: <code>1..10</code> (inclusive), <code>1...10</code> (exclusive)
+- Conditionals: <code>if/elsif/else/end</code>, <code>unless/end</code>
+- Postfix <code>if</code>/<code>unless</code>
+- Loops: <code>while</code>, <code>until</code>, <code>do...while</code>, <code>for...in</code>
+- Iterators: <code>.times</code>, <code>.each</code>, <code>.each_with_index</code>, <code>.map</code>
+- Functions with <code>def...end</code> and explicit <code>return</code>
+- Named arguments: <code>func(x, sep: "-")</code>
+- Pipe operator <code>|&gt;</code>
+- Destructuring (v1.1)</p>
+<p><strong>Collections</strong>
+- Vectors with R-style vectorized arithmetic
+- Hashes with symbol and integer keys, nil-safe access
+- Full method suites for both types</p>
+<p><strong>Standard Library</strong>
+- Math: <code>sqrt</code>, <code>abs</code>, <code>floor</code>, <code>ceil</code>, <code>min</code>, <code>max</code>
+- Statistics: <code>sum</code>, <code>mean</code>, <code>median</code>, <code>stdev</code>, <code>variance</code>
+- Sequences: <code>seq</code>, <code>linspace</code>, <code>rep</code>, <code>clamp</code>
+- String formatting: <code>sprintf</code>, <code>paste</code>
+- Regex: <code>matches</code>, <code>match</code>, <code>match_all</code>, <code>sub</code>, <code>gsub</code>, <code>=~</code>, <code>regex()</code>
+- File I/O: <code>file_read</code>, <code>file_write</code>, <code>file_append</code>, <code>file_lines</code>, <code>file_exists</code>, <code>file_delete</code>
+- Type conversion: <code>to_int</code>, <code>to_float</code>, <code>to_str</code>
+- Type checking: <code>is_integer</code>, <code>is_float</code>, <code>is_string</code>, <code>is_vector</code>, <code>is_nil</code>, <code>is_bool</code>
+- System: <code>exit</code>, <code>argv</code>, <code>env</code></p>
+<p><strong>Error handling</strong>
+- <code>begin/rescue/ensure/end</code>
+- <code>raise</code></p>
+<p><strong>Multi-file</strong>
+- <code>require "filename"</code> — load another <code>.fk</code> file once</p>
+<p><strong>Tooling</strong>
+- <code>frankiec run</code> — run a program
+- <code>frankiec build</code> — compile to Python source
+- <code>frankiec check</code> — syntax check
+- <code>frankiec version</code>
+- <code>python3 install.py</code> — install <code>frankiec</code> to <code>frankie/bin/</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

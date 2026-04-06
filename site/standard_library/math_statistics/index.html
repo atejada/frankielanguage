@@ -1,0 +1,3222 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../data_types/record/">
+      
+      
+        <link rel="next" href="../IntegerMethods/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Math & Statistics - Frankie - The Programming Language</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#math-statistics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Frankie - The Programming Language" class="md-header__button md-logo" aria-label="Frankie - The Programming Language" data-md-component="logo">
+      
+  <img src="../../img/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Frankie - The Programming Language
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Math & Statistics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Frankie - The Programming Language" class="md-nav__button md-logo" aria-label="Frankie - The Programming Language" data-md-component="logo">
+      
+  <img src="../../img/favicon.ico" alt="logo">
+
+    </a>
+    Frankie - The Programming Language
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/cli_commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/variables_and_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables & Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditionals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/error_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Types
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Types
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/Integers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/float/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Float
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/boolean_and_nil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean & Nil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/Strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/vector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/hash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hash
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standard Library
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standard Library
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math & Statistics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math & Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arithmetic Operators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integer-division-and-modulo-with-negatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer Division and Modulo with Negatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-math-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Math Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Math Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#absx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        abs(x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqrtx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sqrt(x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floorx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        floor(x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ceilx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ceil(x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roundx-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        round(x, n)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clampx-lo-hi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clamp(x, lo, hi)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min-and-max" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        min and max
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistics-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistics Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistics Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sumv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sum(v)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meanv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mean(v)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medianv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        median(v)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdevv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stdev(v)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variancev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variance(v)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequences-and-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequences and Ranges
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequences and Ranges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seqstart-stop-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seq(start, stop, step)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linspacestart-stop-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        linspace(start, stop, n)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vecrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vec(range)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repx-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rep(x, n)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vectorised-arithmetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vectorised Arithmetic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pipe-operator-for-data-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Pipe Operator for Data Pipelines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#randomness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Randomness
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Randomness">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rand_inta-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rand_int(a, b)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rand_floata-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rand_float(a, b)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rand()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rand_seedn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rand_seed(n)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shufflev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        shuffle(v)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samplev-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sample(v, n)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeric-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Formatting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntegerMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integer Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StringMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VectorMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HashMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hash Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DateTimeMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datetime Methos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file_io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File I/O
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json_csv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON & CSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DateTime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http_client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webserver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing (frankiec test)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../random/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stitches
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stitches
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiecolor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiecolor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankietable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankietable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiepager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiepager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieconfig/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieconfig
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiestring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiestring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Showcase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/what_is_new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whats''s New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/full_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Stdlib Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arithmetic Operators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integer-division-and-modulo-with-negatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer Division and Modulo with Negatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-math-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Math Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Math Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#absx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        abs(x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqrtx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sqrt(x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floorx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        floor(x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ceilx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ceil(x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roundx-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        round(x, n)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clampx-lo-hi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clamp(x, lo, hi)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min-and-max" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        min and max
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistics-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistics Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistics Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sumv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sum(v)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meanv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mean(v)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medianv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        median(v)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stdevv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stdev(v)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variancev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variance(v)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequences-and-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequences and Ranges
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequences and Ranges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seqstart-stop-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seq(start, stop, step)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linspacestart-stop-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        linspace(start, stop, n)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vecrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vec(range)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repx-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rep(x, n)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vectorised-arithmetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vectorised Arithmetic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pipe-operator-for-data-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Pipe Operator for Data Pipelines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#randomness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Randomness
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Randomness">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rand_inta-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rand_int(a, b)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rand_floata-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rand_float(a, b)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rand()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rand_seedn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rand_seed(n)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shufflev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        shuffle(v)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samplev-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sample(v, n)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeric-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Formatting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="math-statistics">Math &amp; Statistics</h1>
+<h2 id="overview"><code>Overview</code></h2>
+<p>Frankie has a built-in math and statistics library covering everything from basic arithmetic to descriptive statistics. </p>
+<p>The statistical functions are borrowed from R — <code>mean</code>, <code>median</code>, <code>stdev</code>, <code>variance</code> are first-class citizens, not an afterthought. </p>
+<p>All functions are available without any import.</p>
+<hr />
+<h2 id="arithmetic-operators">Arithmetic Operators</h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+<th>Example</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>Addition</td>
+<td><code>10 + 3</code></td>
+<td><code>13</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Subtraction</td>
+<td><code>10 - 3</code></td>
+<td><code>7</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Multiplication</td>
+<td><code>10 * 3</code></td>
+<td><code>30</code></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Float division</td>
+<td><code>10 / 3</code></td>
+<td><code>3.333...</code></td>
+</tr>
+<tr>
+<td><code>//</code></td>
+<td>Integer division</td>
+<td><code>10 // 3</code></td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Modulo</td>
+<td><code>10 % 3</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>Exponentiation</td>
+<td><code>2 ** 8</code></td>
+<td><code>256</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>/</code> always returns a Float. Use <code>//</code> (borrowed from Fortran) for a whole-number result.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="w">     </span><span class="c1"># 3.3333333333333335</span>
+<span class="nb">puts</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">3</span><span class="w">    </span><span class="c1"># 3</span>
+<span class="nb">puts</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">3</span><span class="w">     </span><span class="c1"># 1</span>
+<span class="nb">puts</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">10</span><span class="w">    </span><span class="c1"># 1024</span>
+<span class="nb">puts</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">0</span><span class="w">     </span><span class="c1"># 1</span>
+</code></pre></div>
+<h3 id="integer-division-and-modulo-with-negatives"><code>Integer Division and Modulo with Negatives</code></h3>
+<p><code>//</code> uses floor division — it rounds toward negative infinity:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="mi">17</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">5</span><span class="w">    </span><span class="c1">#  3</span>
+<span class="nb">puts</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">17</span><span class="p">)</span><span class="w"> </span><span class="sr">//</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="c1"># -4  (floors toward -∞)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="mi">17</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="w">     </span><span class="c1">#  2</span>
+<span class="nb">puts</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">17</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="w">  </span><span class="c1">#  3  (result has the sign of the divisor)</span>
+</code></pre></div>
+<hr />
+<h2 id="core-math-functions">Core Math Functions</h2>
+<h3 id="absx"><code>abs(x)</code></h3>
+<p>Absolute value</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">42</span><span class="p">)</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">42</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span><span class="w">     </span><span class="err">→</span><span class="w"> </span><span class="mi">42</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="p">)</span><span class="w">  </span><span class="err">→</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span>
+</code></pre></div>
+<h3 id="sqrtx"><code>sqrt(x)</code></h3>
+<p>Square root</p>
+<p>Always returns a Float.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="mi">144</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="mi">12</span><span class="o">.</span><span class="mi">0</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">     </span><span class="err">→</span><span class="w"> </span><span class="mi">1</span><span class="o">.</span><span class="mi">4142135623730951</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w">     </span><span class="err">→</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span>
+</code></pre></div>
+<h3 id="floorx"><code>floor(x)</code></h3>
+<p>Round down</p>
+<p>Returns the largest integer less than or equal to <code>x</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">floor</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">7</span><span class="p">)</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">3</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">floor</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">3</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">floor</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="w">  </span><span class="p">(</span><span class="n">toward</span><span class="w"> </span><span class="o">-</span><span class="err">∞</span><span class="p">,</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">toward</span><span class="w"> </span><span class="n">zero</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="ceilx"><code>ceil(x)</code></h3>
+<p>Round up</p>
+<p>Returns the smallest integer greater than or equal to <code>x</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">ceil</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">4</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">ceil</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">3</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">ceil</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">.</span><span class="mi">7</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span>
+</code></pre></div>
+<h3 id="roundx-n"><code>round(x, n)</code></h3>
+<p>Round to n decimal places</p>
+<p><code>n</code> defaults to 0. Returns a Float when <code>n &gt; 0</code>, an integer-like Float when <code>n = 0</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">14159</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">14159</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">1416</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span><span class="w">          </span><span class="err">→</span><span class="w"> </span><span class="mi">4</span><span class="o">.</span><span class="mi">0</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span><span class="w">         </span><span class="err">→</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="o">.</span><span class="mi">0</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="o">.</span><span class="mi">71828</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="mi">2</span><span class="o">.</span><span class="mi">718</span>
+</code></pre></div>
+<h3 id="clampx-lo-hi"><code>clamp(x, lo, hi)</code></h3>
+<p>Constrain to a range</p>
+<p>Returns <code>lo</code> if <code>x &lt; lo</code>, <code>hi</code> if <code>x &gt; hi</code>, otherwise <code>x</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">clamp</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w">       </span><span class="err">→</span><span class="w"> </span><span class="mi">10</span><span class="w">  </span><span class="err">—</span><span class="w"> </span><span class="n">above</span><span class="w"> </span><span class="n">max</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">clamp</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w">       </span><span class="err">→</span><span class="w"> </span><span class="mi">0</span><span class="w">   </span><span class="err">—</span><span class="w"> </span><span class="n">below</span><span class="w"> </span><span class="n">min</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">clamp</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w">  </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w">       </span><span class="err">→</span><span class="w"> </span><span class="mi">5</span><span class="w">   </span><span class="err">—</span><span class="w"> </span><span class="n">within</span><span class="w"> </span><span class="n">range</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">clamp</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span><span class="w">  </span><span class="err">→</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">0</span>
+</code></pre></div>
+<h3 id="min-and-max"><code>min</code> and <code>max</code></h3>
+<p>Work on two values or on a vector:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">)</span><span class="w">                </span><span class="err">→</span><span class="w"> </span><span class="mi">3</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">)</span><span class="w">                </span><span class="err">→</span><span class="w"> </span><span class="mi">7</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="o">]</span><span class="p">)</span><span class="w">  </span><span class="err">→</span><span class="w"> </span><span class="mi">1</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="o">]</span><span class="p">)</span><span class="w">  </span><span class="err">→</span><span class="w"> </span><span class="mi">9</span>
+
+<span class="c1"># Also available as vector methods</span>
+<span class="nb">puts</span><span class="w"> </span><span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="o">].</span><span class="n">min</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="mi">1</span>
+<span class="nb">puts</span><span class="w"> </span><span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="o">].</span><span class="n">max</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="mi">9</span>
+</code></pre></div>
+<hr />
+<h2 id="statistics-functions">Statistics Functions</h2>
+<p>All statistics functions take a vector of numbers.</p>
+<h3 id="sumv"><code>sum(v)</code></h3>
+<p>Total</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span><span class="p">)</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">15</span>
+<span class="nb">puts</span><span class="w"> </span><span class="o">[</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="o">].</span><span class="n">sum</span><span class="w">        </span><span class="err">→</span><span class="w"> </span><span class="mi">60</span><span class="w">  </span><span class="err">—</span><span class="w"> </span><span class="nb">method</span><span class="w"> </span><span class="n">form</span>
+</code></pre></div>
+<h3 id="meanv"><code>mean(v)</code></h3>
+<p>Arithmetic mean</p>
+<div class="highlight"><pre><span></span><code><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">67</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span><span class="w"> </span><span class="mi">56</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">46</span><span class="o">.</span><span class="mi">57142857142857</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="w">     </span><span class="err">→</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="nb">method</span><span class="w"> </span><span class="n">form</span>
+</code></pre></div>
+<h3 id="medianv"><code>median(v)</code></h3>
+<p>Middle value</p>
+<p>For even-length vectors, returns the average of the two middle values.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">median</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span><span class="p">)</span><span class="w">       </span><span class="err">→</span><span class="w"> </span><span class="mi">3</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">median</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="o">]</span><span class="p">)</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">5</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">median</span><span class="p">(</span><span class="o">[</span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">67</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="o">]</span><span class="p">)</span><span class="w">  </span><span class="err">→</span><span class="w"> </span><span class="mi">34</span>
+</code></pre></div>
+<h3 id="stdevv"><code>stdev(v)</code></h3>
+<p>Sample standard deviation</p>
+<p>Measures spread. Uses <code>n-1</code> (Bessel's correction) — sample standard deviation, not population.</p>
+<div class="highlight"><pre><span></span><code><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">67</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">stdev</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="mi">26</span><span class="o">.</span><span class="mi">84130316425705</span>
+</code></pre></div>
+<h3 id="variancev"><code>variance(v)</code></h3>
+<p>Sample variance</p>
+<p>The square of the standard deviation.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">variance</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="mi">720</span><span class="o">.</span><span class="mi">4555555555554</span>
+</code></pre></div>
+<hr />
+<h2 id="sequences-and-ranges">Sequences and Ranges</h2>
+<h3 id="seqstart-stop-step"><code>seq(start, stop, step)</code></h3>
+<p>Numeric sequence</p>
+<p>Generates a vector from <code>start</code> to <code>stop</code> in steps of <code>step</code>. Borrowed from R.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w">            </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">        </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w">        </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">25</span><span class="p">)</span><span class="w">  </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">75</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="o">]</span>
+</code></pre></div>
+<h3 id="linspacestart-stop-n"><code>linspace(start, stop, n)</code></h3>
+<p>Evenly spaced values</p>
+<p>Generates exactly <code>n</code> values evenly distributed between <code>start</code> and <code>stop</code>, inclusive.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">75</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w">  </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="o">.</span><span class="mi">0</span><span class="o">]</span>
+</code></pre></div>
+<h3 id="vecrange"><code>vec(range)</code></h3>
+<p>Vector from a range literal</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">)</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="mi">0</span><span class="o">...</span><span class="mi">5</span><span class="p">)</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">]</span>
+</code></pre></div>
+<h3 id="repx-n"><code>rep(x, n)</code></h3>
+<p>Repeat a value</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">rep</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w">      </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">rep</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">rep</span><span class="p">(</span><span class="s2">&quot;ha&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;ha&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ha&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ha&quot;</span><span class="o">]</span>
+</code></pre></div>
+<hr />
+<h2 id="vectorised-arithmetic"><code>Vectorised Arithmetic</code></h2>
+<p>Operations on vectors apply element-wise — borrowed from R. Every numeric operator works this way:</p>
+<div class="highlight"><pre><span></span><code><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w">                  </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="o">]</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w">                 </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v</span><span class="w">                  </span><span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="o">]</span><span class="w">  </span><span class="err">—</span><span class="w"> </span><span class="n">element</span><span class="o">-</span><span class="n">wise</span><span class="w"> </span><span class="n">product</span>
+</code></pre></div>
+<p>Vectors must be the same length for binary operations. Use <code>linspace</code> or <code>rep</code> to create a matching vector.</p>
+<hr />
+<h2 id="the-pipe-operator-for-data-pipelines"><code>The Pipe Operator for Data Pipelines</code></h2>
+<p><code>|&gt;</code> passes the left value as the argument to the right function. Combines naturally with stats:</p>
+<div class="highlight"><pre><span></span><code><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span>
+
+<span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">sum</span><span class="w">  </span><span class="o">|&gt;</span><span class="w"> </span><span class="nb">puts</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">39</span>
+<span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nb">puts</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">9</span>
+<span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">min</span><span class="w">  </span><span class="o">|&gt;</span><span class="w"> </span><span class="nb">puts</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">1</span>
+<span class="n">data</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">max</span><span class="w">  </span><span class="o">|&gt;</span><span class="w"> </span><span class="nb">puts</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">9</span>
+
+<span class="c1"># Chain transformations</span>
+<span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">]</span>
+<span class="w">  </span><span class="o">.</span><span class="n">select</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">end</span>
+<span class="w">  </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">sum</span>
+<span class="w">  </span><span class="o">|&gt;</span><span class="w"> </span><span class="nb">puts</span>
+
+<span class="err">→</span><span class="w"> </span><span class="mi">30</span>
+</code></pre></div>
+<h2 id="randomness">Randomness</h2>
+<h3 id="rand_inta-b"><code>rand_int(a, b)</code></h3>
+<p>Random integer</p>
+<p>Returns a random integer between <code>a</code> and <code>b</code> inclusive.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">rand_int</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w">      </span><span class="err">→</span><span class="w"> </span><span class="n">dice</span><span class="w"> </span><span class="n">roll</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mi">6</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">rand_int</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mi">100</span>
+</code></pre></div>
+<h3 id="rand_floata-b"><code>rand_float(a, b)</code></h3>
+<p>Random float</p>
+<p>Returns a random float between <code>a</code> and <code>b</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">rand_float</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">7493381866018054</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">rand_float</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="w"> </span><span class="o">-</span><span class="mi">0</span><span class="o">.</span><span class="mi">234</span><span class="o">...</span>
+</code></pre></div>
+<h3 id="rand"><code>rand()</code></h3>
+<p>Random float 0..1</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="nb">rand</span><span class="p">()</span><span class="w">   </span><span class="c1"># e.g. 0.4217...</span>
+</code></pre></div>
+<h3 id="rand_seedn"><code>rand_seed(n)</code></h3>
+<p>Seed for reproducibility</p>
+<p>Fix the random seed to get the same sequence every time — useful for tests and reproducible simulations.</p>
+<div class="highlight"><pre><span></span><code><span class="n">rand_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">rand_int</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="n">always</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">seed</span><span class="w"> </span><span class="mi">42</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">rand_int</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="k">next</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">sequence</span>
+</code></pre></div>
+<h3 id="shufflev"><code>shuffle(v)</code></h3>
+<p>Randomly reorder a vector</p>
+<div class="highlight"><pre><span></span><code><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">shuffle</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="w"> </span><span class="o">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="o">]</span>
+</code></pre></div>
+<h3 id="samplev-n"><code>sample(v, n)</code></h3>
+<p>Random sample without replacement</p>
+<div class="highlight"><pre><span></span><code><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">sample</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="w"> </span><span class="o">[</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">sample</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="w"> </span><span class="o">[</span><span class="mi">4</span><span class="o">]</span>
+</code></pre></div>
+<hr />
+<h2 id="numeric-formatting">Numeric Formatting</h2>
+<p>Use <code>sprintf</code> for precise control over how numbers are displayed:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="nb">sprintf</span><span class="p">(</span><span class="s2">&quot;%.2f&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14159</span><span class="p">)</span><span class="w">                    </span><span class="err">→</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span>
+<span class="nb">puts</span><span class="w"> </span><span class="nb">sprintf</span><span class="p">(</span><span class="s2">&quot;%.4f&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14159</span><span class="p">)</span><span class="w">                    </span><span class="err">→</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">1416</span>
+<span class="nb">puts</span><span class="w"> </span><span class="nb">sprintf</span><span class="p">(</span><span class="s2">&quot;%08.3f&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="p">)</span><span class="w">                     </span><span class="err">→</span><span class="w"> </span><span class="mo">0003</span><span class="o">.</span><span class="mi">140</span>
+<span class="nb">puts</span><span class="w"> </span><span class="nb">sprintf</span><span class="p">(</span><span class="s2">&quot;%+d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span><span class="w">                          </span><span class="err">→</span><span class="w"> </span><span class="o">+</span><span class="mi">42</span>
+<span class="nb">puts</span><span class="w"> </span><span class="nb">sprintf</span><span class="p">(</span><span class="s2">&quot;%+d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">42</span><span class="p">)</span><span class="w">                         </span><span class="err">→</span><span class="w"> </span><span class="o">-</span><span class="mi">42</span>
+<span class="nb">puts</span><span class="w"> </span><span class="nb">sprintf</span><span class="p">(</span><span class="s2">&quot;%d items at $%.2f each&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">.</span><span class="mi">99</span><span class="p">)</span><span class="w">  </span><span class="err">→</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="n">items</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="vg">$1</span><span class="o">.</span><span class="mi">99</span><span class="w"> </span><span class="n">each</span>
+</code></pre></div>
+<p>Or use <code>round</code> for display without format strings:</p>
+<div class="highlight"><pre><span></span><code><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="mi">23456</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="o">.</span><span class="mi">89012</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">45678</span><span class="o">]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">data</span><span class="o">.</span><span class="n">map</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span>
+<span class="w">  </span><span class="n">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span>
+<span class="k">end</span><span class="w">             </span>
+
+<span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="o">.</span><span class="mi">89</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">46</span><span class="o">]</span>
+</code></pre></div>
+<hr />
+<h2 id="quick-reference">Quick Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>abs(x)</code></td>
+<td>Absolute value</td>
+<td><code>abs(-5)</code> → <code>5</code></td>
+</tr>
+<tr>
+<td><code>sqrt(x)</code></td>
+<td>Square root</td>
+<td><code>sqrt(9)</code> → <code>3.0</code></td>
+</tr>
+<tr>
+<td><code>floor(x)</code></td>
+<td>Round down</td>
+<td><code>floor(3.9)</code> → <code>3</code></td>
+</tr>
+<tr>
+<td><code>ceil(x)</code></td>
+<td>Round up</td>
+<td><code>ceil(3.1)</code> → <code>4</code></td>
+</tr>
+<tr>
+<td><code>round(x, n)</code></td>
+<td>Round to n places</td>
+<td><code>round(3.14159, 2)</code> → <code>3.14</code></td>
+</tr>
+<tr>
+<td><code>clamp(x, lo, hi)</code></td>
+<td>Constrain to range</td>
+<td><code>clamp(15, 0, 10)</code> → <code>10</code></td>
+</tr>
+<tr>
+<td><code>min(a, b)</code> / <code>min(v)</code></td>
+<td>Minimum</td>
+<td><code>min(3, 7)</code> → <code>3</code></td>
+</tr>
+<tr>
+<td><code>max(a, b)</code> / <code>max(v)</code></td>
+<td>Maximum</td>
+<td><code>max(3, 7)</code> → <code>7</code></td>
+</tr>
+<tr>
+<td><code>sum(v)</code></td>
+<td>Sum of all elements</td>
+<td><code>sum([1,2,3])</code> → <code>6</code></td>
+</tr>
+<tr>
+<td><code>mean(v)</code></td>
+<td>Arithmetic mean</td>
+<td><code>mean([1,2,3])</code> → <code>2.0</code></td>
+</tr>
+<tr>
+<td><code>median(v)</code></td>
+<td>Middle value</td>
+<td><code>median([1,2,3])</code> → <code>2</code></td>
+</tr>
+<tr>
+<td><code>stdev(v)</code></td>
+<td>Sample standard deviation</td>
+<td><code>stdev([2,4,4,4,5,5,7,9])</code> → <code>2.0</code></td>
+</tr>
+<tr>
+<td><code>variance(v)</code></td>
+<td>Sample variance</td>
+<td><code>variance([2,4,6])</code> → <code>4.0</code></td>
+</tr>
+<tr>
+<td><code>seq(start, stop, step)</code></td>
+<td>Numeric sequence</td>
+<td><code>seq(1, 5)</code> → <code>[1,2,3,4,5]</code></td>
+</tr>
+<tr>
+<td><code>linspace(start, stop, n)</code></td>
+<td>n evenly-spaced values</td>
+<td><code>linspace(0.0, 1.0, 3)</code> → <code>[0.0, 0.5, 1.0]</code></td>
+</tr>
+<tr>
+<td><code>vec(range)</code></td>
+<td>Vector from range</td>
+<td><code>vec(1..5)</code> → <code>[1,2,3,4,5]</code></td>
+</tr>
+<tr>
+<td><code>rep(x, n)</code></td>
+<td>Repeat value</td>
+<td><code>rep(0, 3)</code> → <code>[0,0,0]</code></td>
+</tr>
+<tr>
+<td><code>rand_int(a, b)</code></td>
+<td>Random integer a..b</td>
+<td><code>rand_int(1, 6)</code></td>
+</tr>
+<tr>
+<td><code>rand_float(a, b)</code></td>
+<td>Random float a..b</td>
+<td><code>rand_float(0.0, 1.0)</code></td>
+</tr>
+<tr>
+<td><code>rand()</code></td>
+<td>Random float 0..1</td>
+<td><code>rand()</code></td>
+</tr>
+<tr>
+<td><code>rand_seed(n)</code></td>
+<td>Fix random seed</td>
+<td><code>rand_seed(42)</code></td>
+</tr>
+<tr>
+<td><code>shuffle(v)</code></td>
+<td>Randomly reorder</td>
+<td><code>shuffle([1,2,3,4,5])</code></td>
+</tr>
+<tr>
+<td><code>sample(v, n)</code></td>
+<td>Random sample</td>
+<td><code>sample(v, 3)</code></td>
+</tr>
+<tr>
+<td><code>sprintf(fmt, ...)</code></td>
+<td>Formatted number string</td>
+<td><code>sprintf("%.2f", 3.14159)</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2585 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../webserver/">
+      
+      
+        <link rel="next" href="../random/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Testing (frankiec test) - Frankie - The Programming Language</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#testing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Frankie - The Programming Language" class="md-header__button md-logo" aria-label="Frankie - The Programming Language" data-md-component="logo">
+      
+  <img src="../../img/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Frankie - The Programming Language
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Testing (frankiec test)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Frankie - The Programming Language" class="md-nav__button md-logo" aria-label="Frankie - The Programming Language" data-md-component="logo">
+      
+  <img src="../../img/favicon.ico" alt="logo">
+
+    </a>
+    Frankie - The Programming Language
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/cli_commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/variables_and_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables & Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/conditionals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditionals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/error_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Types
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Types
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/Integers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/float/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Float
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/boolean_and_nil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean & Nil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/Strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/vector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/hash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hash
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standard Library
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standard Library
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math_statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math & Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IntegerMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integer Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StringMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VectorMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HashMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hash Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DateTimeMethods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datetime Methos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regular Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file_io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File I/O
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json_csv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON & CSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DateTime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http_client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webserver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing (frankiec test)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing (frankiec test)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assertions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assertions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assertions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assert_eqactual-expected-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_eq(actual, expected, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_neqactual-expected-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_neq(actual, expected, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_truevalue-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_true(value, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_nilvalue-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_nil(value, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_matchvalue-pattern-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_match(value, pattern, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_raisesfn-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_raises(fn, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_raises_typedfn-type-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_raises_typed(fn, type, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structuring-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structuring Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-your-own-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Your Own Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-file-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing File I/O
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#watch-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watch Mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../random/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stitches
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stitches
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiecolor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiecolor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankietable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankietable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiepager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiepager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieconfig/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieconfig
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiestring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiestring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Showcase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/what_is_new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whats''s New
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/full_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Stdlib Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assertions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assertions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assertions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assert_eqactual-expected-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_eq(actual, expected, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_neqactual-expected-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_neq(actual, expected, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_truevalue-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_true(value, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_nilvalue-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_nil(value, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_matchvalue-pattern-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_match(value, pattern, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_raisesfn-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_raises(fn, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_raises_typedfn-type-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_raises_typed(fn, type, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structuring-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structuring Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-your-own-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Your Own Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-file-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing File I/O
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#watch-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watch Mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="testing">Testing</h1>
+<h2 id="overview">Overview</h2>
+<p>Frankie has a built-in test runner — no external libraries, no configuration. </p>
+<p>Write assertions in any <code>.fk</code> file and run it with <code>frankiec test</code>. </p>
+<p>wEvery assertion prints a ✓ or ✗ in real time, and the runner exits with code 1 if any test fails, making it CI-friendly.</p>
+<hr />
+<h2 id="running-tests">Running Tests</h2>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span><span class="nb">test</span><span class="w">             </span><span class="c1"># runs test.fk in the current directory</span>
+frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>mytest.fk<span class="w">   </span><span class="c1"># runs a specific file</span>
+</code></pre></div>
+<p>Output looks like:</p>
+<div class="highlight"><pre><span></span><code>╔══ Frankie Test Runner ════════════════════════════════
+║  test.fk
+╠═══════════════════════════════════════════════════════
+  ✓  addition works
+  ✓  mean of [1,2,3] is 2.0
+  ✗  expected 4, got 5
+  ✓  FileNotFoundError raised on missing file
+
+╠═══════════════════════════════════════════════════════
+║  3/4 passed, 1 failed  (12.3ms)
+╚═══════════════════════════════════════════════════════
+</code></pre></div>
+<hr />
+<h2 id="assertions">Assertions</h2>
+<p>All assertion functions are available without any import inside a test file.</p>
+<h3 id="assert_eqactual-expected-msg"><code>assert_eq(actual, expected, msg)</code></h3>
+<p>Equality</p>
+<p>The workhorse. Passes if <code>actual == expected</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">assert_eq</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">            </span><span class="mi">4</span><span class="p">,</span><span class="w">     </span><span class="s2">&quot;addition&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">]</span><span class="p">),</span><span class="w">    </span><span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w">   </span><span class="s2">&quot;mean of 1..3&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="o">.</span><span class="n">upcase</span><span class="p">,</span><span class="w">  </span><span class="s2">&quot;HELLO&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;upcase&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">].</span><span class="n">length</span><span class="p">,</span><span class="w">  </span><span class="mi">3</span><span class="p">,</span><span class="w">     </span><span class="s2">&quot;vector length&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="assert_neqactual-expected-msg"><code>assert_neq(actual, expected, msg)</code></h3>
+<p>Inequality</p>
+<p>Passes if <code>actual != expected</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">assert_neq</span><span class="p">(</span><span class="n">rand_int</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;rand_int never returns 0&quot;</span><span class="p">)</span>
+<span class="n">assert_neq</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w">         </span><span class="s2">&quot;non-empty string&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="assert_truevalue-msg"><code>assert_true(value, msg)</code></h3>
+<p>Truthy</p>
+<p>Passes if <code>value</code> is truthy (anything except <code>false</code> and <code>nil</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="n">assert_true</span><span class="p">(</span><span class="n">file_exists</span><span class="p">(</span><span class="s2">&quot;/tmp&quot;</span><span class="p">),</span><span class="w">         </span><span class="s2">&quot;tmp dir exists&quot;</span><span class="p">)</span>
+<span class="n">assert_true</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">].</span><span class="n">include?</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w">         </span><span class="s2">&quot;include? works&quot;</span><span class="p">)</span>
+<span class="n">assert_true</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="o">.</span><span class="n">start_with?</span><span class="p">(</span><span class="s2">&quot;he&quot;</span><span class="p">),</span><span class="w">   </span><span class="s2">&quot;start_with?&quot;</span><span class="p">)</span>
+<span class="n">assert_true</span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">                       </span><span class="s2">&quot;comparison&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="assert_nilvalue-msg"><code>assert_nil(value, msg)</code></h3>
+<p>Nil check</p>
+<p>Passes if <code>value</code> is <code>nil</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">assert_nil</span><span class="p">(</span><span class="n">find_user</span><span class="p">(</span><span class="mi">999</span><span class="p">),</span><span class="w">      </span><span class="s2">&quot;missing user returns nil&quot;</span><span class="p">)</span>
+<span class="n">assert_nil</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">].</span><span class="n">find</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;find with no match&quot;</span><span class="p">)</span>
+<span class="n">assert_nil</span><span class="p">({</span><span class="ss">a</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}</span><span class="o">[</span><span class="s2">&quot;missing&quot;</span><span class="o">]</span><span class="p">,</span><span class="w">   </span><span class="s2">&quot;missing hash key is nil&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="assert_matchvalue-pattern-msg"><code>assert_match(value, pattern, msg)</code></h3>
+<p>Regex match</p>
+<p>Passes if <code>pattern</code> matches anywhere in <code>value</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">assert_match</span><span class="p">(</span><span class="s2">&quot;alice@example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">w+@</span><span class="se">\\</span><span class="s2">w+</span><span class="se">\\</span><span class="s2">.</span><span class="se">\\</span><span class="s2">w+&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;valid email&quot;</span><span class="p">)</span>
+<span class="n">assert_match</span><span class="p">(</span><span class="s2">&quot;2024-03-15&quot;</span><span class="p">,</span><span class="w">        </span><span class="s2">&quot;^</span><span class="se">\\</span><span class="s2">d{4}-</span><span class="se">\\</span><span class="s2">d{2}-</span><span class="se">\\</span><span class="s2">d{2}$&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ISO date&quot;</span><span class="p">)</span>
+<span class="n">assert_match</span><span class="p">(</span><span class="s2">&quot;Error: timeout&quot;</span><span class="p">,</span><span class="w">    </span><span class="s2">&quot;timeout&quot;</span><span class="p">,</span><span class="w">  </span><span class="s2">&quot;error message contains timeout&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="assert_raisesfn-msg"><code>assert_raises(fn, msg)</code></h3>
+<p>Any error raised</p>
+<p>Passes if calling <code>fn</code> raises any error.</p>
+<div class="highlight"><pre><span></span><code><span class="n">assert_raises</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
+<span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;division by zero raises&quot;</span><span class="p">)</span>
+
+<span class="n">assert_raises</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
+<span class="w">  </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;/no/such/file.txt&quot;</span><span class="p">)</span>
+<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;missing file raises&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="assert_raises_typedfn-type-msg"><code>assert_raises_typed(fn, type, msg)</code></h3>
+<p>Specific error type</p>
+<p>Passes if calling <code>fn</code> raises exactly the specified error type.</p>
+<div class="highlight"><pre><span></span><code><span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
+<span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;division raises ZeroDivisionError&quot;</span><span class="p">)</span>
+
+<span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
+<span class="w">  </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;/no/such/file.txt&quot;</span><span class="p">)</span>
+<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FileNotFoundError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;missing file raises FileNotFoundError&quot;</span><span class="p">)</span>
+
+<span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
+<span class="w">  </span><span class="s2">&quot;hello&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">42</span>
+<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;TypeError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;string + int raises TypeError&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Supported type strings: <code>"ZeroDivisionError"</code>, <code>"FileNotFoundError"</code>, <code>"TypeError"</code>, <code>"ValueError"</code>, <code>"IndexError"</code>, <code>"KeyError"</code>, <code>"NameError"</code>, <code>"AttributeError"</code>, <code>"RuntimeError"</code>, <code>"Exception"</code>.</p>
+<hr />
+<h2 id="structuring-tests">Structuring Tests</h2>
+<p>There is no required structure — assertions anywhere in the file are collected and reported together. For readability, group related assertions with comments:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># test.fk</span>
+
+<span class="c1"># ── Math ──────────────────────────────────────────────────────</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">),</span><span class="w">          </span><span class="mi">5</span><span class="p">,</span><span class="w">    </span><span class="s2">&quot;abs negative&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="w">           </span><span class="mi">5</span><span class="p">,</span><span class="w">    </span><span class="s2">&quot;abs positive&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">14159</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;round to 2dp&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">clamp</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">   </span><span class="s2">&quot;clamp above max&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">clamp</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">    </span><span class="s2">&quot;clamp below min&quot;</span><span class="p">)</span>
+
+<span class="c1"># ── String ────────────────────────────────────────────────────</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="o">.</span><span class="n">upcase</span><span class="p">,</span><span class="w">          </span><span class="s2">&quot;HELLO&quot;</span><span class="p">,</span><span class="w">  </span><span class="s2">&quot;upcase&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="s2">&quot;  hi  &quot;</span><span class="o">.</span><span class="n">strip</span><span class="p">,</span><span class="w">          </span><span class="s2">&quot;hi&quot;</span><span class="p">,</span><span class="w">     </span><span class="s2">&quot;strip&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="s2">&quot;a,b,c&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">      </span><span class="s2">&quot;split count&quot;</span><span class="p">)</span>
+<span class="n">assert_match</span><span class="p">(</span><span class="s2">&quot;frank123&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">d+&quot;</span><span class="p">,</span><span class="w">             </span><span class="s2">&quot;contains digits&quot;</span><span class="p">)</span>
+
+<span class="c1"># ── Vector ────────────────────────────────────────────────────</span>
+<span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="o">]</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">         </span><span class="s2">&quot;length&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">min</span><span class="p">(</span><span class="n">v</span><span class="p">),</span><span class="w">   </span><span class="mi">1</span><span class="p">,</span><span class="w">         </span><span class="s2">&quot;min&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="n">v</span><span class="p">),</span><span class="w">   </span><span class="mi">9</span><span class="p">,</span><span class="w">         </span><span class="s2">&quot;max&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">sort</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">        </span><span class="s2">&quot;sort first&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">uniq</span><span class="o">.</span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">    </span><span class="s2">&quot;uniq removes one duplicate&quot;</span><span class="p">)</span>
+
+<span class="c1"># ── Error handling ────────────────────────────────────────────</span>
+<span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
+<span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;division by zero&quot;</span><span class="p">)</span>
+
+<span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
+<span class="w">  </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;/no/such/file.txt&quot;</span><span class="p">)</span>
+<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FileNotFoundError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;missing file&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="testing-your-own-functions">Testing Your Own Functions</h2>
+<p>Require your lib files the same way <code>main.fk</code> does:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># test.fk</span>
+<span class="nb">require</span><span class="w"> </span><span class="s2">&quot;lib/math_utils&quot;</span>
+<span class="nb">require</span><span class="w"> </span><span class="s2">&quot;lib/string_utils&quot;</span>
+
+<span class="c1"># ── math_utils ────────────────────────────────────────────────</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w">    </span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">14159</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;unit circle&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w">    </span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w">               </span><span class="s2">&quot;zero radius&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="w">      </span><span class="mi">120</span><span class="p">,</span><span class="w">               </span><span class="s2">&quot;factorial 5&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w">      </span><span class="mi">1</span><span class="p">,</span><span class="w">                 </span><span class="s2">&quot;factorial 0&quot;</span><span class="p">)</span>
+
+<span class="c1"># ── string_utils ──────────────────────────────────────────────</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">slugify</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">),</span><span class="w">  </span><span class="s2">&quot;hello-world&quot;</span><span class="p">,</span><span class="w">   </span><span class="s2">&quot;slugify basic&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">slugify</span><span class="p">(</span><span class="s2">&quot;  spaces  &quot;</span><span class="p">),</span><span class="w">   </span><span class="s2">&quot;spaces&quot;</span><span class="p">,</span><span class="w">        </span><span class="s2">&quot;slugify trims&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">truncate</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span><span class="w">    </span><span class="s2">&quot;hel...&quot;</span><span class="p">,</span><span class="w">        </span><span class="s2">&quot;truncate&quot;</span><span class="p">)</span>
+<span class="n">assert_nil</span><span class="p">(</span><span class="n">truncate</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span><span class="w">     </span><span class="s2">&quot;no truncate needed returns nil&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="testing-file-io">Testing File I/O</h2>
+<p>Use a temporary path and clean up in every test:</p>
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/tmp/fk_test_</span><span class="si">#{</span><span class="n">rand_int</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">9999</span><span class="p">)</span><span class="si">}</span><span class="s2">.txt&quot;</span>
+
+<span class="c1"># Write and read back</span>
+<span class="n">file_write</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;hello frankie</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">assert_true</span><span class="p">(</span><span class="n">file_exists</span><span class="p">(</span><span class="n">path</span><span class="p">),</span><span class="w">            </span><span class="s2">&quot;file was created&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">file_read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;hello frankie&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;content correct&quot;</span><span class="p">)</span>
+
+<span class="c1"># Append</span>
+<span class="n">file_append</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;second line</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">assert_eq</span><span class="p">(</span><span class="n">file_lines</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">    </span><span class="s2">&quot;two lines after append&quot;</span><span class="p">)</span>
+
+<span class="c1"># Delete</span>
+<span class="n">file_delete</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="n">assert_true</span><span class="p">(</span><span class="ow">not</span><span class="w"> </span><span class="n">file_exists</span><span class="p">(</span><span class="n">path</span><span class="p">),</span><span class="w">       </span><span class="s2">&quot;file deleted&quot;</span><span class="p">)</span>
+
+<span class="c1"># FileNotFoundError</span>
+<span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
+<span class="w">  </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;/no/such/file.txt&quot;</span><span class="p">)</span>
+<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FileNotFoundError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;missing file raises correctly&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="watch-mode">Watch Mode</h2>
+<p>Run tests automatically whenever you save:</p>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>watch<span class="w"> </span>test.fk<span class="w"> </span>--test
+</code></pre></div>
+<p>Every time you save <code>test.fk</code> (or any file, since watch triggers on the target file), the test suite re-runs. </p>
+<p>Combine with <code>require</code> to automatically pick up changes in your lib files too.</p>
+<hr />
+<h2 id="quick-reference">Quick Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Assertion</th>
+<th>Passes when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>assert_eq(actual, expected, msg)</code></td>
+<td><code>actual == expected</code></td>
+</tr>
+<tr>
+<td><code>assert_neq(actual, expected, msg)</code></td>
+<td><code>actual != expected</code></td>
+</tr>
+<tr>
+<td><code>assert_true(value, msg)</code></td>
+<td><code>value</code> is truthy</td>
+</tr>
+<tr>
+<td><code>assert_nil(value, msg)</code></td>
+<td><code>value</code> is nil</td>
+</tr>
+<tr>
+<td><code>assert_match(value, pattern, msg)</code></td>
+<td>pattern matches anywhere in value</td>
+</tr>
+<tr>
+<td><code>assert_raises(fn, msg)</code></td>
+<td>calling <code>fn</code> raises any error</td>
+</tr>
+<tr>
+<td><code>assert_raises_typed(fn, type, msg)</code></td>
+<td>calling <code>fn</code> raises that specific type</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

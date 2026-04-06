@@ -1,0 +1,12 @@
+data = [23, 45, 12, 67, 34, 89, 15, 56, 78, 42]
+
+puts "Mean   : #{mean(data)}"
+puts "StdDev : #{stdev(data)}"
+puts "Median : #{median(data)}"
+
+# Pipe operator
+data |> sum |> puts
+
+# Vectorized operations
+v = [1, 2, 3, 4, 5]
+puts v * 2          # [2, 4, 6, 8, 10]
