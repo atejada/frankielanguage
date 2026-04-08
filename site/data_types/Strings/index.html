@@ -851,6 +851,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#triple-quoted-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triple-quoted strings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#string-interpolation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -877,6 +888,28 @@
     <span class="md-ellipsis">
       
         String Operators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-characters-and-slices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing Characters and Slices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nil-safety-with-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nil Safety with Strings
       
     </span>
   </a>
@@ -2043,6 +2076,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#triple-quoted-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triple-quoted strings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#string-interpolation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2069,6 +2113,28 @@
     <span class="md-ellipsis">
       
         String Operators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-characters-and-slices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing Characters and Slices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nil-safety-with-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nil Safety with Strings
       
     </span>
   </a>
@@ -2104,28 +2170,33 @@
 
 
 <h1 id="strings">Strings</h1>
-<h2 id="what-is-a-string">What is a String?</h2>
+<h2 id="what-is-a-string"><code>What is a String?</code></h2>
 <p>A string is a sequence of UTF-8 characters. Strings are used for text — output, input, file content, keys, messages, templates. In Frankie, strings are <strong>immutable</strong> — every method that transforms a string returns a new string rather than modifying the original.</p>
 <div class="highlight"><pre><span></span><code><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, Frankie!&quot;</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">.</span><span class="n">upcase</span><span class="w">    </span><span class="c1"># &quot;HELLO, FRANKIE!&quot;</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="w">           </span><span class="c1"># &quot;Hello, Frankie!&quot; — unchanged</span>
 </code></pre></div>
 <hr />
-<h2 id="string-literals">String Literals</h2>
+<h2 id="string-literals"><code>String Literals</code></h2>
 <p>The standard form is a double-quoted string:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span>
 </code></pre></div>
 <p>Single-quoted strings are also valid but do <strong>not</strong> support interpolation or escape sequences:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="s1">&#39;Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="w">   </span><span class="c1"># Hello, #{name}  — literal, not interpolated</span>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="s1">&#39;Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="w">   </span>
+
+<span class="err">→</span><span class="w"> </span><span class="no">Hello</span><span class="p">,</span><span class="w"> </span><span class="c1">#{name}  — literal, not interpolated</span>
 </code></pre></div>
-<p><strong>Triple-quoted strings</strong> span multiple lines:</p>
+<h2 id="triple-quoted-strings"><code>Triple-quoted strings</code></h2>
+<p>Span multiple lines:</p>
 <div class="highlight"><pre><span></span><code><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">  Hello, Alice!</span>
 <span class="s2">  Welcome to Frankie.</span>
 <span class="s2">&quot;&quot;&quot;</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">message</span>
 </code></pre></div>
-<p><strong>Heredocs</strong> (<code>&lt;&lt;~DELIM</code>) are the cleanest way to write multi-line strings in code. The <code>~</code> variant strips common leading indentation automatically:</p>
+<p><code>Heredocs</code> </p>
+<p>(&lt;&lt;~DELIM) are the cleanest way to write multi-line strings in code. </p>
+<p>The <code>~</code> variant strips common leading indentation automatically:</p>
 <div class="highlight"><pre><span></span><code><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&lt;~</span><span class="dl">SQL</span>
 <span class="sh">  SELECT name, age</span>
 <span class="sh">  FROM employees</span>
@@ -2144,20 +2215,20 @@
 <span class="dl">SQL</span>
 </code></pre></div>
 <hr />
-<h2 id="string-interpolation">String Interpolation</h2>
+<h2 id="string-interpolation"><code>String Interpolation</code></h2>
 <p>Double-quoted strings support <code>#{}</code> to embed any expression directly:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span>
 <span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">95</span>
 
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="w">                  </span><span class="c1"># Hello, Alice!</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Score: </span><span class="si">#{</span><span class="n">score</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">                  </span><span class="c1"># Score: 95</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Double: </span><span class="si">#{</span><span class="n">score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">             </span><span class="c1"># Double: 190</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Upper: </span><span class="si">#{</span><span class="nb">name</span><span class="o">.</span><span class="n">upcase</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">            </span><span class="c1"># Upper: ALICE</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Pi ≈ </span><span class="si">#{</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">14159</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">        </span><span class="c1"># Pi ≈ 3.14</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="w">                  </span><span class="err">→</span><span class="w"> </span><span class="no">Hello</span><span class="p">,</span><span class="w"> </span><span class="no">Alice</span><span class="o">!</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Score: </span><span class="si">#{</span><span class="n">score</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">                  </span><span class="err">→</span><span class="w"> </span><span class="ss">Score</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Double: </span><span class="si">#{</span><span class="n">score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">             </span><span class="err">→</span><span class="w"> </span><span class="ss">Double</span><span class="p">:</span><span class="w"> </span><span class="mi">190</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Upper: </span><span class="si">#{</span><span class="nb">name</span><span class="o">.</span><span class="n">upcase</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">            </span><span class="err">→</span><span class="w"> </span><span class="ss">Upper</span><span class="p">:</span><span class="w"> </span><span class="no">ALICE</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Pi ≈ </span><span class="si">#{</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">14159</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">        </span><span class="err">→</span><span class="w"> </span><span class="no">Pi</span><span class="w"> </span><span class="err">≈</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span>
 </code></pre></div>
 <p>Any valid Frankie expression works inside <code>#{}</code>. The result is automatically converted to a string.</p>
 <hr />
-<h2 id="escape-sequences">Escape Sequences</h2>
+<h2 id="escape-sequences"><code>Escape Sequences</code></h2>
 <p>Inside double-quoted strings:</p>
 <table>
 <thead>
@@ -2190,25 +2261,56 @@
 <span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;She said </span><span class="se">\&quot;</span><span class="s2">hello</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
 </code></pre></div>
 <hr />
-<h2 id="string-operators">String Operators</h2>
+<h2 id="string-operators"><code>String Operators</code></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Concatenation</span>
 <span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Hello, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;Frankie!&quot;</span><span class="w">    </span><span class="c1"># Hello, Frankie!</span>
 
 <span class="c1"># Repetition</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;ha&quot;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="w">                   </span><span class="c1"># hahaha</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">40</span><span class="w">                   </span><span class="c1"># ────────────────────────────────────────</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;ha&quot;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="w">                   </span><span class="err">→</span><span class="w"> </span><span class="n">hahaha</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">40</span><span class="w">                   </span><span class="err">→</span><span class="w"> </span><span class="err">────────────────────────────────────────</span>
 
 <span class="c1"># Comparison</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="w">         </span><span class="c1"># true</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="w">        </span><span class="c1"># true</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="w">         </span><span class="c1"># true  (lexicographic)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="w">         </span><span class="err">→</span><span class="w"> </span><span class="kp">true</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="w">        </span><span class="err">→</span><span class="w"> </span><span class="kp">true</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="w">         </span><span class="err">→</span><span class="w"> </span><span class="kp">true</span><span class="w">  </span><span class="p">(</span><span class="n">lexicographic</span><span class="p">)</span>
 
 <span class="c1"># Match operator — returns position of first match or nil</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;frank123&quot;</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">d+&quot;</span><span class="w">       </span><span class="c1"># 5</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;no digits&quot;</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">d+&quot;</span><span class="w">      </span><span class="c1"># nil</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;frank123&quot;</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">d+&quot;</span><span class="w">       </span><span class="err">→</span><span class="w"> </span><span class="mi">5</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;no digits&quot;</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">d+&quot;</span><span class="w">      </span><span class="err">→</span><span class="w"> </span><span class="kp">nil</span>
 </code></pre></div>
 <hr />
-<h2 id="quick-reference">Quick Reference</h2>
+<h2 id="accessing-characters-and-slices"><code>Accessing Characters and Slices</code></h2>
+<p>Strings are 0-indexed. Negative indices count from the end.</p>
+<div class="highlight"><pre><span></span><code><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Frankie&quot;</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w">       </span><span class="err">→</span><span class="w"> </span><span class="n">F</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w">       </span><span class="err">→</span><span class="w"> </span><span class="n">r</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[-</span><span class="mi">1</span><span class="o">]</span><span class="w">      </span><span class="err">→</span><span class="w"> </span><span class="n">e</span><span class="w">   </span><span class="p">(</span><span class="n">last</span><span class="w"> </span><span class="n">character</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[-</span><span class="mi">3</span><span class="o">]</span><span class="w">      </span><span class="err">→</span><span class="w"> </span><span class="n">i</span>
+
+<span class="c1"># Inclusive range slice</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">4</span><span class="o">]</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="no">Frank</span>
+
+<span class="c1"># Exclusive range slice (up to but not including index 5)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[</span><span class="mi">0</span><span class="o">...</span><span class="mi">4</span><span class="o">]</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="no">Fran</span>
+
+<span class="c1"># Last N characters</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[-</span><span class="mi">3</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span><span class="w">  </span><span class="err">→</span><span class="w"> </span><span class="n">kie</span>
+</code></pre></div>
+<hr />
+<h2 id="nil-safety-with-strings"><code>Nil Safety with Strings</code></h2>
+<p>Calling a method on <code>nil</code> raises a runtime error. Use <code>&amp;.</code> to return nil safely instead:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">nil</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="nb">name</span><span class="o">.</span><span class="n">upcase</span><span class="w">    </span><span class="c1"># Runtime error</span>
+<span class="nb">puts</span><span class="w"> </span><span class="nb">name</span><span class="o">&amp;.</span><span class="n">upcase</span><span class="w">   </span><span class="c1"># nil — safe</span>
+
+<span class="c1"># Useful when a value might or might not be present</span>
+<span class="n">user_input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">nil</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">user_input</span><span class="o">&amp;.</span><span class="n">strip</span><span class="o">&amp;.</span><span class="n">downcase</span><span class="w">   </span><span class="c1"># nil — whole chain short-circuits</span>
+</code></pre></div>
+<hr />
+<h2 id="quick-reference"><code>Quick Reference</code></h2>
 <table>
 <thead>
 <tr>

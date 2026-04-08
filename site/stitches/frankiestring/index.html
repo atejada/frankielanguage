@@ -1665,10 +1665,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lfillstring-character-length" class="md-nav__link">
+  <a href="#pad_leftstr-n-char" class="md-nav__link">
     <span class="md-ellipsis">
       
-        lfill(string, character, length)
+        pad_left(str, n, char)
       
     </span>
   </a>
@@ -1676,10 +1676,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rfillstring-character-length" class="md-nav__link">
+  <a href="#pad_rightstr-n-char" class="md-nav__link">
     <span class="md-ellipsis">
       
-        rfill(string, character, length)
+        pad_right(str, n, char)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#truncatestr-n-suffix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        truncate(str, n, suffix)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slugifystr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        slugify(str)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word_wrapstr-width" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        word_wrap(str, width)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indent_linesstr-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        indent_lines(str, n)
       
     </span>
   </a>
@@ -1977,10 +2021,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lfillstring-character-length" class="md-nav__link">
+  <a href="#pad_leftstr-n-char" class="md-nav__link">
     <span class="md-ellipsis">
       
-        lfill(string, character, length)
+        pad_left(str, n, char)
       
     </span>
   </a>
@@ -1988,10 +2032,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rfillstring-character-length" class="md-nav__link">
+  <a href="#pad_rightstr-n-char" class="md-nav__link">
     <span class="md-ellipsis">
       
-        rfill(string, character, length)
+        pad_right(str, n, char)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#truncatestr-n-suffix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        truncate(str, n, suffix)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slugifystr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        slugify(str)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word_wrapstr-width" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        word_wrap(str, width)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indent_linesstr-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        indent_lines(str, n)
       
     </span>
   </a>
@@ -2017,21 +2105,57 @@
 
 <h1 id="frankiestring">Frankiestring</h1>
 <p>Additional string functions</p>
-<h2 id="lfillstring-character-length"><code>lfill(string, character, length)</code></h2>
-<p>Fills the string specified length with the specified character to the left</p>
+<h2 id="pad_leftstr-n-char"><code>pad_left(str, n, char)</code></h2>
+<p>Right-align in a field of width n (space fill)</p>
 <div class="highlight"><pre><span></span><code><span class="n">stitch</span><span class="w"> </span><span class="s2">&quot;frankiestring&quot;</span>
 
-<span class="nb">puts</span><span class="w"> </span><span class="n">lfill</span><span class="p">(</span><span class="s2">&quot;Frankie&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Oh!&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">pad_left</span><span class="p">(</span><span class="s2">&quot;Frankie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
 
-<span class="err">→</span><span class="w"> </span><span class="no">Oh</span><span class="o">!</span><span class="no">Oh</span><span class="o">!</span><span class="no">Oh</span><span class="o">!</span><span class="no">Oh</span><span class="o">!</span><span class="no">Oh</span><span class="o">!</span><span class="no">Frankie</span>
+<span class="err">→</span><span class="w"> </span><span class="mo">00000</span><span class="no">Frankie</span>
 </code></pre></div>
-<h2 id="rfillstring-character-length"><code>rfill(string, character, length)</code></h2>
-<p>Fills the string specified length with the specified character to the right</p>
+<h2 id="pad_rightstr-n-char"><code>pad_right(str, n, char)</code></h2>
+<p>Right-align with custom fill character</p>
 <div class="highlight"><pre><span></span><code><span class="n">stitch</span><span class="w"> </span><span class="s2">&quot;frankiestring&quot;</span>
 
-<span class="nb">puts</span><span class="w"> </span><span class="n">rfill</span><span class="p">(</span><span class="s2">&quot;Frankie&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Oh!&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">pad_right</span><span class="p">(</span><span class="s2">&quot;Frankie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
 
-<span class="err">→</span><span class="w"> </span><span class="no">FrankieOh</span><span class="o">!</span><span class="no">Oh</span><span class="o">!</span><span class="no">Oh</span><span class="o">!</span><span class="no">Oh</span><span class="o">!</span><span class="no">Oh</span><span class="o">!</span>
+<span class="err">→</span><span class="w"> </span><span class="no">Frankie00000</span>
+</code></pre></div>
+<h2 id="truncatestr-n-suffix"><code>truncate(str, n, suffix)</code></h2>
+<p>Cut to n chars, append custom suffix</p>
+<div class="highlight"><pre><span></span><code><span class="n">stitch</span><span class="w"> </span><span class="s2">&quot;frankiestring&quot;</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="n">truncate</span><span class="p">(</span><span class="s2">&quot;Frankie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
+
+<span class="err">→</span><span class="w"> </span><span class="no">FranX</span>
+</code></pre></div>
+<h2 id="slugifystr"><code>slugify(str)</code></h2>
+<p>URL-safe lowercase slug</p>
+<div class="highlight"><pre><span></span><code><span class="n">stitch</span><span class="w"> </span><span class="s2">&quot;frankiestring&quot;</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="n">slugify</span><span class="p">(</span><span class="s2">&quot;Frankie&#39;s Website&quot;</span><span class="p">)</span>
+
+<span class="err">→</span><span class="w"> </span><span class="n">frankie</span><span class="o">-</span><span class="n">s</span><span class="o">-</span><span class="n">website</span>
+</code></pre></div>
+<h2 id="word_wrapstr-width"><code>word_wrap(str, width)</code></h2>
+<p>Wrap text at word boundaries</p>
+<div class="highlight"><pre><span></span><code><span class="n">stitch</span><span class="w"> </span><span class="s2">&quot;frankiestring&quot;</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="n">word_wrap</span><span class="p">(</span><span class="s2">&quot;Frankie is a nice programming language&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+
+<span class="err">→</span><span class="w"> </span><span class="no">Frankie</span>
+<span class="w">  </span><span class="n">is</span><span class="w"> </span><span class="n">a</span>
+<span class="w">  </span><span class="n">nice</span>
+<span class="w">  </span><span class="n">programming</span>
+<span class="w">  </span><span class="n">language</span>
+</code></pre></div>
+<h2 id="indent_linesstr-n"><code>indent_lines(str, n)</code></h2>
+<p>Prepend n spaces to every line</p>
+<div class="highlight"><pre><span></span><code><span class="n">stitch</span><span class="w"> </span><span class="s2">&quot;frankiestring&quot;</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="n">indent_lines</span><span class="p">(</span><span class="s2">&quot;Frankie is a nice programming language&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+
+<span class="err">→</span><span class="w">     </span><span class="no">Frankie</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">nice</span><span class="w"> </span><span class="n">programming</span><span class="w"> </span><span class="n">language</span><span class="w"> </span>
 </code></pre></div>
 
 

@@ -1803,6 +1803,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v1131-whats_new_v1131fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.13.1 — whats_new_v1131.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v113-whats_new_v113fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.13 — whats_new_v113.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v112-whats_new_v112fk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2098,6 +2120,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v1131-whats_new_v1131fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.13.1 — whats_new_v1131.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v113-whats_new_v113fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.13 — whats_new_v113.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v112-whats_new_v112fk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2259,8 +2303,114 @@
 
 <h1 id="whats-new-per-version">What's New — Per Version</h1>
 <p>Each version of Frankie ships a runnable <code>whats_new_vX.fk</code> example file that demonstrates every new feature introduced in that release. Run any of them with:</p>
-<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v112.fk
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v1131.fk
 </code></pre></div>
+<h2 id="v1131-whats_new_v1131fk">v1.13.1 — <code>whats_new_v1131.fk</code></h2>
+<p><strong>Theme:</strong> Gap closers — no new syntax, everything real programs needed and didn't have.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>frankiestring</code> v2</td>
+<td>Rewritten stitch: <code>pad_left</code>, <code>pad_right</code>, <code>truncate</code>, <code>slugify</code>, <code>word_wrap</code>, <code>indent_lines</code> — replaces clunky <code>lfill</code>/<code>rfill</code> API</td>
+</tr>
+<tr>
+<td><code>Vector .sum do \|x\|</code></td>
+<td>Block form now works — projected sum without a two-step <code>.map</code> + <code>sum</code></td>
+</tr>
+<tr>
+<td><code>Vector .flat_map do \|x\|</code></td>
+<td>Multi-line block bodies now parse correctly</td>
+</tr>
+<tr>
+<td><code>assert_approx_eq(a, b, delta, msg)</code></td>
+<td>Float comparison in tests with configurable delta (default <code>0.001</code>)</td>
+</tr>
+<tr>
+<td><code>run_tests()</code></td>
+<td>Now a public stdlib function — callable from any <code>.fk</code> file, not just <code>frankiec test</code></td>
+</tr>
+<tr>
+<td><code>session(req, resp)</code></td>
+<td>Cookie-backed session hash — read, mutate, <code>.save()</code>. Zero server state, single JSON cookie <code>_fk_session</code></td>
+</tr>
+<tr>
+<td><code>frankiec fmt</code> blank lines</td>
+<td>Intentional blank lines between statement groups inside function bodies now preserved</td>
+</tr>
+<tr>
+<td><code>frankiec fmt</code> multi-line threshold</td>
+<td>Hashes/vectors whose inline form exceeds 60 chars auto-expand to one element per line</td>
+</tr>
+<tr>
+<td><code>frankiec fmt</code> idempotency</td>
+<td>Running <code>fmt --write</code> twice now produces identical output — safe for pre-commit hooks and CI</td>
+</tr>
+<tr>
+<td>Heredoc in <code>do...end</code> blocks</td>
+<td>Fixed lexer bug — heredocs now work anywhere a string expression is valid</td>
+</tr>
+<tr>
+<td><code>Hash.each do \|k, v\|</code></td>
+<td>Two-parameter block iteration confirmed and end-to-end tested</td>
+</tr>
+<tr>
+<td>Symbol key round-trip in <code>fmt</code></td>
+<td><code>{host: "x"}</code> no longer becomes <code>{"host": "x"}</code> after formatting</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="v113-whats_new_v113fk">v1.13 — <code>whats_new_v113.fk</code></h2>
+<p><strong>Theme:</strong> Stitches — a zero-dependency, zero-registry package system.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stitch "name"</code> keyword</td>
+<td>Load a package by name — resolves from <code>./stitches/</code> then <code>~/.frankie/stitches/</code></td>
+</tr>
+<tr>
+<td><code>frankieforms</code></td>
+<td>Form field validation — <code>required</code>, <code>min_length</code>, <code>max_length</code>, <code>email</code>, <code>numeric</code>, <code>alpha</code>, <code>matches_pattern</code></td>
+</tr>
+<tr>
+<td><code>frankietable</code></td>
+<td>ASCII table rendering from a vector of hashes — <code>table(rows)</code> / <code>table(rows, cols)</code></td>
+</tr>
+<tr>
+<td><code>frankiecolor</code></td>
+<td>ANSI color helpers — <code>red</code>, <code>green</code>, <code>yellow</code>, <code>bold</code>, <code>success</code>, <code>error</code>, <code>warn</code>, <code>info</code>, <code>colorize</code>, <code>strip_color</code></td>
+</tr>
+<tr>
+<td><code>frankiepager</code></td>
+<td>Pagination math — <code>paginate(opts)</code>, <code>page_slice(items, page, per_page)</code>, <code>page_links(pager, url_template)</code></td>
+</tr>
+<tr>
+<td><code>frankieconfig</code></td>
+<td>Layered config loading: defaults → JSON file → env vars → overrides, with type coercion</td>
+</tr>
+<tr>
+<td><code>frankiestring</code></td>
+<td>String utilities stitch (v1, superseded by v2 in v1.13.1)</td>
+</tr>
+<tr>
+<td><code>?</code> in function names</td>
+<td><code>def even?(n)</code> now works — <code>?</code> compiled transparently to <code>_q</code> in generated Python</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <hr />
 <h2 id="v112-whats_new_v112fk">v1.12 — <code>whats_new_v112.fk</code></h2>
 <p><strong>Theme:</strong> Filling stdlib gaps, fixing error handling, tooling polish.</p>
