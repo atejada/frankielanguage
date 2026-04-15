@@ -1108,7 +1108,7 @@
   <span class="md-ellipsis">
     
   
-    Datetime Methos
+    Datetime Methods
   
 
     
@@ -1624,6 +1624,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankietemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankietemplate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiecookie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiecookie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1883,6 +1939,78 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v1140-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.14.0 (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.14.0 (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theme-frankie-for-real-web-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theme: Frankie for Real Web Apps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-language-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Language Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-web-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Web Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-stitches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Stitches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tooling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#v1131-2026" class="md-nav__link">
@@ -2546,6 +2674,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v1140-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.14.0 (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.14.0 (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theme-frankie-for-real-web-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theme: Frankie for Real Web Apps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-language-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Language Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-web-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Web Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-stitches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Stitches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tooling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v1131-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3154,6 +3354,77 @@
 
 
 <h1 id="changelog">Changelog</h1>
+<h2 id="v1140-2026">v1.14.0 (2026)</h2>
+<h3 id="theme-frankie-for-real-web-apps">Theme: Frankie for Real Web Apps</h3>
+<hr />
+<h3 id="new-language-features">New Language Features</h3>
+<p><strong><code>spawn { }</code> — Background Blocks</strong>
+- Run any block in a background thread — returns immediately, response goes out while work continues
+- Works in web routes and standalone scripts
+- Spawned blocks receive a copy of variables at spawn time; mutations do not affect outer scope
+- Backed by Python's <code>threading.Thread</code> — zero dependencies</p>
+<p><strong><code>timeout(n) { }</code> — Time-Bounded Execution</strong>
+- Kill any block that exceeds <code>n</code> seconds — raises <code>TimeoutError</code>
+- Works inside <code>begin/rescue TimeoutError</code> for graceful fallback
+- Essential for external HTTP calls, slow database queries, and any operation that can hang
+- Backed by Python's <code>threading</code> with a sentinel thread — zero dependencies</p>
+<p><strong>Hash Destructuring — <code>{name, age} = user</code></strong>
+- Pull hash keys directly into local variables in one assignment
+- Missing keys evaluate to <code>nil</code> — no error
+- Works anywhere an assignment is valid: top level, inside functions, inside route handlers, inside loops
+- Bareword (symbol) keys only — matches the existing hash literal convention</p>
+<p><strong>Shape Pattern Matching — <code>case user when {role: "admin"}</code></strong>
+- <code>when</code> clauses now accept hash literals — matches any hash containing at least those key/value pairs
+- Extra keys in the subject hash are ignored (subset match)
+- Works with records — <code>record Point(x, y)</code> is a hash, so <code>when {x: 0}</code> is valid
+- Mix shape and value <code>when</code> clauses in the same <code>case</code></p>
+<hr />
+<h3 id="new-web-features">New Web Features</h3>
+<p><strong>Async Routes — <code>app.get_async</code> / <code>app.post_async</code> etc.</strong>
+- Non-blocking route handlers — slow I/O in one handler does not hold up others
+- All five HTTP methods have async variants: <code>get_async</code>, <code>post_async</code>, <code>put_async</code>, <code>delete_async</code>, <code>patch_async</code>
+- Use <code>await</code> inside async blocks for non-blocking calls</p>
+<p><strong>Middleware Stack — <code>app.use do |req, next_fn|</code></strong>
+- Chain middleware that wraps every request — auth, logging, rate-limiting, CORS
+- Each layer calls <code>next_fn.(req)</code> to pass control forward, or returns a response to short-circuit
+- Runs in registration order</p>
+<p><strong>Static File Serving — <code>app.static(dir)</code> / <code>app.static(dir, prefix)</code></strong>
+- Serve a directory of static files with one line
+- Serves HTML, CSS, JS, images, fonts, JSON automatically
+- Optional URL prefix: <code>app.static("./assets", "/static")</code>
+- Directory listing disabled by default</p>
+<hr />
+<h3 id="new-stitches">New Stitches</h3>
+<p><strong><code>frankietemplate</code></strong>
+- Mustache-compatible template engine — zero dependencies, pure <code>.fk</code>
+- <code>{{ variable }}</code> — HTML-escaped interpolation
+- <code>{{{ variable }}}</code> — raw / unescaped output
+- <code>{{# section }} ... {{/ section}}</code> — truthy blocks and vector iteration
+- <code>{{^ inverted }} ... {{/ inverted}}</code> — falsy / empty blocks
+- <code>{{&gt; partial_name }}</code> — include from <code>./views/partials/&lt;n&gt;.html</code>
+- <code>{{! comment }}</code> — stripped from output
+- <code>render(template, data)</code> — render a string
+- <code>render_file(path, data)</code> — load and render a file
+- <code>partial(name)</code> — load a partial by name</p>
+<p><strong><code>frankiecookie</code></strong>
+- HMAC-SHA256 signed cookies via Python's <code>hmac</code> + <code>hashlib</code> stdlib — zero dependencies
+- <code>set_signed_cookie(resp, name, value, secret, opts)</code> — write a tamper-proof cookie
+- <code>get_signed_cookie(req, name, secret)</code> — read and verify — returns <code>nil</code> if missing or tampered
+- <code>delete_cookie(resp, name)</code> — expire a cookie immediately
+- <code>cookie_set?(req, name)</code> — check if a cookie is present
+- Supports all cookie options: <code>path</code>, <code>max_age</code>, <code>same_site</code>, <code>http_only</code>, <code>secure</code></p>
+<hr />
+<h3 id="tooling">Tooling</h3>
+<p><strong><code>frankiec new</code> — Scaffold Updated for Stitches</strong>
+- Generated project now includes a <code>stitches/</code> folder with a <code>README.md</code> explaining the stitch convention
+- Generated project includes a <code>views/partials/</code> folder for template projects
+- Generated <code>README.md</code> documents <code>stitch "name"</code> usage
+- Version string in <code>main.fk</code> banner updated to v1.14</p>
+<p><strong>Global Stitch Install — <code>install.py</code></strong>
+- <code>install.py</code> now correctly copies all bundled stitches to <code>~/.frankie/stitches/</code> at install time
+- Installation output lists each stitch file copied
+- <code>frankiecookie</code> and <code>frankietemplate</code> included in the bundled set
+- <code>python3 install.py --uninstall</code> removes <code>~/.frankie/stitches/</code> and <code>~/.frankie/</code> if empty</p>
 <h2 id="v1131-2026">v1.13.1 (2026)</h2>
 <h3 id="bug-fixes-gap-closers">Bug Fixes &amp; Gap Closers</h3>
 <p><strong>Parser / Compiler</strong></p>

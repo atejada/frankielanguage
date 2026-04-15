@@ -996,6 +996,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#hash-destructuring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hash destructuring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#inspecting-hashes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1406,7 +1417,7 @@
   <span class="md-ellipsis">
     
   
-    Datetime Methos
+    Datetime Methods
   
 
     
@@ -1922,6 +1933,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankietemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankietemplate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiecookie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiecookie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2315,6 +2382,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#hash-destructuring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hash destructuring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#inspecting-hashes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2547,6 +2625,13 @@
 <span class="c1"># Merge in place</span>
 <span class="n">h</span><span class="o">.</span><span class="n">merge_bang</span><span class="p">({</span><span class="ss">d</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="ss">a</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">})</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">h</span><span class="w">   </span><span class="c1"># {a: 0, c: 3, d: 5}</span>
+</code></pre></div>
+<hr />
+<h2 id="hash-destructuring">Hash destructuring</h2>
+<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">age</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="ss">role</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nb">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">user</span>
+<span class="nb">puts</span><span class="w"> </span><span class="nb">name</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="no">Alice</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">age</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="mi">30</span>
 </code></pre></div>
 <hr />
 <h2 id="inspecting-hashes">Inspecting Hashes</h2>

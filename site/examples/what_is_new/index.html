@@ -1108,7 +1108,7 @@
   <span class="md-ellipsis">
     
   
-    Datetime Methos
+    Datetime Methods
   
 
     
@@ -1624,6 +1624,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankietemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankietemplate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiecookie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankiecookie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1801,6 +1857,17 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v114-whats_new_v114fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.14 — whats_new_v114.fk
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#v1131-whats_new_v1131fk" class="md-nav__link">
@@ -2120,6 +2187,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v114-whats_new_v114fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.14 — whats_new_v114.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v1131-whats_new_v1131fk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2303,8 +2381,64 @@
 
 <h1 id="whats-new-per-version">What's New — Per Version</h1>
 <p>Each version of Frankie ships a runnable <code>whats_new_vX.fk</code> example file that demonstrates every new feature introduced in that release. Run any of them with:</p>
-<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v1131.fk
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v114.fk
 </code></pre></div>
+<h2 id="v114-whats_new_v114fk">v1.14 — <code>whats_new_v114.fk</code></h2>
+<p><strong>Theme:</strong> Frankie for real web apps — concurrency, templates, signed cookies, middleware, static files, and two language upgrades that make working with data cleaner everywhere.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>spawn { }</code></td>
+<td>Run a block in a background thread — response goes out immediately, work continues behind the scenes</td>
+</tr>
+<tr>
+<td><code>timeout(n) { }</code></td>
+<td>Kill a block that exceeds <code>n</code> seconds — raises <code>TimeoutError</code>, wrap in begin/rescue for graceful fallback</td>
+</tr>
+<tr>
+<td><code>Async routes</code></td>
+<td><code>app.get_async</code> / <code>app.post_async</code> etc. — non-blocking handlers, use <code>await</code> inside for slow I/O</td>
+</tr>
+<tr>
+<td><code>Middleware stack</code></td>
+<td><code>app.use do |req, next_fn|</code> — chain auth, logging, and rate-limiting; call <code>next_fn.(req)</code> to continue or return early to short-circuit</td>
+</tr>
+<tr>
+<td><code>Static file serving</code></td>
+<td><code>app.static("./public")</code> — serve a directory at <code>/</code>; <code>app.static("./assets", "/static")</code> for a URL prefix</td>
+</tr>
+<tr>
+<td><code>frankietemplate</code></td>
+<td>Mustache-compatible template stitch — <code>{{ var }}, {{{ raw }}}, {{# section }}, {{^ inverted }}, {{&gt; partial }}, {{! comment }}</code></td>
+</tr>
+<tr>
+<td><code>frankiecookie</code></td>
+<td>HMAC-signed cookies via Python's <code>hmac</code> stdlib — <code>set_signed_cookie</code> / <code>get_signed_cookie</code> returns <code>nil</code> if tampered</td>
+</tr>
+<tr>
+<td><code>Hash destructuring</code></td>
+<td><code>{name, age} = user</code> — pull symbol keys directly into variables; missing keys become <code>nil</code></td>
+</tr>
+<tr>
+<td><code>Shape pattern matching</code></td>
+<td><code>case user when {role: "admin"}</code> — <code>when</code> now accepts hash literals, matches on subset of keysfrankiec new scaffold</td>
+</tr>
+<tr>
+<td><code>Global stitch install</code></td>
+<td><code>install.py</code> now correctly copies all stitches to <code>~/.frankie/stitches/</code> and lists each file installed</td>
+</tr>
+<tr>
+<td><code>page_links</code> docs</td>
+<td>Full web pagination example added — <code>paginate</code> + <code>page_slice</code> + <code>page_links</code> + <code>frankietemplate</code> working together</td>
+</tr>
+</tbody>
+</table>
 <h2 id="v1131-whats_new_v1131fk">v1.13.1 — <code>whats_new_v1131.fk</code></h2>
 <p><strong>Theme:</strong> Gap closers — no new syntax, everything real programs needed and didn't have.</p>
 <table>
