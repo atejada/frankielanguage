@@ -500,6 +500,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#hash-destructuring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hash Destructuring
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1539,6 +1550,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/encoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1845,6 +1884,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieauth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieratelimit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieratelimit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1969,7 +2064,7 @@
   <span class="md-ellipsis">
     
   
-    Whats''s New
+    What's New
   
 
     
@@ -2160,6 +2255,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#hash-destructuring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hash Destructuring
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2271,13 +2377,13 @@
 <p>Variable names are lowercase with underscores. A variable referenced before assignment raises a runtime error.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">mystery</span><span class="w">   </span><span class="c1"># Runtime error: Undefined variable: mystery</span>
 </code></pre></div>
-<h3 id="reassignment">Reassignment</h3>
+<h3 id="reassignment"><code>Reassignment</code></h3>
 <p>A variable can be reassigned to any type at any time:</p>
 <div class="highlight"><pre><span></span><code><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span>
 <span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w">   </span><span class="c1"># now a String — valid</span>
 <span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span><span class="w"> </span><span class="c1"># now a Vector — still valid</span>
 </code></pre></div>
-<h3 id="multiple-assignment-destructuring">Multiple Assignment (Destructuring)</h3>
+<h3 id="multiple-assignment-destructuring"><code>Multiple Assignment (Destructuring)</code></h3>
 <p>Assign several variables at once from a vector:</p>
 <div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="o">]</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">a</span><span class="w">   </span><span class="c1"># 10</span>
@@ -2296,8 +2402,20 @@
 <span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="n">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min_max</span><span class="p">(</span><span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="o">]</span><span class="p">)</span>
 <span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">lo</span><span class="si">}</span><span class="s2">..</span><span class="si">#{</span><span class="n">hi</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">   </span><span class="c1"># 1..9</span>
 </code></pre></div>
+<h3 id="hash-destructuring"><code>Hash Destructuring</code></h3>
+<p>Assign several variables at once from a hash:</p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">age</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="ss">role</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nb">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">user</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;name=</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2"> age=</span><span class="si">#{</span><span class="n">age</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="p">{</span><span class="ss">city</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lima&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">country</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Peru&quot;</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="ss">city</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">country</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Japan&quot;</span><span class="p">}</span><span class="o">]</span>
+<span class="n">rows</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">row</span><span class="o">|</span>
+<span class="w">  </span><span class="p">{</span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="n">country</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">row</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">city</span><span class="si">}</span><span class="s2">, </span><span class="si">#{</span><span class="n">country</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+</code></pre></div>
 <hr />
-<h2 id="constants">Constants</h2>
+<h2 id="constants"><code>Constants</code></h2>
 <p>Names written in <code>UPPER_SNAKE_CASE</code> are treated as constants. Reassignment prints a warning and the original value is preserved.</p>
 <div class="highlight"><pre><span></span><code><span class="no">MAX_RETRIES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
 <span class="no">PI</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14159</span>
@@ -2308,7 +2426,7 @@
 <span class="nb">puts</span><span class="w"> </span><span class="no">MAX_RETRIES</span><span class="w">   </span><span class="c1"># 3  — unchanged</span>
 </code></pre></div>
 <hr />
-<h2 id="types">Types</h2>
+<h2 id="types"><code>Types</code></h2>
 <p>Frankie is <strong>dynamically typed</strong> — every value has a type, but variables do not. The type is determined by the value at the time it is used.</p>
 <table>
 <thead>
@@ -2367,7 +2485,7 @@
 </tbody>
 </table>
 <hr />
-<h2 id="type-checking">Type Checking</h2>
+<h2 id="type-checking"><code>Type Checking</code></h2>
 <div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">is_integer</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span><span class="w">      </span><span class="c1"># true</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">is_float</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="p">)</span><span class="w">      </span><span class="c1"># true</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">is_string</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1"># true</span>
@@ -2376,7 +2494,7 @@
 <span class="nb">puts</span><span class="w"> </span><span class="n">is_bool</span><span class="p">(</span><span class="kp">true</span><span class="p">)</span><span class="w">       </span><span class="c1"># true</span>
 </code></pre></div>
 <hr />
-<h2 id="type-conversion">Type Conversion</h2>
+<h2 id="type-conversion"><code>Type Conversion</code></h2>
 <p>Frankie does not coerce types silently. Convert explicitly:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="mi">42</span><span class="o">.</span><span class="n">to_s</span><span class="w">       </span><span class="c1"># &quot;42&quot;    — Integer to String</span>
 <span class="nb">puts</span><span class="w"> </span><span class="mi">42</span><span class="o">.</span><span class="n">to_f</span><span class="w">       </span><span class="c1"># 42.0   — Integer to Float</span>
@@ -2396,7 +2514,7 @@
 <span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Type check: </span><span class="si">#{</span><span class="n">is_integer</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">  </span><span class="c1"># Type check: true</span>
 </code></pre></div>
 <hr />
-<h2 id="truthiness">Truthiness</h2>
+<h2 id="truthiness"><code>Truthiness</code></h2>
 <p>Only <code>false</code> and <code>nil</code> are falsy. Everything else — including <code>0</code> and <code>""</code> — is truthy:</p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="mi">0</span><span class="w">     </span><span class="k">then</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;truthy&quot;</span><span class="w"> </span><span class="k">end</span><span class="w">   </span><span class="c1"># prints</span>
 <span class="k">if</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">    </span><span class="k">then</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;truthy&quot;</span><span class="w"> </span><span class="k">end</span><span class="w">   </span><span class="c1"># prints</span>
@@ -2405,7 +2523,7 @@
 <span class="k">if</span><span class="w"> </span><span class="kp">nil</span><span class="w">   </span><span class="k">then</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;truthy&quot;</span><span class="w"> </span><span class="k">end</span><span class="w">   </span><span class="c1"># does not print</span>
 </code></pre></div>
 <hr />
-<h2 id="nil-safety">Nil Safety</h2>
+<h2 id="nil-safety"><code>Nil Safety</code></h2>
 <p>Calling a method on <code>nil</code> raises a runtime error. The <code>&amp;.</code> operator returns <code>nil</code> instead of crashing:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">nil</span>
 <span class="nb">puts</span><span class="w"> </span><span class="nb">name</span><span class="o">.</span><span class="n">upcase</span><span class="w">    </span><span class="c1"># Runtime error</span>
@@ -2415,7 +2533,7 @@
 <span class="nb">puts</span><span class="w"> </span><span class="nb">name</span><span class="o">&amp;.</span><span class="n">upcase</span><span class="o">&amp;.</span><span class="n">reverse</span><span class="w">   </span><span class="c1"># nil</span>
 </code></pre></div>
 <hr />
-<h2 id="scope">Scope</h2>
+<h2 id="scope"><code>Scope</code></h2>
 <p>Frankie has simple lexical scope. Variables defined in the outer scope are readable inside functions and blocks. Variables assigned inside a function are local to that function.</p>
 <div class="highlight"><pre><span></span><code><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
 

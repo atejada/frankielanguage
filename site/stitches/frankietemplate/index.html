@@ -1374,6 +1374,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/encoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1898,6 +1926,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#full-web-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Web Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quick-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1932,6 +1971,62 @@
     
   
     Frankiecookie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frankieauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieauth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frankieratelimit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieratelimit
   
 
     
@@ -2069,7 +2164,7 @@
   <span class="md-ellipsis">
     
   
-    Whats''s New
+    What's New
   
 
     
@@ -2432,6 +2527,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#full-web-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Web Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quick-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2687,6 +2793,81 @@
         └── nav.html
 </code></pre></div>
 <p><code>frankiec new</code> creates the <code>views/</code> and <code>views/partials/</code> directories automatically.</p>
+<hr />
+<h2 id="full-web-example">Full Web Example</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># main.fk</span>
+<span class="n">stitch</span><span class="w"> </span><span class="s2">&quot;frankietemplate&quot;</span>
+
+<span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">web_app</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">static</span><span class="p">(</span><span class="s2">&quot;./public&quot;</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">req</span><span class="o">|</span>
+<span class="w">  </span><span class="n">posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">db</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;posts&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="ss">published</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">})</span>
+<span class="w">  </span><span class="n">html</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">render_file</span><span class="p">(</span><span class="s2">&quot;./views/index.html&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="ss">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Blog&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="ss">posts</span><span class="p">:</span><span class="w"> </span><span class="n">posts</span><span class="p">,</span>
+<span class="w">    </span><span class="ss">count</span><span class="p">:</span><span class="w"> </span><span class="n">posts</span><span class="o">.</span><span class="n">length</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="n">html_response</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/posts/:id&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">req</span><span class="o">|</span>
+<span class="w">  </span><span class="n">post</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">db</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;posts&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nb">id</span><span class="p">:</span><span class="w"> </span><span class="n">req</span><span class="o">.</span><span class="n">params</span><span class="o">[</span><span class="s2">&quot;id&quot;</span><span class="o">].</span><span class="n">to_int</span><span class="p">})</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">post</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kp">nil</span>
+<span class="w">    </span><span class="n">halt</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Post not found&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="w">  </span><span class="n">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">render_file</span><span class="p">(</span><span class="s2">&quot;./views/post.html&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">post</span><span class="p">)</span>
+<span class="w">  </span><span class="n">html_response</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- views/index.html --&gt;</span>
+{{&gt; header }}
+<span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>{{ count }} posts<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+
+  {{# posts }}
+    <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/posts/{{ id }}&quot;</span><span class="p">&gt;</span>{{ title }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{ summary }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+  {{/ posts }}
+
+  {{^ posts }}
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>No posts yet. Check back soon!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  {{/ posts }}
+<span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+{{&gt; footer }}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- views/post.html --&gt;</span>
+{{&gt; header }}
+<span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ title }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;meta&quot;</span><span class="p">&gt;</span>By {{ author }} on {{ date }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    {{{ body_html }}}
+  <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>← Back<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+{{&gt; footer }}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- views/partials/header.html --&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ title }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/style.css&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- views/partials/footer.html --&gt;</span>
+<span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Built with Frankie 🧟<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 <hr />
 <h2 id="quick-reference"><code>Quick Reference</code></h2>
 <table>

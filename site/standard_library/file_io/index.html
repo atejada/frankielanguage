@@ -1451,6 +1451,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#path-helpers-introduced-in-v115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Helpers (introduced in v1.15)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Path Helpers (introduced in v1.15)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path_joinparts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_join(*parts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_dirnamepath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_dirname(path)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_basenamepath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_basename(path)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_extnamepath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_extname(path)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_stempath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_stem(path)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_absolutepath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_absolute(path)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1643,6 +1726,34 @@
     
   
     Random
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encoding
   
 
     
@@ -1962,6 +2073,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieauth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieratelimit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieratelimit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2086,7 +2253,7 @@
   <span class="md-ellipsis">
     
   
-    Whats''s New
+    What's New
   
 
     
@@ -2476,6 +2643,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#path-helpers-introduced-in-v115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Helpers (introduced in v1.15)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Path Helpers (introduced in v1.15)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path_joinparts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_join(*parts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_dirnamepath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_dirname(path)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_basenamepath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_basename(path)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_extnamepath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_extname(path)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_stempath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_stem(path)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_absolutepath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_absolute(path)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2709,8 +2959,66 @@
 <td><code>dir_list(path)</code></td>
 <td>Sorted vector of filenames in directory</td>
 </tr>
+<tr>
+<td><code>path_join(*parts)</code></td>
+<td>Join path segments with the OS separator</td>
+</tr>
+<tr>
+<td><code>path_dirname(path)</code></td>
+<td>Parent directory of a path</td>
+</tr>
+<tr>
+<td><code>path_basename(path)</code></td>
+<td>Filename component of a path</td>
+</tr>
+<tr>
+<td><code>path_extname(path)</code></td>
+<td>File extension including the dot</td>
+</tr>
+<tr>
+<td><code>path_stem(path)</code></td>
+<td>Filename without the extension</td>
+</tr>
+<tr>
+<td><code>path_absolute(path)</code></td>
+<td>Resolve to an absolute path</td>
+</tr>
 </tbody>
 </table>
+<hr />
+<h2 id="path-helpers-introduced-in-v115">Path Helpers <em>(introduced in v1.15)</em></h2>
+<p>Pure path manipulation — no filesystem access required.</p>
+<h3 id="path_joinparts"><code>path_join(*parts)</code></h3>
+<p>Join one or more path segments with the OS separator. Handles trailing slashes correctly.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">path_join</span><span class="p">(</span><span class="s2">&quot;home&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;docs&quot;</span><span class="p">)</span><span class="w">       </span><span class="c1"># home/alice/docs</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">path_join</span><span class="p">(</span><span class="s2">&quot;/usr&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;local&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bin&quot;</span><span class="p">)</span><span class="w">        </span><span class="c1"># /usr/local/bin</span>
+</code></pre></div>
+<h3 id="path_dirnamepath"><code>path_dirname(path)</code></h3>
+<p>Return the parent directory of the given path.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">path_dirname</span><span class="p">(</span><span class="s2">&quot;/home/alice/report.txt&quot;</span><span class="p">)</span><span class="w">   </span><span class="c1"># /home/alice</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">path_dirname</span><span class="p">(</span><span class="s2">&quot;data/results.csv&quot;</span><span class="p">)</span><span class="w">         </span><span class="c1"># data</span>
+</code></pre></div>
+<h3 id="path_basenamepath"><code>path_basename(path)</code></h3>
+<p>Return the filename component (last segment) of the path.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">path_basename</span><span class="p">(</span><span class="s2">&quot;/home/alice/report.txt&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1"># report.txt</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">path_basename</span><span class="p">(</span><span class="s2">&quot;data/results.csv&quot;</span><span class="p">)</span><span class="w">        </span><span class="c1"># results.csv</span>
+</code></pre></div>
+<h3 id="path_extnamepath"><code>path_extname(path)</code></h3>
+<p>Return the file extension including the leading dot. Returns an empty string if there is none.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">path_extname</span><span class="p">(</span><span class="s2">&quot;/home/alice/report.txt&quot;</span><span class="p">)</span><span class="w">   </span><span class="c1"># .txt</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">path_extname</span><span class="p">(</span><span class="s2">&quot;archive.tar.gz&quot;</span><span class="p">)</span><span class="w">           </span><span class="c1"># .gz</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">path_extname</span><span class="p">(</span><span class="s2">&quot;Makefile&quot;</span><span class="p">)</span><span class="w">                 </span><span class="c1"># (empty string)</span>
+</code></pre></div>
+<h3 id="path_stempath"><code>path_stem(path)</code></h3>
+<p>Return the filename without the extension.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">path_stem</span><span class="p">(</span><span class="s2">&quot;/home/alice/report.txt&quot;</span><span class="p">)</span><span class="w">      </span><span class="c1"># report</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">path_stem</span><span class="p">(</span><span class="s2">&quot;archive.tar.gz&quot;</span><span class="p">)</span><span class="w">              </span><span class="c1"># archive.tar</span>
+</code></pre></div>
+<h3 id="path_absolutepath"><code>path_absolute(path)</code></h3>
+<p>Resolve a relative path to an absolute path based on the current working directory.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">path_absolute</span><span class="p">(</span><span class="s2">&quot;./data/db.sqlite&quot;</span><span class="p">)</span><span class="w">        </span><span class="c1"># /home/alice/myapp/data/db.sqlite</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">path_absolute</span><span class="p">(</span><span class="s2">&quot;../config.json&quot;</span><span class="p">)</span><span class="w">          </span><span class="c1"># /home/alice/config.json</span>
+</code></pre></div>
 
 
 

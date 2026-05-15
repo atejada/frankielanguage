@@ -23,7 +23,7 @@
     
     
       
-        <title>Whats''s New - Frankie - The Programming Language</title>
+        <title>What's New - Frankie - The Programming Language</title>
       
     
     
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Whats''s New
+              What's New
             
           </span>
         </div>
@@ -1374,6 +1374,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/encoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1680,6 +1708,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieauth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieratelimit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieratelimit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1815,7 +1899,7 @@
   <span class="md-ellipsis">
     
   
-    Whats''s New
+    What's New
   
 
     
@@ -1833,7 +1917,7 @@
   <span class="md-ellipsis">
     
   
-    Whats''s New
+    What's New
   
 
     
@@ -1857,6 +1941,17 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v115-whats_new_v115fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.15 — whats_new_v115.fk
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#v114-whats_new_v114fk" class="md-nav__link">
@@ -2187,6 +2282,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v115-whats_new_v115fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.15 — whats_new_v115.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v114-whats_new_v114fk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2381,8 +2487,101 @@
 
 <h1 id="whats-new-per-version">What's New — Per Version</h1>
 <p>Each version of Frankie ships a runnable <code>whats_new_vX.fk</code> example file that demonstrates every new feature introduced in that release. Run any of them with:</p>
-<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v114.fk
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v115.fk
 </code></pre></div>
+<h2 id="v115-whats_new_v115fk">v1.15 — <code>whats_new_v115.fk</code></h2>
+<p><strong>Theme:</strong> Language Polish &amp; Developer Ergonomics — cleaner syntax, more powerful stdlib, and two new web stitches.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ternary operator</code></td>
+<td><code>x &gt; 0 ? "pos" : "neg"</code> — right-associative, valid in any expression position</td>
+</tr>
+<tr>
+<td><code>Keyword default params</code></td>
+<td><code>def connect(host, port: 5432, ssl: true)</code> — <code>:</code> syntax now accepted alongside <code>=</code></td>
+</tr>
+<tr>
+<td><code>Splat in multi-assign</code></td>
+<td><code>a, *rest = [1,2,3]</code> and <code>first, *mid, last = arr</code> — capture remaining elements</td>
+</tr>
+<tr>
+<td><code>const</code> keyword</td>
+<td>Explicit constant declaration — reassignment warns and preserves original value</td>
+</tr>
+<tr>
+<td><code>fn.(args)</code> everywhere</td>
+<td>Lambda call syntax now works in all contexts, not just web middleware</td>
+</tr>
+<tr>
+<td><code>json_encode</code></td>
+<td>Preferred name for <code>json_dump</code>; accepts <code>pretty: true</code></td>
+</tr>
+<tr>
+<td><code>hmac_sign</code> / <code>hmac_verify</code></td>
+<td>Promoted from internal <code>_fk_*</code> to public stdlib — signed tokens and webhook verification</td>
+</tr>
+<tr>
+<td><code>base64_encode</code> / <code>base64_decode</code></td>
+<td>Standard Base64 encode/decode — useful for HTTP Basic Auth headers</td>
+</tr>
+<tr>
+<td><code>String#format</code></td>
+<td>Named placeholder substitution: <code>"Hello, {name}!".format({name: "Alice"})</code></td>
+</tr>
+<tr>
+<td><code>.chars</code> / <code>.bytes</code></td>
+<td>Unicode-aware character vector and byte values from a string</td>
+</tr>
+<tr>
+<td>Path helpers</td>
+<td><code>path_join</code>, <code>path_dirname</code>, <code>path_basename</code>, <code>path_extname</code>, <code>path_stem</code>, <code>path_absolute</code></td>
+</tr>
+<tr>
+<td>Date arithmetic</td>
+<td>Date objects support <code>+</code> / <code>-</code> (days) and comparison operators</td>
+</tr>
+<tr>
+<td><code>zip_with</code> block</td>
+<td><code>a.zip_with(b) do \|x, y\| x + y end</code> — element-wise combination</td>
+</tr>
+<tr>
+<td><code>assert_not_nil</code> / <code>assert_in</code></td>
+<td>New test assertions for nil checks and membership</td>
+</tr>
+<tr>
+<td><code>req.query_int/float/bool</code></td>
+<td>Typed query parameter helpers with defaults</td>
+</tr>
+<tr>
+<td><code>frankieauth</code> stitch</td>
+<td>HTTP Basic Auth + Bearer token auth — zero dependencies</td>
+</tr>
+<tr>
+<td><code>frankieratelimit</code> stitch</td>
+<td>Per-IP sliding-window rate limiting — zero dependencies</td>
+</tr>
+<tr>
+<td><code>frankiec check</code></td>
+<td>Parse without executing — useful in CI</td>
+</tr>
+<tr>
+<td><code>frankiec new</code></td>
+<td>Scaffold a complete project layout</td>
+</tr>
+<tr>
+<td><code>frankiec watch</code></td>
+<td>Official file watcher — re-run on save</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="v114-whats_new_v114fk">v1.14 — <code>whats_new_v114.fk</code></h2>
 <p><strong>Theme:</strong> Frankie for real web apps — concurrency, templates, signed cookies, middleware, static files, and two language upgrades that make working with data cleaner everywhere.</p>
 <table>

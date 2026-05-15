@@ -1544,6 +1544,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#formathash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .format(hash)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pastea-b-sep" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1904,6 +1915,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2210,6 +2249,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieauth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieratelimit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieratelimit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2334,7 +2429,7 @@
   <span class="md-ellipsis">
     
   
-    Whats''s New
+    What's New
   
 
     
@@ -2957,6 +3052,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#formathash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .format(hash)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pastea-b-sep" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3203,6 +3309,15 @@
 <div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="nb">sprintf</span><span class="p">(</span><span class="s2">&quot;%-10s %5d %8.2f&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Frankie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14444</span><span class="p">)</span>
 
 <span class="err">→</span><span class="w"> </span><span class="no">Frankie</span><span class="w">        </span><span class="mi">1</span><span class="w">     </span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span>
+</code></pre></div>
+<h3 id="formathash"><code>.format(hash)</code></h3>
+<p>Named placeholder substitution. <em>(introduced in v1.15)</em></p>
+<p>Replaces <code>{key}</code> placeholders using values from the given hash. Raises a descriptive error if a key is missing.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Hello, {name}! You have {count} messages.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">({</span><span class="nb">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">count</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">})</span>
+<span class="err">→</span><span class="w"> </span><span class="no">Hello</span><span class="p">,</span><span class="w"> </span><span class="no">Alice</span><span class="o">!</span><span class="w"> </span><span class="no">You</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="n">messages</span><span class="o">.</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Order {id} placed by {user}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">({</span><span class="nb">id</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="ss">user</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">})</span>
+<span class="err">→</span><span class="w"> </span><span class="no">Order</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="n">placed</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="no">Bob</span>
 </code></pre></div>
 <h3 id="pastea-b-sep"><code>paste(a, b, sep)</code></h3>
 <p>Concatenate with separator.</p>

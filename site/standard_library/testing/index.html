@@ -1476,6 +1476,39 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#assert_not_nilvalue-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_not_nil(value, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_invalue-collection-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_in(value, collection, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_approx_eqactual-expected-delta-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_approx_eq(actual, expected, delta, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#assert_raisesfn-msg" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1581,6 +1614,34 @@
     
   
     Random
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encoding
   
 
     
@@ -1900,6 +1961,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieauth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieratelimit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieratelimit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2024,7 +2141,7 @@
   <span class="md-ellipsis">
     
   
-    Whats''s New
+    What's New
   
 
     
@@ -2271,6 +2388,39 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#assert_not_nilvalue-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_not_nil(value, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_invalue-collection-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_in(value, collection, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert_approx_eqactual-expected-delta-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assert_approx_eq(actual, expected, delta, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#assert_raisesfn-msg" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2431,6 +2581,27 @@ frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </s
 <span class="n">assert_match</span><span class="p">(</span><span class="s2">&quot;2024-03-15&quot;</span><span class="p">,</span><span class="w">        </span><span class="s2">&quot;^</span><span class="se">\\</span><span class="s2">d{4}-</span><span class="se">\\</span><span class="s2">d{2}-</span><span class="se">\\</span><span class="s2">d{2}$&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ISO date&quot;</span><span class="p">)</span>
 <span class="n">assert_match</span><span class="p">(</span><span class="s2">&quot;Error: timeout&quot;</span><span class="p">,</span><span class="w">    </span><span class="s2">&quot;timeout&quot;</span><span class="p">,</span><span class="w">  </span><span class="s2">&quot;error message contains timeout&quot;</span><span class="p">)</span>
 </code></pre></div>
+<h3 id="assert_not_nilvalue-msg"><code>assert_not_nil(value, msg)</code></h3>
+<p>Non-nil check <em>(introduced in v1.15)</em></p>
+<p>Passes if <code>value</code> is anything other than <code>nil</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">assert_not_nil</span><span class="p">(</span><span class="n">find_user</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w">        </span><span class="s2">&quot;user exists&quot;</span><span class="p">)</span>
+<span class="n">assert_not_nil</span><span class="p">(</span><span class="n">result</span><span class="o">[</span><span class="s2">&quot;id&quot;</span><span class="o">]</span><span class="p">,</span><span class="w">        </span><span class="s2">&quot;result has an id&quot;</span><span class="p">)</span>
+<span class="n">assert_not_nil</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w">                  </span><span class="s2">&quot;empty string is not nil&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="assert_invalue-collection-msg"><code>assert_in(value, collection, msg)</code></h3>
+<p>Membership check <em>(introduced in v1.15)</em></p>
+<p>Passes if <code>collection</code> includes <code>value</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">assert_in</span><span class="p">(</span><span class="s2">&quot;admin&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">roles</span><span class="p">,</span><span class="w">    </span><span class="s2">&quot;user has admin role&quot;</span><span class="p">)</span>
+<span class="n">assert_in</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="w">      </span><span class="n">valid_ids</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;id is valid&quot;</span><span class="p">)</span>
+<span class="n">assert_in</span><span class="p">(</span><span class="s2">&quot;fr&quot;</span><span class="p">,</span><span class="w">    </span><span class="o">[</span><span class="s2">&quot;en&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;fr&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;de&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;French supported&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="assert_approx_eqactual-expected-delta-msg"><code>assert_approx_eq(actual, expected, delta, msg)</code></h3>
+<p>Approximate float equality <em>(introduced in v1.13.1)</em></p>
+<p>Passes if <code>|actual - expected| &lt;= delta</code>. Default delta is <code>0.001</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">assert_approx_eq</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">14159</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mo">01</span><span class="p">,</span><span class="w">   </span><span class="s2">&quot;pi rounded&quot;</span><span class="p">)</span>
+<span class="n">assert_approx_eq</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">]</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mo">001</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mean&quot;</span><span class="p">)</span>
+<span class="n">assert_approx_eq</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mo">0001</span><span class="p">,</span><span class="w">   </span><span class="s2">&quot;float addition&quot;</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="assert_raisesfn-msg"><code>assert_raises(fn, msg)</code></h3>
 <p>Any error raised</p>
 <p>Passes if calling <code>fn</code> raises any error.</p>
@@ -2567,6 +2738,18 @@ frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </s
 <tr>
 <td><code>assert_nil(value, msg)</code></td>
 <td><code>value</code> is nil</td>
+</tr>
+<tr>
+<td><code>assert_not_nil(value, msg)</code></td>
+<td><code>value</code> is not nil</td>
+</tr>
+<tr>
+<td><code>assert_in(value, collection, msg)</code></td>
+<td><code>collection</code> includes <code>value</code></td>
+</tr>
+<tr>
+<td><code>assert_approx_eq(a, b, delta, msg)</code></td>
+<td><code>|a - b| &lt;= delta</code> (default delta <code>0.001</code>)</td>
 </tr>
 <tr>
 <td><code>assert_match(value, pattern, msg)</code></td>

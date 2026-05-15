@@ -1303,6 +1303,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#json_encodedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        json_encode(data)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#json_dumpdata" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1576,6 +1587,34 @@
     
   
     Random
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encoding
   
 
     
@@ -1895,6 +1934,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieauth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankieratelimit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frankieratelimit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2019,7 +2114,7 @@
   <span class="md-ellipsis">
     
   
-    Whats''s New
+    What's New
   
 
     
@@ -2233,6 +2328,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#json_encodedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        json_encode(data)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#json_dumpdata" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2397,9 +2503,27 @@
 <span class="nb">puts</span><span class="w"> </span><span class="n">config</span><span class="o">[</span><span class="s2">&quot;host&quot;</span><span class="o">]</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="n">localhost</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">config</span><span class="o">[</span><span class="s2">&quot;port&quot;</span><span class="o">]</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="mi">5432</span>
 </code></pre></div>
+<h3 id="json_encodedata"><code>json_encode(data)</code></h3>
+<p>Serialise to a JSON string <em>(preferred — introduced in v1.15)</em></p>
+<p>The preferred name for <code>json_dump</code>. Accepts <code>pretty: true</code> for formatted output.</p>
+<div class="highlight"><pre><span></span><code><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">scores</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w"> </span><span class="mi">92</span><span class="o">]</span><span class="p">}</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">json_encode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="c1"># {&quot;name&quot;: &quot;Alice&quot;, &quot;scores&quot;: [95, 87, 92]}</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="n">json_encode</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="ss">pretty</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">)</span>
+<span class="c1"># {</span>
+<span class="c1">#   &quot;name&quot;: &quot;Alice&quot;,</span>
+<span class="c1">#   &quot;scores&quot;: [95, 87, 92]</span>
+<span class="c1"># }</span>
+
+<span class="c1"># Round-trip</span>
+<span class="n">raw</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">json_encode</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span><span class="p">)</span>
+<span class="n">back</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json_parse</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">back</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w">    </span><span class="c1"># 2</span>
+</code></pre></div>
 <h3 id="json_dumpdata"><code>json_dump(data)</code></h3>
 <p>Serialise to a JSON string</p>
-<p>The inverse of <code>json_parse</code>. Pass <code>true</code> for pretty output.</p>
+<p>Alias for <code>json_encode</code> — kept for backwards compatibility. Pass <code>true</code> for pretty output.</p>
 <div class="highlight"><pre><span></span><code><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">scores</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">87</span><span class="o">]</span><span class="p">}</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">json_dump</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
 <span class="c1"># {&quot;name&quot;: &quot;Alice&quot;, &quot;scores&quot;: [95, 87]}</span>
@@ -2517,8 +2641,16 @@ Carol,Finance,88000
 <td>Parse JSON string → value</td>
 </tr>
 <tr>
+<td><code>json_encode(data)</code></td>
+<td>Serialise value → JSON string (preferred)</td>
+</tr>
+<tr>
+<td><code>json_encode(data, pretty: true)</code></td>
+<td>Pretty-printed JSON string</td>
+</tr>
+<tr>
 <td><code>json_dump(data)</code></td>
-<td>Serialise value → JSON string</td>
+<td>Serialise value → JSON string (alias for <code>json_encode</code>)</td>
 </tr>
 <tr>
 <td><code>json_dump(data, true)</code></td>
