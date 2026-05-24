@@ -1762,6 +1762,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiemail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frankiemail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiecli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frankiecli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiecache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frankiecache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2674,7 +2758,7 @@
 
 
 <h1 id="full-stdlib-index">Full Stdlib Index</h1>
-<p>Every function, method, and operator available in Frankie v1.15. All are available without any import.</p>
+<p>Every function, method, and operator available in Frankie v1.16. All are available without any import.</p>
 <hr />
 <h2 id="math-arithmetic">Math &amp; Arithmetic</h2>
 <table>
@@ -3048,6 +3132,10 @@
 <tr>
 <td><code>=~</code></td>
 <td>Position of first match or nil</td>
+</tr>
+<tr>
+<td><code>.scan(pattern)</code></td>
+<td>All regex matches as vector (v1.16)</td>
 </tr>
 </tbody>
 </table>
@@ -3428,6 +3516,18 @@
 <tr>
 <td><code>.group_by do \|k, v\|</code></td>
 <td>Bucket pairs by block result</td>
+</tr>
+<tr>
+<td><code>.transform_values do \|v\|</code></td>
+<td>New hash — same keys, block-transformed values (v1.16)</td>
+</tr>
+<tr>
+<td><code>.transform_keys do \|k\|</code></td>
+<td>New hash — block-transformed keys, same values (v1.16)</td>
+</tr>
+<tr>
+<td><code>.deep_merge(other)</code></td>
+<td>Recursively merge nested hashes (v1.16)</td>
 </tr>
 </tbody>
 </table>
@@ -4290,6 +4390,18 @@
 <td><code>require(path)</code></td>
 <td>Load another .fk file (once only)</td>
 </tr>
+<tr>
+<td><code>stitch(name)</code></td>
+<td>Load a stitch package from <code>./stitches/</code> or <code>~/.frankie/stitches/</code></td>
+</tr>
+<tr>
+<td><code>shell(cmd)</code></td>
+<td>Run OS command — returns <code>{stdout, stderr, exit_code, ok}</code> (v1.16)</td>
+</tr>
+<tr>
+<td><code>dotenv(path)</code></td>
+<td>Load <code>.env</code> file into process environment — returns hash of loaded vars (v1.16)</td>
+</tr>
 </tbody>
 </table>
 <hr />
@@ -4353,6 +4465,10 @@
 <tr>
 <td><code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>//=</code> <code>**=</code> <code>%=</code></td>
 <td>Compound assignment</td>
+</tr>
+<tr>
+<td><code>\|\|=</code></td>
+<td>Nil-coalescing assignment — assign only if nil or false (v1.16)</td>
 </tr>
 <tr>
 <td><code>#{}</code></td>

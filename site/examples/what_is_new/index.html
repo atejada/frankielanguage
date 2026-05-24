@@ -1764,6 +1764,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiemail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frankiemail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiecli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frankiecli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stitches/frankiecache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frankiecache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1941,6 +2025,17 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v116-whats_new_v116fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.16 — whats_new_v116.fk
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#v115-whats_new_v115fk" class="md-nav__link">
@@ -2282,6 +2377,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v116-whats_new_v116fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.16 — whats_new_v116.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v115-whats_new_v115fk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2487,8 +2593,65 @@
 
 <h1 id="whats-new-per-version">What's New — Per Version</h1>
 <p>Each version of Frankie ships a runnable <code>whats_new_vX.fk</code> example file that demonstrates every new feature introduced in that release. Run any of them with:</p>
-<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v115.fk
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v116.fk
 </code></pre></div>
+<h2 id="v116-whats_new_v116fk">v1.16 — <code>whats_new_v116.fk</code></h2>
+<p><strong>Theme:</strong> System Integration &amp; Scripting Power — shell commands, environment loading, infinite loops, nil-coalescing assign, richer hash and string tools, and three new stitches for email, CLI parsing, and caching.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>shell(cmd)</code></td>
+<td>Run an OS command — returns <code>{stdout, stderr, exit_code, ok}</code></td>
+</tr>
+<tr>
+<td><code>dotenv(path)</code></td>
+<td>Load a <code>.env</code> file into the process environment — returns hash of loaded vars</td>
+</tr>
+<tr>
+<td><code>loop do...end</code></td>
+<td>Infinite loop, exits only via <code>break</code> — cleaner than <code>while true</code></td>
+</tr>
+<tr>
+<td><code>\|\|=</code></td>
+<td>Nil-coalescing assign — <code>config \|\|= load_defaults()</code></td>
+</tr>
+<tr>
+<td><code>Hash#transform_values</code></td>
+<td>New hash with same keys, block-transformed values</td>
+</tr>
+<tr>
+<td><code>Hash#transform_keys</code></td>
+<td>New hash with block-transformed keys, same values</td>
+</tr>
+<tr>
+<td><code>Hash#deep_merge</code></td>
+<td>Recursive nested hash merge — unlike shallow <code>.merge</code> / <code>\|</code></td>
+</tr>
+<tr>
+<td><code>String#scan</code></td>
+<td>Extract all regex matches as a vector</td>
+</tr>
+<tr>
+<td><code>frankiemail</code> stitch</td>
+<td>Send email via SMTP — plain text, HTML, CC/BCC — zero deps</td>
+</tr>
+<tr>
+<td><code>frankiecli</code> stitch</td>
+<td>CLI argument parsing — flags, options, subcommands — zero deps</td>
+</tr>
+<tr>
+<td><code>frankiecache</code> stitch</td>
+<td>In-memory TTL cache — set/get/delete/clear/size — zero deps</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="v115-whats_new_v115fk">v1.15 — <code>whats_new_v115.fk</code></h2>
 <p><strong>Theme:</strong> Language Polish &amp; Developer Ergonomics — cleaner syntax, more powerful stdlib, and two new web stitches.</p>
 <table>

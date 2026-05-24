@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../boolean_and_nil/">
+        <link rel="prev" href="../frankiemail/">
       
       
-        <link rel="next" href="../vector/">
+        <link rel="next" href="../frankiecache/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Strings - Frankie - The Programming Language</title>
+        <title>frankiecli - Frankie - The Programming Language</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#strings" class="md-skip">
+        <a href="#frankiecli" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Strings
+              frankiecli
             
           </span>
         </div>
@@ -605,20 +605,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -639,7 +637,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -657,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../data_types/" class="md-nav__link">
         
   
   
@@ -685,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Integers/" class="md-nav__link">
+      <a href="../../data_types/Integers/" class="md-nav__link">
         
   
   
@@ -713,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../float/" class="md-nav__link">
+      <a href="../../data_types/float/" class="md-nav__link">
         
   
   
@@ -741,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../boolean_and_nil/" class="md-nav__link">
+      <a href="../../data_types/boolean_and_nil/" class="md-nav__link">
         
   
   
@@ -766,37 +764,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Strings
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../data_types/Strings/" class="md-nav__link">
         
   
   
@@ -812,125 +783,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-a-string" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What is a String?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#string-literals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        String Literals
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#triple-quoted-strings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Triple-quoted strings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#string-interpolation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        String Interpolation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#escape-sequences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Escape Sequences
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#string-operators" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        String Operators
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#accessing-characters-and-slices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Accessing Characters and Slices
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nil-safety-with-strings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Nil Safety with Strings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Reference
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -943,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vector/" class="md-nav__link">
+      <a href="../../data_types/vector/" class="md-nav__link">
         
   
   
@@ -971,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hash/" class="md-nav__link">
+      <a href="../../data_types/hash/" class="md-nav__link">
         
   
   
@@ -999,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lambda/" class="md-nav__link">
+      <a href="../../data_types/lambda/" class="md-nav__link">
         
   
   
@@ -1027,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../record/" class="md-nav__link">
+      <a href="../../data_types/record/" class="md-nav__link">
         
   
   
@@ -1561,18 +1413,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1593,7 +1447,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1611,7 +1465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stitches/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -1639,7 +1493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stitches/frankiecolor/" class="md-nav__link">
+      <a href="../frankiecolor/" class="md-nav__link">
         
   
   
@@ -1667,7 +1521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stitches/frankieforms/" class="md-nav__link">
+      <a href="../frankieforms/" class="md-nav__link">
         
   
   
@@ -1695,7 +1549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stitches/frankietable/" class="md-nav__link">
+      <a href="../frankietable/" class="md-nav__link">
         
   
   
@@ -1723,7 +1577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stitches/frankiepager/" class="md-nav__link">
+      <a href="../frankiepager/" class="md-nav__link">
         
   
   
@@ -1751,7 +1605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stitches/frankieconfig/" class="md-nav__link">
+      <a href="../frankieconfig/" class="md-nav__link">
         
   
   
@@ -1779,7 +1633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stitches/frankiestring/" class="md-nav__link">
+      <a href="../frankiestring/" class="md-nav__link">
         
   
   
@@ -1807,7 +1661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stitches/frankietemplate/" class="md-nav__link">
+      <a href="../frankietemplate/" class="md-nav__link">
         
   
   
@@ -1835,7 +1689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stitches/frankiecookie/" class="md-nav__link">
+      <a href="../frankiecookie/" class="md-nav__link">
         
   
   
@@ -1863,7 +1717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stitches/frankieauth/" class="md-nav__link">
+      <a href="../frankieauth/" class="md-nav__link">
         
   
   
@@ -1891,7 +1745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stitches/frankieratelimit/" class="md-nav__link">
+      <a href="../frankieratelimit/" class="md-nav__link">
         
   
   
@@ -1919,7 +1773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stitches/frankiemail/" class="md-nav__link">
+      <a href="../frankiemail/" class="md-nav__link">
         
   
   
@@ -1944,10 +1798,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../stitches/frankiecli/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frankiecli
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1963,6 +1844,153 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli_parseargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cli_parse(args)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli_getcli-key-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cli_get(cli, key, default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli_flagcli-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cli_flag(cli, name)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli_argcli-index-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cli_arg(cli, index, default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli_requirecli-key-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cli_require(cli, key, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subcommand-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subcommand Pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-no-flag-negation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        --no-flag Negation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1975,7 +2003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stitches/frankiecache/" class="md-nav__link">
+      <a href="../frankiecache/" class="md-nav__link">
         
   
   
@@ -2278,10 +2306,82 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-string" class="md-nav__link">
+  <a href="#functions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is a String?
+        Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli_parseargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cli_parse(args)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli_getcli-key-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cli_get(cli, key, default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli_flagcli-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cli_flag(cli, name)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli_argcli-index-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cli_arg(cli, index, default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli_requirecli-key-msg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cli_require(cli, key, msg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
       
     </span>
   </a>
@@ -2289,10 +2389,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#string-literals" class="md-nav__link">
+  <a href="#subcommand-pattern" class="md-nav__link">
     <span class="md-ellipsis">
       
-        String Literals
+        Subcommand Pattern
       
     </span>
   </a>
@@ -2300,10 +2400,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#triple-quoted-strings" class="md-nav__link">
+  <a href="#-no-flag-negation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Triple-quoted strings
+        --no-flag Negation
       
     </span>
   </a>
@@ -2311,10 +2411,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#string-interpolation" class="md-nav__link">
+  <a href="#full-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        String Interpolation
+        Full Example
       
     </span>
   </a>
@@ -2322,54 +2422,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#escape-sequences" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Escape Sequences
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#string-operators" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        String Operators
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#accessing-characters-and-slices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Accessing Characters and Slices
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nil-safety-with-strings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Nil Safety with Strings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Reference
+        Notes
       
     </span>
   </a>
@@ -2393,206 +2449,174 @@
 
 
 
-<h1 id="strings">Strings</h1>
-<h2 id="what-is-a-string"><code>What is a String?</code></h2>
-<p>A string is a sequence of UTF-8 characters. Strings are used for text — output, input, file content, keys, messages, templates. In Frankie, strings are <strong>immutable</strong> — every method that transforms a string returns a new string rather than modifying the original.</p>
-<div class="highlight"><pre><span></span><code><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, Frankie!&quot;</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">.</span><span class="n">upcase</span><span class="w">    </span><span class="c1"># &quot;HELLO, FRANKIE!&quot;</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="w">           </span><span class="c1"># &quot;Hello, Frankie!&quot; — unchanged</span>
-</code></pre></div>
+<h1 id="frankiecli">Frankiecli</h1>
+<p>Structured command-line argument parsing for Frankie scripts. Zero dependencies — pure <code>.fk</code>, built on <code>argv()</code>.</p>
+<p>Introduced in <strong>v1.16</strong>.</p>
 <hr />
-<h2 id="string-literals"><code>String Literals</code></h2>
-<p>The standard form is a double-quoted string:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span>
+<h2 id="functions">Functions</h2>
+<h3 id="cli_parseargs"><code>cli_parse(args)</code></h3>
+<p>Parse a raw <code>argv()</code> vector into a structured hash.</p>
+<div class="highlight"><pre><span></span><code>{
+  args:    [...],     # positional arguments (non-flag values)
+  flags:   {...},     # boolean flags — {verbose: true, dry_run: true}
+  options: {...},     # named values   — {output: &quot;file.txt&quot;, port: &quot;8080&quot;}
+  command: &quot;...&quot;      # first positional arg (or nil), for subcommand CLIs
+}
 </code></pre></div>
-<p>Single-quoted strings are also valid but do <strong>not</strong> support interpolation or escape sequences:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="s1">&#39;Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="w">   </span>
-
-<span class="err">→</span><span class="w"> </span><span class="no">Hello</span><span class="p">,</span><span class="w"> </span><span class="c1">#{name}  — literal, not interpolated</span>
-</code></pre></div>
-<h2 id="triple-quoted-strings"><code>Triple-quoted strings</code></h2>
-<p>Span multiple lines:</p>
-<div class="highlight"><pre><span></span><code><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">  Hello, Alice!</span>
-<span class="s2">  Welcome to Frankie.</span>
-<span class="s2">&quot;&quot;&quot;</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">message</span>
-</code></pre></div>
-<p><code>Heredocs</code> </p>
-<p>(&lt;&lt;~DELIM) are the cleanest way to write multi-line strings in code. </p>
-<p>The <code>~</code> variant strips common leading indentation automatically:</p>
-<div class="highlight"><pre><span></span><code><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&lt;~</span><span class="dl">SQL</span>
-<span class="sh">  SELECT name, age</span>
-<span class="sh">  FROM employees</span>
-<span class="sh">  WHERE age &gt; 30</span>
-<span class="sh">  ORDER BY name</span>
-<span class="dl">SQL</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">query</span>
-</code></pre></div>
-<p>Heredocs support <code>#{}</code> interpolation just like regular strings:</p>
-<div class="highlight"><pre><span></span><code><span class="n">table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;employees&quot;</span>
-<span class="n">limit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
-
-<span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&lt;~</span><span class="dl">SQL</span>
-<span class="sh">  SELECT * FROM #{table}</span>
-<span class="sh">  LIMIT #{limit}</span>
-<span class="dl">SQL</span>
-</code></pre></div>
-<hr />
-<h2 id="string-interpolation"><code>String Interpolation</code></h2>
-<p>Double-quoted strings support <code>#{}</code> to embed any expression directly:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">name</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span>
-<span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">95</span>
-
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="w">                  </span><span class="err">→</span><span class="w"> </span><span class="no">Hello</span><span class="p">,</span><span class="w"> </span><span class="no">Alice</span><span class="o">!</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Score: </span><span class="si">#{</span><span class="n">score</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">                  </span><span class="err">→</span><span class="w"> </span><span class="ss">Score</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Double: </span><span class="si">#{</span><span class="n">score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">             </span><span class="err">→</span><span class="w"> </span><span class="ss">Double</span><span class="p">:</span><span class="w"> </span><span class="mi">190</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Upper: </span><span class="si">#{</span><span class="nb">name</span><span class="o">.</span><span class="n">upcase</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">            </span><span class="err">→</span><span class="w"> </span><span class="ss">Upper</span><span class="p">:</span><span class="w"> </span><span class="no">ALICE</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Pi ≈ </span><span class="si">#{</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">14159</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">        </span><span class="err">→</span><span class="w"> </span><span class="no">Pi</span><span class="w"> </span><span class="err">≈</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span>
-</code></pre></div>
-<p>Any valid Frankie expression works inside <code>#{}</code>. The result is automatically converted to a string.</p>
-<hr />
-<h2 id="escape-sequences"><code>Escape Sequences</code></h2>
-<p>Inside double-quoted strings:</p>
+<p>Supported input formats:</p>
 <table>
 <thead>
 <tr>
-<th>Sequence</th>
-<th>Meaning</th>
+<th>Input</th>
+<th>Result</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>\n</code></td>
-<td>Newline</td>
+<td><code>--flag</code></td>
+<td><code>flags["flag"] = true</code></td>
 </tr>
 <tr>
-<td><code>\t</code></td>
-<td>Tab</td>
+<td><code>--no-flag</code></td>
+<td><code>flags["flag"] = false</code></td>
 </tr>
 <tr>
-<td><code>\\</code></td>
-<td>Literal backslash</td>
+<td><code>--key value</code></td>
+<td><code>options["key"] = "value"</code></td>
 </tr>
 <tr>
-<td><code>\"</code></td>
-<td>Literal double quote</td>
+<td><code>--key=value</code></td>
+<td><code>options["key"] = "value"</code></td>
+</tr>
+<tr>
+<td><code>-f</code></td>
+<td><code>flags["f"] = true</code></td>
+</tr>
+<tr>
+<td><code>positional</code></td>
+<td>pushed to <code>args</code></td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;line one</span><span class="se">\n</span><span class="s2">line two&quot;</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;column</span><span class="se">\t</span><span class="s2">one</span><span class="se">\t</span><span class="s2">two&quot;</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;She said </span><span class="se">\&quot;</span><span class="s2">hello</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+<p>Dashes in flag/option names are converted to underscores: <code>--dry-run</code> → <code>flags["dry_run"]</code>.</p>
+<hr />
+<h3 id="cli_getcli-key-default"><code>cli_get(cli, key, default)</code></h3>
+<p>Get a named option value, or <code>default</code> if the option was not passed.</p>
+<div class="highlight"><pre><span></span><code><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_get</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;output&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;result.txt&quot;</span><span class="p">)</span>
+<span class="n">port</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">cli_get</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;port&quot;</span><span class="p">,</span><span class="w">   </span><span class="s2">&quot;3000&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h2 id="string-operators"><code>String Operators</code></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Concatenation</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Hello, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;Frankie!&quot;</span><span class="w">    </span><span class="c1"># Hello, Frankie!</span>
-
-<span class="c1"># Repetition</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;ha&quot;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="w">                   </span><span class="err">→</span><span class="w"> </span><span class="n">hahaha</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">40</span><span class="w">                   </span><span class="err">→</span><span class="w"> </span><span class="err">────────────────────────────────────────</span>
-
-<span class="c1"># Comparison</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="w">         </span><span class="err">→</span><span class="w"> </span><span class="kp">true</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="w">        </span><span class="err">→</span><span class="w"> </span><span class="kp">true</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;apple&quot;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="w">         </span><span class="err">→</span><span class="w"> </span><span class="kp">true</span><span class="w">  </span><span class="p">(</span><span class="n">lexicographic</span><span class="p">)</span>
-
-<span class="c1"># Match operator — returns position of first match or nil</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;frank123&quot;</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">d+&quot;</span><span class="w">       </span><span class="err">→</span><span class="w"> </span><span class="mi">5</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;no digits&quot;</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">d+&quot;</span><span class="w">      </span><span class="err">→</span><span class="w"> </span><span class="kp">nil</span>
+<h3 id="cli_flagcli-name"><code>cli_flag(cli, name)</code></h3>
+<p>Check if a boolean flag was passed. Returns <code>false</code> if absent.</p>
+<div class="highlight"><pre><span></span><code><span class="n">verbose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_flag</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;verbose&quot;</span><span class="p">)</span>
+<span class="n">dry_run</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_flag</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dry-run&quot;</span><span class="p">)</span><span class="w">   </span><span class="c1"># normalized automatically</span>
 </code></pre></div>
 <hr />
-<h2 id="accessing-characters-and-slices"><code>Accessing Characters and Slices</code></h2>
-<p>Strings are 0-indexed. Negative indices count from the end.</p>
-<div class="highlight"><pre><span></span><code><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Frankie&quot;</span>
-
-<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w">       </span><span class="err">→</span><span class="w"> </span><span class="n">F</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w">       </span><span class="err">→</span><span class="w"> </span><span class="n">r</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[-</span><span class="mi">1</span><span class="o">]</span><span class="w">      </span><span class="err">→</span><span class="w"> </span><span class="n">e</span><span class="w">   </span><span class="p">(</span><span class="n">last</span><span class="w"> </span><span class="n">character</span><span class="p">)</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[-</span><span class="mi">3</span><span class="o">]</span><span class="w">      </span><span class="err">→</span><span class="w"> </span><span class="n">i</span>
-
-<span class="c1"># Inclusive range slice</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">4</span><span class="o">]</span><span class="w">    </span><span class="err">→</span><span class="w"> </span><span class="no">Frank</span>
-
-<span class="c1"># Exclusive range slice (up to but not including index 5)</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[</span><span class="mi">0</span><span class="o">...</span><span class="mi">4</span><span class="o">]</span><span class="w">   </span><span class="err">→</span><span class="w"> </span><span class="no">Fran</span>
-
-<span class="c1"># Last N characters</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">s</span><span class="o">[-</span><span class="mi">3</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span><span class="w">  </span><span class="err">→</span><span class="w"> </span><span class="n">kie</span>
+<h3 id="cli_argcli-index-default"><code>cli_arg(cli, index, default)</code></h3>
+<p>Get a positional argument by index, or <code>default</code> if not enough args were given.</p>
+<div class="highlight"><pre><span></span><code><span class="n">filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_arg</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;input.txt&quot;</span><span class="p">)</span>
+<span class="n">target</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">cli_arg</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;output.txt&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h2 id="nil-safety-with-strings"><code>Nil Safety with Strings</code></h2>
-<p>Calling a method on <code>nil</code> raises a runtime error. Use <code>&amp;.</code> to return nil safely instead:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">nil</span>
-
-<span class="nb">puts</span><span class="w"> </span><span class="nb">name</span><span class="o">.</span><span class="n">upcase</span><span class="w">    </span><span class="c1"># Runtime error</span>
-<span class="nb">puts</span><span class="w"> </span><span class="nb">name</span><span class="o">&amp;.</span><span class="n">upcase</span><span class="w">   </span><span class="c1"># nil — safe</span>
-
-<span class="c1"># Useful when a value might or might not be present</span>
-<span class="n">user_input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kp">nil</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">user_input</span><span class="o">&amp;.</span><span class="n">strip</span><span class="o">&amp;.</span><span class="n">downcase</span><span class="w">   </span><span class="c1"># nil — whole chain short-circuits</span>
+<h3 id="cli_requirecli-key-msg"><code>cli_require(cli, key, msg)</code></h3>
+<p>Like <code>cli_get</code> but halts with an error message and <code>exit(1)</code> if the option is missing.</p>
+<div class="highlight"><pre><span></span><code><span class="n">db_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_require</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;db&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Please provide --db &lt;url&gt;&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h2 id="quick-reference"><code>Quick Reference</code></h2>
-<table>
-<thead>
-<tr>
-<th>Category</th>
-<th>Methods / Functions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Case</td>
-<td><code>.upcase</code> <code>.downcase</code></td>
-</tr>
-<tr>
-<td>Whitespace</td>
-<td><code>.strip</code> <code>.lstrip</code> <code>.rstrip</code> <code>.chomp</code> <code>.chop</code></td>
-</tr>
-<tr>
-<td>Inspection</td>
-<td><code>.length</code> <code>.empty?</code> <code>.include?</code> <code>.start_with?</code> <code>.end_with?</code> <code>.count</code></td>
-</tr>
-<tr>
-<td>Search</td>
-<td><code>.match</code> <code>.match_all</code> <code>.matches?</code> <code>=~</code></td>
-</tr>
-<tr>
-<td>Transform</td>
-<td><code>.replace</code> <code>.sub</code> <code>.gsub</code> <code>.gsub do</code> <code>.delete</code> <code>.squeeze</code> <code>.tr</code> <code>.reverse</code></td>
-</tr>
-<tr>
-<td>Align</td>
-<td><code>.center</code> <code>.ljust</code> <code>.rjust</code></td>
-</tr>
-<tr>
-<td>Split</td>
-<td><code>.split</code> <code>.lines</code> <code>.chars</code> <code>.bytes</code></td>
-</tr>
-<tr>
-<td>Iterate</td>
-<td><code>.each_char</code> <code>.each_line</code></td>
-</tr>
-<tr>
-<td>Convert</td>
-<td><code>.to_i</code> <code>.to_f</code> <code>.to_s</code> <code>.ord</code> <code>.encode</code> <code>.decode</code></td>
-</tr>
-<tr>
-<td>Format</td>
-<td><code>template()</code> <code>.format()</code> <code>sprintf()</code> <code>paste()</code></td>
-</tr>
-<tr>
-<td>Slice</td>
-<td><code>[i]</code> <code>[a..b]</code> <code>[a...b]</code></td>
-</tr>
-<tr>
-<td>Operators</td>
-<td><code>+</code> <code>*</code> <code>==</code> <code>!=</code> <code>&lt;</code> <code>&gt;</code> <code>=~</code></td>
-</tr>
-</tbody>
-</table>
+<h2 id="quick-start">Quick Start</h2>
+<div class="highlight"><pre><span></span><code><span class="n">stitch</span><span class="w"> </span><span class="s2">&quot;frankiecli&quot;</span>
+
+<span class="n">cli</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_parse</span><span class="p">(</span><span class="n">argv</span><span class="p">())</span>
+
+<span class="nb">name</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">cli_get</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w">  </span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="w">    </span><span class="s2">&quot;World&quot;</span><span class="p">)</span>
+<span class="n">debug</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">cli_flag</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;verbose&quot;</span><span class="p">)</span>
+<span class="n">outfile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_get</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w">  </span><span class="s2">&quot;output&quot;</span><span class="p">,</span><span class="w">  </span><span class="s2">&quot;out.txt&quot;</span><span class="p">)</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Debug mode: </span><span class="si">#{</span><span class="n">debug</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Output: </span><span class="si">#{</span><span class="n">outfile</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>hello.fk<span class="w"> </span>--name<span class="w"> </span>Alice<span class="w"> </span>--verbose<span class="w"> </span>--output<span class="w"> </span>report.txt
+<span class="c1"># Hello, Alice!</span>
+<span class="c1"># Debug mode: true</span>
+<span class="c1"># Output: report.txt</span>
+</code></pre></div>
+<hr />
+<h2 id="subcommand-pattern">Subcommand Pattern</h2>
+<div class="highlight"><pre><span></span><code><span class="n">stitch</span><span class="w"> </span><span class="s2">&quot;frankiecli&quot;</span>
+
+<span class="n">cli</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_parse</span><span class="p">(</span><span class="n">argv</span><span class="p">())</span>
+<span class="n">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli</span><span class="o">[</span><span class="s2">&quot;command&quot;</span><span class="o">]</span>
+
+<span class="k">if</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;build&quot;</span>
+<span class="w">  </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_get</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;target&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;debug&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Building for </span><span class="si">#{</span><span class="n">target</span><span class="si">}</span><span class="s2">...&quot;</span>
+
+<span class="k">elsif</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;deploy&quot;</span>
+<span class="w">  </span><span class="n">env_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_require</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;env&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Usage: deploy --env &lt;name&gt;&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">dry_run</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">cli_flag</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dry-run&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Deploying to </span><span class="si">#{</span><span class="n">env_name</span><span class="si">}#{</span><span class="n">dry_run</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="s2">&quot; (dry run)&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="si">}</span><span class="s2">...&quot;</span>
+
+<span class="k">elsif</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;help&quot;</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">cmd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kp">nil</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Usage: myscript.fk &lt;command&gt; [options]&quot;</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;  build  --target debug|release&quot;</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;  deploy --env &lt;name&gt; [--dry-run]&quot;</span>
+
+<span class="k">else</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Unknown command: </span><span class="si">#{</span><span class="n">cmd</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>myscript.fk<span class="w"> </span>deploy<span class="w"> </span>--env<span class="w"> </span>production
+<span class="c1"># Deploying to production...</span>
+
+frankiec<span class="w"> </span>run<span class="w"> </span>myscript.fk<span class="w"> </span>deploy<span class="w"> </span>--env<span class="w"> </span>staging<span class="w"> </span>--dry-run
+<span class="c1"># Deploying to staging (dry run)...</span>
+</code></pre></div>
+<hr />
+<h2 id="-no-flag-negation">--no-flag Negation</h2>
+<div class="highlight"><pre><span></span><code><span class="n">stitch</span><span class="w"> </span><span class="s2">&quot;frankiecli&quot;</span>
+
+<span class="c1"># Pass --no-color to disable colors</span>
+<span class="n">cli</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">cli_parse</span><span class="p">(</span><span class="n">argv</span><span class="p">())</span>
+<span class="n">colored</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_flag</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;color&quot;</span><span class="p">)</span><span class="w">   </span><span class="c1"># false if --no-color was passed</span>
+
+<span class="k">if</span><span class="w"> </span><span class="n">colored</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="n">green</span><span class="p">(</span><span class="s2">&quot;All good!&quot;</span><span class="p">)</span>
+<span class="k">else</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;All good!&quot;</span>
+<span class="k">end</span>
+</code></pre></div>
+<hr />
+<h2 id="full-example">Full Example</h2>
+<div class="highlight"><pre><span></span><code><span class="n">stitch</span><span class="w"> </span><span class="s2">&quot;frankiecli&quot;</span>
+
+<span class="n">cli</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_parse</span><span class="p">(</span><span class="n">argv</span><span class="p">())</span>
+
+<span class="c1"># Required — exits with error if missing</span>
+<span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_require</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;input&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Usage: report.fk --input &lt;file.csv&gt; [--output &lt;file&gt;] [--verbose]&quot;</span><span class="p">)</span>
+
+<span class="c1"># Optional with defaults</span>
+<span class="n">output</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">cli_get</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w">  </span><span class="s2">&quot;output&quot;</span><span class="p">,</span><span class="w">  </span><span class="s2">&quot;report.txt&quot;</span><span class="p">)</span>
+<span class="n">verbose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cli_flag</span><span class="p">(</span><span class="n">cli</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;verbose&quot;</span><span class="p">)</span>
+
+<span class="k">if</span><span class="w"> </span><span class="n">verbose</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Reading: </span><span class="si">#{</span><span class="n">input</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+
+<span class="n">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">csv_parse</span><span class="p">(</span><span class="n">file_read</span><span class="p">(</span><span class="n">input</span><span class="p">))</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Rows: </span><span class="si">#{</span><span class="n">rows</span><span class="o">.</span><span class="n">length</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">file_write</span><span class="p">(</span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="n">rows</span><span class="o">.</span><span class="n">map</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">r</span><span class="o">|</span><span class="w"> </span><span class="n">r</span><span class="o">.</span><span class="n">to_s</span><span class="w"> </span><span class="k">end</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">))</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Written to </span><span class="si">#{</span><span class="n">output</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="notes">Notes</h2>
+<ul>
+<li>All option names are normalized to <code>snake_case</code>: <code>--dry-run</code> → <code>options["dry_run"]</code>.</li>
+<li><code>cli_parse</code> does not call <code>argv()</code> automatically — pass <code>argv()</code> explicitly so you can also pass test arrays.</li>
+<li>Positional arguments come before or between flags; <code>--key value</code> consumes the next token only when it doesn't start with <code>-</code>.</li>
+</ul>
 
 
 
