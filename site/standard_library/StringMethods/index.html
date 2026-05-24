@@ -3470,30 +3470,30 @@
 <h3 id="scanpattern"><code>.scan(pattern)</code></h3>
 <p>Find all non-overlapping matches of a regex pattern in the string. Returns a vector of matched strings (or capture groups if the pattern contains them).</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Extract all words</span>
-<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;hello world frankie&quot;</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="sr">/\w+/</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;hello world frankie&quot;</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="s2">&quot;[a-z]+&quot;</span><span class="p">)</span>
 <span class="c1"># [&quot;hello&quot;, &quot;world&quot;, &quot;frankie&quot;]</span>
 
 <span class="c1"># Extract email addresses</span>
 <span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Contact alice@example.com or bob@test.org for help.&quot;</span>
-<span class="n">emails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="sr">/[\w.]+@[\w.]+/</span><span class="p">)</span>
+<span class="n">emails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="s2">&quot;[</span><span class="se">\\</span><span class="s2">w.]+@[</span><span class="se">\\</span><span class="s2">w.]+&quot;</span><span class="p">)</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">emails</span>
 <span class="c1"># [&quot;alice@example.com&quot;, &quot;bob@test.org&quot;]</span>
 
 <span class="c1"># Extract dates</span>
 <span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Errors on 2026-01-15 and 2026-02-03.&quot;</span>
-<span class="n">dates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">log</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="sr">/\d{4}-\d{2}-\d{2}/</span><span class="p">)</span>
+<span class="n">dates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">log</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">d{4}-</span><span class="se">\\</span><span class="s2">d{2}-</span><span class="se">\\</span><span class="s2">d{2}&quot;</span><span class="p">)</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">dates</span>
 <span class="c1"># [&quot;2026-01-15&quot;, &quot;2026-02-03&quot;]</span>
 
 <span class="c1"># Extract numbers</span>
 <span class="n">prices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Items cost $12.50, $3.99, and $45.00.&quot;</span>
-<span class="n">amounts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prices</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="sr">/\d+\.\d{2}/</span><span class="p">)</span>
+<span class="n">amounts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prices</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">d+</span><span class="se">\\</span><span class="s2">.</span><span class="se">\\</span><span class="s2">d{2}&quot;</span><span class="p">)</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">amounts</span>
 <span class="c1"># [&quot;12.50&quot;, &quot;3.99&quot;, &quot;45.00&quot;]</span>
 </code></pre></div>
 <p><code>scan</code> is commonly combined with iterators:</p>
 <div class="highlight"><pre><span></span><code><span class="n">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;a href=&#39;https://frankie.dev&#39;&gt;Frankie&lt;/a&gt;&quot;</span>
-<span class="n">urls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">html</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="sr">/href=&#39;([^&#39;]+)&#39;/</span><span class="p">)</span>
+<span class="n">urls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">html</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="s2">&quot;href=&#39;([^&#39;]+)&#39;&quot;</span><span class="p">)</span>
 <span class="n">urls</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">url</span><span class="o">|</span>
 <span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Found link: </span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="k">end</span>

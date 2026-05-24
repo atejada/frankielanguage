@@ -2357,32 +2357,32 @@
 <td>Load a package by name — resolves from <code>./stitches/</code> then <code>~/.frankie/stitches/</code></td>
 </tr>
 <tr>
-<td><strong><code>frankiforms</code></strong></td>
+<td><strong><code>frankieforms</code></strong></td>
 <td>stitch</td>
 <td>Form field validation — required, min/max length, email, numeric, pattern</td>
 </tr>
 <tr>
-<td><strong><code>frankitable</code></strong></td>
+<td><strong><code>frankietable</code></strong></td>
 <td>stitch</td>
 <td>ASCII table rendering from a vector of hashes</td>
 </tr>
 <tr>
-<td><strong><code>frankicolor</code></strong></td>
+<td><strong><code>frankiecolor</code></strong></td>
 <td>stitch</td>
 <td>ANSI color helpers for terminal output</td>
 </tr>
 <tr>
-<td><strong><code>frankipager</code></strong></td>
+<td><strong><code>frankiepager</code></strong></td>
 <td>stitch</td>
 <td>Pagination math — total pages, slicing, prev/next</td>
 </tr>
 <tr>
-<td><strong><code>frankiconfig</code></strong></td>
+<td><strong><code>frankieconfig</code></strong></td>
 <td>stitch</td>
 <td>Layered config loading from defaults, JSON file, and env vars</td>
 </tr>
 <tr>
-<td><strong><code>frankistring</code></strong></td>
+<td><strong><code>frankiestring</code></strong></td>
 <td>stitch</td>
 <td>Additional string functions</td>
 </tr>
@@ -2436,8 +2436,8 @@
 </ol>
 <p>If neither exists, a clear error tells you exactly what to do:</p>
 <div class="highlight"><pre><span></span><code>╔══ Frankie Runtime Error ══════════════════════════════
-║  [Frankie] Stitch not found: &quot;frankiforms&quot;
-║    Put frankiforms.fk in ./stitches/ or ~/.frankie/stitches/
+║  [Frankie] Stitch not found: &quot;frankieforms&quot;
+║    Put frankieforms.fk in ./stitches/ or ~/.frankie/stitches/
 ╚═══════════════════════════════════════════════════════
 </code></pre></div>
 <p>Each stitch is loaded <strong>at most once</strong> — calling <code>stitch "name"</code> multiple times in the same program is safe.</p>
@@ -2454,7 +2454,7 @@
 <tr>
 <td>Path</td>
 <td>Explicit: <code>require "lib/utils"</code></td>
-<td>By name: <code>stitch "frankiforms"</code></td>
+<td>By name: <code>stitch "frankieforms"</code></td>
 </tr>
 <tr>
 <td>Resolution</td>
@@ -2481,8 +2481,8 @@
 ├── lib/
 │   └── utils.fk        ← your own code, loaded with require
 └── stitches/
-    ├── frankiforms.fk   ← third-party, loaded with stitch
-    └── frankitable.fk
+    ├── frankieforms.fk   ← third-party, loaded with stitch
+    └── frankietable.fk
 </code></pre></div>
 <p>Anyone cloning your repo immediately knows what <code>stitches/</code> contains.</p>
 <hr />

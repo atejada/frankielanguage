@@ -2109,16 +2109,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#v1160-2026" class="md-nav__link">
+  <a href="#v1161-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
-        v1.16.0 (2026)
+        v1.16.1 (2026)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="v1.16.0 (2026)">
+    <nav class="md-nav" aria-label="v1.16.1 (2026)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#patch-bug-fixes-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patch: Bug Fixes &amp; Compatibility
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#theme-system-integration-scripting-power" class="md-nav__link">
@@ -2975,16 +2986,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#v1160-2026" class="md-nav__link">
+  <a href="#v1161-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
-        v1.16.0 (2026)
+        v1.16.1 (2026)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="v1.16.0 (2026)">
+    <nav class="md-nav" aria-label="v1.16.1 (2026)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#patch-bug-fixes-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patch: Bug Fixes &amp; Compatibility
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#theme-system-integration-scripting-power" class="md-nav__link">
@@ -3788,7 +3810,30 @@
 
 
 <h1 id="changelog">Changelog</h1>
-<h2 id="v1160-2026">v1.16.0 (2026)</h2>
+<h2 id="v1161-2026">v1.16.1 (2026)</h2>
+<h3 id="patch-bug-fixes-compatibility">Patch: Bug Fixes &amp; Compatibility</h3>
+<hr />
+<p><strong>Regex patterns must be strings, not <code>/literals/</code></strong>
+Frankie does not have a regex literal syntax. All patterns passed to <code>scan</code>, <code>gsub</code>, <code>match_all</code>, <code>matches</code>, etc. must be plain strings with double-escaped backslashes: <code>"\\d+"</code> not <code>/\d+/</code>. The lexer rejects <code>/</code> in expression position when followed by a pattern character — fixed all stdlib docs and examples to use the string form.</p>
+<p><strong><code>||=</code> applies to simple variables only</strong>
+The nil-coalescing assignment operator (<code>||=</code>) works on plain variable names only. Subscript expressions such as <code>hash["key"] ||= value</code> are not supported and will cause a parse error. Use an explicit nil check instead:
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="n">cache</span><span class="o">[</span><span class="s2">&quot;user:1&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kp">nil</span>
+<span class="w">  </span><span class="n">cache</span><span class="o">[</span><span class="s2">&quot;user:1&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">}</span>
+<span class="k">end</span>
+</code></pre></div></p>
+<p><strong>Tuple/parallel assignment not supported</strong>
+Multi-assignment syntax (<code>a, b = b, a + b</code>) causes a parse error. Use a temporary variable:
+<div class="highlight"><pre><span></span><code><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+<span class="n">a</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">b</span>
+<span class="n">b</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span>
+</code></pre></div></p>
+<p><strong><code>hmac_verify(token, secret)</code> takes exactly 2 arguments</strong>
+The subject is embedded in the token by <code>hmac_sign</code> — you do not pass it separately to <code>hmac_verify</code>. Passing 3 arguments raises a runtime error.</p>
+<p><strong><code>.inspect</code> is not a Frankie method</strong>
+Ruby's <code>.inspect</code> does not exist in Frankie. Use string interpolation (<code>"#{value}"</code>) or <code>puts value</code> directly.</p>
+<p><strong>Stitch names use the <code>frankie</code> prefix throughout</strong>
+All built-in stitches are named with the full <code>frankie</code> prefix: <code>frankieforms</code>, <code>frankietable</code>, <code>frankiecolor</code>, <code>frankiepager</code>, <code>frankieconfig</code>, <code>frankiestring</code>. The abbreviated <code>franki</code> prefix is incorrect.</p>
+<hr />
 <h3 id="theme-system-integration-scripting-power">Theme: System Integration &amp; Scripting Power</h3>
 <hr />
 <h3 id="new-language-features">New Language Features</h3>
