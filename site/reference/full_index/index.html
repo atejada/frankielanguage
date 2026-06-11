@@ -2406,6 +2406,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#concurrency-networking-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concurrency &amp; Networking (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range-methods-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Range Methods (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules-errors-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modules &amp; Errors (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#operators-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2730,6 +2763,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#concurrency-networking-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concurrency &amp; Networking (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range-methods-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Range Methods (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules-errors-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modules &amp; Errors (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#operators-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2758,7 +2824,7 @@
 
 
 <h1 id="full-stdlib-index">Full Stdlib Index</h1>
-<p>Every function, method, and operator available in Frankie v1.16.2. All are available without any import.</p>
+<p>Every function, method, and operator available in Frankie v1.17.0. All are available without any import.</p>
 <hr />
 <h2 id="math-arithmetic">Math &amp; Arithmetic</h2>
 <table>
@@ -4242,6 +4308,18 @@
 <td><code>run_tests()</code></td>
 <td>Run all assertions and print results</td>
 </tr>
+<tr>
+<td><code>test "name", tags: ["slow"] do ... end</code></td>
+<td>Named, filterable test group (v1.17)</td>
+</tr>
+<tr>
+<td><code>stub(name, fn)</code></td>
+<td>Replace a global function during tests (v1.17)</td>
+</tr>
+<tr>
+<td><code>unstub(name)</code> / <code>unstub()</code></td>
+<td>Restore one / all stubbed functions (v1.17)</td>
+</tr>
 </tbody>
 </table>
 <hr />
@@ -4391,6 +4469,10 @@
 <td>Load another .fk file (once only)</td>
 </tr>
 <tr>
+<td><code>import "path" as name</code></td>
+<td>Load a .fk file into its own namespace (v1.17)</td>
+</tr>
+<tr>
 <td><code>stitch(name)</code></td>
 <td>Load a stitch package from <code>./stitches/</code> or <code>~/.frankie/stitches/</code></td>
 </tr>
@@ -4401,6 +4483,110 @@
 <tr>
 <td><code>dotenv(path)</code></td>
 <td>Load <code>.env</code> file into process environment — returns hash of loaded vars (v1.16)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="concurrency-networking-v117">Concurrency &amp; Networking <em>(v1.17)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>parallel_map(vec, workers: 4) do \|x\| ... end</code></td>
+<td>Thread-pool map — results in input order</td>
+</tr>
+<tr>
+<td><code>tcp_connect(host, port, timeout: nil)</code></td>
+<td>Open a TCP connection</td>
+</tr>
+<tr>
+<td><code>tcp_listen(port, host: "0.0.0.0")</code></td>
+<td>Listen on a port; <code>.accept()</code> returns a client socket</td>
+</tr>
+<tr>
+<td><code>tcp_serve(port) do \|client\| ... end</code></td>
+<td>Threaded accept loop, auto-closes clients</td>
+</tr>
+<tr>
+<td><code>sock.send(s)</code> / <code>sock.send_line(s)</code></td>
+<td>Send a string (newline appended by <code>send_line</code>)</td>
+</tr>
+<tr>
+<td><code>sock.recv(n)</code> / <code>sock.recv_line()</code></td>
+<td>Receive a string — <code>nil</code> when peer closes</td>
+</tr>
+<tr>
+<td><code>sock.peer()</code> / <code>sock.close()</code></td>
+<td>Remote <code>"host:port"</code> / close the connection</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="range-methods-v117">Range Methods <em>(v1.17)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(1..10).to_vec</code> / <code>.to_a</code></td>
+<td>Convert to a vector</td>
+</tr>
+<tr>
+<td><code>(1..10).include?(x)</code></td>
+<td>Membership test</td>
+</tr>
+<tr>
+<td><code>(1..10).step(n)</code></td>
+<td>Stride: <code>(1..10).step(3)</code> → <code>[1, 4, 7, 10]</code></td>
+</tr>
+<tr>
+<td><code>(1..10).sum</code></td>
+<td>Sum of the range</td>
+</tr>
+<tr>
+<td><code>(1..10).first</code> / <code>.last</code></td>
+<td>Endpoints</td>
+</tr>
+<tr>
+<td><code>when 90..100</code></td>
+<td>Range membership in <code>case/when</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="modules-errors-v117">Modules &amp; Errors <em>(v1.17)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>import "lib/math" as math</code></td>
+<td>Load a <code>.fk</code> file into its own namespace</td>
+</tr>
+<tr>
+<td><code>error TypeName</code></td>
+<td>Declare a user-defined error type</td>
+</tr>
+<tr>
+<td><code>raise TypeName, "msg"</code></td>
+<td>Raise a typed error</td>
+</tr>
+<tr>
+<td><code>rescue TypeName =&gt; e</code></td>
+<td>Catch a typed error (Ruby-style binding)</td>
 </tr>
 </tbody>
 </table>

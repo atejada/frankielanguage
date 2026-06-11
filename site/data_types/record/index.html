@@ -2471,12 +2471,20 @@
 </code></pre></div>
 <hr />
 <h2 id="accessing-fields"><code>Accessing Fields</code></h2>
-<p>Records are Hashes. Access fields with string keys:</p>
+<p>Since v1.17, record fields support <strong>dot access</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">record</span><span class="w"> </span><span class="no">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="w">        </span><span class="c1"># 3</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="w">        </span><span class="c1"># 4</span>
+</code></pre></div>
+<p>Records are still Hashes underneath — string-key access keeps working:</p>
 <div class="highlight"><pre><span></span><code><span class="n">record</span><span class="w"> </span><span class="no">Employee</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span>
 
 <span class="n">emp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Employee</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Engineering&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">95000</span><span class="p">)</span>
 
-<span class="nb">puts</span><span class="w"> </span><span class="n">emp</span><span class="o">[</span><span class="s2">&quot;name&quot;</span><span class="o">]</span><span class="w">     </span><span class="c1"># Alice</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">emp</span><span class="o">.</span><span class="n">name</span><span class="w">        </span><span class="c1"># Alice</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">emp</span><span class="o">[</span><span class="s2">&quot;name&quot;</span><span class="o">]</span><span class="w">     </span><span class="c1"># Alice — equivalent</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">emp</span><span class="o">[</span><span class="s2">&quot;dept&quot;</span><span class="o">]</span><span class="w">     </span><span class="c1"># Engineering</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">emp</span><span class="o">[</span><span class="s2">&quot;salary&quot;</span><span class="o">]</span><span class="w">   </span><span class="c1"># 95000</span>
 
@@ -2661,7 +2669,8 @@
 <span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Person</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Engineer&quot;</span><span class="p">)</span>
 
 <span class="c1"># Access</span>
-<span class="n">pt</span><span class="o">[</span><span class="s2">&quot;x&quot;</span><span class="o">]</span><span class="w">             </span><span class="c1"># field value</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">x</span><span class="w">                </span><span class="c1"># field value via dot access (v1.17)</span>
+<span class="n">pt</span><span class="o">[</span><span class="s2">&quot;x&quot;</span><span class="o">]</span><span class="w">             </span><span class="c1"># field value via key</span>
 <span class="n">pt</span><span class="o">[</span><span class="s2">&quot;__type__&quot;</span><span class="o">]</span><span class="w">      </span><span class="c1"># &quot;Point&quot;</span>
 
 <span class="c1"># Inspect</span>

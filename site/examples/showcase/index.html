@@ -2262,13 +2262,13 @@
 
 
 <h1 id="showcase">Showcase</h1>
-<p>The showcase is a single runnable file that demonstrates every major Frankie feature from v1.0 through v1.12. </p>
+<p>The showcase is a single runnable file that demonstrates every major Frankie feature from v1.0 through v1.17. </p>
 <p>It is the fastest way to see the whole language in one place.</p>
 <div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/showcase.fk
 </code></pre></div>
 <hr />
 <h2 id="what-it-covers">What It Covers</h2>
-<p>The showcase is divided into 38 numbered sections, one per feature area. Each section is self-contained and prints its own output.</p>
+<p>The showcase is divided into 62 numbered sections, one per feature area. Each section is self-contained and prints its own output.</p>
 <table>
 <thead>
 <tr>
@@ -2467,6 +2467,126 @@
 <td>38</td>
 <td><code>rescue FileNotFoundError</code> from file I/O</td>
 <td>v1.12</td>
+</tr>
+<tr>
+<td>39</td>
+<td><code>stitch</code> — package system</td>
+<td>v1.13</td>
+</tr>
+<tr>
+<td>40</td>
+<td><code>?</code> in user-defined function names</td>
+<td>v1.13</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Hash Destructuring — <code>{name, age} = user</code></td>
+<td>v1.14</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Shape Pattern Matching — <code>when {role: "admin"}</code></td>
+<td>v1.14</td>
+</tr>
+<tr>
+<td>43</td>
+<td><code>spawn</code> + <code>timeout</code></td>
+<td>v1.14</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Ternary Operator — <code>x &gt; 0 ? "pos" : "neg"</code></td>
+<td>v1.15</td>
+</tr>
+<tr>
+<td>45</td>
+<td>Keyword Default Params — <code>port: 5432</code></td>
+<td>v1.15</td>
+</tr>
+<tr>
+<td>46</td>
+<td>Splat Multi-Assign — <code>a, *rest = vec</code></td>
+<td>v1.15</td>
+</tr>
+<tr>
+<td>47</td>
+<td><code>const</code> keyword</td>
+<td>v1.15</td>
+</tr>
+<tr>
+<td>48</td>
+<td><code>json_encode</code> + <code>base64</code> / <code>hmac</code> public</td>
+<td>v1.15</td>
+</tr>
+<tr>
+<td>49</td>
+<td><code>String#format</code> + path helpers + date arithmetic</td>
+<td>v1.15</td>
+</tr>
+<tr>
+<td>50</td>
+<td><code>shell()</code> + <code>dotenv()</code></td>
+<td>v1.16</td>
+</tr>
+<tr>
+<td>51</td>
+<td><code>loop do...end</code> + <code>\|\|=</code></td>
+<td>v1.16</td>
+</tr>
+<tr>
+<td>52</td>
+<td><code>transform_values</code> + <code>transform_keys</code></td>
+<td>v1.16</td>
+</tr>
+<tr>
+<td>53</td>
+<td><code>String#scan</code> + <code>Hash#deep_merge</code></td>
+<td>v1.16</td>
+</tr>
+<tr>
+<td>54</td>
+<td><code>frankiecli</code> stitch</td>
+<td>v1.16</td>
+</tr>
+<tr>
+<td>55</td>
+<td><code>frankiecache</code> stitch</td>
+<td>v1.16</td>
+</tr>
+<tr>
+<td>56</td>
+<td>First-class Ranges — <code>.to_vec</code>, <code>.include?</code>, <code>.step</code></td>
+<td>v1.17</td>
+</tr>
+<tr>
+<td>57</td>
+<td>User-defined Error Types — <code>error</code> / <code>rescue Type =&gt; e</code></td>
+<td>v1.17</td>
+</tr>
+<tr>
+<td>58</td>
+<td>Namespaced Imports — <code>import "path" as name</code></td>
+<td>v1.17</td>
+</tr>
+<tr>
+<td>59</td>
+<td>Record Dot Access — <code>p1.x</code></td>
+<td>v1.17</td>
+</tr>
+<tr>
+<td>60</td>
+<td><code>parallel_map</code> — thread-pool map</td>
+<td>v1.17</td>
+</tr>
+<tr>
+<td>61</td>
+<td>TCP Sockets — <code>tcp_connect</code> / <code>tcp_serve</code></td>
+<td>v1.17</td>
+</tr>
+<tr>
+<td>62</td>
+<td>Test Stubs — <code>stub</code> / <code>unstub</code></td>
+<td>v1.17</td>
 </tr>
 </tbody>
 </table>

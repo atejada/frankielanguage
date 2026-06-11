@@ -679,6 +679,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#namespaced-imports-import-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Namespaced Imports — import (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#testing-across-files" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2289,6 +2300,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#namespaced-imports-import-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Namespaced Imports — import (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#testing-across-files" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2393,7 +2415,26 @@
 <div class="highlight"><pre><span></span><code><span class="nb">require</span><span class="w"> </span><span class="s2">&quot;lib/helpers&quot;</span><span class="w">   </span><span class="c1"># must come first</span>
 <span class="nb">require</span><span class="w"> </span><span class="s2">&quot;lib/routes&quot;</span><span class="w">    </span><span class="c1"># can now use helpers</span>
 </code></pre></div>
-<p><strong>Constants and records defined in any required file are global.</strong> There are no namespaces — keep names descriptive enough to avoid collisions.</p>
+<p><strong>Constants and records defined in any required file are global.</strong> <code>require</code> has no namespaces — keep names descriptive enough to avoid collisions, or use <code>import</code> (below) when names start colliding.</p>
+<hr />
+<h2 id="namespaced-imports-import-v117">Namespaced Imports — <code>import</code> (v1.17)</h2>
+<p><code>require</code> merges everything into your scope. For larger programs, <code>import</code> loads a file into its <strong>own namespace</strong> instead:</p>
+<div class="highlight"><pre><span></span><code><span class="n">import</span><span class="w"> </span><span class="s2">&quot;lib/math_utils&quot;</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">math</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="n">math</span><span class="o">.</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w">     </span><span class="c1"># 78.539...</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">math</span><span class="o">.</span><span class="n">PI</span><span class="w">                 </span><span class="c1"># 3.14159265358979</span>
+</code></pre></div>
+<p>The alias is optional — <code>import "lib/math_utils"</code> defines a module named <code>math_utils</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">import</span><span class="w"> </span><span class="s2">&quot;lib/math_utils&quot;</span>
+
+<span class="nb">puts</span><span class="w"> </span><span class="n">math_utils</span><span class="o">.</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<p>Notes:</p>
+<ul>
+<li>Modules are cached — importing the same file twice returns the same module.</li>
+<li><code>require</code> is unchanged and fully supported. Use <code>require</code> for quick scripts, <code>import</code> when names start colliding.</li>
+<li><code>import</code> is a contextual keyword — a variable named <code>import</code> keeps working.</li>
+</ul>
 <hr />
 <h2 id="testing-across-files">Testing Across Files</h2>
 <p><code>frankiec test</code> runs your test suite. A typical <code>test.fk</code> requires the same lib files as <code>main.fk</code>:</p>
@@ -2401,12 +2442,12 @@
 <span class="nb">require</span><span class="w"> </span><span class="s2">&quot;lib/math_utils&quot;</span>
 <span class="nb">require</span><span class="w"> </span><span class="s2">&quot;lib/helpers&quot;</span>
 
-<span class="n">describe</span><span class="w"> </span><span class="s2">&quot;circle_area&quot;</span><span class="w"> </span><span class="k">do</span>
+<span class="nb">test</span><span class="w"> </span><span class="s2">&quot;circle_area&quot;</span><span class="w"> </span><span class="k">do</span>
 <span class="w">  </span><span class="n">assert_eq</span><span class="p">(</span><span class="n">round</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">1416</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;unit circle area&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="n">assert_eq</span><span class="p">(</span><span class="n">round</span><span class="p">(</span><span class="n">circle_area</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w">    </span><span class="s2">&quot;zero radius&quot;</span><span class="p">)</span>
 <span class="k">end</span>
 
-<span class="n">describe</span><span class="w"> </span><span class="s2">&quot;helpers&quot;</span><span class="w"> </span><span class="k">do</span>
+<span class="nb">test</span><span class="w"> </span><span class="s2">&quot;helpers&quot;</span><span class="w"> </span><span class="k">do</span>
 <span class="w">  </span><span class="n">assert_eq</span><span class="p">(</span><span class="n">clamp</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;clamp above max&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="n">assert_eq</span><span class="p">(</span><span class="n">clamp</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="w">  </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">   </span><span class="s2">&quot;clamp below min&quot;</span><span class="p">)</span>
 <span class="k">end</span>

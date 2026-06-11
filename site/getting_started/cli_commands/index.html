@@ -334,6 +334,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Commands
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -350,6 +368,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-check-static-analysis-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec check — Static Analysis (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-test-filtering-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec test — Filtering (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-stitch-stitch-installer-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec stitch — Stitch Installer (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repl-v117-upgrades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REPL (v1.17 upgrades)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2135,6 +2216,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-check-static-analysis-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec check — Static Analysis (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-test-filtering-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec test — Filtering (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-stitch-stitch-installer-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec stitch — Stitch Installer (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repl-v117-upgrades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REPL (v1.17 upgrades)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2153,16 +2286,67 @@
 <h1 id="cli-commands">CLI Commands</h1>
 <ul>
 <li><code>frankiec</code>                                       - launch the REPL</li>
+<li><code>frankiec new   &lt;project&gt;</code>                       - scaffold a new project</li>
 <li><code>frankiec run   &lt;file.fk&gt;</code>                       - run a program</li>
 <li><code>frankiec build &lt;file.fk&gt;</code>                       - compile to Python source</li>
-<li><code>frankiec check &lt;file.fk&gt;</code>                       - syntax check only</li>
-<li><code>frankiec test  [file.fk]</code>                       - run test suite (default: test.fk)</li>
+<li><code>frankiec check [--strict] &lt;file.fk&gt;</code>            - syntax check + static analysis (v1.17)</li>
+<li><code>frankiec test  [file.fk] [--filter &lt;name&gt;] [--tag &lt;tag&gt;]</code> - run test suite (default: test.fk)</li>
 <li><code>frankiec fmt   [--write] [--check] &lt;file.fk&gt;</code>   - auto-format</li>
 <li><code>frankiec docs  [--output out.md] &lt;file.fk&gt;</code>     - generate docs</li>
-<li><code>frankiec repl</code>                                  - interactive REPL</li>
+<li><code>frankiec stitch install &lt;name&gt; [--global]</code>      - install a stitch from the registry (v1.17)</li>
+<li><code>frankiec stitch list</code>                           - list installed + registry stitches (v1.17)</li>
+<li><code>frankiec repl  [--no-banner]</code>                   - interactive REPL</li>
+<li><code>frankiec watch &lt;file.fk&gt; [--test]</code>              - re-run on save</li>
 <li><code>frankiec version</code>                               - show version</li>
 <li><code>frankiec --help</code>                                - full usage</li>
 <li><code>frankiec &lt;cmd&gt; --help</code>                          - per-command help</li>
+</ul>
+<hr />
+<h2 id="frankiec-check-static-analysis-v117"><code>frankiec check</code> — Static Analysis (v1.17)</h2>
+<p><code>check</code> used to be syntax-only. It now finds real bugs before the program runs:</p>
+<div class="highlight"><pre><span></span><code>$ frankiec check app.fk
+  ✗  app.fk:11 — Undefined function: &#39;greeet&#39;
+  ✗  app.fk:9  — greet() expects 1..2 argument(s), got 3
+  ⚠  app.fk:3  — Unused variable &#39;unused_thing&#39; in function &#39;greet&#39;
+
+[Frankie] app.fk — 2 error(s), 1 warning(s)
+</code></pre></div>
+<ul>
+<li>Undefined variables/functions and wrong argument counts are <strong>errors</strong> (exit 1); unused locals are <strong>warnings</strong>.</li>
+<li><code>require</code>, <code>stitch</code> and <code>import</code> targets are resolved and analyzed, so multi-file programs check cleanly.</li>
+<li>Names inside string interpolation (<code>"#{typo}"</code>) are checked too.</li>
+<li><code>--strict</code> makes warnings fail the build (CI mode).</li>
+<li>If a required file can't be resolved (dynamic path), undefined-name errors downgrade to warnings instead of guessing.</li>
+</ul>
+<hr />
+<h2 id="frankiec-test-filtering-v117"><code>frankiec test</code> — Filtering (v1.17)</h2>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span><span class="nb">test</span><span class="w">                    </span><span class="c1"># run everything</span>
+frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--filter<span class="w"> </span>math<span class="w">      </span><span class="c1"># only test groups whose name contains &quot;math&quot;</span>
+frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--tag<span class="w"> </span>slow<span class="w">         </span><span class="c1"># only test groups tagged &quot;slow&quot;</span>
+</code></pre></div>
+<p>Works with <code>test "name", tags: [...] do ... end</code> groups — skipped groups are reported in the summary. See the <a href="../../standard_library/testing/">Testing</a> page.</p>
+<hr />
+<h2 id="frankiec-stitch-stitch-installer-v117"><code>frankiec stitch</code> — Stitch Installer (v1.17)</h2>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>stitch<span class="w"> </span>install<span class="w"> </span>frankiecolor<span class="w">            </span><span class="c1"># → ./stitches/</span>
+frankiec<span class="w"> </span>stitch<span class="w"> </span>install<span class="w"> </span>frankiecache<span class="w"> </span>--global<span class="w">   </span><span class="c1"># → ~/.frankie/stitches/</span>
+frankiec<span class="w"> </span>stitch<span class="w"> </span>list<span class="w">                            </span><span class="c1"># installed + registry</span>
+</code></pre></div>
+<p>Stitches are fetched straight from the Frankie GitHub repository using the Python stdlib HTTP client — a package manager with no packaging.</p>
+<hr />
+<h2 id="repl-v117-upgrades">REPL (v1.17 upgrades)</h2>
+<div class="highlight"><pre><span></span><code>fk&gt; 2 + 3
+=&gt; 5
+fk&gt; _ * 10
+=&gt; 50
+fk&gt; help parallel_map
+  parallel_map(vec, fn, workers=4)
+    parallel_map(vec, workers: 4) do |x| ... end
+    Runs the block across a thread pool...
+</code></pre></div>
+<ul>
+<li>Bare expressions echo their value (<code>=&gt;</code>), like Ruby's irb.</li>
+<li><code>_</code> always holds the last echoed result.</li>
+<li><code>help &lt;function&gt;</code> shows the signature and documentation of any stdlib or user-defined function.</li>
 </ul>
 
 

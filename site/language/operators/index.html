@@ -602,6 +602,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Range Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-class-ranges-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First-Class Ranges (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2407,6 +2424,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Range Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-class-ranges-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First-Class Ranges (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2713,6 +2747,19 @@
 <span class="nb">puts</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">)</span><span class="w">       </span><span class="c1"># [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="mi">0</span><span class="o">...</span><span class="mi">5</span><span class="p">)</span><span class="w">       </span><span class="c1"># [0, 1, 2, 3, 4]</span>
 </code></pre></div>
+<h3 id="first-class-ranges-v117">First-Class Ranges (v1.17)</h3>
+<p>Ranges are proper values — assign them, print them, and call methods on them:</p>
+<div class="highlight"><pre><span></span><code><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">r</span><span class="w">                    </span><span class="c1"># 1..10</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">r</span><span class="o">.</span><span class="n">to_vec</span><span class="w">             </span><span class="c1"># [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">r</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="w">        </span><span class="c1"># true</span>
+<span class="nb">puts</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">      </span><span class="c1"># [1, 4, 7, 10]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="w">           </span><span class="c1"># 10</span>
+<span class="nb">puts</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="w">        </span><span class="c1"># 1</span>
+<span class="nb">puts</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">last</span><span class="w">         </span><span class="c1"># 10</span>
+<span class="nb">puts</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">to_vec</span><span class="w">       </span><span class="c1"># [1, 2, 3]    (exclusive)</span>
+</code></pre></div>
+<p><code>.to_a</code> is an alias for <code>.to_vec</code>. In <code>case/when</code>, a range value tests membership: <code>when 90..100</code>.</p>
 <hr />
 <h2 id="operator-precedence">Operator Precedence</h2>
 <p>From highest to lowest:</p>

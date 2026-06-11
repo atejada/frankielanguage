@@ -2027,6 +2027,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v117-whats_new_v117fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.17 — whats_new_v117.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v1162-whats_new_v116fk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2377,6 +2388,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v117-whats_new_v117fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.17 — whats_new_v117.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v1162-whats_new_v116fk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2593,8 +2615,77 @@
 
 <h1 id="whats-new-per-version">What's New — Per Version</h1>
 <p>Each version of Frankie ships a runnable <code>whats_new_vX.fk</code> example file that demonstrates every new feature introduced in that release. Run any of them with:</p>
-<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v116.fk
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v117.fk
 </code></pre></div>
+<h2 id="v117-whats_new_v117fk">v1.17 — <code>whats_new_v117.fk</code></h2>
+<p><strong>Theme:</strong> "Programs that grow" — namespacing, real static checking, typed errors, first-class ranges, easy concurrency, TCP sockets, and a stitch installer. Everything still pure Python stdlib, zero dependencies.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>import "path" as name</code></td>
+<td>Load a <code>.fk</code> file into its own namespace — <code>geo.circle_area(5)</code>, <code>geo.PI</code>; modules cached; <code>require</code> unchanged</td>
+</tr>
+<tr>
+<td><code>error TypeName</code></td>
+<td>User-defined error types — <code>raise ValidationError, "msg"</code>, caught with <code>rescue ValidationError =&gt; e</code></td>
+</tr>
+<tr>
+<td><code>rescue Type =&gt; e</code></td>
+<td>New Ruby-style rescue binding (old <code>rescue Type e</code> form still works)</td>
+</tr>
+<tr>
+<td>First-class ranges</td>
+<td><code>r = 1..10</code> prints as <code>1..10</code>; <code>.to_vec</code>, <code>.include?</code>, <code>.step(n)</code>, <code>.sum</code>, <code>.first</code>, <code>.last</code></td>
+</tr>
+<tr>
+<td>Range <code>case/when</code></td>
+<td><code>when 90..100</code> tests membership — works with range values in variables too</td>
+</tr>
+<tr>
+<td>Record dot access</td>
+<td><code>p1.x</code> instead of <code>p1["x"]</code> — hash-style access still works</td>
+</tr>
+<tr>
+<td><code>parallel_map</code></td>
+<td><code>parallel_map(urls, workers: 8) do \|u\| ... end</code> — thread-pool map, results in input order</td>
+</tr>
+<tr>
+<td>TCP sockets</td>
+<td><code>tcp_connect</code> / <code>tcp_listen</code> / <code>tcp_serve</code> — <code>send_line</code>, <code>recv_line</code>, <code>peer</code>, threaded server loop</td>
+</tr>
+<tr>
+<td><code>frankiec check</code></td>
+<td>Real static analysis — undefined names, wrong arg counts, unused locals; <code>--strict</code> for CI</td>
+</tr>
+<tr>
+<td>Cross-file tracebacks</td>
+<td>Runtime errors point at the right file <em>and</em> line, in requires, imports and stitches</td>
+</tr>
+<tr>
+<td><code>test</code> groups</td>
+<td><code>test "name", tags: ["slow"] do ... end</code> — filter with <code>--filter</code> / <code>--tag</code></td>
+</tr>
+<tr>
+<td><code>stub</code> / <code>unstub</code></td>
+<td>Swap any global function during tests — <code>stub("shell", -&gt;(cmd) { fake })</code></td>
+</tr>
+<tr>
+<td>Stitch installer</td>
+<td><code>frankiec stitch install frankiecolor [--global]</code>, <code>frankiec stitch list</code></td>
+</tr>
+<tr>
+<td>REPL upgrades</td>
+<td>Bare expressions echo <code>=&gt; value</code>, <code>_</code> holds last result, <code>help &lt;function&gt;</code> shows docs</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="v1162-whats_new_v116fk">v1.16.2 — <code>whats_new_v116.fk</code></h2>
 <p><strong>Theme:</strong> System Integration &amp; Scripting Power — shell commands, environment loading, infinite loops, nil-coalescing assign, richer hash and string tools, and three new stitches for email, CLI parsing, and caching.</p>
 <table>

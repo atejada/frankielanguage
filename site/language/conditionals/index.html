@@ -2563,6 +2563,7 @@
 <span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;F&quot;</span>
 <span class="k">end</span>
 </code></pre></div>
+<p>Since v1.17, <code>case/when</code> tests <strong>membership</strong> for range literals — <code>when 90..100</code> matches any value inside the range, not just the range itself. Note that this applies to range <em>literals</em> written in the <code>when</code> clause; a range stored in a variable is compared with <code>==</code> instead.</p>
 <hr />
 <h2 id="ternary-style-with-inline-if">Ternary-style with Inline <code>if</code></h2>
 <p>Frankie does not have a <code>? :</code> ternary operator. Use inline <code>if</code> instead:</p>

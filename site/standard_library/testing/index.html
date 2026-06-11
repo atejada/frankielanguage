@@ -1536,6 +1536,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#test-groups-test-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Groups — test (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stubbing-stub-unstub-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stubbing — stub / unstub (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#structuring-tests" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2532,6 +2554,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#test-groups-test-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Groups — test (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stubbing-stub-unstub-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stubbing — stub / unstub (v1.17)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#structuring-tests" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2607,11 +2651,13 @@
 <h2 id="overview">Overview</h2>
 <p>Frankie has a built-in test runner — no external libraries, no configuration. </p>
 <p>Write assertions in any <code>.fk</code> file and run it with <code>frankiec test</code>. </p>
-<p>wEvery assertion prints a ✓ or ✗ in real time, and the runner exits with code 1 if any test fails, making it CI-friendly.</p>
+<p>Every assertion prints a ✓ or ✗ in real time, and the runner exits with code 1 if any test fails, making it CI-friendly.</p>
 <hr />
 <h2 id="running-tests">Running Tests</h2>
-<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span><span class="nb">test</span><span class="w">             </span><span class="c1"># runs test.fk in the current directory</span>
-frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>mytest.fk<span class="w">   </span><span class="c1"># runs a specific file</span>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span><span class="nb">test</span><span class="w">                  </span><span class="c1"># runs test.fk in the current directory</span>
+frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>mytest.fk<span class="w">        </span><span class="c1"># runs a specific file</span>
+frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--filter<span class="w"> </span>math<span class="w">    </span><span class="c1"># v1.17 — only test groups whose name contains &quot;math&quot;</span>
+frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--tag<span class="w"> </span>slow<span class="w">       </span><span class="c1"># v1.17 — only test groups tagged &quot;slow&quot;</span>
 </code></pre></div>
 <p>Output looks like:</p>
 <div class="highlight"><pre><span></span><code>╔══ Frankie Test Runner ════════════════════════════════
@@ -2689,33 +2735,51 @@ frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </s
 <h3 id="assert_raisesfn-msg"><code>assert_raises(fn, msg)</code></h3>
 <p>Any error raised</p>
 <p>Passes if calling <code>fn</code> raises any error.</p>
-<div class="highlight"><pre><span></span><code><span class="n">assert_raises</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
-<span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">0</span>
-<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;division by zero raises&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">assert_raises</span><span class="p">(</span><span class="o">-&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;division by zero raises&quot;</span><span class="p">)</span>
 
-<span class="n">assert_raises</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
-<span class="w">  </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;/no/such/file.txt&quot;</span><span class="p">)</span>
-<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;missing file raises&quot;</span><span class="p">)</span>
+<span class="n">assert_raises</span><span class="p">(</span><span class="o">-&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;/no/such/file.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;missing file raises&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="assert_raises_typedfn-type-msg"><code>assert_raises_typed(fn, type, msg)</code></h3>
 <p>Specific error type</p>
 <p>Passes if calling <code>fn</code> raises exactly the specified error type.</p>
-<div class="highlight"><pre><span></span><code><span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
-<span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">0</span>
-<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;division raises ZeroDivisionError&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">assert_raises_typed</span><span class="p">(</span><span class="o">-&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;division raises ZeroDivisionError&quot;</span><span class="p">)</span>
 
-<span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
-<span class="w">  </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;/no/such/file.txt&quot;</span><span class="p">)</span>
-<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FileNotFoundError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;missing file raises FileNotFoundError&quot;</span><span class="p">)</span>
+<span class="n">assert_raises_typed</span><span class="p">(</span><span class="o">-&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;/no/such/file.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;FileNotFoundError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;missing file raises FileNotFoundError&quot;</span><span class="p">)</span>
 
-<span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
-<span class="w">  </span><span class="s2">&quot;hello&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">42</span>
-<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;TypeError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;string + int raises TypeError&quot;</span><span class="p">)</span>
+<span class="n">assert_raises_typed</span><span class="p">(</span><span class="o">-&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;TypeError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;string + int raises TypeError&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Supported type strings: <code>"ZeroDivisionError"</code>, <code>"FileNotFoundError"</code>, <code>"TypeError"</code>, <code>"ValueError"</code>, <code>"IndexError"</code>, <code>"KeyError"</code>, <code>"NameError"</code>, <code>"AttributeError"</code>, <code>"RuntimeError"</code>, <code>"Exception"</code>.</p>
+<p>Supported type strings: <code>"ZeroDivisionError"</code>, <code>"FileNotFoundError"</code>, <code>"TypeError"</code>, <code>"ValueError"</code>, <code>"IndexError"</code>, <code>"KeyError"</code>, <code>"NameError"</code>, <code>"AttributeError"</code>, <code>"TimeoutError"</code>, <code>"RuntimeError"</code>, <code>"Exception"</code> — plus any user-defined error type declared with <code>error</code> (v1.17).</p>
+<hr />
+<h2 id="test-groups-test-v117">Test Groups — <code>test</code> (v1.17)</h2>
+<p>Group related assertions into named, filterable blocks with <code>test</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">test</span><span class="w"> </span><span class="s2">&quot;math basics&quot;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="n">assert_eq</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;addition works&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">assert_eq</span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">),</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;abs negative&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="nb">test</span><span class="w"> </span><span class="s2">&quot;slow integration&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">tags</span><span class="p">:</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;slow&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;network&quot;</span><span class="o">]</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="n">assert_true</span><span class="p">(</span><span class="n">http_get</span><span class="p">(</span><span class="s2">&quot;http://localhost:3000/health&quot;</span><span class="p">)</span><span class="o">[</span><span class="s2">&quot;ok&quot;</span><span class="o">]</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Run a subset from the command line:</p>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span><span class="nb">test</span><span class="w">                    </span><span class="c1"># run everything</span>
+frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--filter<span class="w"> </span>math<span class="w">      </span><span class="c1"># groups whose name contains &quot;math&quot;</span>
+frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--tag<span class="w"> </span>slow<span class="w">         </span><span class="c1"># groups tagged &quot;slow&quot;</span>
+</code></pre></div>
+<p>Skipped groups are reported in the summary. <code>test</code> is a contextual keyword — a variable named <code>test</code> keeps working.</p>
+<hr />
+<h2 id="stubbing-stub-unstub-v117">Stubbing — <code>stub</code> / <code>unstub</code> (v1.17)</h2>
+<p>Swap any global function during a test — including stdlib functions like <code>shell</code> and <code>http_get</code> — to test without side effects:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">test</span><span class="w"> </span><span class="s2">&quot;stubbing&quot;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="n">stub</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">-&gt;</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="ss">ok</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">,</span><span class="w"> </span><span class="ss">stdout</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fake&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">exit_code</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
+<span class="w">  </span><span class="n">assert_eq</span><span class="p">(</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;anything&quot;</span><span class="p">)</span><span class="o">[</span><span class="s2">&quot;stdout&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;fake&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">unstub</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">)</span><span class="w">    </span><span class="c1"># restore the real shell</span>
+<span class="k">end</span>
+</code></pre></div>
+<p><code>unstub(name)</code> restores one function; <code>unstub()</code> with no arguments restores everything.</p>
 <hr />
 <h2 id="structuring-tests">Structuring Tests</h2>
-<p>There is no required structure — assertions anywhere in the file are collected and reported together. For readability, group related assertions with comments:</p>
+<p>Use <code>test</code> groups (above), or simply place assertions anywhere in the file — they are collected and reported together. For readability, group related assertions with comments:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># test.fk</span>
 
 <span class="c1"># ── Math ──────────────────────────────────────────────────────</span>
@@ -2740,13 +2804,9 @@ frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </s
 <span class="n">assert_eq</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">uniq</span><span class="o">.</span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">    </span><span class="s2">&quot;uniq removes one duplicate&quot;</span><span class="p">)</span>
 
 <span class="c1"># ── Error handling ────────────────────────────────────────────</span>
-<span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
-<span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">0</span>
-<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;division by zero&quot;</span><span class="p">)</span>
+<span class="n">assert_raises_typed</span><span class="p">(</span><span class="o">-&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;division by zero&quot;</span><span class="p">)</span>
 
-<span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
-<span class="w">  </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;/no/such/file.txt&quot;</span><span class="p">)</span>
-<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FileNotFoundError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;missing file&quot;</span><span class="p">)</span>
+<span class="n">assert_raises_typed</span><span class="p">(</span><span class="o">-&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;/no/such/file.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;FileNotFoundError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;missing file&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="testing-your-own-functions">Testing Your Own Functions</h2>
@@ -2786,9 +2846,7 @@ frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </s
 <span class="n">assert_true</span><span class="p">(</span><span class="ow">not</span><span class="w"> </span><span class="n">file_exists</span><span class="p">(</span><span class="n">path</span><span class="p">),</span><span class="w">       </span><span class="s2">&quot;file deleted&quot;</span><span class="p">)</span>
 
 <span class="c1"># FileNotFoundError</span>
-<span class="n">assert_raises_typed</span><span class="p">(</span><span class="n">def</span><span class="p">()</span>
-<span class="w">  </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;/no/such/file.txt&quot;</span><span class="p">)</span>
-<span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FileNotFoundError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;missing file raises correctly&quot;</span><span class="p">)</span>
+<span class="n">assert_raises_typed</span><span class="p">(</span><span class="o">-&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;/no/such/file.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s2">&quot;FileNotFoundError&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;missing file raises correctly&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="watch-mode">Watch Mode</h2>
@@ -2846,6 +2904,28 @@ frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </s
 <tr>
 <td><code>assert_raises_typed(fn, type, msg)</code></td>
 <td>calling <code>fn</code> raises that specific type</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Helper (v1.17)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>test "name", tags: [...] do ... end</code></td>
+<td>Named, filterable test group</td>
+</tr>
+<tr>
+<td><code>stub(name, fn)</code></td>
+<td>Replace a global function for the test</td>
+</tr>
+<tr>
+<td><code>unstub(name)</code> / <code>unstub()</code></td>
+<td>Restore one / all stubbed functions</td>
 </tr>
 </tbody>
 </table>
