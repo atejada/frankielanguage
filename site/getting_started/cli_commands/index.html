@@ -385,6 +385,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#frankiec-lsp-language-server-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec lsp — Language Server (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-bundle-one-file-distribution-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec bundle — One-File Distribution (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#frankiec-check-static-analysis-v117" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2223,6 +2245,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#frankiec-lsp-language-server-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec lsp — Language Server (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-bundle-one-file-distribution-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec bundle — One-File Distribution (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#frankiec-check-static-analysis-v117" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2289,18 +2333,57 @@
 <li><code>frankiec new   &lt;project&gt;</code>                       - scaffold a new project</li>
 <li><code>frankiec run   &lt;file.fk&gt;</code>                       - run a program</li>
 <li><code>frankiec build &lt;file.fk&gt;</code>                       - compile to Python source</li>
-<li><code>frankiec check [--strict] &lt;file.fk&gt;</code>            - syntax check + static analysis (v1.17)</li>
+<li><code>frankiec bundle &lt;file.fk&gt; [-o out.py]</code>          - compile to ONE self-contained .py (v1.18)</li>
+<li><code>frankiec check [--strict] &lt;file.fk | dir&gt;</code>      - syntax check + static analysis (v1.17); directories recurse (v1.18)</li>
 <li><code>frankiec test  [file.fk] [--filter &lt;name&gt;] [--tag &lt;tag&gt;]</code> - run test suite (default: test.fk)</li>
-<li><code>frankiec fmt   [--write] [--check] &lt;file.fk&gt;</code>   - auto-format</li>
+<li><code>frankiec fmt   [--write] [--check] &lt;file.fk | dir&gt;</code> - auto-format; directories recurse (v1.18)</li>
 <li><code>frankiec docs  [--output out.md] &lt;file.fk&gt;</code>     - generate docs</li>
+<li><code>frankiec lsp</code>                                   - start the Language Server (v1.18)</li>
 <li><code>frankiec stitch install &lt;name&gt; [--global]</code>      - install a stitch from the registry (v1.17)</li>
 <li><code>frankiec stitch list</code>                           - list installed + registry stitches (v1.17)</li>
+<li><code>frankiec stitch verify</code>                         - check installed stitches against stitch.lock (v1.18)</li>
+<li><code>frankiec stitch update [name]</code>                  - re-fetch + re-pin stitches (v1.18)</li>
 <li><code>frankiec repl  [--no-banner]</code>                   - interactive REPL</li>
 <li><code>frankiec watch &lt;file.fk&gt; [--test]</code>              - re-run on save</li>
 <li><code>frankiec version</code>                               - show version</li>
 <li><code>frankiec --help</code>                                - full usage</li>
 <li><code>frankiec &lt;cmd&gt; --help</code>                          - per-command help</li>
 </ul>
+<hr />
+<h2 id="frankiec-lsp-language-server-v118"><code>frankiec lsp</code> — Language Server (v1.18)</h2>
+<p>Frankie speaks the Language Server Protocol over stdio, built directly on the static analyzer:</p>
+<ul>
+<li><strong>Live diagnostics</strong> — undefined names, wrong argument counts, unused variables, lex/parse errors — as you type.</li>
+<li><strong>Completion</strong> — stdlib functions (with signatures + docs), your own functions, records, enums, and keywords.</li>
+<li><strong>Hover</strong> — signatures and documentation; <code>##</code> doc-comments above your <code>def</code>s show up in hover cards.</li>
+</ul>
+<p>The VS Code extension in the compiler repo (<code>editors/vscode/</code>) launches the server automatically. For Neovim (0.10+):</p>
+<div class="highlight"><pre><span></span><code><span class="nv">vim</span><span class="p">.</span><span class="py">filetype</span><span class="p">.</span><span class="nf">add</span><span class="p">({</span><span class="w"> </span><span class="nv">extension</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">fk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;frankie&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
+<span class="nv">vim</span><span class="p">.</span><span class="py">api</span><span class="p">.</span><span class="nf">nvim_create_autocmd</span><span class="p">(</span><span class="s2">&quot;FileType&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;frankie&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nv">callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+<span class="w">    </span><span class="nv">vim</span><span class="p">.</span><span class="py">lsp</span><span class="p">.</span><span class="nf">start</span><span class="p">({</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;frankie&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;frankiec&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lsp&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
+<span class="w">  </span><span class="kr">end</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div>
+<p>For Helix (<code>languages.toml</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="k">[language-server.frankie]</span>
+<span class="n">command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;frankiec&quot;</span>
+<span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;lsp&quot;</span><span class="p">]</span>
+
+<span class="k">[[language]]</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;frankie&quot;</span>
+<span class="n">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;source.frankie&quot;</span>
+<span class="n">file-types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;fk&quot;</span><span class="p">]</span>
+<span class="n">language-servers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;frankie&quot;</span><span class="p">]</span>
+</code></pre></div>
+<hr />
+<h2 id="frankiec-bundle-one-file-distribution-v118"><code>frankiec bundle</code> — One-File Distribution (v1.18)</h2>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>bundle<span class="w"> </span>app.fk<span class="w"> </span>-o<span class="w"> </span>app.py
+python3<span class="w"> </span>app.py<span class="w">        </span><span class="c1"># anywhere Python 3.8+ exists — no Frankie needed</span>
+</code></pre></div>
+<p>The bundle inlines the entire Frankie stdlib and <strong>pre-compiles every statically referenced file</strong> — <code>require</code>, <code>import</code> and <code>stitch</code> targets, recursively. At runtime they resolve from an embedded registry instead of the filesystem. Dynamic paths (computed at runtime) can't be bundled and produce a warning.</p>
+<p>Write a tool, hand someone a single file. That's the whole story.</p>
 <hr />
 <h2 id="frankiec-check-static-analysis-v117"><code>frankiec check</code> — Static Analysis (v1.17)</h2>
 <p><code>check</code> used to be syntax-only. It now finds real bugs before the program runs:</p>
@@ -2317,7 +2400,13 @@
 <li>Names inside string interpolation (<code>"#{typo}"</code>) are checked too.</li>
 <li><code>--strict</code> makes warnings fail the build (CI mode).</li>
 <li>If a required file can't be resolved (dynamic path), undefined-name errors downgrade to warnings instead of guessing.</li>
+<li>Since v1.18, <code>check</code> and <code>fmt</code> accept directories and recurse into <code>.fk</code> files:</li>
 </ul>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>check<span class="w"> </span>.<span class="w">              </span><span class="c1"># analyze the whole project</span>
+frankiec<span class="w"> </span>check<span class="w"> </span>--strict<span class="w"> </span>src<span class="w">   </span><span class="c1"># CI mode — warnings fail too</span>
+frankiec<span class="w"> </span>fmt<span class="w"> </span>--check<span class="w"> </span>.<span class="w">        </span><span class="c1"># formatting gate</span>
+frankiec<span class="w"> </span>fmt<span class="w"> </span>--write<span class="w"> </span>.<span class="w">        </span><span class="c1"># fix everything in place</span>
+</code></pre></div>
 <hr />
 <h2 id="frankiec-test-filtering-v117"><code>frankiec test</code> — Filtering (v1.17)</h2>
 <div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span><span class="nb">test</span><span class="w">                    </span><span class="c1"># run everything</span>
@@ -2330,8 +2419,11 @@ frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </s
 <div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>stitch<span class="w"> </span>install<span class="w"> </span>frankiecolor<span class="w">            </span><span class="c1"># → ./stitches/</span>
 frankiec<span class="w"> </span>stitch<span class="w"> </span>install<span class="w"> </span>frankiecache<span class="w"> </span>--global<span class="w">   </span><span class="c1"># → ~/.frankie/stitches/</span>
 frankiec<span class="w"> </span>stitch<span class="w"> </span>list<span class="w">                            </span><span class="c1"># installed + registry</span>
+frankiec<span class="w"> </span>stitch<span class="w"> </span>verify<span class="w">                          </span><span class="c1"># v1.18 — ✓ pinned · ⚠ modified · ✗ missing</span>
+frankiec<span class="w"> </span>stitch<span class="w"> </span>update<span class="w"> </span><span class="o">[</span>name<span class="o">]</span><span class="w">                   </span><span class="c1"># v1.18 — re-fetch + re-pin</span>
 </code></pre></div>
 <p>Stitches are fetched straight from the Frankie GitHub repository using the Python stdlib HTTP client — a package manager with no packaging.</p>
+<p>Since v1.18, installs are pinned in <code>stitch.lock</code> (sha256, source, size, date). Commit the lockfile for reproducible builds; <code>verify</code> exits 1 on problems, so it drops straight into CI. Global installs (<code>--global</code>) don't touch the lockfile.</p>
 <hr />
 <h2 id="repl-v117-upgrades">REPL (v1.17 upgrades)</h2>
 <div class="highlight"><pre><span></span><code>fk&gt; 2 + 3

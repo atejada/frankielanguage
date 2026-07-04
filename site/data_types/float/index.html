@@ -2338,9 +2338,11 @@
 <div class="highlight"><pre><span></span><code><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="w">       </span><span class="c1"># standard decimal</span>
 <span class="o">-</span><span class="mi">0</span><span class="o">.</span><span class="mi">5</span><span class="w">       </span><span class="c1"># negative</span>
 <span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="w">        </span><span class="c1"># integer value, Float type</span>
-<span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="n">e6</span><span class="w">      </span><span class="c1"># scientific notation — 1000000.0</span>
+<span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="n">e6</span><span class="w">      </span><span class="c1"># scientific notation — 1000000.0 (v1.18)</span>
 <span class="mi">2</span><span class="o">.</span><span class="mi">5</span><span class="n">e</span><span class="o">-</span><span class="mi">3</span><span class="w">     </span><span class="c1"># 0.0025</span>
+<span class="mi">3</span><span class="o">.</span><span class="mi">141_592</span><span class="w">  </span><span class="c1"># underscore separators (v1.18)</span>
 </code></pre></div>
+<p>Scientific notation (<code>1e6</code>, <code>2.5e-3</code>, <code>1E+9</code>) and underscore separators (<code>3.141_592</code>) are supported since v1.18.</p>
 <h2 id="arithmetic"><code>Arithmetic</code></h2>
 <p>All standard operators work on Floats. Mixing Integer and Float produces a Float:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="w">    </span><span class="c1"># 4.140000000000001 (float precision)</span>

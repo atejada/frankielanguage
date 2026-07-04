@@ -1642,6 +1642,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#websockets-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSockets (v1.18)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WebSockets (v1.18)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server-appwebsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server — app.websocket
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-ws_connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client — ws_connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websocket-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSocket object
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#web-api-summary" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2756,6 +2806,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#websockets-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSockets (v1.18)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WebSockets (v1.18)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server-appwebsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server — app.websocket
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-ws_connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client — ws_connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websocket-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSocket object
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#web-api-summary" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3312,6 +3412,66 @@ Returning a hash or vector auto-converts to JSON.</p>
 </code></pre></div>
 <p>Static files are matched before routes — if both a static file and a route exist at the same path, the file wins. File types served automatically: <code>.html</code>, <code>.css</code>, <code>.js</code>, <code>.json</code>, <code>.png</code>, <code>.jpg</code>, <code>.gif</code>, <code>.svg</code>, <code>.webp</code>, <code>.ico</code>, <code>.woff</code>, <code>.woff2</code>. Directory listing is disabled — unknown paths return 404.</p>
 <hr />
+<h2 id="websockets-v118">WebSockets <em>(v1.18)</em></h2>
+<p>Hand-rolled RFC 6455 on the built-in web server — handshake, framing, ping/pong, clean close. Zero dependencies, as always.</p>
+<h3 id="server-appwebsocket">Server — <code>app.websocket</code></h3>
+<div class="highlight"><pre><span></span><code><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">web_app</span><span class="p">()</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">websocket</span><span class="p">(</span><span class="s2">&quot;/ws/:room&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">ws</span><span class="o">|</span>
+<span class="w">  </span><span class="n">ws</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;welcome to </span><span class="si">#{</span><span class="n">ws</span><span class="o">.</span><span class="n">params</span><span class="o">[</span><span class="s2">&quot;room&quot;</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="kp">loop</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ws</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+<span class="w">    </span><span class="k">break</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kp">nil</span><span class="w">      </span><span class="c1"># client closed</span>
+<span class="w">    </span><span class="n">ws</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;echo: </span><span class="si">#{</span><span class="n">msg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+</code></pre></div>
+<p>Each connection runs the handler in its own thread and closes automatically when the handler returns. <code>recv()</code> answers pings for you and returns <code>nil</code> when the peer disconnects.</p>
+<h3 id="client-ws_connect">Client — <code>ws_connect</code></h3>
+<div class="highlight"><pre><span></span><code><span class="n">sock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ws_connect</span><span class="p">(</span><span class="s2">&quot;ws://localhost:3000/ws/lobby&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">timeout</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p>Only <code>ws://</code> URLs are supported (no TLS).</p>
+<h3 id="websocket-object">WebSocket object</h3>
+<table>
+<thead>
+<tr>
+<th>Method / property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ws.send(msg)</code></td>
+<td>Send a text message</td>
+</tr>
+<tr>
+<td><code>ws.recv()</code></td>
+<td>Receive a text message — <code>nil</code> when the peer closes</td>
+</tr>
+<tr>
+<td><code>ws.close()</code></td>
+<td>Close the connection</td>
+</tr>
+<tr>
+<td><code>ws.params</code></td>
+<td>Route parameters (e.g. <code>:room</code>) — server side</td>
+</tr>
+<tr>
+<td><code>ws.path</code></td>
+<td>Request path — server side</td>
+</tr>
+<tr>
+<td><code>ws.peer</code></td>
+<td>Remote <code>"host:port"</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="web-api-summary"><code>Web API Summary</code></h2>
 <table>
 <thead>
@@ -3364,6 +3524,14 @@ Returning a hash or vector auto-converts to JSON.</p>
 <tr>
 <td><code>app.static(dir, prefix)</code></td>
 <td>Serve a directory at a URL prefix</td>
+</tr>
+<tr>
+<td><code>app.websocket(path) do \|ws\| end</code></td>
+<td>Register a WebSocket route (v1.18)</td>
+</tr>
+<tr>
+<td><code>ws_connect(url, timeout: nil)</code></td>
+<td>WebSocket client connection (v1.18)</td>
 </tr>
 <tr>
 <td><code>app.before do \|req\| end</code></td>

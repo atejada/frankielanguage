@@ -1511,6 +1511,39 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#unionother-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .union(other) (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intersectother-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .intersect(other) (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differenceother-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .difference(other) (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#flatten" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3390,6 +3423,39 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#unionother-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .union(other) (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intersectother-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .intersect(other) (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differenceother-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .difference(other) (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#flatten" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4041,6 +4107,24 @@
 <div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="o">].</span><span class="n">uniq</span>
 
 <span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span>
+</code></pre></div>
+<h3 id="unionother-v118"><code>.union(other)</code> <em>(v1.18)</em></h3>
+<p>All elements from both vectors — order-preserving, deduplicating.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">].</span><span class="n">union</span><span class="p">(</span><span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span><span class="p">)</span>
+
+<span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span>
+</code></pre></div>
+<h3 id="intersectother-v118"><code>.intersect(other)</code> <em>(v1.18)</em></h3>
+<p>Elements present in both vectors.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">].</span><span class="n">intersect</span><span class="p">(</span><span class="o">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="o">]</span><span class="p">)</span>
+
+<span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span>
+</code></pre></div>
+<h3 id="differenceother-v118"><code>.difference(other)</code> <em>(v1.18)</em></h3>
+<p>Elements of the receiver not present in the argument.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">].</span><span class="n">difference</span><span class="p">(</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">)</span>
+
+<span class="err">→</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span>
 </code></pre></div>
 <h3 id="flatten"><code>.flatten</code></h3>
 <p>Deep flatten — recursively collapses all nested vectors.</p>

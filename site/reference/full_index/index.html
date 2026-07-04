@@ -2439,6 +2439,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#websockets-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSockets (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-benchmarking-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging &amp; Benchmarking (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enums-set-operations-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enums &amp; Set Operations (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeric-literals-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Literals (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#operators-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2796,6 +2840,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#websockets-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSockets (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-benchmarking-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging &amp; Benchmarking (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enums-set-operations-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enums &amp; Set Operations (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeric-literals-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Literals (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#operators-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2824,7 +2912,7 @@
 
 
 <h1 id="full-stdlib-index">Full Stdlib Index</h1>
-<p>Every function, method, and operator available in Frankie v1.17.0. All are available without any import.</p>
+<p>Every function, method, and operator available in Frankie v1.18.0. All are available without any import.</p>
 <hr />
 <h2 id="math-arithmetic">Math &amp; Arithmetic</h2>
 <table>
@@ -4587,6 +4675,110 @@
 <tr>
 <td><code>rescue TypeName =&gt; e</code></td>
 <td>Catch a typed error (Ruby-style binding)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="websockets-v118">WebSockets <em>(v1.18)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app.websocket("/ws/:room") do \|ws\| ... end</code></td>
+<td>WebSocket route on the built-in server</td>
+</tr>
+<tr>
+<td><code>ws_connect(url, timeout: nil)</code></td>
+<td>Client connection (<code>ws://</code> URLs)</td>
+</tr>
+<tr>
+<td><code>ws.send(msg)</code> / <code>ws.recv()</code></td>
+<td>Text messages — <code>recv</code> returns <code>nil</code> on close</td>
+</tr>
+<tr>
+<td><code>ws.close()</code> / <code>ws.params</code> / <code>ws.path</code> / <code>ws.peer</code></td>
+<td>Lifecycle + route metadata</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="debugging-benchmarking-v118">Debugging &amp; Benchmarking <em>(v1.18)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>breakpoint</code></td>
+<td>Pause into a scoped debug REPL (skipped when not a tty)</td>
+</tr>
+<tr>
+<td><code>breakpoint if cond</code></td>
+<td>Conditional breakpoint</td>
+</tr>
+<tr>
+<td><code>benchmark ["label"] do ... end</code></td>
+<td>Time a block — returns elapsed ms</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="enums-set-operations-v118">Enums &amp; Set Operations <em>(v1.18)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enum Status(pending, active, done)</code></td>
+<td>Named symbolic values — members are their own names as strings</td>
+</tr>
+<tr>
+<td><code>Status.values</code> / <code>Status.include?(x)</code></td>
+<td>All members / membership test</td>
+</tr>
+<tr>
+<td><code>vec.union(v)</code></td>
+<td>Order-preserving union, deduplicating</td>
+</tr>
+<tr>
+<td><code>vec.intersect(v)</code></td>
+<td>Elements present in both vectors</td>
+</tr>
+<tr>
+<td><code>vec.difference(v)</code></td>
+<td>Elements not present in the argument</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="numeric-literals-v118">Numeric Literals <em>(v1.18)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1_000_000</code>, <code>3.141_592</code></td>
+<td>Underscore separators</td>
+</tr>
+<tr>
+<td><code>1e6</code>, <code>2.5e-3</code>, <code>1E+9</code></td>
+<td>Scientific notation</td>
 </tr>
 </tbody>
 </table>

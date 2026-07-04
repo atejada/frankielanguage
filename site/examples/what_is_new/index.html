@@ -2027,6 +2027,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v118-whats_new_v118fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.18 — whats_new_v118.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v117-whats_new_v117fk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2388,6 +2399,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v118-whats_new_v118fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.18 — whats_new_v118.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v117-whats_new_v117fk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2615,8 +2637,61 @@
 
 <h1 id="whats-new-per-version">What's New — Per Version</h1>
 <p>Each version of Frankie ships a runnable <code>whats_new_vX.fk</code> example file that demonstrates every new feature introduced in that release. Run any of them with:</p>
-<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v117.fk
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v118.fk
 </code></pre></div>
+<h2 id="v118-whats_new_v118fk">v1.18 — <code>whats_new_v118.fk</code></h2>
+<p><strong>Theme:</strong> "From projects to products" — edit (LSP), ship (bundle), connect (WebSockets), debug (breakpoint). Pure Python stdlib underneath, zero external dependencies, as always.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>frankiec lsp</code></td>
+<td>Language Server over stdio — live diagnostics, completion, hover docs in VS Code, Neovim, Helix, Zed</td>
+</tr>
+<tr>
+<td><code>frankiec bundle</code></td>
+<td>Compile a program + all <code>require</code>/<code>import</code>/<code>stitch</code> targets into ONE self-contained <code>.py</code> — runs anywhere with Python 3.8+</td>
+</tr>
+<tr>
+<td>WebSockets</td>
+<td><code>app.websocket("/ws/:room") do \|ws\| ... end</code> server + <code>ws_connect(url)</code> client — hand-rolled RFC 6455</td>
+</tr>
+<tr>
+<td><code>breakpoint</code></td>
+<td>Pause into a scoped debug REPL — <code>vars</code>, <code>where</code>, any Frankie expression; skipped when stdin isn't a tty</td>
+</tr>
+<tr>
+<td><code>enum Status(pending, active, done)</code></td>
+<td>Named symbolic values — <code>Status.pending</code>, <code>.values</code>, <code>.include?</code>, <code>case/when</code> matching</td>
+</tr>
+<tr>
+<td><code>benchmark "label" do ... end</code></td>
+<td>Time a block — prints <code>⏱ label: 12.3ms</code>, returns elapsed ms</td>
+</tr>
+<tr>
+<td>Set operations</td>
+<td><code>.union</code> / <code>.intersect</code> / <code>.difference</code> — order-preserving, deduplicating</td>
+</tr>
+<tr>
+<td>Numeric literals</td>
+<td>Underscores <code>1_250_000</code> + scientific notation <code>6.022e23</code></td>
+</tr>
+<tr>
+<td>Project-wide tooling</td>
+<td><code>frankiec check .</code> and <code>frankiec fmt --write .</code> recurse into directories</td>
+</tr>
+<tr>
+<td>Stitch lockfile</td>
+<td><code>stitch.lock</code> with sha256 pins — <code>frankiec stitch verify</code> / <code>update</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="v117-whats_new_v117fk">v1.17 — <code>whats_new_v117.fk</code></h2>
 <p><strong>Theme:</strong> "Programs that grow" — namespacing, real static checking, typed errors, first-class ranges, easy concurrency, TCP sockets, and a stitch installer. Everything still pure Python stdlib, zero dependencies.</p>
 <table>

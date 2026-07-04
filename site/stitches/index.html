@@ -1544,8 +1544,30 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The stitch Keyword">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-stitches-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Stitches (v1.17)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Stitches (v1.17)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lockfile-stitchlock-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lockfile — stitch.lock (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#compared-to-require" class="md-nav__link">
@@ -2270,8 +2292,30 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The stitch Keyword">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-stitches-v117" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Stitches (v1.17)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Stitches (v1.17)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lockfile-stitchlock-v118" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lockfile — stitch.lock (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#compared-to-require" class="md-nav__link">
@@ -2441,6 +2485,21 @@
 ╚═══════════════════════════════════════════════════════
 </code></pre></div>
 <p>Each stitch is loaded <strong>at most once</strong> — calling <code>stitch "name"</code> multiple times in the same program is safe.</p>
+<hr />
+<h2 id="installing-stitches-v117">Installing Stitches (v1.17)</h2>
+<p>The stitch installer fetches stitches straight from the Frankie GitHub repository using the Python stdlib HTTP client — a package manager with no packaging:</p>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>stitch<span class="w"> </span>install<span class="w"> </span>frankiecolor<span class="w">            </span><span class="c1"># → ./stitches/</span>
+frankiec<span class="w"> </span>stitch<span class="w"> </span>install<span class="w"> </span>frankiecache<span class="w"> </span>--global<span class="w">   </span><span class="c1"># → ~/.frankie/stitches/</span>
+frankiec<span class="w"> </span>stitch<span class="w"> </span>list<span class="w">                            </span><span class="c1"># installed + registry</span>
+</code></pre></div>
+<h3 id="lockfile-stitchlock-v118">Lockfile — <code>stitch.lock</code> (v1.18)</h3>
+<p>Installing a stitch pins it in <code>stitch.lock</code> (sha256, source, size, date). Commit the lockfile and your builds are reproducible:</p>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>stitch<span class="w"> </span>install<span class="w"> </span>frankiecolor<span class="w">   </span><span class="c1"># writes/updates stitch.lock</span>
+frankiec<span class="w"> </span>stitch<span class="w"> </span>verify<span class="w">                 </span><span class="c1"># ✓ pinned · ⚠ modified · ✗ missing</span>
+frankiec<span class="w"> </span>stitch<span class="w"> </span>update<span class="w">                 </span><span class="c1"># re-fetch everything + re-pin</span>
+frankiec<span class="w"> </span>stitch<span class="w"> </span>update<span class="w"> </span>frankiecolor<span class="w">    </span><span class="c1"># or just one</span>
+</code></pre></div>
+<p><code>verify</code> exits 1 on problems — drop it straight into CI. Global installs (<code>--global</code>) don't touch the lockfile.</p>
 <h3 id="compared-to-require">Compared to <code>require</code></h3>
 <table>
 <thead>
