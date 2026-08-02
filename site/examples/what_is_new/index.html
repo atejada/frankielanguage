@@ -2027,6 +2027,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v120-whats_new_v120fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.20 — whats_new_v120.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v119-whats_new_v119fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.19 — whats_new_v119.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v118-whats_new_v118fk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2399,6 +2421,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v120-whats_new_v120fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.20 — whats_new_v120.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v119-whats_new_v119fk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.19 — whats_new_v119.fk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v118-whats_new_v118fk" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2636,9 +2680,88 @@
 
 
 <h1 id="whats-new-per-version">What's New — Per Version</h1>
-<p>Each version of Frankie ships a runnable <code>whats_new_vX.fk</code> example file that demonstrates every new feature introduced in that release. Run any of them with:</p>
-<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v118.fk
+<p>Each version of Frankie ships a runnable <code>whats_new_vX.fk</code> example file that demonstrates every new feature introduced in that release. Every install (Homebrew, git clone, or unpacked zip) bundles the same set — grab one with <code>frankiec examples whats_new_v120</code> or run it straight from the source tree:</p>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v120.fk
 </code></pre></div>
+<h2 id="v120-whats_new_v120fk">v1.20 — <code>whats_new_v120.fk</code></h2>
+<p><strong>Theme:</strong> "It's Alive… and Playing" — two game engines, one shared API. Pure Python stdlib, zero external dependencies, as always.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>frankiegame</code></td>
+<td>Terminal game engine — raw keys via stdlib <code>termios</code>, double-buffered ANSI rendering, headless-safe for CI</td>
+</tr>
+<tr>
+<td><code>frankiecanvas</code></td>
+<td>Browser game engine — same API, real pixels via HTML5 canvas streamed over WebSockets, multiplayer for free</td>
+</tr>
+<tr>
+<td>Shared engine API</td>
+<td><code>game_new</code>, <code>on_key</code>, <code>on_tick</code>, <code>draw</code>, <code>draw_sprite</code>, <code>collide?</code>, <code>run_game</code>, <code>render_frame</code>, <code>max_ticks:</code> for CI</td>
+</tr>
+<tr>
+<td><code>on_player_key</code> (canvas-only)</td>
+<td>Per-player input — every connected browser tab is a player</td>
+</tr>
+<tr>
+<td><code>frankiec new --game</code></td>
+<td>Scaffold a playable starter with <code>frankiegame</code> pre-installed</td>
+</tr>
+<tr>
+<td>Showcase games</td>
+<td>🐍 <code>snake</code> (terminal), 🧟 <code>zombie_invaders</code> (browser), 🏓 <code>pong</code> (browser, multiplayer)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Patch — v1.20.1:</strong> arrow keys fixed in terminal games (<code>term_key()</code> now reads raw bytes); <code>frankiec examples [name]</code> to browse/copy bundled examples; official Homebrew formula (<code>brew install atejada/frankie/frankie</code>).</p>
+<hr />
+<h2 id="v119-whats_new_v119fk">v1.19 — <code>whats_new_v119.fk</code></h2>
+<p><strong>Theme:</strong> "Under the microscope" — types, a real debugger, coverage. Pure Python stdlib, zero external dependencies, as always.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>def area(r: Float) -&gt; Float</code></td>
+<td>Gradual type annotations — optional, checked statically by <code>check</code>/CI/LSP</td>
+</tr>
+<tr>
+<td>Stepping debugger</td>
+<td><code>(fkdb)</code> gains <code>s</code>/<code>n</code>/<code>stack</code>; <code>frankiec run --debug</code> breaks at line 1</td>
+</tr>
+<tr>
+<td><code>frankiec test --coverage</code></td>
+<td>Line coverage report + <code>.frankie_coverage.json</code>, read by the LSP</td>
+</tr>
+<tr>
+<td>TLS + UDP</td>
+<td><code>tcp_connect(tls: true)</code>, <code>ws_connect("wss://...")</code>, <code>udp_listen</code>/<code>udp_send</code></td>
+</tr>
+<tr>
+<td><code>frankiec docs --html</code></td>
+<td>Doc-comments rendered as styled single-page HTML</td>
+</tr>
+<tr>
+<td>Stitch installs from any URL</td>
+<td><code>frankiec stitch install https://.../foo.fk</code>, pinned in <code>stitch.lock</code></td>
+</tr>
+<tr>
+<td>Showcase projects</td>
+<td>🧟 <code>zombie_chat</code>, ⚡ <code>word_reanimator</code>, 💰 <code>frankie_ledger</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="v118-whats_new_v118fk">v1.18 — <code>whats_new_v118.fk</code></h2>
 <p><strong>Theme:</strong> "From projects to products" — edit (LSP), ship (bundle), connect (WebSockets), debug (breakpoint). Pure Python stdlib underneath, zero external dependencies, as always.</p>
 <table>

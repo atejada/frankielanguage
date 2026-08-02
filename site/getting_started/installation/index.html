@@ -376,13 +376,63 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#homebrew-macoslinux" class="md-nav__link">
+    <span class="md-ellipsis">
       
-        <li class="md-nav__item">
+        Homebrew (macOS/Linux)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-clone-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git clone + installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#without-installing" class="md-nav__link">
     <span class="md-ellipsis">
       
         Without installing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-examples-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the Examples Live
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
       
     </span>
   </a>
@@ -2231,13 +2281,63 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#homebrew-macoslinux" class="md-nav__link">
+    <span class="md-ellipsis">
       
-        <li class="md-nav__item">
+        Homebrew (macOS/Linux)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-clone-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git clone + installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#without-installing" class="md-nav__link">
     <span class="md-ellipsis">
       
         Without installing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-examples-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the Examples Live
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
       
     </span>
   </a>
@@ -2268,20 +2368,47 @@
 <li>No external dependencies — pure Python standard library</li>
 </ul>
 <h2 id="installation">Installation</h2>
-<div class="highlight"><pre><span></span><code># 1. Unzip and enter the folder
-cd frankie
+<h3 id="homebrew-macoslinux">Homebrew (macOS/Linux)</h3>
+<p>The easiest path if you're on a Mac or Linux box with Homebrew. Frankie ships as a third-party tap:</p>
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>tap<span class="w"> </span>atejada/frankie
+brew<span class="w"> </span>trust<span class="w"> </span>atejada/frankie<span class="w">     </span><span class="c1"># Homebrew 6.0+: third-party taps need explicit trust</span>
+brew<span class="w"> </span>install<span class="w"> </span>frankie
+frankiec<span class="w"> </span>version<span class="w">                </span><span class="c1"># Frankie v1.20.1 🧟</span>
+</code></pre></div>
+<p>One-liner alternative (auto-taps and trusts just this formula):</p>
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>atejada/frankie/frankie
+</code></pre></div>
+<p>Homebrew installs are pure Python stdlib too — the only dependency is <code>python@3.12</code>. Standard stitches resolve from the installed tree automatically, alongside project-local <code>./stitches</code> and <code>~/.frankie/stitches</code> (which still take precedence).</p>
+<p>To upgrade later: <code>brew upgrade frankie</code>. To remove: <code>brew uninstall frankie</code>.</p>
+<h3 id="git-clone-installer">Git clone + installer</h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/atejada/Frankie.git
+<span class="nb">cd</span><span class="w"> </span>Frankie
+python3<span class="w"> </span>install.py
 
-# 2. Run the installer
-python3 install.py
-
-# 3. Add frankie/bin to your PATH (add to ~/.bashrc or ~/.zshrc)
-export PATH=&quot;/path/to/frankie/bin:$PATH&quot;
+<span class="c1"># Add frankie/bin to your PATH (add to ~/.bashrc or ~/.zshrc)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/path/to/frankie/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 </code></pre></div>
 <p>To uninstall:</p>
-<div class="highlight"><pre><span></span><code>python3 install.py --uninstall
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>install.py<span class="w"> </span>--uninstall
 </code></pre></div>
-<h2 id="without-installing">Without installing</h2>
-<div class="highlight"><pre><span></span><code>python3 frankiec.py run examples/hello.fk
+<h3 id="without-installing">Without installing</h3>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>frankiec.py<span class="w"> </span>run<span class="w"> </span>examples/hello.fk
+</code></pre></div>
+<hr />
+<h2 id="where-the-examples-live">Where the Examples Live</h2>
+<p>Every install method ships the same bundle of examples and showcase projects (Hello World, Fizzbuzz, the full showcase, and playable projects like Snake and Zombie Chat). <code>frankiec</code> always knows where its own install lives, so you don't need to hunt for the source tree:</p>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>examples<span class="w">              </span><span class="c1"># list everything bundled with this install</span>
+frankiec<span class="w"> </span>examples<span class="w"> </span>snake<span class="w">        </span><span class="c1"># copy a project into the current directory</span>
+<span class="nb">cd</span><span class="w"> </span>snake<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>frankiec<span class="w"> </span>run<span class="w"> </span>main.fk
+</code></pre></div>
+<p>This works identically whether you installed via Homebrew, <code>git clone</code> + <code>install.py</code>, or an unpacked zip. For a Homebrew install specifically, the examples live under the formula's <code>libexec</code> directory (<code>frankiec examples</code> prints the exact path); for a git clone, they're just <code>examples/</code> in the repo root.</p>
+<p>Single-file examples (like <code>fizzbuzz.fk</code>) copy as one <code>.fk</code> file; full projects (like <code>snake</code> or <code>frankie_ledger</code>) copy as a whole directory, including their pinned <code>stitches/</code> and <code>stitch.lock</code>.</p>
+<hr />
+<h2 id="quick-start">Quick Start</h2>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>repl<span class="w">                              </span><span class="c1"># interactive REPL</span>
+frankiec<span class="w"> </span>new<span class="w"> </span>myapp<span class="w">                         </span><span class="c1"># scaffold a new project</span>
+frankiec<span class="w"> </span>new<span class="w"> </span>--game<span class="w"> </span>mygame<span class="w">                 </span><span class="c1"># scaffold a playable starter game</span>
+frankiec<span class="w"> </span>run<span class="w"> </span>examples/hello.fk<span class="w">             </span><span class="c1"># run a program</span>
 </code></pre></div>
 
 

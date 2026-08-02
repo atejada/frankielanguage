@@ -396,6 +396,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#frankiec-examples-browse-bundled-examples-v1201" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec examples — Browse Bundled Examples (v1.20.1)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-new-game-playable-starter-v120" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec new --game — Playable Starter (v1.20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-run-debug-stepping-debugger-v119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec run --debug — Stepping Debugger (v1.19)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-docs-html-v119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec docs --html (v1.19)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#frankiec-bundle-one-file-distribution-v118" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2256,6 +2300,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#frankiec-examples-browse-bundled-examples-v1201" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec examples — Browse Bundled Examples (v1.20.1)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-new-game-playable-starter-v120" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec new --game — Playable Starter (v1.20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-run-debug-stepping-debugger-v119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec run --debug — Stepping Debugger (v1.19)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frankiec-docs-html-v119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec docs --html (v1.19)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#frankiec-bundle-one-file-distribution-v118" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2330,19 +2418,20 @@
 <h1 id="cli-commands">CLI Commands</h1>
 <ul>
 <li><code>frankiec</code>                                       - launch the REPL</li>
-<li><code>frankiec new   &lt;project&gt;</code>                       - scaffold a new project</li>
-<li><code>frankiec run   &lt;file.fk&gt;</code>                       - run a program</li>
+<li><code>frankiec new   [--game] &lt;project&gt;</code>              - scaffold a new project (<code>--game</code>: playable starter, v1.20)</li>
+<li><code>frankiec run   [--debug] &lt;file.fk&gt;</code>             - run a program (<code>--debug</code>: break at line 1, v1.19)</li>
 <li><code>frankiec build &lt;file.fk&gt;</code>                       - compile to Python source</li>
 <li><code>frankiec bundle &lt;file.fk&gt; [-o out.py]</code>          - compile to ONE self-contained .py (v1.18)</li>
 <li><code>frankiec check [--strict] &lt;file.fk | dir&gt;</code>      - syntax check + static analysis (v1.17); directories recurse (v1.18)</li>
-<li><code>frankiec test  [file.fk] [--filter &lt;name&gt;] [--tag &lt;tag&gt;]</code> - run test suite (default: test.fk)</li>
+<li><code>frankiec test  [file.fk] [--filter &lt;name&gt;] [--tag &lt;tag&gt;] [--coverage]</code> - run test suite (default: test.fk); <code>--coverage</code> since v1.19</li>
 <li><code>frankiec fmt   [--write] [--check] &lt;file.fk | dir&gt;</code> - auto-format; directories recurse (v1.18)</li>
-<li><code>frankiec docs  [--output out.md] &lt;file.fk&gt;</code>     - generate docs</li>
+<li><code>frankiec docs  [--html] [--output out.md] &lt;file.fk&gt;</code> - generate docs; <code>--html</code> since v1.19</li>
 <li><code>frankiec lsp</code>                                   - start the Language Server (v1.18)</li>
-<li><code>frankiec stitch install &lt;name&gt; [--global]</code>      - install a stitch from the registry (v1.17)</li>
+<li><code>frankiec stitch install &lt;name | url&gt; [--global]</code> - install a stitch from the registry or any URL (v1.17; URLs v1.19)</li>
 <li><code>frankiec stitch list</code>                           - list installed + registry stitches (v1.17)</li>
 <li><code>frankiec stitch verify</code>                         - check installed stitches against stitch.lock (v1.18)</li>
 <li><code>frankiec stitch update [name]</code>                  - re-fetch + re-pin stitches (v1.18)</li>
+<li><code>frankiec examples [name]</code>                       - list bundled examples, or copy one here (v1.20.1)</li>
 <li><code>frankiec repl  [--no-banner]</code>                   - interactive REPL</li>
 <li><code>frankiec watch &lt;file.fk&gt; [--test]</code>              - re-run on save</li>
 <li><code>frankiec version</code>                               - show version</li>
@@ -2378,6 +2467,35 @@
 <span class="n">language-servers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;frankie&quot;</span><span class="p">]</span>
 </code></pre></div>
 <hr />
+<h2 id="frankiec-examples-browse-bundled-examples-v1201"><code>frankiec examples</code> — Browse Bundled Examples (v1.20.1)</h2>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>examples<span class="w">              </span><span class="c1"># list everything bundled with this install</span>
+frankiec<span class="w"> </span>examples<span class="w"> </span>snake<span class="w">        </span><span class="c1"># copy a project into the current directory</span>
+<span class="nb">cd</span><span class="w"> </span>snake<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>frankiec<span class="w"> </span>run<span class="w"> </span>main.fk
+</code></pre></div>
+<ul>
+<li>With no argument, lists every project (in <code>examples/projects/</code>) and single-file example bundled with the install, plus the source directory.</li>
+<li>With a name, copies that project directory — or single <code>.fk</code> file — into the current directory, ready to run.</li>
+<li>Works identically for Homebrew, git-clone, and <code>install.py</code> installs — <code>frankiec</code> always knows where its own install lives.</li>
+<li>Won't overwrite an existing file or directory of the same name.</li>
+</ul>
+<p>See <a href="../installation/#where-the-examples-live">Where the Examples Live</a> for details on install-specific paths.</p>
+<hr />
+<h2 id="frankiec-new-game-playable-starter-v120"><code>frankiec new --game</code> — Playable Starter (v1.20)</h2>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>new<span class="w"> </span>--game<span class="w"> </span>mygame
+<span class="nb">cd</span><span class="w"> </span>mygame<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>frankiec<span class="w"> </span>run<span class="w"> </span>main.fk
+</code></pre></div>
+<p>Scaffolds a playable starter (a zombie you steer with the arrows) with the <code>frankiegame</code> stitch pre-installed and lockfile-pinned. See the <a href="../../stitches/frankiegame/">frankiegame</a> and <a href="../../stitches/frankiecanvas/">frankiecanvas</a> stitch pages for the full game engine API.</p>
+<hr />
+<h2 id="frankiec-run-debug-stepping-debugger-v119"><code>frankiec run --debug</code> — Stepping Debugger (v1.19)</h2>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>--debug<span class="w"> </span>app.fk
+</code></pre></div>
+<p>Breaks at the very first line of the program, dropping you into the <code>(fkdb)</code> debug REPL before anything executes — useful for stepping through a program you've never read. See <a href="../../standard_library/debugging/">Debugging &amp; Benchmarking</a> for the full command reference (<code>s</code>, <code>n</code>, <code>stack</code>, <code>vars</code>, <code>c</code>).</p>
+<hr />
+<h2 id="frankiec-docs-html-v119"><code>frankiec docs --html</code> (v1.19)</h2>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>docs<span class="w"> </span>--html<span class="w"> </span>mystitch.fk<span class="w"> </span>--output<span class="w"> </span>mystitch.html
+</code></pre></div>
+<p>Renders <code>##</code> doc-comments (with <code>@param</code> / <code>@return</code> / <code>@example</code>) into a styled single-page HTML document matching the Frankie website's theme, instead of the default Markdown output.</p>
+<hr />
 <h2 id="frankiec-bundle-one-file-distribution-v118"><code>frankiec bundle</code> — One-File Distribution (v1.18)</h2>
 <div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>bundle<span class="w"> </span>app.fk<span class="w"> </span>-o<span class="w"> </span>app.py
 python3<span class="w"> </span>app.py<span class="w">        </span><span class="c1"># anywhere Python 3.8+ exists — no Frankie needed</span>
@@ -2412,17 +2530,19 @@ frankiec<span class="w"> </span>fmt<span class="w"> </span>--write<span class="w
 <div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span><span class="nb">test</span><span class="w">                    </span><span class="c1"># run everything</span>
 frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--filter<span class="w"> </span>math<span class="w">      </span><span class="c1"># only test groups whose name contains &quot;math&quot;</span>
 frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--tag<span class="w"> </span>slow<span class="w">         </span><span class="c1"># only test groups tagged &quot;slow&quot;</span>
+frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--coverage<span class="w">         </span><span class="c1"># v1.19 — report line coverage after the run</span>
 </code></pre></div>
-<p>Works with <code>test "name", tags: [...] do ... end</code> groups — skipped groups are reported in the summary. See the <a href="../../standard_library/testing/">Testing</a> page.</p>
+<p>Works with <code>test "name", tags: [...] do ... end</code> groups — skipped groups are reported in the summary. <code>--coverage</code> writes <code>.frankie_coverage.json</code>, which the LSP reads to show uncovered lines as editor hints. See the <a href="../../standard_library/testing/">Testing</a> page.</p>
 <hr />
 <h2 id="frankiec-stitch-stitch-installer-v117"><code>frankiec stitch</code> — Stitch Installer (v1.17)</h2>
 <div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>stitch<span class="w"> </span>install<span class="w"> </span>frankiecolor<span class="w">            </span><span class="c1"># → ./stitches/</span>
 frankiec<span class="w"> </span>stitch<span class="w"> </span>install<span class="w"> </span>frankiecache<span class="w"> </span>--global<span class="w">   </span><span class="c1"># → ~/.frankie/stitches/</span>
+frankiec<span class="w"> </span>stitch<span class="w"> </span>install<span class="w"> </span>https://example.com/stitches/foo.fk<span class="w">   </span><span class="c1"># v1.19 — any URL</span>
 frankiec<span class="w"> </span>stitch<span class="w"> </span>list<span class="w">                            </span><span class="c1"># installed + registry</span>
 frankiec<span class="w"> </span>stitch<span class="w"> </span>verify<span class="w">                          </span><span class="c1"># v1.18 — ✓ pinned · ⚠ modified · ✗ missing</span>
 frankiec<span class="w"> </span>stitch<span class="w"> </span>update<span class="w"> </span><span class="o">[</span>name<span class="o">]</span><span class="w">                   </span><span class="c1"># v1.18 — re-fetch + re-pin</span>
 </code></pre></div>
-<p>Stitches are fetched straight from the Frankie GitHub repository using the Python stdlib HTTP client — a package manager with no packaging.</p>
+<p>Stitches are fetched straight from the Frankie GitHub repository using the Python stdlib HTTP client — a package manager with no packaging. Since v1.19, <code>install</code> also accepts arbitrary URLs, not just registry names.</p>
 <p>Since v1.18, installs are pinned in <code>stitch.lock</code> (sha256, source, size, date). Commit the lockfile for reproducible builds; <code>verify</code> exits 1 on problems, so it drops straight into CI. Global installs (<code>--global</code>) don't touch the lockfile.</p>
 <hr />
 <h2 id="repl-v117-upgrades">REPL (v1.17 upgrades)</h2>

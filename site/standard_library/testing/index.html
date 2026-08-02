@@ -1547,6 +1547,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#test-coverage-coverage-v119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Coverage — --coverage (v1.19)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stubbing-stub-unstub-v117" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2565,6 +2576,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#test-coverage-coverage-v119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Coverage — --coverage (v1.19)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stubbing-stub-unstub-v117" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2658,6 +2680,7 @@
 frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>mytest.fk<span class="w">        </span><span class="c1"># runs a specific file</span>
 frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--filter<span class="w"> </span>math<span class="w">    </span><span class="c1"># v1.17 — only test groups whose name contains &quot;math&quot;</span>
 frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--tag<span class="w"> </span>slow<span class="w">       </span><span class="c1"># v1.17 — only test groups tagged &quot;slow&quot;</span>
+frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--coverage<span class="w">       </span><span class="c1"># v1.19 — report line coverage after the run</span>
 </code></pre></div>
 <p>Output looks like:</p>
 <div class="highlight"><pre><span></span><code>╔══ Frankie Test Runner ════════════════════════════════
@@ -2767,6 +2790,20 @@ frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </s
 frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--tag<span class="w"> </span>slow<span class="w">         </span><span class="c1"># groups tagged &quot;slow&quot;</span>
 </code></pre></div>
 <p>Skipped groups are reported in the summary. <code>test</code> is a contextual keyword — a variable named <code>test</code> keeps working.</p>
+<hr />
+<h2 id="test-coverage-coverage-v119">Test Coverage — <code>--coverage</code> (v1.19)</h2>
+<p>Add <code>--coverage</code> to see which lines your tests actually exercised:</p>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </span>tcov.fk<span class="w"> </span>--coverage
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>╠══ Coverage ═══════════════════════════════════════════
+║   80.0%  tcov.fk  missing: 6
+║  ── overall: 80.0% (4/5 lines)
+</code></pre></div>
+<ul>
+<li>Percentages and missing-line ranges are mapped back to <code>.fk</code> source.</li>
+<li>Writes <code>.frankie_coverage.json</code> in the current directory.</li>
+<li>The LSP reads that file — after a coverage run, uncovered lines show up as unobtrusive hints directly in your editor.</li>
+</ul>
 <hr />
 <h2 id="stubbing-stub-unstub-v117">Stubbing — <code>stub</code> / <code>unstub</code> (v1.17)</h2>
 <p>Swap any global function during a test — including stdlib functions like <code>shell</code> and <code>http_get</code> — to test without side effects:</p>
@@ -2926,6 +2963,10 @@ frankiec<span class="w"> </span><span class="nb">test</span><span class="w"> </s
 <tr>
 <td><code>unstub(name)</code> / <code>unstub()</code></td>
 <td>Restore one / all stubbed functions</td>
+</tr>
+<tr>
+<td><code>frankiec test --coverage</code></td>
+<td>Report line coverage; writes <code>.frankie_coverage.json</code> (v1.19)</td>
 </tr>
 </tbody>
 </table>

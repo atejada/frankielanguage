@@ -2126,15 +2126,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#breakpoint-debugger-lite" class="md-nav__link">
+  <a href="#breakpoint-stepping-debugger" class="md-nav__link">
     <span class="md-ellipsis">
       
-        breakpoint — Debugger-Lite
+        breakpoint — Stepping Debugger
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="breakpoint — Debugger-Lite">
+    <nav class="md-nav" aria-label="breakpoint — Stepping Debugger">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2142,6 +2142,17 @@
     <span class="md-ellipsis">
       
         Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-from-the-very-first-line-v119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug from the very first line (v1.19)
       
     </span>
   </a>
@@ -2215,9 +2226,9 @@
 
 
 <h1 id="debugging-benchmarking">Debugging &amp; Benchmarking</h1>
-<p>Introduced in <strong>v1.18</strong>. A debugger-lite you can drop anywhere, and friendly block timing — both built into the language, zero dependencies.</p>
+<p>Introduced in <strong>v1.18</strong>, with a full stepping debugger added in <strong>v1.19</strong>. A debugger you can drop anywhere, and friendly block timing — both built into the language, zero dependencies.</p>
 <hr />
-<h2 id="breakpoint-debugger-lite"><code>breakpoint</code> — Debugger-Lite</h2>
+<h2 id="breakpoint-stepping-debugger"><code>breakpoint</code> — Stepping Debugger</h2>
 <p>Drop <code>breakpoint</code> anywhere. When execution reaches it in a terminal, the program pauses into a scoped REPL:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">price</span><span class="p">(</span><span class="n">qty</span><span class="p">)</span>
 <span class="w">  </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">qty</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="o">.</span><span class="mi">5</span>
@@ -2229,7 +2240,7 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>🧟 breakpoint — pricing.fk:3
    ──▶ 3 │   breakpoint
-   (c)ontinue · vars · where · exit · or type any Frankie expression
+   (c)ontinue · s(tep) · n(ext) · stack · vars · where · exit · or type any Frankie expression
 
 (fkdb) vars
   qty = 10
@@ -2252,8 +2263,20 @@
 <td>Continue execution</td>
 </tr>
 <tr>
+<td><code>s</code></td>
+<td>Step — execute one line, stepping into calls <em>(v1.19)</em></td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>Next — one line, stepping over calls <em>(v1.19)</em></td>
+</tr>
+<tr>
+<td><code>stack</code></td>
+<td>Show the Frankie call stack, innermost first <em>(v1.19)</em></td>
+</tr>
+<tr>
 <td><code>vars</code></td>
-<td>List local variables in the paused scope</td>
+<td>List local variables in the paused scope (clean — no stdlib noise)</td>
 </tr>
 <tr>
 <td><code>where</code></td>
@@ -2269,6 +2292,11 @@
 </tr>
 </tbody>
 </table>
+<p>Stepping is line-accurate everywhere thanks to the compiler's line maps — including inside <code>require</code>d files.</p>
+<h3 id="debug-from-the-very-first-line-v119">Debug from the very first line (v1.19)</h3>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>--debug<span class="w"> </span>app.fk
+</code></pre></div>
+<p>Breaks before the first statement runs, so you can step through a program you've never read — no need to add a <code>breakpoint</code> line yourself.</p>
 <h3 id="conditional-breakpoints">Conditional breakpoints</h3>
 <p>Postfix conditions work:</p>
 <div class="highlight"><pre><span></span><code><span class="n">breakpoint</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">qty</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100</span>
@@ -2314,6 +2342,14 @@
 <tr>
 <td><code>breakpoint if cond</code></td>
 <td>Conditional breakpoint</td>
+</tr>
+<tr>
+<td><code>frankiec run --debug app.fk</code></td>
+<td>Break at the first line automatically (v1.19)</td>
+</tr>
+<tr>
+<td><code>(fkdb) s</code> / <code>n</code> / <code>stack</code></td>
+<td>Step in / step over / show call stack (v1.19)</td>
 </tr>
 <tr>
 <td><code>benchmark "label" do ... end</code></td>

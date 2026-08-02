@@ -2189,7 +2189,7 @@
 <h1 id="claudemd">CLAUDE.md</h1>
 <p>This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.</p>
 <h2 id="what-is-this-repo">What is this repo?</h2>
-<p>This is the documentation site for the <strong>Frankie Programming Language</strong> (v1.18.0) — a procedural language with Ruby-inspired syntax that compiles to Python. Docs are written in Markdown and served as a static site.</p>
+<p>This is the documentation site for the <strong>Frankie Programming Language</strong> (v1.20.1) — a procedural language with Ruby-inspired syntax that compiles to Python. Docs are written in Markdown and served as a static site.</p>
 <p>The Frankie compiler itself lives in a separate repo (<code>/Documents/GitHub/Frankie</code>). This repo is docs only.</p>
 <h2 id="structure">Structure</h2>
 <div class="highlight"><pre><span></span><code>docs/
@@ -2210,7 +2210,7 @@
 <li><code>reference/full_index.md</code> is the canonical single-page stdlib reference — keep it in sync when adding/changing stdlib functions.</li>
 <li>Example <code>.fk</code> files in <code>examples/</code> are real, runnable Frankie programs (test them against the compiler when updating).</li>
 <li><code>getting_started/changelog.md</code> tracks version history — update it for every Frankie version bump.</li>
-<li>Docs target Frankie v1.18.0 unless explicitly updating to a new version.</li>
+<li>Docs target Frankie v1.20.1 unless explicitly updating to a new version.</li>
 </ul>
 <h2 id="frankie-language-quick-reference-for-writing-accurate-docs">Frankie language quick reference (for writing accurate docs)</h2>
 <ul>
@@ -2221,6 +2221,8 @@
 <li><code>error</code>, <code>import</code> and <code>test</code> are contextual keywords (v1.17) — only special in statement position</li>
 <li><code>enum</code>, <code>benchmark</code> and <code>breakpoint</code> are contextual keywords too (v1.18)</li>
 <li>Numeric literals support underscores (<code>1_000_000</code>) and scientific notation (<code>2.5e-3</code>) since v1.18</li>
+<li>Gradual type annotations (<code>def area(r: Float) -&gt; Float</code>) since v1.19 — optional, checked statically only</li>
+<li>Frankie installs via Homebrew (<code>brew install atejada/frankie/frankie</code>), git clone + <code>install.py</code>, or unpacked zip; <code>frankiec examples [name]</code> lists/copies bundled examples regardless of install method</li>
 <li>Integer division uses <code>//</code>, exponentiation uses <code>**</code> (Fortran heritage)</li>
 <li><code>?</code> identifiers compile to <code>_q</code>, <code>!</code> to <code>_bang</code> in generated Python</li>
 <li>Test assertions: <code>assert_eq</code>, <code>assert_true</code>, <code>assert_match</code>, <code>assert_nil</code>, <code>assert_raises</code>, <code>assert_raises_typed</code></li>

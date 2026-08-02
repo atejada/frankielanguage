@@ -2461,6 +2461,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#type-annotations-v119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type Annotations (v1.19)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enums-set-operations-v118" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2476,6 +2487,28 @@
     <span class="md-ellipsis">
       
         Numeric Literals (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-engines-v120" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Game Engines (v1.20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tooling-additions-v119v1201" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tooling Additions (v1.19–v1.20.1)
       
     </span>
   </a>
@@ -2862,6 +2895,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#type-annotations-v119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type Annotations (v1.19)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enums-set-operations-v118" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2877,6 +2921,28 @@
     <span class="md-ellipsis">
       
         Numeric Literals (v1.18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-engines-v120" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Game Engines (v1.20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tooling-additions-v119v1201" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tooling Additions (v1.19–v1.20.1)
       
     </span>
   </a>
@@ -2912,7 +2978,7 @@
 
 
 <h1 id="full-stdlib-index">Full Stdlib Index</h1>
-<p>Every function, method, and operator available in Frankie v1.18.0. All are available without any import.</p>
+<p>Every function, method, and operator available in Frankie v1.20.1. All are available without any import.</p>
 <hr />
 <h2 id="math-arithmetic">Math &amp; Arithmetic</h2>
 <table>
@@ -4408,6 +4474,10 @@
 <td><code>unstub(name)</code> / <code>unstub()</code></td>
 <td>Restore one / all stubbed functions (v1.17)</td>
 </tr>
+<tr>
+<td><code>frankiec test --coverage</code></td>
+<td>Report line coverage; writes <code>.frankie_coverage.json</code> (v1.19)</td>
+</tr>
 </tbody>
 </table>
 <hr />
@@ -4589,8 +4659,8 @@
 <td>Thread-pool map — results in input order</td>
 </tr>
 <tr>
-<td><code>tcp_connect(host, port, timeout: nil)</code></td>
-<td>Open a TCP connection</td>
+<td><code>tcp_connect(host, port, timeout: nil, tls: false)</code></td>
+<td>Open a TCP connection — <code>tls: true</code> for TLS (v1.19)</td>
 </tr>
 <tr>
 <td><code>tcp_listen(port, host: "0.0.0.0")</code></td>
@@ -4611,6 +4681,18 @@
 <tr>
 <td><code>sock.peer()</code> / <code>sock.close()</code></td>
 <td>Remote <code>"host:port"</code> / close the connection</td>
+</tr>
+<tr>
+<td><code>udp_listen(port, host: "0.0.0.0")</code></td>
+<td>Bind a UDP socket (v1.19)</td>
+</tr>
+<tr>
+<td><code>udp_send(host, port, msg)</code></td>
+<td>Fire-and-forget datagram (v1.19)</td>
+</tr>
+<tr>
+<td><code>sock.recv(n)</code> / <code>sock.send_to(host, port, msg)</code></td>
+<td>UDP receive/send — <code>recv</code> returns <code>{data:, host:, port:}</code> (v1.19)</td>
 </tr>
 </tbody>
 </table>
@@ -4694,7 +4776,7 @@
 </tr>
 <tr>
 <td><code>ws_connect(url, timeout: nil)</code></td>
-<td>Client connection (<code>ws://</code> URLs)</td>
+<td>Client connection (<code>ws://</code> and <code>wss://</code> — TLS since v1.19)</td>
 </tr>
 <tr>
 <td><code>ws.send(msg)</code> / <code>ws.recv()</code></td>
@@ -4725,8 +4807,40 @@
 <td>Conditional breakpoint</td>
 </tr>
 <tr>
+<td><code>frankiec run --debug app.fk</code></td>
+<td>Break at the first line automatically (v1.19)</td>
+</tr>
+<tr>
+<td><code>(fkdb) s</code> / <code>n</code> / <code>stack</code></td>
+<td>Step in / step over / show call stack (v1.19)</td>
+</tr>
+<tr>
 <td><code>benchmark ["label"] do ... end</code></td>
 <td>Time a block — returns elapsed ms</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="type-annotations-v119">Type Annotations <em>(v1.19)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>def area(r: Float) -&gt; Float</code></td>
+<td>Parameter and return type annotations — optional, checked statically</td>
+</tr>
+<tr>
+<td><code>Int</code>/<code>Integer</code>, <code>Float</code>/<code>Number</code>, <code>String</code>/<code>Str</code>, <code>Bool</code>/<code>Boolean</code></td>
+<td>Core type names (with aliases)</td>
+</tr>
+<tr>
+<td><code>Vector</code>, <code>Hash</code>, <code>Lambda</code>, <code>Range</code>, <code>Nil</code>, <code>Any</code></td>
+<td>Remaining type names — <code>Any</code> matches anything</td>
 </tr>
 </tbody>
 </table>
@@ -4779,6 +4893,107 @@
 <tr>
 <td><code>1e6</code>, <code>2.5e-3</code>, <code>1E+9</code></td>
 <td>Scientific notation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="game-engines-v120">Game Engines <em>(v1.20)</em></h2>
+<p>Loaded via <code>stitch "frankiegame"</code> (terminal) or <code>stitch "frankiecanvas"</code> (browser) — same API, nothing enters the global namespace until you stitch one in. Full reference: <a href="../../stitches/frankiegame/">frankiegame</a>, <a href="../../stitches/frankiecanvas/">frankiecanvas</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>game_new(width:, height:, fps:, ...)</code></td>
+<td>Create the game state hash</td>
+</tr>
+<tr>
+<td><code>on_key(g, key) do \|game\| ... end</code></td>
+<td>Handle one key</td>
+</tr>
+<tr>
+<td><code>on_any_key(g) do \|game, key\| ... end</code></td>
+<td>Handle every key press</td>
+</tr>
+<tr>
+<td><code>on_tick(g) do \|game\| ... end</code></td>
+<td>Called once per frame</td>
+</tr>
+<tr>
+<td><code>clear(g)</code> / <code>draw(g, x, y, s, color: nil)</code> / <code>text(g, x, y, s, color: nil)</code></td>
+<td>Frame buffer + glyph drawing</td>
+</tr>
+<tr>
+<td><code>draw_sprite(g, x, y, sprite, color: nil)</code></td>
+<td>Multi-line sprite, transparent spaces</td>
+</tr>
+<tr>
+<td><code>collide?(x1, y1, w1, h1, x2, y2, w2, h2)</code></td>
+<td>AABB collision test</td>
+</tr>
+<tr>
+<td><code>game_beep(g)</code> / <code>stop_game(g)</code> / <code>run_game(g)</code></td>
+<td>Sound / end loop / enter blocking loop</td>
+</tr>
+<tr>
+<td><code>render_frame(g)</code></td>
+<td>Buffer as a string (headless tests)</td>
+</tr>
+<tr>
+<td><code>rect(g, x, y, w, h, color)</code></td>
+<td>Filled rectangle — <code>frankiecanvas</code> only</td>
+</tr>
+<tr>
+<td><code>on_player_key(g) do \|game, player, key\| ... end</code></td>
+<td>Per-player input — <code>frankiecanvas</code> only</td>
+</tr>
+<tr>
+<td><code>players_count(g)</code></td>
+<td>Connected browser count — <code>frankiecanvas</code> only</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tooling-additions-v119v1201">Tooling Additions <em>(v1.19–v1.20.1)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>frankiec run --debug app.fk</code></td>
+<td>Break at the first line automatically (v1.19)</td>
+</tr>
+<tr>
+<td><code>frankiec test --coverage</code></td>
+<td>Report line coverage, writes <code>.frankie_coverage.json</code> (v1.19)</td>
+</tr>
+<tr>
+<td><code>frankiec docs --html</code></td>
+<td>Render doc-comments as styled single-page HTML (v1.19)</td>
+</tr>
+<tr>
+<td><code>frankiec stitch install &lt;url&gt;</code></td>
+<td>Install a stitch from any URL, not just the registry (v1.19)</td>
+</tr>
+<tr>
+<td><code>frankiec new --game &lt;project&gt;</code></td>
+<td>Scaffold a playable starter game (v1.20)</td>
+</tr>
+<tr>
+<td><code>frankiec examples [name]</code></td>
+<td>List bundled examples, or copy one into the current directory (v1.20.1)</td>
+</tr>
+<tr>
+<td><code>brew install atejada/frankie/frankie</code></td>
+<td>Homebrew install (v1.20.1)</td>
 </tr>
 </tbody>
 </table>

@@ -1971,6 +1971,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#showcase-projects-v119-v120" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Showcase Projects (v1.19-v1.20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hello-world" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2278,6 +2289,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#showcase-projects-v119-v120" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Showcase Projects (v1.19-v1.20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hello-world" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2394,6 +2416,56 @@
 
 
 <h1 id="examples">Examples</h1>
+<h2 id="showcase-projects-v119-v120">Showcase Projects (v1.19-v1.20)</h2>
+<p>Beyond the single-file snippets below, Frankie ships six complete, playable projects — each a self-contained <code>.fk</code> program (or small pinned-stitch project) you can read in one sitting and run with one command. They install with Frankie itself, so there's nothing extra to download.</p>
+<p>Grab any of them with <code>frankiec examples</code>, which works the same way whether Frankie was installed via Homebrew, <code>git clone</code> + <code>install.py</code>, or an unpacked zip:</p>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>examples<span class="w">              </span><span class="c1"># list everything bundled with this install</span>
+frankiec<span class="w"> </span>examples<span class="w"> </span>snake<span class="w">        </span><span class="c1"># copies the project into the current directory</span>
+<span class="nb">cd</span><span class="w"> </span>snake<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>frankiec<span class="w"> </span>run<span class="w"> </span>main.fk
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Renderer / stack</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🧟 <code>zombie_chat</code></td>
+<td>WebSockets</td>
+<td>Multi-room chat — server + web UI in one file</td>
+</tr>
+<tr>
+<td>⚡ <code>word_reanimator</code></td>
+<td>WebSockets</td>
+<td>Multiplayer browser hangman, shared state</td>
+</tr>
+<tr>
+<td>💰 <code>frankie_ledger</code></td>
+<td>SQLite + stitches</td>
+<td>Terminal expense tracker with R-style stats</td>
+</tr>
+<tr>
+<td>🐍 <code>snake</code></td>
+<td><code>frankiegame</code> (terminal)</td>
+<td>The whole game engine API in ~80 lines</td>
+</tr>
+<tr>
+<td>🧟 <code>zombie_invaders</code></td>
+<td><code>frankiecanvas</code> (browser)</td>
+<td>Rects, sprites, waves, beeps</td>
+</tr>
+<tr>
+<td>🏓 <code>pong</code></td>
+<td><code>frankiecanvas</code> (browser)</td>
+<td>Multiplayer via <code>on_player_key</code> — two tabs, one ball</td>
+</tr>
+</tbody>
+</table>
+<p>Each project bundles to a single self-contained <code>.py</code> with <code>frankiec bundle</code> — no Frankie installation required to run the result.</p>
+<hr />
 <h2 id="hello-world">Hello World</h2>
 <div class="highlight"><pre><span></span><code><span class="nb">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;World&quot;</span>
 <span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!&quot;</span>

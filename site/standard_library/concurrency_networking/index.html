@@ -2149,10 +2149,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tcp_connecthost-port-timeout-nil-client" class="md-nav__link">
+  <a href="#tcp_connecthost-port-timeout-nil-tls-false-client" class="md-nav__link">
     <span class="md-ellipsis">
       
-        tcp_connect(host, port, timeout: nil) — client
+        tcp_connect(host, port, timeout: nil, tls: false) — client
       
     </span>
   </a>
@@ -2209,6 +2209,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#udp-sockets-v119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UDP Sockets (v1.19)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UDP Sockets (v1.19)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#udp_listenport-host-0000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        udp_listen(port, host: "0.0.0.0")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp_sendhost-port-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        udp_send(host, port, message)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-socket-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UDP socket methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websockets-v118-tls-v119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSockets (v1.18) + TLS (v1.19)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#error-handling" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2248,7 +2309,7 @@
 
 
 <h1 id="concurrency-networking">Concurrency &amp; Networking</h1>
-<p>Introduced in <strong>v1.17</strong>. Thread-pool mapping and raw TCP sockets — all built on the Python standard library, zero external dependencies.</p>
+<p>Introduced in <strong>v1.17</strong>, with TLS and UDP added in <strong>v1.19</strong>. Thread-pool mapping, raw TCP/UDP sockets, and WebSockets — all built on the Python standard library, zero external dependencies.</p>
 <hr />
 <h2 id="parallel_map"><code>parallel_map</code></h2>
 <p>Thread-pool map for I/O-bound work: HTTP calls, shell commands, file reads. Runs the block across a pool of worker threads and returns results <strong>in input order</strong>.</p>
@@ -2276,7 +2337,7 @@
 </code></pre></div>
 <hr />
 <h2 id="tcp-sockets">TCP Sockets</h2>
-<h3 id="tcp_connecthost-port-timeout-nil-client"><code>tcp_connect(host, port, timeout: nil)</code> — client</h3>
+<h3 id="tcp_connecthost-port-timeout-nil-tls-false-client"><code>tcp_connect(host, port, timeout: nil, tls: false)</code> — client</h3>
 <p>Opens a TCP connection and returns a socket object:</p>
 <div class="highlight"><pre><span></span><code><span class="n">sock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tcp_connect</span><span class="p">(</span><span class="s2">&quot;example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">7777</span><span class="p">,</span><span class="w"> </span><span class="ss">timeout</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
 <span class="n">sock</span><span class="o">.</span><span class="n">send_line</span><span class="p">(</span><span class="s2">&quot;ping&quot;</span><span class="p">)</span>
@@ -2284,6 +2345,13 @@
 <span class="nb">puts</span><span class="w"> </span><span class="n">sock</span><span class="o">.</span><span class="n">peer</span><span class="p">()</span><span class="w">          </span><span class="c1"># &quot;93.184.216.34:7777&quot;</span>
 <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
+<p>Pass <code>tls: true</code> for a certificate-verified TLS connection (v1.19), via Python's stdlib <code>ssl</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">sock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tcp_connect</span><span class="p">(</span><span class="s2">&quot;example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">443</span><span class="p">,</span><span class="w"> </span><span class="ss">tls</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">)</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">send_line</span><span class="p">(</span><span class="s2">&quot;GET / HTTP/1.0</span><span class="se">\r\n\r\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">sock</span><span class="o">.</span><span class="n">recv_line</span><span class="p">()</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p>Server-side TLS stays on the wish list — <code>tcp_listen</code>/<code>tcp_serve</code> are plaintext only.</p>
 <h3 id="socket-methods">Socket methods</h3>
 <table>
 <thead>
@@ -2350,6 +2418,52 @@
 <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 <hr />
+<h2 id="udp-sockets-v119">UDP Sockets (v1.19)</h2>
+<p>Connectionless datagrams — no handshake, no ordering guarantees, fire-and-forget or request/response as you like.</p>
+<h3 id="udp_listenport-host-0000"><code>udp_listen(port, host: "0.0.0.0")</code></h3>
+<div class="highlight"><pre><span></span><code><span class="n">sock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">udp_listen</span><span class="p">(</span><span class="mi">9999</span><span class="p">)</span>
+<span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span><span class="w">                  </span><span class="c1"># blocks for the next datagram</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">msg</span><span class="o">[</span><span class="s2">&quot;data&quot;</span><span class="o">]</span><span class="w">                   </span><span class="c1"># the payload as a string</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">msg</span><span class="o">[</span><span class="s2">&quot;host&quot;</span><span class="o">]</span><span class="w">                   </span><span class="c1"># sender&#39;s address</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">send_to</span><span class="p">(</span><span class="n">msg</span><span class="o">[</span><span class="s2">&quot;host&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">[</span><span class="s2">&quot;port&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pong&quot;</span><span class="p">)</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="udp_sendhost-port-message"><code>udp_send(host, port, message)</code></h3>
+<p>Fire-and-forget — opens a socket, sends one datagram, closes:</p>
+<div class="highlight"><pre><span></span><code><span class="n">udp_send</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ping&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="udp-socket-methods">UDP socket methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sock.recv(n: 4096)</code></td>
+<td>Block for the next datagram → <code>{data:, host:, port:}</code></td>
+</tr>
+<tr>
+<td><code>sock.send_to(host, port, msg)</code></td>
+<td>Send a datagram to a specific address</td>
+</tr>
+<tr>
+<td><code>sock.close()</code></td>
+<td>Close the socket</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="websockets-v118-tls-v119">WebSockets (v1.18) + TLS (v1.19)</h2>
+<p>Full WebSocket coverage lives on the <a href="../webserver/#websockets-v118">Web Server</a> page — <code>app.websocket</code> for the server side, <code>ws_connect</code> for clients. Since v1.19, <code>ws_connect</code> also accepts <code>wss://</code> URLs for TLS-secured connections:</p>
+<div class="highlight"><pre><span></span><code><span class="n">sock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ws_connect</span><span class="p">(</span><span class="s2">&quot;wss://echo.example.com/socket&quot;</span><span class="p">)</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<hr />
 <h2 id="error-handling">Error Handling</h2>
 <p>Socket operations raise on failure — connection refused, timeouts, etc. Rescue them like any other error:</p>
 <div class="highlight"><pre><span></span><code><span class="k">begin</span>
@@ -2375,8 +2489,8 @@
 <td>Thread-pool map, results in input order</td>
 </tr>
 <tr>
-<td><code>tcp_connect(host, port, timeout: nil)</code></td>
-<td>Open a TCP connection</td>
+<td><code>tcp_connect(host, port, timeout: nil, tls: false)</code></td>
+<td>Open a TCP connection — <code>tls: true</code> for TLS (v1.19)</td>
 </tr>
 <tr>
 <td><code>tcp_listen(port, host: "0.0.0.0")</code></td>
@@ -2397,6 +2511,22 @@
 <tr>
 <td><code>sock.peer()</code> / <code>sock.close()</code></td>
 <td>Remote <code>"host:port"</code> / close the connection</td>
+</tr>
+<tr>
+<td><code>udp_listen(port, host: "0.0.0.0")</code></td>
+<td>Bind a UDP socket (v1.19)</td>
+</tr>
+<tr>
+<td><code>udp_send(host, port, msg)</code></td>
+<td>Fire-and-forget datagram (v1.19)</td>
+</tr>
+<tr>
+<td><code>sock.recv(n)</code> / <code>sock.send_to(host, port, msg)</code></td>
+<td>UDP receive/send (v1.19)</td>
+</tr>
+<tr>
+<td><code>ws_connect(url, timeout: nil)</code></td>
+<td>WebSocket client — <code>ws://</code> or <code>wss://</code> (v1.18 / TLS in v1.19)</td>
 </tr>
 </tbody>
 </table>
