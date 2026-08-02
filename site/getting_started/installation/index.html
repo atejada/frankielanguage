@@ -2401,7 +2401,11 @@ python3<span class="w"> </span>install.py
 frankiec<span class="w"> </span>examples<span class="w"> </span>snake<span class="w">        </span><span class="c1"># copy a project into the current directory</span>
 <span class="nb">cd</span><span class="w"> </span>snake<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>frankiec<span class="w"> </span>run<span class="w"> </span>main.fk
 </code></pre></div>
-<p>This works identically whether you installed via Homebrew, <code>git clone</code> + <code>install.py</code>, or an unpacked zip. For a Homebrew install specifically, the examples live under the formula's <code>libexec</code> directory (<code>frankiec examples</code> prints the exact path); for a git clone, they're just <code>examples/</code> in the repo root.</p>
+<p>This works identically whether you installed via Homebrew, <code>git clone</code> + <code>install.py</code>, or an unpacked zip.</p>
+<ul>
+<li><strong>Homebrew:</strong> examples live at <code>$(brew --prefix frankie)/libexec/examples/</code> — typically <code>/opt/homebrew/opt/frankie/libexec/examples/</code> on Apple Silicon, or <code>/usr/local/opt/frankie/libexec/examples/</code> on Intel Macs. <code>frankiec examples</code> (no arguments) also prints this path directly, so you never have to work it out by hand.</li>
+<li><strong>Git clone / zip:</strong> examples are just <code>examples/</code> in the repo root.</li>
+</ul>
 <p>Single-file examples (like <code>fizzbuzz.fk</code>) copy as one <code>.fk</code> file; full projects (like <code>snake</code> or <code>frankie_ledger</code>) copy as a whole directory, including their pinned <code>stitches/</code> and <code>stitch.lock</code>.</p>
 <hr />
 <h2 id="quick-start">Quick Start</h2>
