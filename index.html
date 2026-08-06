@@ -109,7 +109,7 @@ footer{border-top:1px solid var(--border);padding:2.2rem 2.5rem;display:flex;ali
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">🧟 Frankie <span>v1.20.1</span></a>
+  <a href="#" class="nav-logo">🧟 Frankie <span>v1.21.0</span></a>
   <ul>
     <li><a href="#features">Features</a></li>
     <li><a href="#syntax">Syntax</a></li>
@@ -139,7 +139,7 @@ footer{border-top:1px solid var(--border);padding:2.2rem 2.5rem;display:flex;ali
   </div>
   <div class="ctas">
     <a href="#install" class="btn btn-p">Get Started →</a>
-    <a href="https://github.com/atejada/Frankie/releases" class="btn btn-s">Download v1.20.1</a>
+    <a href="https://github.com/atejada/Frankie/releases" class="btn btn-s">Download v1.21.0</a>
     <a href="https://atejada.github.io/frankielanguage/site/index.html" class="btn btn-s">Go to the Docs</a>
     <a href="https://github.com/atejada/Frankie" class="btn btn-s">★ Star on GitHub</a>
   </div>
@@ -153,6 +153,8 @@ footer{border-top:1px solid var(--border);padding:2.2rem 2.5rem;display:flex;ali
   <h2>Everything you need.<br>Nothing you don't.</h2>
   <p style="color:var(--muted);max-width:560px;font-size:.97rem">Proudly procedural — functions, data, loops, logic. No classes, no <code>self</code>, no inheritance. Runs on Python 3.10+ with zero external dependencies.</p>
   <div class="grid">
+    <div class="card"><div class="card-icon">🖼️</div><h3>Image Sprites <span class="new-badge">v1.21</span></h3><p><code>load_image("zombie.png")</code> + <code>draw_image(g, x, y, img, w:, h:)</code> — real PNG/JPEG/GIF bitmaps in <code>frankiecanvas</code>, cached client-side after the first frame.</p></div>
+    <div class="card"><div class="card-icon">🔊</div><h3>WebAudio Synth <span class="new-badge">v1.21</span></h3><p><code>synth_play(g, freq:, wave:, dur:, gain:)</code> — real oscillator tones (sine/square/sawtooth/triangle), not just a beep. <code>game_beep</code> is now a thin wrapper over it.</p></div>
     <div class="card"><div class="card-icon">🎮</div><h3><code>frankiegame</code> Engine <span class="new-badge">v1.20</span></h3><p>A terminal game engine: fixed-timestep loop, raw arrow keys, double-buffered ANSI rendering, sprites, collision. Snake in ~80 lines — and your test suite can play it headless.</p></div>
     <div class="card"><div class="card-icon">🕹️</div><h3><code>frankiecanvas</code> Engine <span class="new-badge">v1.20</span></h3><p>The SAME game API on an HTML5 canvas — served by Frankie's web server, streamed over WebSockets. Every browser tab is a player: multiplayer Pong costs zero extra code.</p></div>
     <div class="card"><div class="card-icon">🔬</div><h3>Type Annotations <span class="new-badge">v1.19</span></h3><p><code>def area(r: Float) -> Float</code> — optional, zero runtime cost, checked by <code>frankiec check</code> and live in your editor. Un-annotated code is untouched.</p></div>
@@ -1025,7 +1027,8 @@ frankiec test</pre></div>
   <table>
     <thead><tr><th>Version</th><th>Highlights</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td><strong>v1.20.0</strong></td><td>frankiegame terminal engine, frankiecanvas browser engine (same API, multiplayer via on_player_key), terminal primitives (term_raw/term_key/term_render), frankiec new --game, showcase games: Snake, Zombie Invaders, Pong</td><td><span class="badge bl">Latest</span></td></tr>
+      <tr><td><strong>v1.21.0</strong></td><td>image sprites (load_image/draw_image) + WebAudio synth (synth_play) in frankiecanvas, cross-engine parity in frankiegame, new file_read_base64 stdlib primitive, SPEC.md corrections — 🧊 language frozen for "The Book of Frankie"</td><td><span class="badge bl">Latest</span></td></tr>
+      <tr><td><strong>v1.20.0</strong></td><td>frankiegame terminal engine, frankiecanvas browser engine (same API, multiplayer via on_player_key), terminal primitives (term_raw/term_key/term_render), frankiec new --game, showcase games: Snake, Zombie Invaders, Pong</td><td><span class="badge bs">Stable</span></td></tr>
       <tr><td><strong>v1.19.0</strong></td><td>gradual type annotations, stepping debugger (run --debug, s/n/stack), test --coverage + LSP hints, wss:// + TLS tcp, UDP sockets, stitch install from URL, docs --html, showcase projects (Zombie Chat, Word Reanimator, Frankie Ledger)</td><td><span class="badge bs">Stable</span></td></tr>
       <tr><td><strong>v1.18.0</strong></td><td>frankiec lsp (Language Server), frankiec bundle (one-file ship), WebSockets, breakpoint debug REPL, enum, benchmark, set ops, numeric underscores + 1e6, stitch.lock verify/update, check/fmt on directories</td><td><span class="badge bs">Stable</span></td></tr>
       <tr><td><strong>v1.17.0</strong></td><td>import "x" as y namespaces, error types + rescue =>, first-class ranges, record dot access, static analysis in check, accurate cross-file tracebacks, parallel_map, TCP sockets, test groups/--filter/--tag, stub/unstub, stitch installer, REPL => echo + help</td><td><span class="badge bs">Stable</span></td></tr>
