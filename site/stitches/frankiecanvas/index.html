@@ -2259,10 +2259,43 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#load_imagepath-v121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        load_image(path) (v1.21)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#draw_imageg-x-y-image-w-1-h-1-v121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        draw_image(g, x, y, image, w: 1, h: 1) (v1.21)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#collidex1-y1-w1-h1-x2-y2-w2-h2" class="md-nav__link">
     <span class="md-ellipsis">
       
         collide?(x1, y1, w1, h1, x2, y2, w2, h2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synth_playg-freq-440-wave-sine-dur-008-gain-006-v121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        synth_play(g, freq: 440, wave: "sine", dur: 0.08, gain: 0.06) (v1.21)
       
     </span>
   </a>
@@ -2402,7 +2435,7 @@
 
 
 <h1 id="frankiecanvas">frankiecanvas</h1>
-<p>Introduced in <strong>v1.20</strong>. The browser renderer for Frankie games — same core API as <a href="../frankiegame/"><code>frankiegame</code></a>, but your game gets real pixels: an HTML5 canvas served by the built-in web server, frames streamed over WebSockets, keyboard and mouse events streamed back. Multiplayer for free — every connected browser is a player, built on the v1.18 WebSocket architecture.</p>
+<p>Introduced in <strong>v1.20</strong>, with real image sprites and a WebAudio synth API added in <strong>v1.21</strong>. The browser renderer for Frankie games — same core API as <a href="../frankiegame/"><code>frankiegame</code></a>, but your game gets real pixels: an HTML5 canvas served by the built-in web server, frames streamed over WebSockets, keyboard and mouse events streamed back. Multiplayer for free — every connected browser is a player, built on the v1.18 WebSocket architecture.</p>
 <hr />
 <h2 id="quick-start">Quick Start</h2>
 <div class="highlight"><pre><span></span><code><span class="n">stitch</span><span class="w"> </span><span class="s2">&quot;frankiecanvas&quot;</span>
@@ -2460,10 +2493,28 @@
 <p>Filled rectangle in cell units.</p>
 <h3 id="draw_spriteg-x-y-sprite-color-nil"><code>draw_sprite(g, x, y, sprite, color: nil)</code></h3>
 <p>Multi-line sprite; spaces are transparent, same as the terminal renderer.</p>
+<h3 id="load_imagepath-v121"><code>load_image(path)</code> <em>(v1.21)</em></h3>
+<p>Reads a PNG, JPEG, or GIF file and returns an image handle (<code>{src: "data:image/...;base64,..."}</code>) for use with <code>draw_image</code>. Call it once, outside the game loop — it hits disk and Base64-encodes the file:</p>
+<div class="highlight"><pre><span></span><code><span class="n">zombie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_image</span><span class="p">(</span><span class="s2">&quot;zombie.png&quot;</span><span class="p">)</span><span class="w">     </span><span class="c1"># once, before run_game</span>
+</code></pre></div>
+<p>Internally this uses the new <a href="../../standard_library/file_io/#file_read_base64-path"><code>file_read_base64</code></a> stdlib primitive, since <code>file_read</code> is text-mode and would corrupt binary image data.</p>
+<h3 id="draw_imageg-x-y-image-w-1-h-1-v121"><code>draw_image(g, x, y, image, w: 1, h: 1)</code> <em>(v1.21)</em></h3>
+<p>Draws a loaded image at cell <code>(x, y)</code>, sized <code>w × h</code> cells:</p>
+<div class="highlight"><pre><span></span><code><span class="n">on_tick</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">game</span><span class="o">|</span>
+<span class="w">  </span><span class="n">clear</span><span class="p">(</span><span class="n">game</span><span class="p">)</span>
+<span class="w">  </span><span class="n">draw_image</span><span class="p">(</span><span class="n">game</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">zombie</span><span class="p">,</span><span class="w"> </span><span class="ss">w</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">h</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Every connected browser decodes and caches the image the first time it's drawn — later frames just resend the coordinates, not the image data. The same call also works against <code>frankiegame</code>, which renders a <code>▒</code> placeholder block since a terminal can't show real pixels — see <a href="../frankiegame/#load_image-path-v121">frankiegame</a>.</p>
 <h3 id="collidex1-y1-w1-h1-x2-y2-w2-h2"><code>collide?(x1, y1, w1, h1, x2, y2, w2, h2)</code></h3>
 <p>Axis-aligned bounding box overlap test.</p>
+<h3 id="synth_playg-freq-440-wave-sine-dur-008-gain-006-v121"><code>synth_play(g, freq: 440, wave: "sine", dur: 0.08, gain: 0.06)</code> <em>(v1.21)</em></h3>
+<p>Plays a real WebAudio oscillator tone in every connected browser. <code>wave</code> is <code>"sine"</code>, <code>"square"</code>, <code>"sawtooth"</code>, or <code>"triangle"</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">synth_play</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="ss">freq</span><span class="p">:</span><span class="w"> </span><span class="mi">220</span><span class="p">,</span><span class="w"> </span><span class="ss">wave</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sawtooth&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">dur</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">gain</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">08</span><span class="p">)</span>
+</code></pre></div>
+<p><code>frankiegame</code> also has <code>synth_play</code> — it maps to the terminal bell, with parameters accepted but ignored, so the same call compiles against either engine.</p>
 <h3 id="game_beepg"><code>game_beep(g)</code></h3>
-<p>A WebAudio blip in every connected browser.</p>
+<p>A WebAudio blip in every connected browser. Since v1.21 this is a thin wrapper over <code>synth_play(g, freq: 520, wave: "square", dur: 0.07, gain: 0.06)</code> — behavior is unchanged.</p>
 <h3 id="on_keyg-key-do-game-end"><code>on_key(g, key) do |game| ... end</code></h3>
 <p>Handle one key — shared across all connected players.</p>
 <h3 id="on_any_keyg-do-game-key-end"><code>on_any_key(g) do |game, key| ... end</code></h3>
@@ -2515,6 +2566,14 @@ frankiec<span class="w"> </span>examples<span class="w"> </span>pong<span class=
 <td>Multi-line sprite, transparent spaces</td>
 </tr>
 <tr>
+<td><code>load_image(path)</code></td>
+<td>Load a PNG/JPEG/GIF for <code>draw_image</code> (v1.21)</td>
+</tr>
+<tr>
+<td><code>draw_image(g, x, y, image, w: 1, h: 1)</code></td>
+<td>Draw a loaded image, client-cached after first draw (v1.21)</td>
+</tr>
+<tr>
 <td><code>collide?(x1, y1, w1, h1, x2, y2, w2, h2)</code></td>
 <td>AABB collision test</td>
 </tr>
@@ -2535,8 +2594,12 @@ frankiec<span class="w"> </span>examples<span class="w"> </span>pong<span class=
 <td>Connected browser count (canvas-only)</td>
 </tr>
 <tr>
+<td><code>synth_play(g, freq:, wave:, dur:, gain:)</code></td>
+<td>Real WebAudio oscillator tone (v1.21)</td>
+</tr>
+<tr>
 <td><code>game_beep(g)</code></td>
-<td>WebAudio blip in every tab</td>
+<td>WebAudio blip in every tab — now a <code>synth_play</code> wrapper</td>
 </tr>
 <tr>
 <td><code>stop_game(g)</code></td>

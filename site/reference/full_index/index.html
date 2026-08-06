@@ -2516,6 +2516,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#language-freeze-v121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧊 Language Freeze (v1.21)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#operators-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2950,6 +2961,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#language-freeze-v121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧊 Language Freeze (v1.21)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#operators-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2978,7 +3000,7 @@
 
 
 <h1 id="full-stdlib-index">Full Stdlib Index</h1>
-<p>Every function, method, and operator available in Frankie v1.20.1. All are available without any import.</p>
+<p>Every function, method, and operator available in Frankie v1.21.0. All are available without any import.</p>
 <hr />
 <h2 id="math-arithmetic">Math &amp; Arithmetic</h2>
 <table>
@@ -3816,6 +3838,10 @@
 <tr>
 <td><code>file_read(path)</code></td>
 <td>Read entire file as string — raises <code>FileNotFoundError</code></td>
+</tr>
+<tr>
+<td><code>file_read_base64(path)</code></td>
+<td>Read binary file, Base64-encoded — raises <code>FileNotFoundError</code> (v1.21)</td>
 </tr>
 <tr>
 <td><code>file_lines(path)</code></td>
@@ -4932,12 +4958,24 @@
 <td>Multi-line sprite, transparent spaces</td>
 </tr>
 <tr>
+<td><code>load_image(path)</code></td>
+<td>Load a PNG/JPEG/GIF — real pixels on frankiecanvas, path-only placeholder on frankiegame (v1.21)</td>
+</tr>
+<tr>
+<td><code>draw_image(g, x, y, image, w: 1, h: 1)</code></td>
+<td>Draw a loaded image — <code>▒</code> placeholder block on frankiegame (v1.21)</td>
+</tr>
+<tr>
+<td><code>synth_play(g, freq:, wave:, dur:, gain:)</code></td>
+<td>WebAudio oscillator tone on frankiecanvas, terminal bell on frankiegame (v1.21)</td>
+</tr>
+<tr>
 <td><code>collide?(x1, y1, w1, h1, x2, y2, w2, h2)</code></td>
 <td>AABB collision test</td>
 </tr>
 <tr>
 <td><code>game_beep(g)</code> / <code>stop_game(g)</code> / <code>run_game(g)</code></td>
-<td>Sound / end loop / enter blocking loop</td>
+<td>Sound (now a <code>synth_play</code> wrapper) / end loop / enter blocking loop</td>
 </tr>
 <tr>
 <td><code>render_frame(g)</code></td>
@@ -4997,6 +5035,9 @@
 </tr>
 </tbody>
 </table>
+<hr />
+<h2 id="language-freeze-v121">🧊 Language Freeze <em>(v1.21)</em></h2>
+<p>Frankie is language-frozen as of v1.21.0 while "The Book of Frankie" is written against this exact version. Grammar, stdlib signatures, and stitch APIs are locked for the duration — patch releases (bug fixes, doc corrections) continue, but no new syntax or behavior changes until the freeze lifts.</p>
 <hr />
 <h2 id="operators-reference">Operators Reference</h2>
 <table>

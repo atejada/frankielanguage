@@ -1263,6 +1263,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#file_read_base64path-v121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        file_read_base64(path) (v1.21)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2578,6 +2589,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#file_read_base64path-v121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        file_read_base64(path) (v1.21)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2926,7 +2948,13 @@
 <span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="n">line</span>
 <span class="k">end</span>
 </code></pre></div>
-<p>Both raise <code>FileNotFoundError</code> if the file doesn't exist — use <code>rescue</code> to handle it gracefully:</p>
+<h3 id="file_read_base64path-v121"><code>file_read_base64(path)</code> <em>(v1.21)</em></h3>
+<p>Read a binary file, Base64-encoded</p>
+<p><code>file_read</code> is text-mode and will corrupt binary data (images, audio, zip files). Use <code>file_read_base64</code> for anything that isn't text — <a href="../../stitches/frankiecanvas/#load_image-path-v121"><code>load_image</code></a> in <code>frankiegame</code>/<code>frankiecanvas</code> uses it internally for PNG/JPEG/GIF sprites.</p>
+<div class="highlight"><pre><span></span><code><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">file_read_base64</span><span class="p">(</span><span class="s2">&quot;sprite.png&quot;</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">data</span><span class="o">.</span><span class="n">length</span><span class="w">   </span><span class="c1"># Base64 text, safe to embed in a data: URL or JSON</span>
+</code></pre></div>
+<p>Both <code>file_read</code> and <code>file_lines</code> (and <code>file_read_base64</code>) raise <code>FileNotFoundError</code> if the file doesn't exist — use <code>rescue</code> to handle it gracefully:</p>
 <div class="highlight"><pre><span></span><code><span class="k">begin</span>
 <span class="w">  </span><span class="n">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">file_read</span><span class="p">(</span><span class="s2">&quot;config.json&quot;</span><span class="p">)</span>
 <span class="k">rescue</span><span class="w"> </span><span class="no">FileNotFoundError</span><span class="w"> </span><span class="n">e</span>
@@ -3038,6 +3066,10 @@
 <td>Raises <code>FileNotFoundError</code></td>
 </tr>
 <tr>
+<td><code>file_read_base64(path)</code></td>
+<td>Raises <code>FileNotFoundError</code></td>
+</tr>
+<tr>
 <td><code>file_lines(path)</code></td>
 <td>Raises <code>FileNotFoundError</code></td>
 </tr>
@@ -3076,6 +3108,10 @@
 <tr>
 <td><code>file_read(path)</code></td>
 <td>Read entire file as string</td>
+</tr>
+<tr>
+<td><code>file_read_base64(path)</code></td>
+<td>Read binary file, Base64-encoded (v1.21)</td>
 </tr>
 <tr>
 <td><code>file_lines(path)</code></td>

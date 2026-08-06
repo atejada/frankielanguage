@@ -2226,6 +2226,39 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#load_imagepath-v121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        load_image(path) (v1.21)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#draw_imageg-x-y-image-w-1-h-1-v121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        draw_image(g, x, y, image, w: 1, h: 1) (v1.21)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synth_playg-freq-440-wave-sine-dur-008-gain-006-v121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        synth_play(g, freq: 440, wave: "sine", dur: 0.08, gain: 0.06) (v1.21)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#collidex1-y1-w1-h1-x2-y2-w2-h2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2369,7 +2402,7 @@
 
 
 <h1 id="frankiegame">frankiegame</h1>
-<p>Introduced in <strong>v1.20</strong>. A tiny terminal game engine — fixed-timestep loop, double-buffered ANSI rendering, non-blocking keys. Zero dependencies, built entirely on stdlib <code>termios</code>.</p>
+<p>Introduced in <strong>v1.20</strong>, with image and audio API parity added in <strong>v1.21</strong>. A tiny terminal game engine — fixed-timestep loop, double-buffered ANSI rendering, non-blocking keys. Zero dependencies, built entirely on stdlib <code>termios</code>.</p>
 <p><code>frankiegame</code> shares its entire API with <a href="../frankiecanvas/"><code>frankiecanvas</code></a> (the browser renderer) — write your game once, and the <code>stitch</code> line picks where it renders.</p>
 <hr />
 <h2 id="quick-start">Quick Start</h2>
@@ -2422,6 +2455,20 @@
 <span class="s2">&quot;</span>
 <span class="n">draw_sprite</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">sprite</span><span class="p">)</span>
 </code></pre></div>
+<h3 id="load_imagepath-v121"><code>load_image(path)</code> <em>(v1.21)</em></h3>
+<p>Loads an image file for use with <code>draw_image</code>. On <code>frankiegame</code>, this just remembers the path — the terminal can't show real pixels, so <code>draw_image</code> renders a placeholder block instead. Call it once before <code>run_game</code>, not per frame.</p>
+<div class="highlight"><pre><span></span><code><span class="n">zombie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_image</span><span class="p">(</span><span class="s2">&quot;zombie.png&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>The same call works unchanged against <code>frankiecanvas</code>, which decodes the real file — see <a href="../frankiecanvas/#load_image-path-v121">frankiecanvas</a> for the pixel version.</p>
+<h3 id="draw_imageg-x-y-image-w-1-h-1-v121"><code>draw_image(g, x, y, image, w: 1, h: 1)</code> <em>(v1.21)</em></h3>
+<p>Draws the loaded image at cell <code>(x, y)</code>, sized <code>w × h</code> cells. On <code>frankiegame</code> this renders a <code>▒</code> placeholder block over that area — since a terminal can't show a real bitmap, the point is that the <em>function calls</em> stay identical across both engines, so a game written against <code>frankiegame</code> still compiles and runs (with placeholder graphics) if you swap in <code>frankiecanvas</code> later, and vice versa.</p>
+<div class="highlight"><pre><span></span><code><span class="n">on_tick</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">game</span><span class="o">|</span>
+<span class="w">  </span><span class="n">clear</span><span class="p">(</span><span class="n">game</span><span class="p">)</span>
+<span class="w">  </span><span class="n">draw_image</span><span class="p">(</span><span class="n">game</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">zombie</span><span class="p">,</span><span class="w"> </span><span class="ss">w</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">h</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>
+<h3 id="synth_playg-freq-440-wave-sine-dur-008-gain-006-v121"><code>synth_play(g, freq: 440, wave: "sine", dur: 0.08, gain: 0.06)</code> <em>(v1.21)</em></h3>
+<p>On <code>frankiegame</code>, this maps to the terminal bell — the parameters are accepted but ignored, so cross-engine code still compiles. See <a href="../frankiecanvas/#synth_play-v121">frankiecanvas</a> for real synthesized tones.</p>
 <h3 id="collidex1-y1-w1-h1-x2-y2-w2-h2"><code>collide?(x1, y1, w1, h1, x2, y2, w2, h2)</code></h3>
 <p>Axis-aligned bounding box overlap test.</p>
 <h3 id="on_keyg-key-do-game-end"><code>on_key(g, key) do |game| ... end</code></h3>
@@ -2431,7 +2478,7 @@
 <h3 id="on_tickg-do-game-end"><code>on_tick(g) do |game| ... end</code></h3>
 <p>Called once per frame — draw here.</p>
 <h3 id="game_beepg"><code>game_beep(g)</code></h3>
-<p>Rings the terminal bell. (A WebAudio blip in <code>frankiecanvas</code>.)</p>
+<p>Rings the terminal bell. Since v1.21 this is a thin wrapper over <code>synth_play(g, freq: 520, wave: "square", dur: 0.07, gain: 0.06)</code> — behavior is unchanged, it's just built on the new synth primitive underneath. (A real WebAudio blip in <code>frankiecanvas</code>.)</p>
 <h3 id="stop_gameg"><code>stop_game(g)</code></h3>
 <p>Ends the loop after the current frame.</p>
 <h3 id="render_frameg"><code>render_frame(g)</code></h3>
@@ -2472,6 +2519,18 @@
 <tr>
 <td><code>draw_sprite(g, x, y, sprite, color: nil)</code></td>
 <td>Multi-line sprite with transparent spaces</td>
+</tr>
+<tr>
+<td><code>load_image(path)</code></td>
+<td>Load an image — real pixels on frankiecanvas, path-only here (v1.21)</td>
+</tr>
+<tr>
+<td><code>draw_image(g, x, y, image, w: 1, h: 1)</code></td>
+<td>Draw a loaded image — <code>▒</code> placeholder block here (v1.21)</td>
+</tr>
+<tr>
+<td><code>synth_play(g, freq:, wave:, dur:, gain:)</code></td>
+<td>Terminal bell here, real tone on frankiecanvas (v1.21)</td>
 </tr>
 <tr>
 <td><code>collide?(x1, y1, w1, h1, x2, y2, w2, h2)</code></td>

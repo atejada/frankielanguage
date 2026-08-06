@@ -2262,16 +2262,16 @@
 
 
 <h1 id="showcase">Showcase</h1>
-<p>The showcase is a single runnable file that demonstrates every major Frankie feature from v1.0 through v1.18. </p>
+<p>The showcase is a single runnable file that demonstrates every major Frankie feature from v1.0 through v1.21. </p>
 <p>It is the fastest way to see the whole language in one place.</p>
 <div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/showcase.fk
 <span class="c1"># or, without a local checkout:</span>
 frankiec<span class="w"> </span>examples<span class="w"> </span>showcase<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>frankiec<span class="w"> </span>run<span class="w"> </span>showcase.fk
 </code></pre></div>
-<p>Type annotations, the stepping debugger, TLS/UDP, and the game engines (v1.19–v1.20) landed after the showcase file was last extended — see <a href="../what_is_new/">What's New — Per Version</a> for those, or grab the standalone <a href="../#showcase-projects-v119-v120">showcase projects</a> (Snake, Pong, Zombie Chat, and more) with <code>frankiec examples</code>.</p>
+<p>Want the playable versions instead? Grab the standalone <a href="../#showcase-projects-v119-v120">showcase projects</a> (Snake, Pong, Zombie Chat, and more) with <code>frankiec examples</code>.</p>
 <hr />
 <h2 id="what-it-covers">What It Covers</h2>
-<p>The showcase is divided into 67 numbered sections, one per feature area. Each section is self-contained and prints its own output.</p>
+<p>The showcase is divided into 78 numbered sections, one per feature area. Each section is self-contained and prints its own output.</p>
 <table>
 <thead>
 <tr>
@@ -2615,6 +2615,61 @@ frankiec<span class="w"> </span>examples<span class="w"> </span>showcase<span cl
 <td>67</td>
 <td>WebSockets — <code>app.websocket</code> / <code>ws_connect</code></td>
 <td>v1.18</td>
+</tr>
+<tr>
+<td>68</td>
+<td>Gradual Type Annotations — <code>def f(x: Float) -&gt; Float</code></td>
+<td>v1.19</td>
+</tr>
+<tr>
+<td>69</td>
+<td>UDP Sockets — <code>udp_listen</code>, <code>send_to</code>, <code>recv</code></td>
+<td>v1.19</td>
+</tr>
+<tr>
+<td>70</td>
+<td>TLS Clients — verified <code>wss://</code> / <code>tcp_connect(tls: true)</code></td>
+<td>v1.19</td>
+</tr>
+<tr>
+<td>71</td>
+<td>v1.19 Tooling — <code>--debug</code>, <code>--coverage</code>, <code>docs --html</code>, stitch URL installs</td>
+<td>v1.19</td>
+</tr>
+<tr>
+<td>72</td>
+<td><code>frankiegame</code> — terminal game engine, <code>run_game</code> / <code>max_ticks</code></td>
+<td>v1.20</td>
+</tr>
+<tr>
+<td>73</td>
+<td>Engine Helpers — <code>collide?</code>, <code>GAME_COLORS</code></td>
+<td>v1.20</td>
+</tr>
+<tr>
+<td>74</td>
+<td><code>frankiecanvas</code> — same API, real HTML5-canvas pixels</td>
+<td>v1.20</td>
+</tr>
+<tr>
+<td>75</td>
+<td>Image Sprites — <code>load_image</code> / <code>draw_image</code></td>
+<td>v1.21</td>
+</tr>
+<tr>
+<td>76</td>
+<td>WebAudio Synth — <code>synth_play</code>, <code>game_beep</code></td>
+<td>v1.21</td>
+</tr>
+<tr>
+<td>77</td>
+<td><code>file_read_base64</code> — binary-safe reads</td>
+<td>v1.21</td>
+</tr>
+<tr>
+<td>78</td>
+<td>🧊 Language Freeze — The Book of Frankie</td>
+<td>v1.21</td>
 </tr>
 </tbody>
 </table>
