@@ -1185,6 +1185,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standard_library/concurrency_networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrenty & Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standard_library/json_csv/" class="md-nav__link">
         
   
@@ -1389,6 +1417,34 @@
     
   
     Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
   
 
     
@@ -2027,6 +2083,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v122-whats_new_v122fk-more-fortran" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.22 — whats_new_v122.fk — "More FORTRAN" 🧮
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v121-whats_new_v121fk-the-book-edition" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2432,6 +2499,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v122-whats_new_v122fk-more-fortran" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.22 — whats_new_v122.fk — "More FORTRAN" 🧮
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v121-whats_new_v121fk-the-book-edition" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2702,9 +2780,46 @@
 
 
 <h1 id="whats-new-per-version">What's New — Per Version</h1>
-<p>Each version of Frankie ships a runnable <code>whats_new_vX.fk</code> example file that demonstrates every new feature introduced in that release. Every install (Homebrew, git clone, or unpacked zip) bundles the same set — grab one with <code>frankiec examples whats_new_v121</code> or run it straight from the source tree:</p>
-<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v121.fk
+<p>Each version of Frankie ships a runnable <code>whats_new_vX.fk</code> example file that demonstrates every new feature introduced in that release. Every install (Homebrew, git clone, or unpacked zip) bundles the same set — grab one with <code>frankiec examples whats_new_v122</code> or run it straight from the source tree:</p>
+<div class="highlight"><pre><span></span><code>frankiec<span class="w"> </span>run<span class="w"> </span>examples/whats_new_v122.fk
 </code></pre></div>
+<h2 id="v122-whats_new_v122fk-more-fortran">v1.22 — <code>whats_new_v122.fk</code> — "More FORTRAN" 🧮</h2>
+<p><strong>Theme:</strong> One last feature pass before the freeze locks back in — leaning harder into Frankie's FORTRAN heritage. Pure Python stdlib, zero external dependencies, as always.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Matrix math</td>
+<td><code>+</code>/<code>-</code>/<code>/</code>/<code>%</code>/<code>**</code> now recurse through nested vectors, so matrices do real element-wise math instead of silently concatenating rows; <code>matrix_new</code>, <code>matrix_identity</code>, <code>matrix_shape</code>, <code>matrix_transpose</code>, <code>matrix_scale</code>, <code>matrix_multiply</code></td>
+</tr>
+<tr>
+<td>Complex numbers</td>
+<td><code>complex_new(real, imag)</code> exposes Python's native complex type — <code>+</code>/<code>-</code>/<code>*</code>/<code>/</code>/<code>**</code> all work for free; <code>complex_real</code>/<code>complex_imag</code>/<code>complex_conj</code>/<code>complex_abs</code>; prints as <code>3+4i</code></td>
+</tr>
+<tr>
+<td>Math intrinsics</td>
+<td><code>sin</code>/<code>cos</code>/<code>tan</code>/<code>asin</code>/<code>acos</code>/<code>atan</code>/<code>atan2</code>, <code>exp</code>/<code>log</code>/<code>log10</code>/<code>log2</code>, <code>factorial</code>/<code>gcd</code>/<code>lcm</code>, and constants <code>PI</code>/<code>E</code></td>
+</tr>
+<tr>
+<td>Labeled loops</td>
+<td><code>loop</code>/<code>while</code>/<code>until</code>/<code>for</code> take an optional <code>:name</code> label; <code>break :name</code>/<code>next :name</code> target that exact loop from anywhere nested inside it</td>
+</tr>
+<tr>
+<td><code>:symbol</code> is its own token</td>
+<td>Previously indistinguishable from a plain string at the parser level — needed for <code>break :label</code> to be unambiguous; every existing use of <code>:name</code> as a value is unaffected</td>
+</tr>
+<tr>
+<td>🧊 Language freeze moves to v1.22.0</td>
+<td>This was the explicitly-promised "last big addition" — only bug fixes and doc corrections from here</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="v121-whats_new_v121fk-the-book-edition">v1.21 — <code>whats_new_v121.fk</code> — "The Book Edition" 🧊</h2>
 <p><strong>Theme:</strong> Real bitmap sprites and a proper synth API for <code>frankiecanvas</code>, a binary-safe file primitive underneath both, and a language freeze while the language gets a book written about it. Pure Python stdlib, zero external dependencies, as always.</p>
 <table>

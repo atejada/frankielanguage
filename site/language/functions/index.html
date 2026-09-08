@@ -1400,6 +1400,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standard_library/concurrency_networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrenty & Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standard_library/json_csv/" class="md-nav__link">
         
   
@@ -1604,6 +1632,34 @@
     
   
     Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
   
 
     
@@ -2759,15 +2815,16 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">read_outer</span>
 <span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="n">x</span><span class="w">   </span><span class="c1"># 10 — outer x is readable</span>
 <span class="k">end</span>
-<span class="n">read_outer</span>
+<span class="n">read_outer</span><span class="p">()</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">set_local</span>
 <span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="w">   </span><span class="c1"># local to set_local</span>
 <span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="n">x</span><span class="w">   </span><span class="c1"># 99</span>
 <span class="k">end</span>
-<span class="n">set_local</span>
+<span class="n">set_local</span><span class="p">()</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">x</span><span class="w">     </span><span class="c1"># 10 — outer x unchanged</span>
 </code></pre></div>
+<p>Unlike Ruby, Frankie always requires parentheses to call a function, even with zero arguments. A bare name like <code>read_outer</code> (no <code>()</code>) is just a reference to the function object, not a call — it silently does nothing as a statement.</p>
 <hr />
 <h2 id="multi-file-programs">Multi-file Programs</h2>
 <p>Split code across files with <code>require</code>. Each file is loaded at most once.</p>

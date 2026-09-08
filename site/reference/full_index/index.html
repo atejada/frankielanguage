@@ -1183,6 +1183,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standard_library/concurrency_networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrenty & Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standard_library/json_csv/" class="md-nav__link">
         
   
@@ -1387,6 +1415,34 @@
     
   
     Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
   
 
     
@@ -2146,6 +2202,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#matrix-math-v122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matrix Math (v1.22)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complex-numbers-v122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complex Numbers (v1.22)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sequences-vectors" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2461,6 +2539,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#labeled-loops-v122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labeled Loops (v1.22)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#type-annotations-v119" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2516,10 +2605,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#language-freeze-v121" class="md-nav__link">
+  <a href="#language-freeze-v122" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧊 Language Freeze (v1.21)
+        🧊 Language Freeze (v1.22)
       
     </span>
   </a>
@@ -2591,6 +2680,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#matrix-math-v122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matrix Math (v1.22)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complex-numbers-v122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complex Numbers (v1.22)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sequences-vectors" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2906,6 +3017,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#labeled-loops-v122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labeled Loops (v1.22)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#type-annotations-v119" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2961,10 +3083,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#language-freeze-v121" class="md-nav__link">
+  <a href="#language-freeze-v122" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧊 Language Freeze (v1.21)
+        🧊 Language Freeze (v1.22)
       
     </span>
   </a>
@@ -3000,7 +3122,7 @@
 
 
 <h1 id="full-stdlib-index">Full Stdlib Index</h1>
-<p>Every function, method, and operator available in Frankie v1.21.0. All are available without any import.</p>
+<p>Every function, method, and operator available in Frankie v1.22.0. All are available without any import.</p>
 <hr />
 <h2 id="math-arithmetic">Math &amp; Arithmetic</h2>
 <table>
@@ -3086,6 +3208,114 @@
 <tr>
 <td><code>**</code></td>
 <td>Exponentiation — Fortran heritage</td>
+</tr>
+<tr>
+<td><code>sin(x)</code> <code>cos(x)</code> <code>tan(x)</code></td>
+<td>Trigonometric functions, radians (v1.22)</td>
+</tr>
+<tr>
+<td><code>asin(x)</code> <code>acos(x)</code> <code>atan(x)</code> <code>atan2(y, x)</code></td>
+<td>Inverse trig (v1.22)</td>
+</tr>
+<tr>
+<td><code>exp(x)</code></td>
+<td>e^x (v1.22)</td>
+</tr>
+<tr>
+<td><code>log(x, base = nil)</code></td>
+<td>Logarithm — natural by default (v1.22)</td>
+</tr>
+<tr>
+<td><code>log10(x)</code> <code>log2(x)</code></td>
+<td>Base-10 / base-2 logarithm (v1.22)</td>
+</tr>
+<tr>
+<td><code>PI</code> <code>E</code></td>
+<td>Constants (v1.22)</td>
+</tr>
+<tr>
+<td><code>factorial(n)</code></td>
+<td>n! — raises for negative input (v1.22)</td>
+</tr>
+<tr>
+<td><code>gcd(a, b)</code> <code>lcm(a, b)</code></td>
+<td>Number theory (v1.22)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="matrix-math-v122">Matrix Math <em>(v1.22)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matrix_new(rows, cols, fill = 0)</code></td>
+<td>Build a filled matrix</td>
+</tr>
+<tr>
+<td><code>matrix_identity(n)</code></td>
+<td>n×n identity matrix</td>
+</tr>
+<tr>
+<td><code>matrix_shape(m)</code></td>
+<td><code>[rows, cols]</code></td>
+</tr>
+<tr>
+<td><code>matrix_transpose(m)</code></td>
+<td>Swap rows and columns</td>
+</tr>
+<tr>
+<td><code>matrix_scale(m, n)</code></td>
+<td>Multiply every element by <code>n</code></td>
+</tr>
+<tr>
+<td><code>matrix_multiply(m1, m2)</code></td>
+<td>Real row·column matrix multiplication — raises on shape mismatch</td>
+</tr>
+<tr>
+<td><code>+</code> <code>-</code> <code>/</code> <code>%</code> <code>**</code></td>
+<td>Element-wise on nested vectors (matrices) at any depth</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="complex-numbers-v122">Complex Numbers <em>(v1.22)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>complex_new(real, imag = 0)</code></td>
+<td>Build a complex number</td>
+</tr>
+<tr>
+<td><code>complex_real(c)</code></td>
+<td>Real part</td>
+</tr>
+<tr>
+<td><code>complex_imag(c)</code></td>
+<td>Imaginary part</td>
+</tr>
+<tr>
+<td><code>complex_conj(c)</code></td>
+<td>Complex conjugate</td>
+</tr>
+<tr>
+<td><code>complex_abs(c)</code></td>
+<td>Magnitude</td>
+</tr>
+<tr>
+<td><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>**</code></td>
+<td>Native arithmetic — printed as <code>3+4i</code></td>
 </tr>
 </tbody>
 </table>
@@ -4847,6 +5077,42 @@
 </tbody>
 </table>
 <hr />
+<h2 id="labeled-loops-v122">Labeled Loops <em>(v1.22)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>loop :name do ... end</code></td>
+<td>Label a <code>loop</code></td>
+</tr>
+<tr>
+<td><code>while :name cond ... end</code></td>
+<td>Label a <code>while</code></td>
+</tr>
+<tr>
+<td><code>until :name cond ... end</code></td>
+<td>Label an <code>until</code></td>
+</tr>
+<tr>
+<td><code>for :name x in xs ... end</code></td>
+<td>Label a <code>for</code> — the label comes before the loop variable</td>
+</tr>
+<tr>
+<td><code>break :name</code></td>
+<td>Exit the labeled loop, from anywhere nested inside it</td>
+</tr>
+<tr>
+<td><code>next :name</code></td>
+<td>Skip to the next iteration of the labeled loop, from anywhere nested inside it</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="type-annotations-v119">Type Annotations <em>(v1.19)</em></h2>
 <table>
 <thead>
@@ -5036,8 +5302,9 @@
 </tbody>
 </table>
 <hr />
-<h2 id="language-freeze-v121">🧊 Language Freeze <em>(v1.21)</em></h2>
-<p>Frankie is language-frozen as of v1.21.0 while "The Book of Frankie" is written against this exact version. Grammar, stdlib signatures, and stitch APIs are locked for the duration — patch releases (bug fixes, doc corrections) continue, but no new syntax or behavior changes until the freeze lifts.</p>
+<h2 id="language-freeze-v122">🧊 Language Freeze <em>(v1.22)</em></h2>
+<p>Frankie is language-frozen as of v1.22.0 while "The Book of Frankie" is written against this exact version. Grammar, stdlib signatures, and stitch APIs are locked for the duration — patch releases (bug fixes, doc corrections) continue, but no new syntax or behavior changes until the freeze lifts.</p>
+<p>The freeze briefly lifted from v1.21.0 to v1.22.0 for one deliberate, final feature pass leaning into Frankie's FORTRAN heritage — Matrix math, Complex numbers, math intrinsics, and labeled loops — before locking again. No further feature releases are planned before the book ships.</p>
 <hr />
 <h2 id="operators-reference">Operators Reference</h2>
 <table>

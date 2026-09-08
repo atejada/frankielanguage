@@ -946,10 +946,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#r-style-vectorised-arithmetic" class="md-nav__link">
+  <a href="#vectorised-arithmetic" class="md-nav__link">
     <span class="md-ellipsis">
       
-        R-style Vectorised Arithmetic
+        Vectorised Arithmetic
       
     </span>
   </a>
@@ -1433,6 +1433,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standard_library/concurrency_networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrenty & Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standard_library/json_csv/" class="md-nav__link">
         
   
@@ -1637,6 +1665,34 @@
     
   
     Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
   
 
     
@@ -2467,10 +2523,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#r-style-vectorised-arithmetic" class="md-nav__link">
+  <a href="#vectorised-arithmetic" class="md-nav__link">
     <span class="md-ellipsis">
       
-        R-style Vectorised Arithmetic
+        Vectorised Arithmetic
       
     </span>
   </a>
@@ -2671,15 +2727,18 @@
 <span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="w">           </span><span class="c1"># [1, 3]</span>
 </code></pre></div>
 <hr />
-<h2 id="r-style-vectorised-arithmetic"><code>R-style Vectorised Arithmetic</code></h2>
-<p>Operations on vectors apply element-wise — borrowed from R:</p>
+<h2 id="vectorised-arithmetic"><code>Vectorised Arithmetic</code></h2>
+<p>Operations on vectors apply element-wise — R does this natively, and it's the same whole-array math FORTRAN 90+ pioneered decades earlier:</p>
 <div class="highlight"><pre><span></span><code><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span>
 
-<span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w">              </span><span class="c1"># [2, 4, 6, 8, 10]</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">[</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">]</span><span class="w">   </span><span class="c1"># [11, 12, 13, 14, 15]</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w">             </span><span class="c1"># [1, 4, 9, 16, 25]</span>
 </code></pre></div>
+<p><code>*</code> is the one exception — it repeats the vector (Python-list semantics), not element-wise scaling:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w">               </span><span class="c1"># [1, 2, 3, 4, 5, 1, 2, 3, 4, 5] — repeated, not scaled</span>
+</code></pre></div>
 <p>Vectors of different lengths raise a runtime error for arithmetic. For pairing, use <code>.zip</code> instead.</p>
+<p>A matrix is just a vector of vectors — since v1.22, arithmetic recurses through nested vectors too, so <code>[[1,2],[3,4]] + [[5,6],[7,8]]</code> is genuinely element-wise. See <a href="../../standard_library/math_statistics/#matrix-math-v122">Matrix Math</a> for <code>matrix_new</code>, <code>matrix_multiply</code>, and friends.</p>
 <hr />
 <h2 id="statistical-functions"><code>Statistical Functions</code></h2>
 <div class="highlight"><pre><span></span><code><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">67</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span><span class="w"> </span><span class="mi">56</span><span class="o">]</span>

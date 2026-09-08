@@ -782,6 +782,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#labeled-loops-v122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labeled Loops (v1.22)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1466,6 +1477,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standard_library/concurrency_networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrenty & Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standard_library/json_csv/" class="md-nav__link">
         
   
@@ -1670,6 +1709,34 @@
     
   
     Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
   
 
     
@@ -2642,6 +2709,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#labeled-loops-v122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labeled Loops (v1.22)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2693,8 +2771,8 @@
 </code></pre></div>
 <p>Useful when you need to guarantee at least one execution — user input loops, retry logic:</p>
 <div class="highlight"><pre><span></span><code><span class="k">do</span>
-<span class="w">  </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;Enter a positive number: &quot;</span><span class="p">)</span>
-<span class="w">  </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="o">.</span><span class="n">to_i</span>
+<span class="w">  </span><span class="nb">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">(</span><span class="s2">&quot;Enter a positive number: &quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">name</span><span class="o">.</span><span class="n">to_i</span>
 <span class="k">while</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span>
 
 <span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;You entered: </span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -2721,8 +2799,8 @@
 
 <span class="c1"># Over a hash — gives [key, value] pairs</span>
 <span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="ss">host</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">port</span><span class="p">:</span><span class="w"> </span><span class="mi">5432</span><span class="p">}</span>
-<span class="k">for</span><span class="w"> </span><span class="n">pair</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">config</span>
-<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">pair</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">pair</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">|</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">k</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="k">end</span>
 </code></pre></div>
 <hr />
@@ -2866,6 +2944,47 @@
 <span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">pair</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="si">}</span><span class="s2"> × </span><span class="si">#{</span><span class="n">pair</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="si">}</span><span class="s2"> = </span><span class="si">#{</span><span class="n">pair</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pair</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="k">end</span>
 </code></pre></div>
+<hr />
+<h2 id="labeled-loops-v122">Labeled Loops (v1.22)</h2>
+<p>A bare <code>break</code> or <code>next</code> only ever affects the loop it's directly inside — for a deeply nested search, that usually means booleans and extra checks to unwind more than one level. <code>while</code>, <code>until</code>, <code>for</code>, and <code>loop</code> can carry a <code>:name</code> label right after the keyword, and <code>break :name</code> / <code>next :name</code> target that exact loop from anywhere nested inside it, even through other unlabeled loops in between.</p>
+<div class="highlight"><pre><span></span><code><span class="kp">loop</span><span class="w"> </span><span class="ss">:outer</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="kp">loop</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">break</span><span class="w"> </span><span class="ss">:outer</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;inner i=</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;never reached — the labeled break already exited :outer&quot;</span>
+<span class="k">end</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;after outer loop&quot;</span>
+<span class="c1"># inner i=1</span>
+<span class="c1"># inner i=2</span>
+<span class="c1"># after outer loop</span>
+</code></pre></div>
+<p><code>next :name</code> works the same way, jumping straight to the next iteration of the labeled loop instead of just the innermost one:</p>
+<div class="highlight"><pre><span></span><code><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">while</span><span class="w"> </span><span class="ss">:outer</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">  </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">    </span><span class="n">j</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">next</span><span class="w"> </span><span class="ss">:outer</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;i=</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2"> j=</span><span class="si">#{</span><span class="n">j</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+<span class="c1"># i=1 j=1</span>
+<span class="c1"># i=2 j=1</span>
+<span class="c1"># i=3 j=1</span>
+</code></pre></div>
+<p><code>for</code> takes its label right after <code>for</code>, before the loop variable:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="ss">:outer</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span>
+<span class="w">    </span><span class="k">break</span><span class="w"> </span><span class="ss">:outer</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;x=</span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2"> y=</span><span class="si">#{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>An unlabeled <code>break</code>/<code>next</code> between the label and the target loop is transparent — it isn't required to also carry the label, and it doesn't accidentally get caught early. Only a loop can be labeled; plain <code>break</code>/<code>next</code> inside iterator blocks (<code>.each</code>, <code>.map</code>, ...) are unaffected.</p>
 
 
 

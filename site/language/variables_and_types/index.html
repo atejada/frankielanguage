@@ -1372,6 +1372,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standard_library/concurrency_networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrenty & Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standard_library/json_csv/" class="md-nav__link">
         
   
@@ -1576,6 +1604,34 @@
     
   
     Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
   
 
     
@@ -2636,13 +2692,19 @@
 </code></pre></div>
 <hr />
 <h2 id="truthiness"><code>Truthiness</code></h2>
-<p>Only <code>false</code> and <code>nil</code> are falsy. Everything else — including <code>0</code> and <code>""</code> — is truthy:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="mi">0</span><span class="w">     </span><span class="k">then</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;truthy&quot;</span><span class="w"> </span><span class="k">end</span><span class="w">   </span><span class="c1"># prints</span>
-<span class="k">if</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">    </span><span class="k">then</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;truthy&quot;</span><span class="w"> </span><span class="k">end</span><span class="w">   </span><span class="c1"># prints</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[]</span><span class="w">    </span><span class="k">then</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;truthy&quot;</span><span class="w"> </span><span class="k">end</span><span class="w">   </span><span class="c1"># prints</span>
-<span class="k">if</span><span class="w"> </span><span class="kp">false</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;truthy&quot;</span><span class="w"> </span><span class="k">end</span><span class="w">   </span><span class="c1"># does not print</span>
-<span class="k">if</span><span class="w"> </span><span class="kp">nil</span><span class="w">   </span><span class="k">then</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;truthy&quot;</span><span class="w"> </span><span class="k">end</span><span class="w">   </span><span class="c1"># does not print</span>
+<p><code>if</code>, <code>while</code>, <code>until</code>, and the inline-<code>if</code> expression follow Python-style truthiness: <code>false</code>, <code>nil</code>, <code>0</code>, <code>0.0</code>, <code>""</code>, <code>[]</code>, and <code>{}</code> are all falsy. Everything else is truthy.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="mi">0</span><span class="w">     </span><span class="k">then</span><span class="w"> </span><span class="s2">&quot;truthy&quot;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s2">&quot;falsy&quot;</span><span class="w"> </span><span class="k">end</span><span class="p">)</span><span class="w">   </span><span class="c1"># falsy</span>
+<span class="nb">puts</span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">    </span><span class="k">then</span><span class="w"> </span><span class="s2">&quot;truthy&quot;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s2">&quot;falsy&quot;</span><span class="w"> </span><span class="k">end</span><span class="p">)</span><span class="w">   </span><span class="c1"># falsy</span>
+<span class="nb">puts</span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="o">[]</span><span class="w">    </span><span class="k">then</span><span class="w"> </span><span class="s2">&quot;truthy&quot;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s2">&quot;falsy&quot;</span><span class="w"> </span><span class="k">end</span><span class="p">)</span><span class="w">   </span><span class="c1"># falsy</span>
+<span class="nb">puts</span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="kp">false</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s2">&quot;truthy&quot;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s2">&quot;falsy&quot;</span><span class="w"> </span><span class="k">end</span><span class="p">)</span><span class="w">   </span><span class="c1"># falsy</span>
+<span class="nb">puts</span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="kp">nil</span><span class="w">   </span><span class="k">then</span><span class="w"> </span><span class="s2">&quot;truthy&quot;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s2">&quot;falsy&quot;</span><span class="w"> </span><span class="k">end</span><span class="p">)</span><span class="w">   </span><span class="c1"># falsy</span>
 </code></pre></div>
+<p>The exception is <code>||=</code> (nil-coalescing assignment), which uses Ruby's model instead — only <code>nil</code> and <code>false</code> trigger the fallback:</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="n">a</span><span class="w"> </span><span class="o">||=</span><span class="w"> </span><span class="mi">99</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">a</span><span class="w">   </span><span class="c1"># 0 — kept, not nil/false</span>
+</code></pre></div>
+<p>See <a href="../conditionals/#truthiness">Conditionals</a> for the full picture, including why <code>then</code> only works in this inline-<code>if</code> <em>expression</em> form.</p>
 <hr />
 <h2 id="nil-safety"><code>Nil Safety</code></h2>
 <p>Calling a method on <code>nil</code> raises a runtime error. The <code>&amp;.</code> operator returns <code>nil</code> instead of crashing:</p>
@@ -2661,14 +2723,15 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">show</span>
 <span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="n">x</span><span class="w">   </span><span class="c1"># readable — outer scope is accessible</span>
 <span class="k">end</span>
-<span class="n">show</span><span class="w">   </span><span class="c1"># 10</span>
+<span class="n">show</span><span class="p">()</span><span class="w">   </span><span class="c1"># 10</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">modify</span>
 <span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="w">   </span><span class="c1"># local to modify — does not affect outer x</span>
 <span class="k">end</span>
-<span class="n">modify</span>
+<span class="n">modify</span><span class="p">()</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">x</span><span class="w">     </span><span class="c1"># 10 — unchanged</span>
 </code></pre></div>
+<p>Unlike Ruby, Frankie always requires parentheses to call a function, even with zero arguments — a bare <code>show</code> (no <code>()</code>) is just a reference to the function object and does nothing as a statement.</p>
 
 
 

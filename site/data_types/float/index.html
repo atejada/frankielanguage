@@ -1300,6 +1300,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standard_library/concurrency_networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrenty & Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standard_library/json_csv/" class="md-nav__link">
         
   
@@ -1504,6 +1532,34 @@
     
   
     Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
   
 
     
@@ -2372,10 +2428,10 @@
 <span class="nb">puts</span><span class="w"> </span><span class="n">floor</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">7</span><span class="p">)</span><span class="w">         </span><span class="c1"># 3</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">ceil</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span><span class="w">          </span><span class="c1"># 4</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">567</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">    </span><span class="c1"># 3.57</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">567</span><span class="p">)</span><span class="w">       </span><span class="c1"># 4    (rounds to nearest integer)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">567</span><span class="p">)</span><span class="w">       </span><span class="c1"># 4.0  (rounds to nearest, but still returns a Float)</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">clamp</span><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span><span class="w">   </span><span class="c1"># 1.0</span>
 </code></pre></div>
-<p><code>sqrt</code> always returns a Float. <code>floor</code>, <code>ceil</code>, and <code>round(x)</code> with no decimal argument return an Integer.</p>
+<p><code>sqrt</code> always returns a Float. <code>floor</code> and <code>ceil</code> return an Integer. <code>round(x)</code>, even with no decimal argument, always returns a Float.</p>
 <h2 id="conversion"><code>Conversion</code></h2>
 <div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="mi">3</span><span class="o">.</span><span class="mi">14</span><span class="o">.</span><span class="n">to_i</span><span class="w">    </span><span class="c1"># 3     — truncates toward zero</span>
 <span class="nb">puts</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">.</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">to_i</span><span class="w">  </span><span class="c1"># -3    — truncates toward zero (not floor)</span>

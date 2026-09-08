@@ -1394,6 +1394,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standard_library/concurrency_networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrenty & Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standard_library/json_csv/" class="md-nav__link">
         
   
@@ -1598,6 +1626,34 @@
     
   
     Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
   
 
     
@@ -2694,7 +2750,7 @@
 <div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w">           </span><span class="c1"># [1, 2, 3, 4, 5]</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">       </span><span class="c1"># [0, 2, 4, 6, 8, 10]</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w">      </span><span class="c1"># [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">25</span><span class="p">)</span><span class="w">     </span><span class="c1"># [0.0, 0.25, 0.5, 0.75, 1.0]</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="o">.</span><span class="mi">25</span><span class="p">)</span><span class="w">     </span><span class="c1"># [0, 0.25, 0.5, 0.75, 1.0]</span>
 </code></pre></div>
 <p><code>vec(range)</code> builds a vector from a range literal:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">)</span><span class="w">     </span><span class="c1"># [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
@@ -2706,20 +2762,34 @@
 <span class="nb">puts</span><span class="w"> </span><span class="n">rand_int</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w">      </span><span class="c1"># dice roll — e.g. 4</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">rand_int</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">    </span><span class="c1"># 0 to 100</span>
 
-<span class="c1"># Repeatable with a seed</span>
+<span class="c1"># Repeatable with a seed — a seed reproduces the whole sequence of</span>
+<span class="c1"># calls, not a single fixed value. Each call still returns a different</span>
+<span class="c1"># number; reseeding just replays that same sequence from the start.</span>
 <span class="n">rand_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="nb">puts</span><span class="w"> </span><span class="n">rand_int</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">    </span><span class="c1"># always the same value for seed 42</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">rand_int</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">    </span><span class="c1"># 82</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">rand_int</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">    </span><span class="c1"># 15</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">rand_int</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">    </span><span class="c1"># 4</span>
+
+<span class="n">rand_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">rand_int</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">    </span><span class="c1"># 82 — same sequence, from the top</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">rand_int</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">    </span><span class="c1"># 15</span>
+<span class="nb">puts</span><span class="w"> </span><span class="n">rand_int</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">    </span><span class="c1"># 4</span>
 </code></pre></div>
 <hr />
 <h2 id="integers-in-vectors">Integers in Vectors</h2>
-<p>Vectors of integers support R-style vectorised arithmetic — operations apply element-wise:</p>
+<p>Vectors of integers support R-style vectorised arithmetic — <code>+</code>, <code>-</code>, <code>/</code>, <code>%</code>, and <code>**</code> apply element-wise:</p>
 <div class="highlight"><pre><span></span><code><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">]</span>
 
-<span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w">              </span><span class="c1"># [2, 4, 6, 8, 10]</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">[</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">]</span><span class="w">   </span><span class="c1"># [11, 12, 13, 14, 15]</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w">             </span><span class="c1"># [1, 4, 9, 16, 25]</span>
-
-<span class="c1"># Statistical functions on integer vectors</span>
+</code></pre></div>
+<p><code>*</code> is the one exception — on a vector it repeats (Python-list semantics), it does not scale:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w">               </span><span class="c1"># [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]  — repeated, not scaled</span>
+</code></pre></div>
+<p>To scale every element by a number, use <code>.map</code> instead:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="n">v</span><span class="o">.</span><span class="n">map</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">end</span><span class="w">     </span><span class="c1"># [2, 4, 6, 8, 10]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Statistical functions on integer vectors</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w">             </span><span class="c1"># 15</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">mean</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w">            </span><span class="c1"># 3.0</span>
 <span class="nb">puts</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w">             </span><span class="c1"># 1</span>

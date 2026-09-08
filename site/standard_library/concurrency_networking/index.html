@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../file_io/">
+      
+      
+        <link rel="next" href="../json_csv/">
       
       
         
@@ -19,7 +23,7 @@
     
     
       
-        <title>Concurrency & Networking - Frankie - The Programming Language</title>
+        <title>Concurrenty & Networking - Frankie - The Programming Language</title>
       
     
     
@@ -95,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Concurrency &amp; Networking
+              Concurrenty & Networking
             
           </span>
         </div>
@@ -907,18 +911,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -939,7 +945,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1178,6 +1184,247 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrenty & Networking
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrenty & Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parallel_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        parallel_map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-sockets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCP Sockets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Sockets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp_connecthost-port-timeout-nil-tls-false-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tcp_connect(host, port, timeout: nil, tls: false) — client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socket-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Socket methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp_listenport-host-0000-manual-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tcp_listen(port, host: "0.0.0.0") — manual server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp_serveport-do-client-end-threaded-server-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tcp_serve(port) do |client| ... end — threaded server loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-a-tiny-clientserver-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: a tiny client/server pair
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#udp-sockets-v119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UDP Sockets (v1.19)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UDP Sockets (v1.19)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#udp_listenport-host-0000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        udp_listen(port, host: "0.0.0.0")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp_sendhost-port-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        udp_send(host, port, message)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-socket-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UDP socket methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websockets-v118-tls-v119" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSockets (v1.18) + TLS (v1.19)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
@@ -1385,6 +1632,34 @@
     
   
     Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
   
 
     

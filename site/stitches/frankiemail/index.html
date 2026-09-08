@@ -1185,6 +1185,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../standard_library/concurrency_networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrenty & Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../standard_library/json_csv/" class="md-nav__link">
         
   
@@ -1389,6 +1417,34 @@
     
   
     Encoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standard_library/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
   
 
     
@@ -2415,9 +2471,9 @@
 <td>Plain-text or HTML body</td>
 </tr>
 <tr>
-<td><code>from</code></td>
+<td><code>sender</code></td>
 <td><code>"frankie@localhost"</code></td>
-<td>Sender address</td>
+<td>Sender address (the From: header)</td>
 </tr>
 <tr>
 <td><code>smtp</code></td>
@@ -2435,7 +2491,7 @@
 <td>SMTP username (leave blank for unauthenticated)</td>
 </tr>
 <tr>
-<td><code>pass</code></td>
+<td><code>password</code></td>
 <td><code>""</code></td>
 <td>SMTP password</td>
 </tr>
@@ -2465,11 +2521,11 @@
 <span class="w">  </span><span class="ss">to</span><span class="p">:</span><span class="w">      </span><span class="s2">&quot;alice@example.com&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="ss">subject</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello from Frankie!&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="ss">body</span><span class="p">:</span><span class="w">    </span><span class="s2">&quot;This was sent by a Frankie script.&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="ss">from</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;MAIL_FROM&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bot@example.com&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="ss">sender</span><span class="p">:</span><span class="w">  </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;MAIL_FROM&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bot@example.com&quot;</span><span class="p">),</span>
 <span class="w">  </span><span class="ss">smtp</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_HOST&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;smtp.gmail.com&quot;</span><span class="p">),</span>
 <span class="w">  </span><span class="ss">port</span><span class="p">:</span><span class="w">    </span><span class="mi">587</span><span class="p">,</span>
 <span class="w">  </span><span class="ss">user</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_USER&quot;</span><span class="p">),</span>
-<span class="w">  </span><span class="ss">pass</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_PASS&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="ss">password</span><span class="p">:</span><span class="w"> </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_PASS&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="k">if</span><span class="w"> </span><span class="n">result</span><span class="o">[</span><span class="s2">&quot;ok&quot;</span><span class="o">]</span>
@@ -2495,7 +2551,7 @@
 <span class="w">  </span><span class="ss">html</span><span class="p">:</span><span class="w">    </span><span class="kp">true</span><span class="p">,</span>
 <span class="w">  </span><span class="ss">smtp</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_HOST&quot;</span><span class="p">),</span>
 <span class="w">  </span><span class="ss">user</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_USER&quot;</span><span class="p">),</span>
-<span class="w">  </span><span class="ss">pass</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_PASS&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="ss">password</span><span class="p">:</span><span class="w"> </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_PASS&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
 <hr />
@@ -2510,7 +2566,7 @@
 <span class="w">  </span><span class="ss">body</span><span class="p">:</span><span class="w">    </span><span class="s2">&quot;v1.16 deployed to production.&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="ss">smtp</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_HOST&quot;</span><span class="p">),</span>
 <span class="w">  </span><span class="ss">user</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_USER&quot;</span><span class="p">),</span>
-<span class="w">  </span><span class="ss">pass</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_PASS&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="ss">password</span><span class="p">:</span><span class="w"> </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_PASS&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
 <hr />
@@ -2523,7 +2579,7 @@
 <span class="w">  </span><span class="ss">body</span><span class="p">:</span><span class="w">    </span><span class="s2">&quot;Please investigate immediately.&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="ss">smtp</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_HOST&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;localhost&quot;</span><span class="p">),</span>
 <span class="w">  </span><span class="ss">user</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_USER&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">),</span>
-<span class="w">  </span><span class="ss">pass</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_PASS&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="ss">password</span><span class="p">:</span><span class="w"> </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_PASS&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">result</span><span class="o">[</span><span class="s2">&quot;ok&quot;</span><span class="o">]</span>
@@ -2551,7 +2607,7 @@
 <span class="w">  </span><span class="ss">body</span><span class="p">:</span><span class="w">    </span><span class="n">lines</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">),</span>
 <span class="w">  </span><span class="ss">smtp</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_HOST&quot;</span><span class="p">),</span>
 <span class="w">  </span><span class="ss">user</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_USER&quot;</span><span class="p">),</span>
-<span class="w">  </span><span class="ss">pass</span><span class="p">:</span><span class="w">    </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_PASS&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="ss">password</span><span class="p">:</span><span class="w"> </span><span class="n">env</span><span class="p">(</span><span class="s2">&quot;SMTP_PASS&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
 <hr />
