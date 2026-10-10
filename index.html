@@ -147,7 +147,7 @@ footer{border-top:1px solid var(--border);padding:2.2rem 2.5rem;display:flex;ali
 </head>
 <body>
 <nav>
-  <a href="#" class="nav-logo">🧟 Frankie <span>v1.22.0</span></a>
+  <a href="#" class="nav-logo">🧟 Frankie <span>v1.22.3</span></a>
   <ul>
     <li><a href="#features">Features</a></li>
     <li><a href="#playground">Playground</a></li>
@@ -178,7 +178,7 @@ footer{border-top:1px solid var(--border);padding:2.2rem 2.5rem;display:flex;ali
   <div class="ctas">
     <a href="#install" class="btn btn-p">Get Started →</a>
     <a href="#playground" class="btn btn-s">▶ Try it in your browser</a>
-    <a href="https://github.com/atejada/Frankie/releases" class="btn btn-s">Download v1.22.0</a>
+    <a href="https://github.com/atejada/Frankie/releases" class="btn btn-s">Download v1.22.3</a>
     <a href="https://atejada.github.io/frankielanguage/site/index.html" class="btn btn-s">Go to the Docs</a>
     <a href="https://github.com/atejada/Frankie" class="btn btn-s">★ Star on GitHub</a>
   </div>
@@ -190,7 +190,7 @@ footer{border-top:1px solid var(--border);padding:2.2rem 2.5rem;display:flex;ali
   <h2>Everything you need.<br>Nothing you don't.</h2>
   <p style="color:var(--muted);max-width:560px;font-size:.97rem">Proudly procedural — functions, data, loops, logic. No classes, no <code>self</code>, no inheritance. Runs on Python 3.10+ with zero external dependencies.</p>
   <div class="grid">
-    <div class="card"><div class="card-icon">🧊</div><h3>Language Freeze <span class="new-badge">v1.22</span></h3><p>v1.22.0 is the last feature release for a while — Blag is writing <em>The Book of Frankie</em> against this exact version. Bug fixes and doc corrections continue; new syntax and stdlib features are on hold.</p></div>
+    <div class="card"><div class="card-icon">🧊</div><h3>Language Freeze <span class="new-badge">v1.22</span></h3><p>v1.22.0 was the last feature release for a while — Blag is writing <em>The Book of Frankie</em> against this exact version. Bug fixes and doc corrections continue; new syntax and stdlib features are on hold.</p></div>
     <div class="card"><div class="card-icon">🔁</div><h3>Labeled Loops <span class="new-badge">v1.22</span></h3><p><code>loop :outer do … loop do … break :outer end end</code> — <code>break :name</code> / <code>next :name</code> escape or continue a specific loop from anywhere nested inside it. Works on <code>loop</code>, <code>while</code>, <code>until</code>, and <code>for</code>.</p></div>
     <div class="card"><div class="card-icon">🧮</div><h3>Math Intrinsics <span class="new-badge">v1.22</span></h3><p>FORTRAN's classic built-ins, batteries included: <code>sin</code>, <code>cos</code>, <code>atan2</code>, <code>exp</code>, <code>log(x, base)</code>, <code>factorial</code>, <code>gcd</code>, <code>lcm</code>, plus <code>PI</code> and <code>E</code> constants.</p></div>
     <div class="card"><div class="card-icon">➕</div><h3>Complex Numbers <span class="new-badge">v1.22</span></h3><p><code>complex_new(3, 4)</code> prints as <code>3+4i</code> and runs on Python's native complex type underneath — <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>**</code> all work for free. Plus <code>complex_abs</code> / <code>complex_conj</code>.</p></div>
@@ -1011,7 +1011,9 @@ frankiec test</pre></div>
   <table>
     <thead><tr><th>Version</th><th>Highlights</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td><strong>v1.22.0</strong></td><td>🧊 Language freeze — The Book of Frankie. Matrix math (real element-wise arithmetic on nested vectors + matrix_multiply/transpose/scale/identity), complex numbers (complex_new, printed as 3+4i), math intrinsics (sin/cos/atan2/exp/log/factorial/gcd/lcm, PI, E), labeled loops (loop :name / break :name / next :name)</td><td><span class="badge bl">Latest</span></td></tr>
+      <tr><td><strong>v1.22.3</strong></td><td>🔧 <code>frankiec fmt</code> keeps comments and parentheses; stitch doc comments restored. 🌐 Browser Playground — try Frankie with nothing to install. No language changes.</td><td><span class="badge bl">Latest</span></td></tr>
+      <tr><td><strong>v1.22.2</strong></td><td>Bug fixes found while writing The Book of Frankie: <code>app.static</code> root-mount fall-through, keyword-shaped identifier assignment, Homebrew tag</td><td><span class="badge bs">Stable</span></td></tr>
+      <tr><td><strong>v1.22.0</strong></td><td>🧊 Language freeze — The Book of Frankie. Matrix math (real element-wise arithmetic on nested vectors + matrix_multiply/transpose/scale/identity), complex numbers (complex_new, printed as 3+4i), math intrinsics (sin/cos/atan2/exp/log/factorial/gcd/lcm, PI, E), labeled loops (loop :name / break :name / next :name)</td><td><span class="badge bs">Stable</span></td></tr>
       <tr><td><strong>v1.21.0</strong></td><td>load_image / draw_image — real PNG/JPEG/GIF sprites on frankiecanvas, ▒ placeholder on frankiegame. synth_play — real WebAudio oscillator tones, terminal bell fallback. file_read_base64 for binary-safe reads</td><td><span class="badge bs">Stable</span></td></tr>
       <tr><td><strong>v1.20.0</strong></td><td>frankiegame terminal engine, frankiecanvas browser engine (same API, multiplayer via on_player_key), terminal primitives (term_raw/term_key/term_render), frankiec new --game, showcase games: Snake, Zombie Invaders, Pong</td><td><span class="badge bs">Stable</span></td></tr>
       <tr><td><strong>v1.19.0</strong></td><td>gradual type annotations, stepping debugger (run --debug, s/n/stack), test --coverage + LSP hints, wss:// + TLS tcp, UDP sockets, stitch install from URL, docs --html, showcase projects (Zombie Chat, Word Reanimator, Frankie Ledger)</td><td><span class="badge bs">Stable</span></td></tr>
