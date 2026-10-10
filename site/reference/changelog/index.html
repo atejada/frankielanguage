@@ -344,6 +344,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/playground/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playground
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2165,6 +2193,73 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v1223-2026-patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.22.3 (2026) — Patch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.22.3 (2026) — Patch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frankiec-fmt-no-longer-eats-your-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec fmt no longer eats your comments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-the-frankie-playground" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New: the Frankie Playground 🌐
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1222-2026-patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.22.2 (2026) — Patch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.22.2 (2026) — Patch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes-found-while-writing-the-book-of-frankie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug fixes found while writing The Book of Frankie
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v1220-2026-more-fortran" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3497,6 +3592,73 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v1223-2026-patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.22.3 (2026) — Patch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.22.3 (2026) — Patch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frankiec-fmt-no-longer-eats-your-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        frankiec fmt no longer eats your comments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-the-frankie-playground" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New: the Frankie Playground 🌐
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1222-2026-patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v1.22.2 (2026) — Patch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.22.2 (2026) — Patch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes-found-while-writing-the-book-of-frankie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug fixes found while writing The Book of Frankie
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v1220-2026-more-fortran" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4776,6 +4938,26 @@
 
 
 <h1 id="changelog">Changelog</h1>
+<h2 id="v1223-2026-patch">v1.22.3 (2026) — Patch</h2>
+<h3 id="frankiec-fmt-no-longer-eats-your-comments"><code>frankiec fmt</code> no longer eats your comments</h3>
+<ul>
+<li><strong><code>frankiec fmt --write</code> stripped every comment from a file.</strong> The formatter is AST-based and the lexer discarded comments, so they were lost on rewrite. Comments are now recorded on the side and re-attached to the statement they belong to (full-line comments above it, trailing comments after it). Formatting is idempotent.</li>
+<li><strong><code>frankiec fmt</code> could drop parentheses and change the meaning of an expression</strong> (e.g. <code>(a + b) * c</code>, or range bounds like <code>(n - 1)..m</code>). It now uses a precedence table and keeps the parentheses that matter.</li>
+<li><strong>Stitch doc comments restored</strong> in <code>frankiegame</code> and <code>frankiecanvas</code> (<code>##</code> comments consumed by <code>frankiec docs</code>).</li>
+</ul>
+<h3 id="new-the-frankie-playground">New: the Frankie Playground 🌐</h3>
+<p>Try Frankie in the browser with nothing to install. See <a href="../../getting_started/playground/">The Playground</a>.</p>
+<p>No new syntax, no stdlib/stitch signature changes — the language freeze for The Book of Frankie stays in effect.</p>
+<hr />
+<h2 id="v1222-2026-patch">v1.22.2 (2026) — Patch</h2>
+<h3 id="bug-fixes-found-while-writing-the-book-of-frankie">Bug fixes found while writing The Book of Frankie</h3>
+<ul>
+<li><strong><code>app.static("./dir")</code> (1-arg, root-mounted form) was shadowing every dynamic route with a 404.</strong> When a request didn't match a static file, the dispatcher returned 404 immediately instead of falling through to check regular routes. Fixed: the 2-arg, explicit-prefix form (<code>app.static("/static", "./dir")</code>) still 404s outright since it owns that URL space exclusively, but the root-mounted 1-arg form now falls through to routes when no static file matches.</li>
+<li><strong>Assigning to a keyword-shaped identifier crashed at runtime.</strong> <code>import = "value"</code> (and compound assignment to a keyword-shaped name, e.g. <code>class += 1</code>) generated invalid Python, since <code>gen_assign</code>/<code>gen_compound_assign</code> weren't running the identifier through the same <code>_py_safe()</code> mangling used everywhere else in codegen. Fixed — both now mangle consistently.</li>
+<li><strong>Homebrew tap was tagged <code>v1.22</code> instead of <code>v1.22.0</code></strong>, inconsistent with every other release tag and the <code>FRANKIE_VERSION</code> constant. Retagged, and the formula/README now point at the correct tarball.</li>
+</ul>
+<p>No new syntax, no stdlib/stitch signature changes — the language freeze for The Book of Frankie stays in effect.</p>
+<hr />
 <h2 id="v1220-2026-more-fortran">v1.22.0 (2026) — "More FORTRAN" 🧮</h2>
 <h3 id="one-last-feature-pass-before-the-freeze-locks-back-in">One last feature pass before the freeze locks back in</h3>
 <p>The freeze briefly lifted from v1.21.0 for a single, deliberate, final round leaning harder into Frankie's FORTRAN heritage — real matrix math, complex numbers, math intrinsics, and labeled loops. This is the last planned feature release before the book ships; only bug fixes and doc corrections from here.</p>
