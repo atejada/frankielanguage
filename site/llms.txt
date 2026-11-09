@@ -1,0 +1,87 @@
+# Frankie - The Programming Language
+
+> Frankie is a procedural programming language with Ruby-inspired syntax that compiles to Python. Pure Python, zero dependencies. Install with Homebrew (`brew install atejada/frankie/frankie`) or try it in the browser at https://atejada.github.io/frankielanguage/#playground.
+
+The `.md` links below are clean markdown versions of each docs page. The whole documentation in one file: https://atejada.github.io/frankielanguage/site/llms-full.txt
+
+## Docs
+
+- [Welcome to Frankie - The Programming Language Docs](https://atejada.github.io/frankielanguage/site/index.md): No Homebrew? Clone the repo and run python3 install.py, or try it in your browser with nothing to install. See Installation.
+- [About](https://atejada.github.io/frankielanguage/site/about.md): The Frankie Programming Language - A procedural language stitched from Ruby, Python, R and Fortran — with a built-in web server, SQLite, and zero dependencies.
+
+## Getting Started
+
+- [Getting Started with Frankie](https://atejada.github.io/frankielanguage/site/getting_started/installation.md): The easiest path if you're on a Mac or Linux box with Homebrew. Frankie ships as a third-party tap:
+- [CLI Commands](https://atejada.github.io/frankielanguage/site/getting_started/cli_commands.md): Frankie speaks the Language Server Protocol over stdio, built directly on the static analyzer:
+- [The Frankie Playground](https://atejada.github.io/frankielanguage/site/getting_started/playground.md): Run Frankie in the browser, with nothing to install: Open the Playground.
+
+## Language
+
+- [Variables & Types](https://atejada.github.io/frankielanguage/site/language/variables_and_types.md): Variables are created on first assignment. There is no declaration step — no var, let, or type annotation. Frankie figures out the type from the value.
+- [Operators](https://atejada.github.io/frankielanguage/site/language/operators.md): Shorthand for x = x op value:
+- [Conditionals](https://atejada.github.io/frankielanguage/site/language/conditionals.md): The basic conditional. The first branch whose condition is truthy runs; the rest are skipped.
+- [Loops](https://atejada.github.io/frankielanguage/site/language/loops.md): Frankie has four loop constructs and a rich set of iterator methods. The loop constructs handle index-based and condition-based repetition; the iterators han…
+- [Functions](https://atejada.github.io/frankielanguage/site/language/functions.md): Use def to define a named function. The last expression is implicitly returned — return is optional at the end.
+- [Error Handling](https://atejada.github.io/frankielanguage/site/language/error_handling.md): Wrap risky code in a begin block. If an error is raised, execution jumps to the matching rescue clause. ensure always runs — whether an error occurred or not.
+- [Modules](https://atejada.github.io/frankielanguage/site/language/modules.md): As programs grow, splitting them across multiple .fk files keeps things manageable. Use require to load another file.
+
+## Data Types
+
+- [Data Types](https://atejada.github.io/frankielanguage/site/data_types/index.md): Every value in Frankie has a type. The type determines what the value can do — what methods it responds to, how it behaves in arithmetic, and how it prints. …
+- [Integers](https://atejada.github.io/frankielanguage/site/data_types/Integers.md): An Integer is a whole number — positive, negative, or zero — with no decimal point. Integers in Frankie have no fixed size limit; they grow as large as neede…
+- [Float](https://atejada.github.io/frankielanguage/site/data_types/float.md): A Float is a decimal number — any value with a fractional part, or a number produced by float division. Frankie uses IEEE 754 double-precision, the same stan…
+- [Boolean & Nil](https://atejada.github.io/frankielanguage/site/data_types/boolean_and_nil.md): A Boolean is either true or false. Booleans are produced by comparisons, logical operators, and predicate methods (.empty?, .nil?, isinteger(), etc.).
+- [Strings](https://atejada.github.io/frankielanguage/site/data_types/Strings.md): A string is a sequence of UTF-8 characters. Strings are used for text — output, input, file content, keys, messages, templates. In Frankie, strings are immut…
+- [Vector](https://atejada.github.io/frankielanguage/site/data_types/vector.md): A Vector is an ordered, 0-indexed list of values. Vectors can hold any mix of types — integers, strings, booleans, other vectors, hashes. They are Frankie's …
+- [Hash](https://atejada.github.io/frankielanguage/site/data_types/hash.md): A Hash is an ordered collection of key-value pairs. Keys map to values — you look up a value by its key. Hashes are Frankie's dictionary type, modelled after…
+- [Lambda](https://atejada.github.io/frankielanguage/site/data_types/lambda.md): A Lambda is an anonymous function stored as a value. Unlike a def function which is declared and called by name, a lambda can be assigned to a variable, stor…
+- [Record](https://atejada.github.io/frankielanguage/site/data_types/record.md): A Record is a named data object — a Hash with a declared structure and a readable name. Where a plain hash is anonymous, a Record prints as Point(x: 3, y: 4)…
+
+## Standard Library
+
+- [Math & Statistics](https://atejada.github.io/frankielanguage/site/standard_library/math_statistics.md): Frankie has a built-in math and statistics library covering everything from basic arithmetic to descriptive statistics.
+- [Integer Methods](https://atejada.github.io/frankielanguage/site/standard_library/IntegerMethods.md): Convert to Float.
+- [String methods](https://atejada.github.io/frankielanguage/site/standard_library/StringMethods.md): Convert all characters to uppercase.
+- [Vector Methods](https://atejada.github.io/frankielanguage/site/standard_library/VectorMethods.md): First element. Returns nil if empty.
+- [Hash Methods](https://atejada.github.io/frankielanguage/site/standard_library/HashMethods.md): Get the value for a key.
+- [DateTime Methods](https://atejada.github.io/frankielanguage/site/standard_library/DateTimeMethods.md): Current date and time as a DateTime object
+- [Regular Expressions](https://atejada.github.io/frankielanguage/site/standard_library/regex.md): Return the first match object for pattern, or nil.
+- [File I/O](https://atejada.github.io/frankielanguage/site/standard_library/file_io.md): Frankie has a complete file I/O library built on Python's standard open() — zero external dependencies.
+- [Concurrency & Networking](https://atejada.github.io/frankielanguage/site/standard_library/concurrency_networking.md): Introduced in v1.17, with TLS and UDP added in v1.19. Thread-pool mapping, raw TCP/UDP sockets, and WebSockets — all built on the Python standard library, ze…
+- [JSON & CSV](https://atejada.github.io/frankielanguage/site/standard_library/json_csv.md): Frankie has built-in support for reading and writing both JSON and CSV — no external libraries, no imports required. J
+- [DateTime](https://atejada.github.io/frankielanguage/site/standard_library/datetime.md): Frankie has a built-in DateTime type for working with dates and times — no external libraries required.
+- [HTTP Client](https://atejada.github.io/frankielanguage/site/standard_library/http_client.md): Frankie has a built-in HTTP client for making GET, POST, PUT, and DELETE requests — no external libraries, no imports.
+- [Database Access (SQLite)](https://atejada.github.io/frankielanguage/site/standard_library/database.md): Frankie has built-in SQLite support via dbopen() — zero external dependencies, works everywhere Python does.
+- [Frankie Web Server](https://atejada.github.io/frankielanguage/site/standard_library/webserver.md): Frankie ships a built-in HTTP web server in the style of Sinatra / Camping. Zero external dependencies — it runs on Python's standard library http.server.
+- [Testing](https://atejada.github.io/frankielanguage/site/standard_library/testing.md): Frankie has a built-in test runner — no external libraries, no configuration.
+- [Random](https://atejada.github.io/frankielanguage/site/standard_library/random.md): Frankie has a built-in random number library — no imports required.
+- [Encoding & Signing](https://atejada.github.io/frankielanguage/site/standard_library/encoding.md): Built-in functions for Base64 encoding and HMAC signing. Zero dependencies — backed by Python's base64 and hmac / hashlib standard library modules.
+- [Debugging & Benchmarking](https://atejada.github.io/frankielanguage/site/standard_library/debugging.md): Introduced in v1.18, with a full stepping debugger added in v1.19. A debugger you can drop anywhere, and friendly block timing — both built into the language…
+
+## Stitches
+
+- [Stitches](https://atejada.github.io/frankielanguage/site/stitches/index.md): Frankie's zero-dependency, zero-registry package system. Drop a .fk file in the right folder and stitch it in.
+- [Frankiecolor](https://atejada.github.io/frankielanguage/site/stitches/frankiecolor.md): Terminal Colors
+- [Frankieforms](https://atejada.github.io/frankielanguage/site/stitches/frankieforms.md): Form Validation
+- [Frankietable](https://atejada.github.io/frankielanguage/site/stitches/frankietable.md): ASCII Tables
+- [Frankiepager](https://atejada.github.io/frankielanguage/site/stitches/frankiepager.md): Pagination
+- [Frankieconfig](https://atejada.github.io/frankielanguage/site/stitches/frankieconfig.md): Layered Config
+- [Frankiestring](https://atejada.github.io/frankielanguage/site/stitches/frankiestring.md): Additional string functions
+- [Frankietemplate](https://atejada.github.io/frankielanguage/site/stitches/frankietemplate.md): Mustache-Compatible Templates
+- [Frankiecookie](https://atejada.github.io/frankielanguage/site/stitches/frankiecookie.md): Write a signed cookie
+- [Frankieauth](https://atejada.github.io/frankielanguage/site/stitches/frankieauth.md): HTTP Basic Auth and Bearer token authentication for Frankie web apps. Zero dependencies — uses Frankie's built-in hmacsign / hmacverify and base64decode.
+- [Frankieratelimit](https://atejada.github.io/frankielanguage/site/stitches/frankieratelimit.md): In-memory per-IP rate limiting middleware for Frankie web apps. No dependencies. Uses a sliding window algorithm — resets on server restart by design.
+- [Frankiemail](https://atejada.github.io/frankielanguage/site/stitches/frankiemail.md): Send email via SMTP from any Frankie script. Zero external dependencies — uses Python's built-in smtplib under the hood.
+- [Frankiecli](https://atejada.github.io/frankielanguage/site/stitches/frankiecli.md): Structured command-line argument parsing for Frankie scripts. Zero dependencies — pure .fk, built on argv().
+- [Frankiecache](https://atejada.github.io/frankielanguage/site/stitches/frankiecache.md): In-memory key/value cache with optional TTL (time-to-live). Zero dependencies — pure .fk, no external libraries. State resets on process restart — use the da…
+
+## Examples
+
+- [Examples](https://atejada.github.io/frankielanguage/site/examples/index.md): Beyond the single-file snippets below, Frankie ships six complete, playable projects — each a self-contained .fk program (or small pinned-stitch project) you…
+- [Showcase](https://atejada.github.io/frankielanguage/site/examples/showcase.md): The showcase is a single runnable file that demonstrates every major Frankie feature from v1.0 through v1.22.
+- [What's New — Per Version](https://atejada.github.io/frankielanguage/site/examples/what_is_new.md): Each version of Frankie ships a runnable whatsnewvX.fk example file that demonstrates every new feature introduced in that release. Every install (Homebrew, …
+
+## Reference
+
+- [Changelog](https://atejada.github.io/frankielanguage/site/reference/changelog.md): Try Frankie in the browser with nothing to install. See The Playground.
+- [Full Stdlib Index](https://atejada.github.io/frankielanguage/site/reference/full_index.md): Every function, method, and operator available in Frankie v1.22.3. All are available without any import.

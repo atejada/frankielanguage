@@ -2243,6 +2243,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conventions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2302,6 +2313,8 @@
 ├── reference/                # full_index.md — every stdlib function in one table
 └── img/                      # Logo and favicon
 </code></pre></div>
+<h2 id="build">Build</h2>
+<p><code>mkdocs build &amp;&amp; python3 tools/build_llms.py</code> (run from the parent folder that holds <code>mkdocs.yml</code>) — the second step generates <code>site/llms.txt</code>, <code>site/llms-full.txt</code>, a <code>.md</code> twin of every page, and adds llms.txt pointers to each HTML page (AI-readiness / afdocs). <code>mkdocs build</code> wipes <code>site/</code>, so always run both. Commit <code>site/</code>.</p>
 <h2 id="conventions">Conventions</h2>
 <ul>
 <li>Each data type, stdlib module, and stitch has its own dedicated page.</li>

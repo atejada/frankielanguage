@@ -50,10 +50,10 @@
 
     
     
-  </head>
+  <!-- llms-directive --><link rel="alternate" type="text/markdown" href="https://atejada.github.io/frankielanguage/site/index.md"><link rel="llms-txt" href="https://atejada.github.io/frankielanguage/site/llms.txt"></head>
   
   
-    <body dir="ltr">
+    <body dir="ltr"><p style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">For AI agents: a documentation index is at https://atejada.github.io/frankielanguage/site/llms.txt, the full docs at https://atejada.github.io/frankielanguage/site/llms-full.txt, and this page as markdown at https://atejada.github.io/frankielanguage/site/index.md.</p>
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -201,6 +201,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -217,6 +235,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hello-frankie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hello, Frankie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-in-30-seconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install in 30 seconds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-ai-agents-and-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For AI agents and tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2215,6 +2296,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hello-frankie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hello, Frankie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-in-30-seconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install in 30 seconds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-ai-agents-and-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For AI agents and tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2239,6 +2372,32 @@
 <h2>No install? <a href="https://atejada.github.io/frankielanguage/#playground" target="_blank">Try Frankie in your browser</a> — see <a href="getting_started/playground/">The Playground</a></h2>
 
 <h2>For Frankie's website visit <a href="https://atejada.github.io/frankielanguage/" target="_blank">The Frankie Language</a></h2>
+
+<h2 id="hello-frankie">Hello, Frankie</h2>
+<div class="highlight"><pre><span></span><code><span class="nb">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;world&quot;</span>
+<span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2"> squared is </span><span class="si">#{</span><span class="n">i</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+</code></pre></div>
+<h2 id="install-in-30-seconds">Install in 30 seconds</h2>
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>atejada/frankie/frankie
+frankiec<span class="w"> </span>run<span class="w"> </span>hello.fk
+</code></pre></div>
+<p>No Homebrew? Clone the repo and run <code>python3 install.py</code>, or <a href="getting_started/playground/">try it in your browser</a> with nothing to install. See <a href="getting_started/installation/">Installation</a>.</p>
+<h2 id="where-to-go-next">Where to go next</h2>
+<ul>
+<li><strong><a href="getting_started/installation/">Installation</a></strong> and <strong><a href="getting_started/cli_commands/">CLI Commands</a></strong> — <code>frankiec run</code>, <code>test</code>, <code>check</code>, <code>fmt</code>, <code>repl</code>, <code>new</code>, <code>watch</code>.</li>
+<li><strong><a href="language/variables_and_types/">Language</a></strong> — variables, operators, conditionals, loops (including labeled loops), functions, error handling, modules.</li>
+<li><strong><a href="data_types/">Data Types</a></strong> — Integer, Float, String, Vector, Hash, Lambda, Record.</li>
+<li><strong><a href="standard_library/math_statistics/">Standard Library</a></strong> — math and matrices, files, JSON/CSV, HTTP, SQLite, a built-in web server, testing, regex and more.</li>
+<li><strong><a href="stitches/">Stitches</a></strong> — reusable library modules loaded with <code>stitch "name"</code>.</li>
+<li><strong><a href="examples/">Examples</a></strong> and <strong><a href="examples/showcase/">Showcase</a></strong> — runnable programs, from FizzBuzz to games.</li>
+<li><strong><a href="reference/changelog/">Changelog</a></strong> and <strong><a href="reference/full_index/">Full Stdlib Index</a></strong> — every release and every function.</li>
+</ul>
+<h2 id="for-ai-agents-and-tools">For AI agents and tools</h2>
+<p>Plain-markdown access to these docs: <a href="https://atejada.github.io/frankielanguage/site/llms.txt"><code>llms.txt</code></a> (index) and <a href="https://atejada.github.io/frankielanguage/site/llms-full.txt"><code>llms-full.txt</code></a> (everything in one file). Every page also has a <code>.md</code> twin, e.g. <code>getting_started/playground.md</code>.</p>
 
 
 
